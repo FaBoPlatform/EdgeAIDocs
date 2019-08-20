@@ -320,8 +320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../digital/202_9axis/" title="201 3Axis" class="md-nav__link">
-      201 3Axis
+    <a href="../digital/202_9axis/" title="202 9Axis" class="md-nav__link">
+      202 9Axis
     </a>
   </li>
 
@@ -332,8 +332,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../digital/203_color/" title="201 3Axis" class="md-nav__link">
-      201 3Axis
+    <a href="../digital/203_color/" title="203 Color" class="md-nav__link">
+      203 Color
     </a>
   </li>
 
@@ -344,8 +344,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../digital/204_barometer/" title="201 3Axis" class="md-nav__link">
-      201 3Axis
+    <a href="../digital/204_barometer/" title="204 Barometer" class="md-nav__link">
+      204 Barometer
     </a>
   </li>
 
@@ -385,13 +385,13 @@
                 
                 <h1 id="gpio">GPIOの有効化</h1>
 <p>JupyterからTerminalを起動します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_yatdrtw6h6ful5n checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_yatdrtw6h6ful5n-panel role=tab><label for=tab-group-0-0_yatdrtw6h6ful5n class=code-tab-label data-lang id=tab-group-0-0_yatdrtw6h6ful5n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_yatdrtw6h6ful5n-panel aria-labelledby=tab-group-0-0_yatdrtw6h6ful5n-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo pip3 install Jetson.GPIO
-</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_xyd08jpr5ykv1ag class=code-tab data-lang aria-controls=tab-group-0-1_xyd08jpr5ykv1ag-panel role=tab><label for=tab-group-0-1_xyd08jpr5ykv1ag class=code-tab-label data-lang id=tab-group-0-1_xyd08jpr5ykv1ag-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_xyd08jpr5ykv1ag-panel aria-labelledby=tab-group-0-1_xyd08jpr5ykv1ag-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_v877rmy378ulbm7 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_v877rmy378ulbm7-panel role=tab><label for=tab-group-0-0_v877rmy378ulbm7 class=code-tab-label data-lang id=tab-group-0-0_v877rmy378ulbm7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_v877rmy378ulbm7-panel aria-labelledby=tab-group-0-0_v877rmy378ulbm7-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo pip3 install Jetson.GPIO
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_wl1lsnfnvis7e0n class=code-tab data-lang aria-controls=tab-group-0-1_wl1lsnfnvis7e0n-panel role=tab><label for=tab-group-0-1_wl1lsnfnvis7e0n class=code-tab-label data-lang id=tab-group-0-1_wl1lsnfnvis7e0n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_wl1lsnfnvis7e0n-panel aria-labelledby=tab-group-0-1_wl1lsnfnvis7e0n-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo groupadd -f -r gpio
 sudo usermod -a -G gpio jetbot
-</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-2_vp90sn5gahtwko2 class=code-tab data-lang aria-controls=tab-group-0-2_vp90sn5gahtwko2-panel role=tab><label for=tab-group-0-2_vp90sn5gahtwko2 class=code-tab-label data-lang id=tab-group-0-2_vp90sn5gahtwko2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_vp90sn5gahtwko2-panel aria-labelledby=tab-group-0-2_vp90sn5gahtwko2-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d/
-</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-3_2sfh802gapqe90x class=code-tab data-lang aria-controls=tab-group-0-3_2sfh802gapqe90x-panel role=tab><label for=tab-group-0-3_2sfh802gapqe90x class=code-tab-label data-lang id=tab-group-0-3_2sfh802gapqe90x-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_2sfh802gapqe90x-panel aria-labelledby=tab-group-0-3_2sfh802gapqe90x-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger
-</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-4_3ud9c379dg1zdkw class=code-tab data-lang aria-controls=tab-group-0-4_3ud9c379dg1zdkw-panel role=tab><label for=tab-group-0-4_3ud9c379dg1zdkw class=code-tab-label data-lang id=tab-group-0-4_3ud9c379dg1zdkw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-4_3ud9c379dg1zdkw-panel aria-labelledby=tab-group-0-4_3ud9c379dg1zdkw-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo reboot
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-2_twout7xyz3htfe4 class=code-tab data-lang aria-controls=tab-group-0-2_twout7xyz3htfe4-panel role=tab><label for=tab-group-0-2_twout7xyz3htfe4 class=code-tab-label data-lang id=tab-group-0-2_twout7xyz3htfe4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_twout7xyz3htfe4-panel aria-labelledby=tab-group-0-2_twout7xyz3htfe4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d/
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-3_vjqrycbcnqyaie3 class=code-tab data-lang aria-controls=tab-group-0-3_vjqrycbcnqyaie3-panel role=tab><label for=tab-group-0-3_vjqrycbcnqyaie3 class=code-tab-label data-lang id=tab-group-0-3_vjqrycbcnqyaie3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_vjqrycbcnqyaie3-panel aria-labelledby=tab-group-0-3_vjqrycbcnqyaie3-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-4_az5gdaj5iyf5eo7 class=code-tab data-lang aria-controls=tab-group-0-4_az5gdaj5iyf5eo7-panel role=tab><label for=tab-group-0-4_az5gdaj5iyf5eo7 class=code-tab-label data-lang id=tab-group-0-4_az5gdaj5iyf5eo7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-4_az5gdaj5iyf5eo7-panel aria-labelledby=tab-group-0-4_az5gdaj5iyf5eo7-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo reboot
 </pre></div></td></tr></table></div></div>
                 
                   
