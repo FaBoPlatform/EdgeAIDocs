@@ -1,5 +1,7 @@
 # FaBo EdgeAI Docs
 
+![](./img/EdgeAIKIT_Main.jpg)
+
 ## FaBo EdgeAI Docsについて
 
 FaBo EdgeAI Kit(Jetson Nano使用)に関するドキュメントです。
