@@ -1,12 +1,25 @@
 # 211 7Segment
 
+
+
+## サンプルコードの動作
+７セグメントを表示します。
+
+## サンプルコード使用時の接続
+FaBo #2 を I2C0,I2C1,I2C2のいずれかに接続します。 
+
+## Brick回路図
+~画像〜
+
+FaBoのライブラリをインストール
+
 ```
 git clone https://github.com/FaBoPlatform/FaBo7Segment-TLC59208-Python.git
 cd FaBo7Segment-TLC59208-Python
 sudo pip3 install .
 ```
 
-
+0~9をカウントアップします。
 ```
 # coding: utf-8
 import FaBo7Seg_TLC59208

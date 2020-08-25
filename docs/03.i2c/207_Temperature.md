@@ -1,11 +1,23 @@
 # 207 Temperature
 
+
+## サンプルコードの動作
+温度を計測して表示します。
+
+## サンプルコード使用時の接続
+FaBo #2 を I2C0,I2C1,I2C2のいずれかに接続します。 
+
+## Brick回路図
+~画像〜
+
+FaBoのライブラリをインストール
+
 ```
 git clone https://github.com/FaBoPlatform/FaBoTemperature-ADT7410-Python.git
 cd FaBoTemperature-ADT7410-Python
 sudo pip3 install .
 ```
-
+## ソースコード
 
 ```
 # coding: utf-8

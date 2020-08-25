@@ -1,5 +1,15 @@
 # 204 Barometer
 
+## サンプルコードの動作
+気圧、温度を測ります。
+
+## サンプルコード使用時の接続
+FaBo #204 Barometer を I2C0,I2C1,I2C2のいずれかに接続します。 
+
+## Brick回路図
+~画像〜
+
+FaBoのライブラリをインストール
 ```
 git clone https://github.com/FaBoPlatform/FaBoBarometer-MPL115-Python.git
 cd FaBoBarometer-MPL115-Python

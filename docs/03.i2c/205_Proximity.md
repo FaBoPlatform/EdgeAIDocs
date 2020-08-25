@@ -1,5 +1,16 @@
 # 205 Proximty
 
+
+## サンプルコードの動作
+
+
+## サンプルコード使用時の接続
+FaBo #2 を I2C0,I2C1,I2C2のいずれかに接続します。 
+
+## Brick回路図
+~画像〜
+
+FaBoのライブラリをインストール
 ```
 git clone https://github.com/FaBoPlatform/FaBoProximity-VCNL4010-Python.git
 cd FaBoProximity-VCNL4010-Python

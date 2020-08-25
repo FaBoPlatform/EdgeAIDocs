@@ -1,6 +1,12 @@
 # 103 Button
 
-GPIOの判定　
+FaBo #103 BUTTON Brickを使用してボタンがおしたら、LED点灯させます。
+LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。
+
+
+GPIOの判定
+
+以下のコードは、ボタンが押されたのたえずチェックします。
 
 ```
 # coding: utf-8
@@ -28,7 +34,10 @@ except KeyboardInterrupt:
     sys.exit(0)
 ```
 
+
 GPIOの入力待ち
+
+以下のコードはボタンがおされるまで待っています。
 
 ```
 # coding: utf-8
@@ -56,6 +65,8 @@ except KeyboardInterrupt:
 ```
 
 イベントとして取得
+
+以下のコードは、処理中にボタンがおされたら、現在の処理を停止して、関数blinkを呼び、その関数の処理がおわったら、blink呼び出し前に戻ります。
 
 ```
 # coding: utf-8
