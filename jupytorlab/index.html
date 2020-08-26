@@ -297,6 +297,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="インストール" class="md-nav__link">
+    インストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="エラーが出た場合" class="md-nav__link">
+    エラーが出た場合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-lab" title="jupyter labを起動" class="md-nav__link">
+    jupyter labを起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jetson-nano" title="Jetson Nanoにアクセス" class="md-nav__link">
+    Jetson Nanoにアクセス
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python3" title="python3のコードを記述する。" class="md-nav__link">
+    python3のコードを記述する。
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="グラフを表示させる" class="md-nav__link">
+    グラフを表示させる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown" title="Markdownの記述方法" class="md-nav__link">
+    Markdownの記述方法
+  </a>
+  
+</li>
+      
       
       
       
@@ -1029,6 +1084,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="インストール" class="md-nav__link">
+    インストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="エラーが出た場合" class="md-nav__link">
+    エラーが出た場合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyter-lab" title="jupyter labを起動" class="md-nav__link">
+    jupyter labを起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jetson-nano" title="Jetson Nanoにアクセス" class="md-nav__link">
+    Jetson Nanoにアクセス
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python3" title="python3のコードを記述する。" class="md-nav__link">
+    python3のコードを記述する。
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="グラフを表示させる" class="md-nav__link">
+    グラフを表示させる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown" title="Markdownの記述方法" class="md-nav__link">
+    Markdownの記述方法
+  </a>
+  
+</li>
+      
       
       
       
@@ -1049,7 +1159,77 @@
                   <h1>Jupytorlab</h1>
                 
                 <h2 id="jupytorlab">Jupytorlabの使い方</h2>
-<p>工事中</p>
+<p>従来は、sshでログインしてpythonを実行できますが、Jupyter NoteBookおよびJupyter labは、豊富なリソースを利用し、WebブラウザからPythonを実行できます。また、画像やグラフなどを簡単に表示できデータ分析などに役立ち大変便利です。また、簡単に文章表現できるMarkDownにも対応しております。</p>
+<h2 id="_1">インストール</h2>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>$sudo apt install nodejs npm</span>
+<span class=err>$sudo apt install python3-pip</span>
+<span class=err>$sudo pip3 install jupyter jupyterlab</span>
+</code></pre></div></td></tr></table></p>
+<h2 id="_2">エラーが出た場合</h2>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>$sudo apt-get install python3-dev</span>
+<span class=err>$sudo apt-get install libffi-dev</span>
+</code></pre></div></td></tr></table></p>
+<h2 id="jupyter-lab">jupyter labを起動</h2>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>$chromium-browser --no-sandbox &amp; jupyter lab</span>
+</code></pre></div></td></tr></table></p>
+<p>ipアドレスをしらべる。Wifiで接続する場合は、wan0の項目のIPアドレス</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>$ifconfig -a</span>
+</code></pre></div></td></tr></table></p>
+<h2 id="jetson-nano">Jetson Nanoにアクセス</h2>
+<p>パソコンのブラウザ（Chrome,Firefox）アドレスバーに192.168.0.****と入力します。
+※お使いの環境によります。
+<img alt="" src="../img/jupyterlab/jupyterlabgamen01.jpg" /></p>
+<h3 id="python3">python3のコードを記述する。</h3>
+<p>python3を選ぶ。
+<img alt="" src="../img/jupyterlab/jypyterlabgamen02.png" />
+すると1つのセルが現れます。
+<img alt="" src="../img/jupyterlab/jupyterlabgamen03.png" />
+renameを選択肢ファイルに名前をつけます。サンプルとしてhelloworld.ipynbと名前をつけます。
+<img alt="" src="../img/jupyterlab/jupyterlabgamenrename.png" /></p>
+<p>セルに以下の１行コードを入力します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>print(&quot;Hello World.&quot;)</span>
+</code></pre></div></td></tr></table></p>
+<p><img alt="" src="../img/jupyterlab/jupyterlabgamen04.png" /></p>
+<p>入力し終わったら、上の横三角マークするとクリックすると
+Hello World.
+と表示することができたと思います。</p>
+<p>ループなど停止する場合は、四角ボタンをクリックします。</p>
+<h2 id="_3">グラフを表示させる</h2>
+<p>左上にある+ボタンを押して、Lancherのタブにて、terminalを選択します。</p>
+<p>つぎのパッケージをインストールします。</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_8b6fo1t3u1tjk2j checked=checked class=code-tab data-lang aria-controls=tab-group-5-0_8b6fo1t3u1tjk2j-panel role=tab><label for=tab-group-5-0_8b6fo1t3u1tjk2j class=code-tab-label data-lang id=tab-group-5-0_8b6fo1t3u1tjk2j-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-0_8b6fo1t3u1tjk2j-panel aria-labelledby=tab-group-5-0_8b6fo1t3u1tjk2j-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$ sudo pip3 install cython
+</code></pre></div></td></tr></table></div><input name=tab-group-5 type=radio id=tab-group-5-1_z039wgn984ezkc4 class=code-tab data-lang aria-controls=tab-group-5-1_z039wgn984ezkc4-panel role=tab><label for=tab-group-5-1_z039wgn984ezkc4 class=code-tab-label data-lang id=tab-group-5-1_z039wgn984ezkc4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-1_z039wgn984ezkc4-panel aria-labelledby=tab-group-5-1_z039wgn984ezkc4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>$sudo pip3 install -U pip testresources setuptools</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-5 type=radio id=tab-group-5-2_u5ngwvey4rrd9w5 class=code-tab data-lang aria-controls=tab-group-5-2_u5ngwvey4rrd9w5-panel role=tab><label for=tab-group-5-2_u5ngwvey4rrd9w5 class=code-tab-label data-lang id=tab-group-5-2_u5ngwvey4rrd9w5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-2_u5ngwvey4rrd9w5-panel aria-labelledby=tab-group-5-2_u5ngwvey4rrd9w5-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$ sudo pip3 install matplotlib
+</code></pre></div></td></tr></table></div></div>
+
+<p>y　＝　２x　＋　１　の一次関数を描画する</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>matplotlib.pyplot</span> <span class=k>as</span> <span class=nn>plt</span>
+<span class=kn>import</span> <span class=nn>numpy</span> <span class=k>as</span> <span class=nn>np</span>
+
+<span class=n>x</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=kp>arange</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>300</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+<span class=n>y</span> <span class=o>=</span> <span class=n>x</span> <span class=o>*</span> <span class=mi>2</span> <span class=o>+</span> <span class=mi>1</span>
+
+<span class=n>plt</span><span class=o>.</span><span class=n>plot</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span>
+<span class=n>plt</span><span class=o>.</span><span class=n>show</span><span class=p>()</span>
+</code></pre></div></td></tr></table></p>
+<p><img alt="" src="../img/jupyterlab/GraphDemo.png" /></p>
+<h2 id="markdown">Markdownの記述方法</h2>
+<p>タブ内の＋ボタンを押して、セルを追加します。Code-&gt;Markdownに変更します。
+そのセルの中に ## グラフの描画　１次関数と入力します。
+<img alt="" src="../img/jupyterlab/MarkDown01.png" /></p>
+<p>Shiftキー + enterキーを押すとマークダウンのテキストとして入力されコメントアウトよりも表現豊かに表記ができます。</p>
+<p><img alt="" src="../img/jupyterlab/MarkDown02.png" /></p>
+<p>s</p>
                 
                   
                 
