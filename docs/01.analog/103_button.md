@@ -1,5 +1,12 @@
 # 103 Button
 
+## 接続
+
+GPIOは4,5,6,12,13,16
+
+![](./../img/share/gpio_pin.jpg)
+
+
 FaBo #103 BUTTON Brickを使用してボタンがおしたら、LED点灯させます。
 LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。
 
