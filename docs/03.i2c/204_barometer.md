@@ -6,6 +6,9 @@
 ## サンプルコード使用時の接続
 FaBo #204 Barometer を I2C0,I2C1,I2C2のいずれかに接続します。 
 
+![](./../img/211_7Seg/i2cpin.jpg)
+
+
 ## Brick回路図
 ~画像〜
 
