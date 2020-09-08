@@ -76,18 +76,20 @@ Exitを選択してエンターキーで終了します。
 import Jetson.GPIO as GPIO
 import time
 
-tempo = 180
-onkai = [220.0,246.9,277.2,293.7,329.6,370.0,415.3,440.0]
+tempo = 120
+onkai = {"C4":261.6, "C4#":277.2, "D4":293.7 ,"D4#":311.1,"E4":329.6,"F4":349.2,"F4#":370.0,"G4":392.0,"G4#":415.3,"A4":440.0,"A4#":466.2,"B4":493.9,"C5":523.3}
+notename = ["C4","D4","E4","F4","G4","A4","B4","C5"]
 GPIO.setmode(GPIO.BCM)
-PIN = 12 #12 or 13
+PIN = 12
 GPIO.setup(PIN, GPIO.OUT)
-buzzer = GPIO.PWM(PIN, 220)
+buzzer = GPIO.PWM(PIN, 261.6)
 buzzer.start(50)
 print ("Play Start.")
 
-for frequency in onkai:
-    print(frequency)    
-    buzzer.ChangeFrequency(frequency)
+for i in notename: 
+    freq = onkai[i]
+    print (freq)
+    buzzer.ChangeFrequency(freq)
     time.sleep(60/tempo)
 
 buzzer.stop()
