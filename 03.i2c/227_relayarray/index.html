@@ -455,6 +455,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../01.analog/114_UV/" title="114 UV" class="md-nav__link">
+      114 UV
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../01.analog/115_hunidity/" title="115 hunidity" class="md-nav__link">
       115 hunidity
     </a>
@@ -481,6 +493,18 @@
   <li class="md-nav__item">
     <a href="../../01.analog/117_switch/" title="117 switch" class="md-nav__link">
       117 switch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01.analog/123_relay/" title="123 RELAY" class="md-nav__link">
+      123 RELAY
     </a>
   </li>
 
@@ -1204,7 +1228,17 @@
 35
 36
 37
-38</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>FaBoGPIO_PCAL6408</span>
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>FaBoGPIO_PCAL6408</span>
 <span class=kn>import</span> <span class=nn>time</span>
 <span class=kn>import</span> <span class=nn>sys</span>
 
@@ -1216,6 +1250,7 @@
 
 <span class=k>try</span><span class=p>:</span>
     <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+
         <span class=c1>#順番にリレーON</span>
         <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>8</span><span class=p>):</span>
             <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0x01</span><span class=o>&lt;&lt;</span><span class=n>i</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
@@ -1231,13 +1266,22 @@
         <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
         <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span>
 
-        <span class=c1>#順番にリレーをON</span>
-        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>8</span><span class=p>):</span>
-            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+        <span class=c1>#順次にリレーをON</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>9</span><span class=p>):</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>((</span><span class=mi>2</span> <span class=o>**</span> <span class=n>i</span><span class=p>)</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
             <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>((</span><span class=mi>2</span> <span class=o>**</span> <span class=n>i</span><span class=p>)</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
             <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
+        <span class=c1>#リレー全数オンオフテスト</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+
+        <span class=c1>#すべてOFF</span>
+        <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
 
 <span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
     <span class=n>pcal6408</span><span class=o>.</span><span class=n>setAllClear</span><span class=p>()</span>

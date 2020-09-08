@@ -544,6 +544,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../01.analog/114_UV/" title="114 UV" class="md-nav__link">
+      114 UV
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../01.analog/115_hunidity/" title="115 hunidity" class="md-nav__link">
       115 hunidity
     </a>
@@ -570,6 +582,18 @@
   <li class="md-nav__item">
     <a href="../01.analog/117_switch/" title="117 switch" class="md-nav__link">
       117 switch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01.analog/123_relay/" title="123 RELAY" class="md-nav__link">
+      123 RELAY
     </a>
   </li>
 
@@ -1220,10 +1244,10 @@
 </ol>
 <p>Jetson GPIOライブラリは、I / Oピンに番号を付ける4つの方法を提供します。最初の2つは、RPi.GPIOライブラリによって提供されるモードに対応しています。つまり、40ピンのGPIOヘッダーのピン番号とBroadcom SoCのGPIO番号をそれぞれ参照するBOARDとBCMです。残りの2つのモード、CVMおよびTEGRA_SOCは、CVM / CVBコネクタおよびTegra SoCの信号名にそれぞれ対応する番号の代わりに文字列を使用します。</p>
 <p>使用しているモードを指定するには（必須）、次の関数呼び出しを使用します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_r4u5n24a01pg0kd checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_r4u5n24a01pg0kd-panel role=tab><label for=tab-group-1-0_r4u5n24a01pg0kd class=code-tab-label data-lang id=tab-group-1-0_r4u5n24a01pg0kd-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_r4u5n24a01pg0kd-panel aria-labelledby=tab-group-1-0_r4u5n24a01pg0kd-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BOARD)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_0trtp9n6zjv7ird class=code-tab data-lang aria-controls=tab-group-1-1_0trtp9n6zjv7ird-panel role=tab><label for=tab-group-1-1_0trtp9n6zjv7ird class=code-tab-label data-lang id=tab-group-1-1_0trtp9n6zjv7ird-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_0trtp9n6zjv7ird-panel aria-labelledby=tab-group-1-1_0trtp9n6zjv7ird-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BCM)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-2_a6p5e1hgw2gmtxo class=code-tab data-lang aria-controls=tab-group-1-2_a6p5e1hgw2gmtxo-panel role=tab><label for=tab-group-1-2_a6p5e1hgw2gmtxo class=code-tab-label data-lang id=tab-group-1-2_a6p5e1hgw2gmtxo-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_a6p5e1hgw2gmtxo-panel aria-labelledby=tab-group-1-2_a6p5e1hgw2gmtxo-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.CVM)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-3_29crw495oi1zmuv class=code-tab data-lang aria-controls=tab-group-1-3_29crw495oi1zmuv-panel role=tab><label for=tab-group-1-3_29crw495oi1zmuv class=code-tab-label data-lang id=tab-group-1-3_29crw495oi1zmuv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_29crw495oi1zmuv-panel aria-labelledby=tab-group-1-3_29crw495oi1zmuv-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.TEGRA_SOC)</span>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_ha06dkjquh9q9vs checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_ha06dkjquh9q9vs-panel role=tab><label for=tab-group-1-0_ha06dkjquh9q9vs class=code-tab-label data-lang id=tab-group-1-0_ha06dkjquh9q9vs-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_ha06dkjquh9q9vs-panel aria-labelledby=tab-group-1-0_ha06dkjquh9q9vs-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BOARD)</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_t1uu9t3io0cwpdv class=code-tab data-lang aria-controls=tab-group-1-1_t1uu9t3io0cwpdv-panel role=tab><label for=tab-group-1-1_t1uu9t3io0cwpdv class=code-tab-label data-lang id=tab-group-1-1_t1uu9t3io0cwpdv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_t1uu9t3io0cwpdv-panel aria-labelledby=tab-group-1-1_t1uu9t3io0cwpdv-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BCM)</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-2_ovm2gpsciwmr2cv class=code-tab data-lang aria-controls=tab-group-1-2_ovm2gpsciwmr2cv-panel role=tab><label for=tab-group-1-2_ovm2gpsciwmr2cv class=code-tab-label data-lang id=tab-group-1-2_ovm2gpsciwmr2cv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_ovm2gpsciwmr2cv-panel aria-labelledby=tab-group-1-2_ovm2gpsciwmr2cv-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.CVM)</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-3_7hbgtysjya6k0jp class=code-tab data-lang aria-controls=tab-group-1-3_7hbgtysjya6k0jp-panel role=tab><label for=tab-group-1-3_7hbgtysjya6k0jp class=code-tab-label data-lang id=tab-group-1-3_7hbgtysjya6k0jp-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_7hbgtysjya6k0jp-panel aria-labelledby=tab-group-1-3_7hbgtysjya6k0jp-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.TEGRA_SOC)</span>
 </code></pre></div></td></tr></table></div></div>
 
 <p>設定されているモードを確認するには、次を呼び出します。</p>
