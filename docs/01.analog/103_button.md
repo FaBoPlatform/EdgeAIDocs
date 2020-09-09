@@ -1,5 +1,14 @@
 # 103 Button
 
+![](./../img/103_BUTTON/button103.jpg)
+
+## 注意
+
+＃FaBo 103 button は、抵抗が１０Kのものをご使用ください。
+茶、黒、赤、金（１０２）
+
+![](./../img/103_BUTTON/103_Button_102.png)
+
 ## 接続
 
 GPIOは4,5,6,12,13,16

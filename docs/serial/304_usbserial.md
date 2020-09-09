@@ -1,5 +1,7 @@
 # 304 USBserial
 
+![](./../img/304_usbserial/usbserial304.jpg)
+
 ## サンプルコードの動作
 FaBo USB Serialを使いUARTで通信いたします。
 
