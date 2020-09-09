@@ -46,6 +46,7 @@ time.sleep(1)
 
 try:
     while True:
+            
         #順番にリレーON
         for i in range(8):
             pcal6408.setDigital(0x01<<i, 0)
@@ -60,15 +61,24 @@ try:
         #すべてOFF
         pcal6408.setDigital(0xFF, 1)
         time.sleep(3)
-        
-        #順番にリレーをON
-        for i in range(8):
-            pcal6408.setDigital(i+1, 0)
+            
+        #順次にリレーをON
+        for i in range(9):
+            pcal6408.setDigital((2 ** i)-1, 0)
             time.sleep(1)
-            pcal6408.setDigital(i+1, 1)
+            pcal6408.setDigital((2 ** i)-1, 1)
             time.sleep(1)
         
-
+        #リレー全数オンオフテスト
+        for i in range(5):
+            pcal6408.setDigital(0xFF, 1)
+            time.sleep(1)
+            pcal6408.setDigital(0xFF, 0)
+            time.sleep(1)
+            
+        #すべてOFF
+        pcal6408.setDigital(0xFF, 1)
+        
 except KeyboardInterrupt:
     pcal6408.setAllClear()
     sys.exit()

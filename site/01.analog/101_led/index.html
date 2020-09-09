@@ -36,7 +36,7 @@
     
     
       
-        <title>128 LED2 - FaBo EdgeAI Docs</title>
+        <title>101 LED - FaBo EdgeAI Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#128-led2" tabindex="1" class="md-skip">
+      <a href="#101-led" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo EdgeAI Docs
               </span>
               <span class="md-header-nav__topic">
-                128 LED2
+                101 LED
               </span>
             
           
@@ -321,73 +321,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        128 LED2
-      </label>
-    
-    <a href="./" title="128 LED2" class="md-nav__link md-nav__link--active">
-      128 LED2
+    <a href="./" title="101 LED" class="md-nav__link md-nav__link--active">
+      101 LED
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="サンプルコードの動作" class="md-nav__link">
-    サンプルコードの動作
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="サンプルコード使用時の接続" class="md-nav__link">
-    サンプルコード使用時の接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" title="JETSON NANO GPIO40ピン" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brick" title="Brick回路図" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="準備" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="サンプルコード" class="md-nav__link">
-    サンプルコード
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -530,6 +466,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../114_UV/" title="114 UV" class="md-nav__link">
+      114 UV
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../115_hunidity/" title="115 hunidity" class="md-nav__link">
       115 hunidity
     </a>
@@ -556,6 +504,30 @@
   <li class="md-nav__item">
     <a href="../117_switch/" title="117 switch" class="md-nav__link">
       117 switch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../123_relay/" title="123 RELAY" class="md-nav__link">
+      123 RELAY
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../128_led2/" title="128 LED2" class="md-nav__link">
+      128 LED2
     </a>
   </li>
 
@@ -1110,57 +1082,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="サンプルコードの動作" class="md-nav__link">
-    サンプルコードの動作
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="サンプルコード使用時の接続" class="md-nav__link">
-    サンプルコード使用時の接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" title="JETSON NANO GPIO40ピン" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brick" title="Brick回路図" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="準備" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="サンプルコード" class="md-nav__link">
-    サンプルコード
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1172,237 +1093,8 @@
               
                 
                 
-                <h1 id="128-led2">128 LED2</h1>
-<p><img alt="" src="../../img/FaBo128/FaBo128.JPG" /></p>
-<p>トランジスタ 付きのLEDを使用する。</p>
-<h2 id="_1">サンプルコードの動作</h2>
-<p>FaBo #1 LED Brickを使用して１秒ごとにLEDを点滅します。</p>
-<h2 id="_2">サンプルコード使用時の接続</h2>
-<p>LED BrickをGPIO４に接続します。 </p>
-<p>GPIOは4,5,6,12,13,16</p>
-<p><img alt="" src="../../img/share/gpio_pin.jpg" /></p>
-<h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
-<table>
-<thead>
-<tr>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">2</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">2</td>
-<td>I2C_2_SDA</td>
-<td align="center">4</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">3</td>
-<td>I2C_2_SCL</td>
-<td align="center">6</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">4</td>
-<td>AUDIO_MCLK</td>
-<td align="center">8</td>
-<td align="center">14</td>
-<td>UART_2_TX</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">10</td>
-<td align="center">15</td>
-<td>UART_2_RX</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">17</td>
-<td>UART_2_RTS</td>
-<td align="center">12</td>
-<td align="center">18</td>
-<td>I2S_4_SCLK</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">27</td>
-<td>SPI_2_SCK</td>
-<td align="center">14</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td align="center">22</td>
-<td>LCD_TE</td>
-<td align="center">16</td>
-<td align="center">23</td>
-<td>SPI_2_CS1</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">18</td>
-<td align="center">24</td>
-<td>SPI_2_CS0</td>
-</tr>
-<tr>
-<td align="center">19</td>
-<td align="center">10</td>
-<td>SPI_1_MOSI</td>
-<td align="center">20</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">21</td>
-<td align="center">9</td>
-<td>SPI_1_MISO</td>
-<td align="center">22</td>
-<td align="center">25</td>
-<td>SPI_2_MISO</td>
-</tr>
-<tr>
-<td align="center">23</td>
-<td align="center">11</td>
-<td>SPI_1_SCK</td>
-<td align="center">24</td>
-<td align="center">8</td>
-<td>SPI_1_CS0</td>
-</tr>
-<tr>
-<td align="center">25</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">26</td>
-<td align="center">7</td>
-<td>SPI_1_CS1</td>
-</tr>
-<tr>
-<td align="center">27</td>
-<td align="center">-</td>
-<td>I2C_1_SDA</td>
-<td align="center">28</td>
-<td align="center">-</td>
-<td>I2C_1_SCL</td>
-</tr>
-<tr>
-<td align="center">29</td>
-<td align="center">5</td>
-<td>CAM_AF_EN</td>
-<td align="center">30</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">31</td>
-<td align="center">6</td>
-<td>GPIO_OZ0</td>
-<td align="center">32</td>
-<td align="center">12</td>
-<td>LCD_BL_PWM</td>
-</tr>
-<tr>
-<td align="center">33</td>
-<td align="center">13</td>
-<td>GPIO_PE6</td>
-<td align="center">34</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">35</td>
-<td align="center">19</td>
-<td>I2S_4_LRCK</td>
-<td align="center">36</td>
-<td align="center">16</td>
-<td>UART_2_CTS</td>
-</tr>
-<tr>
-<td align="center">37</td>
-<td align="center">26</td>
-<td>SPI_2_MOSI</td>
-<td align="center">38</td>
-<td align="center">20</td>
-<td>I2S_4_SDIN</td>
-</tr>
-<tr>
-<td align="center">39</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">40</td>
-<td align="center">21</td>
-<td>I2S_4_SDOUT</td>
-</tr>
-</tbody>
-</table>
-<h2 id="brick">Brick回路図</h2>
-<p>~画像〜</p>
-<p><br></p>
-<h2 id="_3">準備</h2>
-<p>Python（RPi.GPIO）と同じAPIも持つPythonでGPIOを制御するためにはパッケージのインストールが必要になります。
-GPIOの章を参照してください。</p>
-<h2 id="_4">サンプルコード</h2>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
-<span class=kn>import</span> <span class=nn>Jetson.GPIO</span> <span class=kn>as</span> <span class=nn>GPIO</span>
-<span class=kn>import</span> <span class=nn>time</span>
-<span class=kn>import</span> <span class=nn>sys</span>
-
-<span class=n>LEDPIN</span> <span class=o>=</span> <span class=mi>4</span>
-
-<span class=n>GPIO</span><span class=o>.</span><span class=n>setwarnings</span><span class=p>(</span><span class=bp>False</span><span class=p>)</span>
-<span class=n>GPIO</span><span class=o>.</span><span class=n>setmode</span><span class=p>(</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>BCM</span> <span class=p>)</span>
-<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span> <span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>OUT</span> <span class=p>)</span>
-
-<span class=k>try</span><span class=p>:</span>
-    <span class=k>while</span> <span class=bp>True</span><span class=p>:</span>
-        <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span> <span class=n>LEDPIN</span><span class=p>,</span> <span class=bp>True</span> <span class=p>)</span>
-        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span> <span class=mf>1.0</span> <span class=p>)</span>
-        <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span> <span class=n>LEDPIN</span><span class=p>,</span> <span class=bp>False</span> <span class=p>)</span>
-        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span> <span class=mf>1.0</span> <span class=p>)</span> 
-<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
-    <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
-    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
-</code></pre></div></td></tr></table></p>
+                <h1 id="101-led">101 LED</h1>
+<h1 id="128-led2">128 LED2をご使用ください。</h1>
                 
                   
                 

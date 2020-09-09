@@ -1,6 +1,6 @@
 # 102 buzzer
 
-![](./../img/102_Buzzer/FaBo102.JPG)
+![](./../img/102_Buzzer/FaBo102.jpg)
 
 ## サンプルコードの動作
 JetsonのGPIOからPWM信号を出力し矩形波ドレミの音階を出力します。
