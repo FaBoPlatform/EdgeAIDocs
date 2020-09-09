@@ -311,8 +311,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../01.analog/101_led/" title="128 LED2" class="md-nav__link">
-      128 LED2
+    <a href="../../01.analog/101_led/" title="101 LED" class="md-nav__link">
+      101 LED
     </a>
   </li>
 
@@ -505,6 +505,18 @@
   <li class="md-nav__item">
     <a href="../../01.analog/123_relay/" title="123 RELAY" class="md-nav__link">
       123 RELAY
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01.analog/128_led2/" title="128 LED2" class="md-nav__link">
+      128 LED2
     </a>
   </li>
 
@@ -1163,10 +1175,10 @@
 <p>※注意　信号レベルは3.3Vになります。デフォルトでは、SERIALピンのVCC（５V）からは給電されません。</p>
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_r5ogtvr4vzelfgl checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_r5ogtvr4vzelfgl-panel role=tab><label for=tab-group-0-0_r5ogtvr4vzelfgl class=code-tab-label data-lang id=tab-group-0-0_r5ogtvr4vzelfgl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_r5ogtvr4vzelfgl-panel aria-labelledby=tab-group-0-0_r5ogtvr4vzelfgl-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_rkirlrtec04axt3 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_rkirlrtec04axt3-panel role=tab><label for=tab-group-0-0_rkirlrtec04axt3 class=code-tab-label data-lang id=tab-group-0-0_rkirlrtec04axt3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_rkirlrtec04axt3-panel aria-labelledby=tab-group-0-0_rkirlrtec04axt3-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1>#sudo chmod 666 /dev/ttyTHS1でアクセス権を与る。</span>
 <span class=kn>import</span> <span class=nn>serial</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_dwgvripz3gh4fnv class=code-tab data-lang aria-controls=tab-group-0-1_dwgvripz3gh4fnv-panel role=tab><label for=tab-group-0-1_dwgvripz3gh4fnv class=code-tab-label data-lang id=tab-group-0-1_dwgvripz3gh4fnv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_dwgvripz3gh4fnv-panel aria-labelledby=tab-group-0-1_dwgvripz3gh4fnv-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_dqj1rdw96oqbxtv class=code-tab data-lang aria-controls=tab-group-0-1_dqj1rdw96oqbxtv-panel role=tab><label for=tab-group-0-1_dqj1rdw96oqbxtv class=code-tab-label data-lang id=tab-group-0-1_dqj1rdw96oqbxtv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_dqj1rdw96oqbxtv-panel aria-labelledby=tab-group-0-1_dqj1rdw96oqbxtv-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -1203,7 +1215,7 @@
 <span class=n>print</span><span class=p>(</span><span class=ss>&quot;send: TestEnd&quot;</span><span class=p>)</span>
 <span class=n>ser</span><span class=p>.</span><span class=k>write</span><span class=p>(</span><span class=n>recv_data</span><span class=p>)</span>
 <span class=n>ser</span><span class=p>.</span><span class=k>write</span><span class=p>(</span><span class=n>b</span><span class=ss>&quot;\r\nRECEIVE:TEST END&quot;</span><span class=p>)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-2_87wpq3centq6pem class=code-tab data-lang aria-controls=tab-group-0-2_87wpq3centq6pem-panel role=tab><label for=tab-group-0-2_87wpq3centq6pem class=code-tab-label data-lang id=tab-group-0-2_87wpq3centq6pem-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_87wpq3centq6pem-panel aria-labelledby=tab-group-0-2_87wpq3centq6pem-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-2_av98oacoz7tr045 class=code-tab data-lang aria-controls=tab-group-0-2_av98oacoz7tr045-panel role=tab><label for=tab-group-0-2_av98oacoz7tr045 class=code-tab-label data-lang id=tab-group-0-2_av98oacoz7tr045-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_av98oacoz7tr045-panel aria-labelledby=tab-group-0-2_av98oacoz7tr045-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -1238,7 +1250,7 @@
     <span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=sa>b</span><span class=s2>&quot;RECEIVE:hello world! FaBo 2020-2021-2</span><span class=se>\r\n</span><span class=s2>&quot;</span><span class=p>)</span>
 
 <span class=n>ser</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-3_dqt9pfof9hlkatw class=code-tab data-lang aria-controls=tab-group-0-3_dqt9pfof9hlkatw-panel role=tab><label for=tab-group-0-3_dqt9pfof9hlkatw class=code-tab-label data-lang id=tab-group-0-3_dqt9pfof9hlkatw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_dqt9pfof9hlkatw-panel aria-labelledby=tab-group-0-3_dqt9pfof9hlkatw-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-3_c2skfp5yr2zylnr class=code-tab data-lang aria-controls=tab-group-0-3_c2skfp5yr2zylnr-panel role=tab><label for=tab-group-0-3_c2skfp5yr2zylnr class=code-tab-label data-lang id=tab-group-0-3_c2skfp5yr2zylnr-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_c2skfp5yr2zylnr-panel aria-labelledby=tab-group-0-3_c2skfp5yr2zylnr-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
