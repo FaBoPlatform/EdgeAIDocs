@@ -36,7 +36,7 @@
     
     
       
-        <title>SDカードの作成 - FaBo EdgeAI Docs</title>
+        <title>00.sd - FaBo EdgeAI Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#sd" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo EdgeAI Docs
               </span>
               <span class="md-header-nav__topic">
-                SDカードの作成
+                00.sd
               </span>
             
           
@@ -168,45 +168,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        SDカードの作成
-      </label>
-    
-    <a href="./" title="SDカードの作成" class="md-nav__link md-nav__link--active">
-      SDカードの作成
+    <a href="./" title="00.sd" class="md-nav__link md-nav__link--active">
+      00.sd
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sd_1" title="SDカードの焼き込み" class="md-nav__link">
-    SDカードの焼き込み
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetbot" title="JetBotの起動" class="md-nav__link">
-    JetBotの起動
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -1116,29 +1080,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sd_1" title="SDカードの焼き込み" class="md-nav__link">
-    SDカードの焼き込み
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetbot" title="JetBotの起動" class="md-nav__link">
-    JetBotの起動
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1150,7 +1091,16 @@
               
                 
                 
-                <h1 id="sd">SDカードの作成</h1>
+                <h1 id="_1">開発するためのソフトウェア</h1>
+<p>Jetson Nanoのアプリケーションを開発するためソフトウェア作成するのには、SDカードに焼く必要があります。NVIDIAは、JetPackというソフトウェア群で配布しており、それぞれインストールされるOSやライブラリはバージョンが異なっています。OSはUbuntu18.04LTSです。それをJetsonにカスタマイズされたL４T（Linux for Tegra）を使用します。ほかにもJetPackには、GPUを使うためのソフトウェアであるCUDA、高速に推論を行うことができるTensorRT,CUDAを使ってDNNで高速化するライブラリであるcuDNN,簡単に画像処理実現できるOpenCV,GPUを用いて動画をリアルタイムに分析するDeepStream,ツールなどが含まれています。</p>
+<p>JetPack Archive
+https://developer.nvidia.com/embedded/jetpack-archive</p>
+<p>JetPack 4.4
+https://developer.nvidia.com/embedded/jetpack</p>
+<p>Jetpack 4.3
+https://developer.nvidia.com/jetpack-43-archive</p>
+<h1 id="sd">SDカードの作成</h1>
+<p>JetPack以外にもいろいろなパッケージをインストールする必要があり、インストールに非常に時間がかかり、ライブラリをインストール済みイメージをご用意しました。</p>
 <h2 id="sd_1">SDカードの焼き込み</h2>
 <p>Jetbot用のSDカードをダウンロードしてきて、<a href="https://www.balena.io/etcher/">Etcher</a>でSDカードに焼き込む。</p>
 <table>
