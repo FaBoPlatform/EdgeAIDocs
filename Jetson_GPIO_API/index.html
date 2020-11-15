@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-3.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-3.1.0">
     
     
       
@@ -1256,10 +1256,10 @@
 </ol>
 <p>Jetson GPIOライブラリは、I / Oピンに番号を付ける4つの方法を提供します。最初の2つは、RPi.GPIOライブラリによって提供されるモードに対応しています。つまり、40ピンのGPIOヘッダーのピン番号とBroadcom SoCのGPIO番号をそれぞれ参照するBOARDとBCMです。残りの2つのモード、CVMおよびTEGRA_SOCは、CVM / CVBコネクタおよびTegra SoCの信号名にそれぞれ対応する番号の代わりに文字列を使用します。</p>
 <p>使用しているモードを指定するには（必須）、次の関数呼び出しを使用します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_rgke7a0rh7ucwvs checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_rgke7a0rh7ucwvs-panel role=tab><label for=tab-group-1-0_rgke7a0rh7ucwvs class=code-tab-label data-lang id=tab-group-1-0_rgke7a0rh7ucwvs-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_rgke7a0rh7ucwvs-panel aria-labelledby=tab-group-1-0_rgke7a0rh7ucwvs-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BOARD)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_uzzzsp7xwviskg6 class=code-tab data-lang aria-controls=tab-group-1-1_uzzzsp7xwviskg6-panel role=tab><label for=tab-group-1-1_uzzzsp7xwviskg6 class=code-tab-label data-lang id=tab-group-1-1_uzzzsp7xwviskg6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_uzzzsp7xwviskg6-panel aria-labelledby=tab-group-1-1_uzzzsp7xwviskg6-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BCM)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-2_yecbfrl433a2g2p class=code-tab data-lang aria-controls=tab-group-1-2_yecbfrl433a2g2p-panel role=tab><label for=tab-group-1-2_yecbfrl433a2g2p class=code-tab-label data-lang id=tab-group-1-2_yecbfrl433a2g2p-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_yecbfrl433a2g2p-panel aria-labelledby=tab-group-1-2_yecbfrl433a2g2p-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.CVM)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-3_ajwo1uayd4lgnfs class=code-tab data-lang aria-controls=tab-group-1-3_ajwo1uayd4lgnfs-panel role=tab><label for=tab-group-1-3_ajwo1uayd4lgnfs class=code-tab-label data-lang id=tab-group-1-3_ajwo1uayd4lgnfs-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_ajwo1uayd4lgnfs-panel aria-labelledby=tab-group-1-3_ajwo1uayd4lgnfs-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.TEGRA_SOC)</span>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_x24fgzizha0b08d checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_x24fgzizha0b08d-panel role=tab><label for=tab-group-1-0_x24fgzizha0b08d class=code-tab-label data-lang id=tab-group-1-0_x24fgzizha0b08d-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_x24fgzizha0b08d-panel aria-labelledby=tab-group-1-0_x24fgzizha0b08d-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BOARD)</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_6tbagei2wrukqkk class=code-tab data-lang aria-controls=tab-group-1-1_6tbagei2wrukqkk-panel role=tab><label for=tab-group-1-1_6tbagei2wrukqkk class=code-tab-label data-lang id=tab-group-1-1_6tbagei2wrukqkk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_6tbagei2wrukqkk-panel aria-labelledby=tab-group-1-1_6tbagei2wrukqkk-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.BCM)</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-2_g5xuqsp6wqr3qql class=code-tab data-lang aria-controls=tab-group-1-2_g5xuqsp6wqr3qql-panel role=tab><label for=tab-group-1-2_g5xuqsp6wqr3qql class=code-tab-label data-lang id=tab-group-1-2_g5xuqsp6wqr3qql-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_g5xuqsp6wqr3qql-panel aria-labelledby=tab-group-1-2_g5xuqsp6wqr3qql-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.CVM)</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-3_jlcraoj86gd6bd6 class=code-tab data-lang aria-controls=tab-group-1-3_jlcraoj86gd6bd6-panel role=tab><label for=tab-group-1-3_jlcraoj86gd6bd6 class=code-tab-label data-lang id=tab-group-1-3_jlcraoj86gd6bd6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_jlcraoj86gd6bd6-panel aria-labelledby=tab-group-1-3_jlcraoj86gd6bd6-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>GPIO.setmode(GPIO.TEGRA_SOC)</span>
 </code></pre></div></td></tr></table></div></div>
 
 <p>設定されているモードを確認するには、次を呼び出します。</p>
@@ -1517,7 +1517,7 @@ docs.nvidia.com
           
         
       
-      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       
     
     
