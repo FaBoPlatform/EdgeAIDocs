@@ -1,4 +1,4 @@
-# 104 Analog
+# 104 Angle
 
 ## サンプルコードの動作
 
@@ -10,7 +10,7 @@ GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。
 
 ![](./../img/104_angle/Analogpinass.jpg)
 
-　 
+　
 
 ~写真〜
 
@@ -45,8 +45,10 @@ GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。
 <br>
 
 
+
 ## 準備
-SPIをつかえるようにしましょう。
+
+GPIOインターフェースをSPIとPWMをつかえるように設定しましょう。
 
 Jetson-IO toolを起動します。
 
@@ -54,7 +56,18 @@ $sudo /opt/nvidia/jetson-io/jetson-io.py
 
 Pinmux テーブルの設定
 
-~画像〜
+![](./../img/104_angle/JETSONHEADTOOL.png)
+
+Configure 40-pin expansion headerを選択します。
+
+![](./../img/104_angle/PWMSPIEANBLE.png)
+
+上下のカーソルで合わせ、スペースキーで有効にします。
+
+GPIO１２（３２ピン）がPWM 1、A0は、A/Dコンバーターを使うのでSPI 1（１９、２１、２３、２４、２６ピン）をそれぞれ有効にします。
+
+Backを選択して復帰します。
+
 
 pip3がインストールされていない場合は、
 ```
@@ -72,6 +85,8 @@ https://pypi.org/project/spidev/
 
 ## サンプルコード
 
+サンプルは、#104 AngleをA０、#128 LED２を１２に接続します。
+
 ```
 # coding: utf-8
 import Jetson.GPIO as GPIO
@@ -83,7 +98,7 @@ import sys
 ANGLEPIN = 0
 
 # GPIO4コネクタにLEDを接続
-LEDPIN = 4
+LEDPIN = 12
 
 #######################################################################
 def readadc(channel):
