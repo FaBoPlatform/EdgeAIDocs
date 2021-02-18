@@ -6,7 +6,7 @@ FaBo #104 LED Brickを使用してアナログ値を計測
 
 ## サンプルコード使用時の接続
 
-GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。
+GPIO12にLED Brickを接続、A0にAnalog Brickを接続します。
 
 ![](./../img/104_angle/Analogpinass.jpg)
 
