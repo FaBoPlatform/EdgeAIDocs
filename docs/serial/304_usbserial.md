@@ -6,11 +6,23 @@
 FaBo USB Serialを使いUARTで通信いたします。
 
 ## サンプルコード使用時の接続
-FaBo #2 を SERIALに接続します。
+FaBo #304 USB serial を SERIALに接続します。
 
 ![](./../img/share/serial_pin.jpg)
 
-※注意　信号レベルは3.3Vになります。デフォルトでは、SERIALピンのVCC（５V）からは給電されません。
+※注意　#519への信号レベルは3.3Vになります。ジャンパーを3.3Vにセットしてください。
+USBシリアルからは＃５１９へは、給電をしないでください。POWERジャンパピンをはずします。
+また、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。
+
+## インストール
+
+```
+$pip3 install pyserial
+```
+
+```
+$sudo chmod 666 /dev/ttyTHS1
+```
 
 
 ## Brick回路図
@@ -18,7 +30,6 @@ FaBo #2 を SERIALに接続します。
 ~画像〜
 
 ```
-#sudo chmod 666 /dev/ttyTHS1でアクセス権を与る。
 import serial
 ```
 
@@ -85,8 +96,8 @@ ser.write(b"INPUT CHAR.\r\n")
 for w in range(100):
     recv_data = ser.read(1)
     ser.write(recv_data)
-    
+
 ser.write(b"TEST END.\r\n")
-    
+
 ser.close()
 ```
