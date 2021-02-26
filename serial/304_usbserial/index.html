@@ -408,8 +408,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02.DLI/02.gettingstarted/" class="md-nav__link">
+      <a href="../../02.DLI/02.setup1/" class="md-nav__link">
         セットアップ①
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.DLI/03.setup2/" class="md-nav__link">
+        セットアップ②
       </a>
     </li>
   
@@ -1362,13 +1374,13 @@
 USBシリアルからは＃５１９へは、給電をしないでください。POWERジャンパピンをはずします。
 また、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。</p>
 <h2 id="_3">インストール</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_1p4j11yoics3k77 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_1p4j11yoics3k77-panel role=tab><label for=tab-group-0-0_1p4j11yoics3k77 class=code-tab-label data-lang id=tab-group-0-0_1p4j11yoics3k77-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_1p4j11yoics3k77-panel aria-labelledby=tab-group-0-0_1p4j11yoics3k77-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$pip3 install pyserial
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_0rc964t8et7vnv7 class=code-tab data-lang aria-controls=tab-group-0-1_0rc964t8et7vnv7-panel role=tab><label for=tab-group-0-1_0rc964t8et7vnv7 class=code-tab-label data-lang id=tab-group-0-1_0rc964t8et7vnv7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_0rc964t8et7vnv7-panel aria-labelledby=tab-group-0-1_0rc964t8et7vnv7-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo chmod 666 /dev/ttyTHS1
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_kh3fii7m1jp2f79 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_kh3fii7m1jp2f79-panel role=tab><label for=tab-group-0-0_kh3fii7m1jp2f79 class=code-tab-label data-lang id=tab-group-0-0_kh3fii7m1jp2f79-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_kh3fii7m1jp2f79-panel aria-labelledby=tab-group-0-0_kh3fii7m1jp2f79-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$pip3 install pyserial
+</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_8oswog54bw4ef6v class=code-tab data-lang aria-controls=tab-group-0-1_8oswog54bw4ef6v-panel role=tab><label for=tab-group-0-1_8oswog54bw4ef6v class=code-tab-label data-lang id=tab-group-0-1_8oswog54bw4ef6v-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_8oswog54bw4ef6v-panel aria-labelledby=tab-group-0-1_8oswog54bw4ef6v-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo chmod 666 /dev/ttyTHS1
 </code></pre></div></td></tr></table></div></div>
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_3r29emzpm7xygsc checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_3r29emzpm7xygsc-panel role=tab><label for=tab-group-1-0_3r29emzpm7xygsc class=code-tab-label data-lang id=tab-group-1-0_3r29emzpm7xygsc-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_3r29emzpm7xygsc-panel aria-labelledby=tab-group-1-0_3r29emzpm7xygsc-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>serial</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_xbgpap2rdwqlr07 class=code-tab data-lang aria-controls=tab-group-1-1_xbgpap2rdwqlr07-panel role=tab><label for=tab-group-1-1_xbgpap2rdwqlr07 class=code-tab-label data-lang id=tab-group-1-1_xbgpap2rdwqlr07-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_xbgpap2rdwqlr07-panel aria-labelledby=tab-group-1-1_xbgpap2rdwqlr07-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_qctzufcgt8t8t3n checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_qctzufcgt8t8t3n-panel role=tab><label for=tab-group-1-0_qctzufcgt8t8t3n class=code-tab-label data-lang id=tab-group-1-0_qctzufcgt8t8t3n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_qctzufcgt8t8t3n-panel aria-labelledby=tab-group-1-0_qctzufcgt8t8t3n-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>serial</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_kw1h52nqbihayf9 class=code-tab data-lang aria-controls=tab-group-1-1_kw1h52nqbihayf9-panel role=tab><label for=tab-group-1-1_kw1h52nqbihayf9 class=code-tab-label data-lang id=tab-group-1-1_kw1h52nqbihayf9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_kw1h52nqbihayf9-panel aria-labelledby=tab-group-1-1_kw1h52nqbihayf9-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
 <span class=normal> 2</span>
 <span class=normal> 3</span>
 <span class=normal> 4</span>
@@ -1405,7 +1417,7 @@ USBシリアルからは＃５１９へは、給電をしないでください�
 <span class=n>print</span><span class=p>(</span><span class=s>&quot;send: TestEnd&quot;</span><span class=p>)</span>
 <span class=n>ser</span><span class=p>.</span><span class=n>write</span><span class=p>(</span><span class=n>recv_data</span><span class=p>)</span>
 <span class=n>ser</span><span class=p>.</span><span class=n>write</span><span class=p>(</span><span class=n>b</span><span class=s>&quot;\r\nRECEIVE:TEST END&quot;</span><span class=p>)</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-2_3y4ce1j3yzwh7c4 class=code-tab data-lang aria-controls=tab-group-1-2_3y4ce1j3yzwh7c4-panel role=tab><label for=tab-group-1-2_3y4ce1j3yzwh7c4 class=code-tab-label data-lang id=tab-group-1-2_3y4ce1j3yzwh7c4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_3y4ce1j3yzwh7c4-panel aria-labelledby=tab-group-1-2_3y4ce1j3yzwh7c4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-2_vntidr4ras4kl82 class=code-tab data-lang aria-controls=tab-group-1-2_vntidr4ras4kl82-panel role=tab><label for=tab-group-1-2_vntidr4ras4kl82 class=code-tab-label data-lang id=tab-group-1-2_vntidr4ras4kl82-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_vntidr4ras4kl82-panel aria-labelledby=tab-group-1-2_vntidr4ras4kl82-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
 <span class=normal> 2</span>
 <span class=normal> 3</span>
 <span class=normal> 4</span>
@@ -1440,7 +1452,7 @@ USBシリアルからは＃５１９へは、給電をしないでください�
     <span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=sa>b</span><span class=s2>&quot;RECEIVE:hello world! FaBo 2020-2021-2</span><span class=se>\r\n</span><span class=s2>&quot;</span><span class=p>)</span>
 
 <span class=n>ser</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-3_vey8gygtfwkjgky class=code-tab data-lang aria-controls=tab-group-1-3_vey8gygtfwkjgky-panel role=tab><label for=tab-group-1-3_vey8gygtfwkjgky class=code-tab-label data-lang id=tab-group-1-3_vey8gygtfwkjgky-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_vey8gygtfwkjgky-panel aria-labelledby=tab-group-1-3_vey8gygtfwkjgky-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-3_frdl5qs4o78i48g class=code-tab data-lang aria-controls=tab-group-1-3_frdl5qs4o78i48g-panel role=tab><label for=tab-group-1-3_frdl5qs4o78i48g class=code-tab-label data-lang id=tab-group-1-3_frdl5qs4o78i48g-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_frdl5qs4o78i48g-panel aria-labelledby=tab-group-1-3_frdl5qs4o78i48g-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
 <span class=normal> 2</span>
 <span class=normal> 3</span>
 <span class=normal> 4</span>
