@@ -1381,13 +1381,62 @@
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
 <p>FaBoのライブラリをインストール</p>
-<p> <div class=codehilite><pre><span></span><code><span class=nv>$git</span> clone https://github.com/FaBoPlatform/FaBoGPIO-PCAL6408-Python.git
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=nv>$git</span> clone https://github.com/FaBoPlatform/FaBoGPIO-PCAL6408-Python.git
 <span class=nv>$cd</span> FaBoGPIO-PCAL6408-Python
 <span class=nv>$sudo</span> pip3 install .
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
 <p>リレーの動作チェックします。
 リレーの動作は、アティブローになりますのでご注意ください。</p>
-<p> <div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>FaBoGPIO_PCAL6408</span>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>FaBoGPIO_PCAL6408</span>
 <span class=kn>import</span> <span class=nn>time</span>
 <span class=kn>import</span> <span class=nn>sys</span>
 
@@ -1435,7 +1484,7 @@
 <span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
     <span class=n>pcal6408</span><span class=o>.</span><span class=n>setAllClear</span><span class=p>()</span>
     <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>()</span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
                 
               
               

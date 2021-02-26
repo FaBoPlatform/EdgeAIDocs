@@ -1374,13 +1374,31 @@
 USBシリアルからは＃５１９へは、給電をしないでください。POWERジャンパピンをはずします。
 また、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。</p>
 <h2 id="_3">インストール</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_qaaok3yj23v75fl checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_qaaok3yj23v75fl-panel role=tab><label for=tab-group-0-0_qaaok3yj23v75fl class=code-tab-label data-lang id=tab-group-0-0_qaaok3yj23v75fl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_qaaok3yj23v75fl-panel aria-labelledby=tab-group-0-0_qaaok3yj23v75fl-label><div class=codehilite><pre><span></span><code>$pip3 install pyserial
-</code></pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-1_lqo6w77wb339mut class=code-tab data-lang aria-controls=tab-group-0-1_lqo6w77wb339mut-panel role=tab><label for=tab-group-0-1_lqo6w77wb339mut class=code-tab-label data-lang id=tab-group-0-1_lqo6w77wb339mut-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_lqo6w77wb339mut-panel aria-labelledby=tab-group-0-1_lqo6w77wb339mut-label><div class=codehilite><pre><span></span><code>$sudo chmod 666 /dev/ttyTHS1
-</code></pre></div></div></div>
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_l4wi7gyudzq5ujb checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_l4wi7gyudzq5ujb-panel role=tab><label for=tab-group-0-0_l4wi7gyudzq5ujb class=code-tab-label data-lang id=tab-group-0-0_l4wi7gyudzq5ujb-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_l4wi7gyudzq5ujb-panel aria-labelledby=tab-group-0-0_l4wi7gyudzq5ujb-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$pip3 install pyserial
+</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_sxwtw9xoqz6ra2x class=code-tab data-lang aria-controls=tab-group-0-1_sxwtw9xoqz6ra2x-panel role=tab><label for=tab-group-0-1_sxwtw9xoqz6ra2x class=code-tab-label data-lang id=tab-group-0-1_sxwtw9xoqz6ra2x-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_sxwtw9xoqz6ra2x-panel aria-labelledby=tab-group-0-1_sxwtw9xoqz6ra2x-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo chmod 666 /dev/ttyTHS1
+</code></pre></div></td></tr></table></div></div>
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_mvsxk5twobktjgg checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_mvsxk5twobktjgg-panel role=tab><label for=tab-group-1-0_mvsxk5twobktjgg class=code-tab-label data-lang id=tab-group-1-0_mvsxk5twobktjgg-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_mvsxk5twobktjgg-panel aria-labelledby=tab-group-1-0_mvsxk5twobktjgg-label><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>serial</span>
-</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-1_6sy3snbjmkxshq9 class=code-tab data-lang aria-controls=tab-group-1-1_6sy3snbjmkxshq9-panel role=tab><label for=tab-group-1-1_6sy3snbjmkxshq9 class=code-tab-label data-lang id=tab-group-1-1_6sy3snbjmkxshq9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_6sy3snbjmkxshq9-panel aria-labelledby=tab-group-1-1_6sy3snbjmkxshq9-label><div class=codehilite><pre><span></span><code><span class=o>#</span> <span class=o>/</span><span class=n>dev</span><span class=o>/</span><span class=n>ttyTHS1でボーレート115200</span><span class=err>、パリティビットなしで設定</span>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_6eckruuktqbh2r0 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_6eckruuktqbh2r0-panel role=tab><label for=tab-group-1-0_6eckruuktqbh2r0 class=code-tab-label data-lang id=tab-group-1-0_6eckruuktqbh2r0-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_6eckruuktqbh2r0-panel aria-labelledby=tab-group-1-0_6eckruuktqbh2r0-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>serial</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_rmu77m82tuw6uwk class=code-tab data-lang aria-controls=tab-group-1-1_rmu77m82tuw6uwk-panel role=tab><label for=tab-group-1-1_rmu77m82tuw6uwk class=code-tab-label data-lang id=tab-group-1-1_rmu77m82tuw6uwk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_rmu77m82tuw6uwk-panel aria-labelledby=tab-group-1-1_rmu77m82tuw6uwk-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=o>#</span> <span class=o>/</span><span class=n>dev</span><span class=o>/</span><span class=n>ttyTHS1でボーレート115200</span><span class=err>、パリティビットなしで設定</span>
 <span class=n>ser</span> <span class=o>=</span> <span class=n>serial</span><span class=p>.</span><span class=n>Serial</span><span class=p>(</span><span class=s>&quot;/dev/ttyTHS1&quot;</span><span class=p>,</span> <span class=n>baudrate</span><span class=o>=</span><span class=mi>115200</span> <span class=p>,</span><span class=n>parity</span><span class=o>=</span><span class=n>serial</span><span class=p>.</span><span class=n>PARITY_NONE</span><span class=p>)</span>
 
 <span class=o>#</span> <span class=err>ノイズデータがある場合があるのでバッファをクリアする</span>
@@ -1399,7 +1417,24 @@ USBシリアルからは＃５１９へは、給電をしないでください�
 <span class=n>print</span><span class=p>(</span><span class=s>&quot;send: TestEnd&quot;</span><span class=p>)</span>
 <span class=n>ser</span><span class=p>.</span><span class=n>write</span><span class=p>(</span><span class=n>recv_data</span><span class=p>)</span>
 <span class=n>ser</span><span class=p>.</span><span class=n>write</span><span class=p>(</span><span class=n>b</span><span class=s>&quot;\r\nRECEIVE:TEST END&quot;</span><span class=p>)</span>
-</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-2_e2be4fyi77oa8ua class=code-tab data-lang aria-controls=tab-group-1-2_e2be4fyi77oa8ua-panel role=tab><label for=tab-group-1-2_e2be4fyi77oa8ua class=code-tab-label data-lang id=tab-group-1-2_e2be4fyi77oa8ua-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_e2be4fyi77oa8ua-panel aria-labelledby=tab-group-1-2_e2be4fyi77oa8ua-label><div class=codehilite><pre><span></span><code><span class=c1>## バーストテスト</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-2_i6aennvmcv1mwsf class=code-tab data-lang aria-controls=tab-group-1-2_i6aennvmcv1mwsf-panel role=tab><label for=tab-group-1-2_i6aennvmcv1mwsf class=code-tab-label data-lang id=tab-group-1-2_i6aennvmcv1mwsf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_i6aennvmcv1mwsf-panel aria-labelledby=tab-group-1-2_i6aennvmcv1mwsf-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1>## バーストテスト</span>
 
 <span class=kn>import</span> <span class=nn>serial</span>
 <span class=kn>import</span> <span class=nn>time</span>
@@ -1417,7 +1452,26 @@ USBシリアルからは＃５１９へは、給電をしないでください�
     <span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=sa>b</span><span class=s2>&quot;RECEIVE:hello world! FaBo 2020-2021-2</span><span class=se>\r\n</span><span class=s2>&quot;</span><span class=p>)</span>
 
 <span class=n>ser</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
-</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-3_bjg4qjj21n0gwkm class=code-tab data-lang aria-controls=tab-group-1-3_bjg4qjj21n0gwkm-panel role=tab><label for=tab-group-1-3_bjg4qjj21n0gwkm class=code-tab-label data-lang id=tab-group-1-3_bjg4qjj21n0gwkm-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_bjg4qjj21n0gwkm-panel aria-labelledby=tab-group-1-3_bjg4qjj21n0gwkm-label><div class=codehilite><pre><span></span><code><span class=c1>#１００文字を入力して送信して表示する。QWERT入力確認</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-3_a1rpvjdlzen3w55 class=code-tab data-lang aria-controls=tab-group-1-3_a1rpvjdlzen3w55-panel role=tab><label for=tab-group-1-3_a1rpvjdlzen3w55 class=code-tab-label data-lang id=tab-group-1-3_a1rpvjdlzen3w55-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_a1rpvjdlzen3w55-panel aria-labelledby=tab-group-1-3_a1rpvjdlzen3w55-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1>#１００文字を入力して送信して表示する。QWERT入力確認</span>
 <span class=kn>import</span> <span class=nn>serial</span>
 
 <span class=c1># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定</span>
@@ -1437,7 +1491,7 @@ USBシリアルからは＃５１９へは、給電をしないでください�
 <span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=sa>b</span><span class=s2>&quot;TEST END.</span><span class=se>\r\n</span><span class=s2>&quot;</span><span class=p>)</span>
 
 <span class=n>ser</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
-</code></pre></div></div></div>
+</code></pre></div></td></tr></table></div></div>
                 
               
               

@@ -1279,33 +1279,37 @@
 <p>ここでは、Jetson NanoでRaspberryPiと同じAPIがあるPython（RPi.GPIO）によるGPIO制御を行うためには、Jetson GPIOライブラリをインストールする必要があります。</p>
 <p>JupyterからTerminalを起動します。</p>
 <p>pip3インストール</p>
-<p> <div class=codehilite><pre><span></span><code>$sudo apt-get install python3-pip
-</code></pre></div></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo apt-get install python3-pip
+</code></pre></div></td></tr></table></p>
 <p>Pipでインストールされているパッケージを表示する</p>
-<p> <div class=codehilite><pre><span></span><code>$pip3 list
-</code></pre></div></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$pip3 list
+</code></pre></div></td></tr></table></p>
 <p>または、マニュアルインストール</p>
-<p> <div class=codehilite><pre><span></span><code>$cd ~
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$cd ~
 $git clone https://github.com/NVIDIA/jetson-gpio.git
 $cd jetson-gpio
 $sudo python3 setup.py install
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
 <p>Jetson.GPIOのインストール</p>
-<p> <div class=codehilite><pre><span></span><code>$sudo pip3 install Jetson.GPIO
-</code></pre></div></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo pip3 install Jetson.GPIO
+</code></pre></div></td></tr></table></p>
 <p>ユーザの追加</p>
-<p> <div class=codehilite><pre><span></span><code>$sudo groupadd -f -r gpio
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
+<span class=normal>2</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo groupadd -f -r gpio
 $sudo usermod -a -G gpio jetbot
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
 <p>udevのルールを追加</p>
-<p> <div class=codehilite><pre><span></span><code>$sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d/
-</code></pre></div></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d/
+</code></pre></div></td></tr></table></p>
 <p>ルールを再読み込み</p>
-<p> <div class=codehilite><pre><span></span><code><span class=o>$</span><span class=n>sudo</span> <span class=n>udevadm</span> <span class=n>control</span> <span class=o>--</span><span class=n>reload</span><span class=o>-</span><span class=n>rules</span> <span class=o>&amp;&amp;</span> <span class=n>sudo</span> <span class=n>udevadm</span> <span class=n>trigger</span>
-</code></pre></div></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=o>$</span><span class=n>sudo</span> <span class=n>udevadm</span> <span class=n>control</span> <span class=o>--</span><span class=n>reload</span><span class=o>-</span><span class=n>rules</span> <span class=o>&amp;&amp;</span> <span class=n>sudo</span> <span class=n>udevadm</span> <span class=n>trigger</span>
+</code></pre></div></td></tr></table></p>
 <p>再起動</p>
-<p> <div class=codehilite><pre><span></span><code>$sudo reboot
-</code></pre></div></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>$sudo reboot
+</code></pre></div></td></tr></table></p>
 <p>USBケーブルを抜いて、電源を抜いた上で再起動</p>
 <p>pythonライブラリ</p>
 <p><br></p>

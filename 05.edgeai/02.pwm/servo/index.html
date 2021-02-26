@@ -1363,16 +1363,41 @@
 <p><img alt="" src="./../img/share/Servo_pwm.jpg" /></p>
 <h2 id="_2">ライブラリ</h2>
 <p>smbus2をインストール</p>
-<p> <div class=codehilite><pre><span></span><code>sudo pip3 install smbus2
-</code></pre></div></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo pip3 install smbus2
+</code></pre></div></td></tr></table></p>
 <p>FaBoPWMをインストール</p>
-<p> <div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
 cd FaBoPWM-PCA9685-Python
 sudo pip3 install .
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
 <h2 id="_3">ソース</h2>
 <p>初期化</p>
-<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
 <span class=kn>import</span> <span class=nn>Fabo_PCA9685</span>
 <span class=kn>import</span> <span class=nn>time</span>
 <span class=kn>import</span> <span class=nn>pkg_resources</span>
@@ -1396,13 +1421,16 @@ sudo pip3 install .
 <span class=n>bus</span> <span class=o>=</span> <span class=n>smbus</span><span class=o>.</span><span class=n>SMBus</span><span class=p>(</span><span class=n>BUSNUM</span><span class=p>)</span>
 <span class=n>PCA9685</span> <span class=o>=</span> <span class=n>Fabo_PCA9685</span><span class=o>.</span><span class=n>PCA9685</span><span class=p>(</span><span class=n>bus</span><span class=p>,</span><span class=n>INITIAL_VALUE</span><span class=p>,</span><span class=n>address</span><span class=o>=</span><span class=mh>0x60</span><span class=p>)</span>
 <span class=n>PCA9685</span><span class=o>.</span><span class=n>set_hz</span><span class=p>(</span><span class=n>SERVO_HZ</span><span class=p>)</span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
 <p>値を設定</p>
-<p> <div class=codehilite><pre><span></span><code># set value
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code># set value
 value = 330
 channel = 0 # PWM0番目のピンのサーボ
 PCA9685.set_channel_value(channel,value)
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
                 
               
               

@@ -1350,7 +1350,29 @@
 LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <p>GPIOの判定</p>
 <p>以下のコードは、ボタンが押されたのたえずチェックします。</p>
-<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
 <span class=kn>import</span> <span class=nn>Jetson.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
 <span class=kn>import</span> <span class=nn>sys</span>
 
@@ -1373,10 +1395,31 @@ LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
     <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
     <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
 <p>GPIOの入力待ち</p>
 <p>以下のコードはボタンがおされるまで待っています。</p>
-<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
 <span class=kn>import</span> <span class=nn>Jetson.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
 <span class=kn>import</span> <span class=nn>sys</span>
 
@@ -1398,10 +1441,38 @@ LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
     <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
     <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
 <p>イベントとして取得</p>
 <p>以下のコードは、処理中にボタンがおされたら、現在の処理を停止して、関数blinkを呼び、その関数の処理がおわったら、blink呼び出し前に戻ります。</p>
-<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
 <span class=kn>import</span> <span class=nn>Jetson.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
 <span class=kn>import</span> <span class=nn>sys</span>
 
@@ -1430,7 +1501,7 @@ LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
     <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
     <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
-</code></pre></div></p>
+</code></pre></div></td></tr></table></p>
                 
               
               
