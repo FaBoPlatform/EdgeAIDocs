@@ -1112,8 +1112,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../../04.etc/304_usbserial/" class="md-nav__link">
+        304 USBserial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../04.etc/Appendix/" class="md-nav__link">
         Appendix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.etc/demo/" class="md-nav__link">
+        デモ
       </a>
     </li>
   
@@ -1127,84 +1151,6 @@
       <a href="../../04.etc/jupyterlab/" class="md-nav__link">
         Jupyterlab
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
-      
-      <label class="md-nav__link" for="__nav_5_3">
-        Demo
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Demo" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_3">
-          <span class="md-nav__icon md-icon"></span>
-          Demo
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04.etc/Demo/demo/" class="md-nav__link">
-        デモ
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
-      
-      <label class="md-nav__link" for="__nav_5_4">
-        Serial
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Serial" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_4">
-          <span class="md-nav__icon md-icon"></span>
-          Serial
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04.etc/serial/304_usbserial/" class="md-nav__link">
-        304 USBserial
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1271,8 +1217,8 @@
 <p>Keyboard, Mouse, HDMIを外し、USBでPCと接続します。</p>
 <p><img alt="" src="../img/headless01.jpg" /></p>
 <p>先程設定したユーザ名@192.168.55.1 でPCのターミナルからSSHでログインしてみましょう。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_3jv0aczkijyqiit checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_3jv0aczkijyqiit-panel role=tab><label for=tab-group-0-0_3jv0aczkijyqiit class=code-tab-label data-lang id=tab-group-0-0_3jv0aczkijyqiit-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_3jv0aczkijyqiit-panel aria-labelledby=tab-group-0-0_3jv0aczkijyqiit-label><pre><code class>ssh jetson@192.168.55.11
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_ws5tab9vmam12hy class=code-tab data-lang aria-controls=tab-group-0-1_ws5tab9vmam12hy-panel role=tab><label for=tab-group-0-1_ws5tab9vmam12hy class=code-tab-label data-lang id=tab-group-0-1_ws5tab9vmam12hy-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_ws5tab9vmam12hy-panel aria-labelledby=tab-group-0-1_ws5tab9vmam12hy-label><pre><code class>mkdir -p ~/nvdli-data
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_qfz76yzsyp502sx checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_qfz76yzsyp502sx-panel role=tab><label for=tab-group-0-0_qfz76yzsyp502sx class=code-tab-label data-lang id=tab-group-0-0_qfz76yzsyp502sx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_qfz76yzsyp502sx-panel aria-labelledby=tab-group-0-0_qfz76yzsyp502sx-label><pre><code class>ssh jetson@192.168.55.11
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_p4mzdajvwi54jp7 class=code-tab data-lang aria-controls=tab-group-0-1_p4mzdajvwi54jp7-panel role=tab><label for=tab-group-0-1_p4mzdajvwi54jp7 class=code-tab-label data-lang id=tab-group-0-1_p4mzdajvwi54jp7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_p4mzdajvwi54jp7-panel aria-labelledby=tab-group-0-1_p4mzdajvwi54jp7-label><pre><code class>mkdir -p ~/nvdli-data
 </code></pre></div></div>
 <p><a href="NVIDIA NGC">https://ngc.nvidia.com/catalog/containers/nvidia:dli:dli-nano-ai</a>に公開されている最新のDockerを起動します。</p>
 <p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \ 
