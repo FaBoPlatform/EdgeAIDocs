@@ -1286,54 +1286,31 @@ LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <p><img alt="" src="./../img/share/gpio_pin.jpg" /></p>
 <p>GPIOの判定</p>
 <p>以下のコードは、ボタンが押されたのたえずチェックします。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span>
-<span class=normal>12</span>
-<span class=normal>13</span>
-<span class=normal>14</span>
-<span class=normal>15</span>
-<span class=normal>16</span>
-<span class=normal>17</span>
-<span class=normal>18</span>
-<span class=normal>19</span>
-<span class=normal>20</span>
-<span class=normal>21</span>
-<span class=normal>22</span>
-<span class=normal>23</span>
-<span class=normal>24</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
-<span class=kn>import</span> <span class=nn>RPi.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
-<span class=kn>import</span> <span class=nn>time</span>
+<p> <pre><code class># coding: utf-8
+import RPi.GPIO as GPIO
+import time
 
-<span class=n>LEDPIN</span> <span class=o>=</span> <span class=mi>4</span>
-<span class=n>LSPIN</span> <span class=o>=</span> <span class=mi>5</span>   <span class=c1>#LimitSwitch pin</span>
+LEDPIN = 4
+LSPIN = 5   #LimitSwitch pin
 
-<span class=n>led_state</span> <span class=o>=</span> <span class=mi>0</span>
+led_state = 0
 
-<span class=n>GPIO</span><span class=o>.</span><span class=n>setwarnings</span><span class=p>(</span><span class=kc>False</span><span class=p>)</span>
-<span class=n>GPIO</span><span class=o>.</span><span class=n>setmode</span><span class=p>(</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>BCM</span> <span class=p>)</span>
-<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span> <span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>OUT</span> <span class=p>)</span>
-<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span> <span class=n>LSPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>IN</span><span class=p>)</span>
+GPIO.setwarnings(False)
+GPIO.setmode( GPIO.BCM )
+GPIO.setup( LEDPIN, GPIO.OUT )
+GPIO.setup( LSPIN, GPIO.IN)
 
-<span class=k>try</span><span class=p>:</span>
-    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
-        <span class=k>if</span><span class=p>(</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>input</span><span class=p>(</span> <span class=n>LSPIN</span> <span class=p>)</span> <span class=p>):</span>
-            <span class=n>led_state</span> <span class=o>=</span> <span class=mi>1</span> <span class=o>-</span> <span class=n>led_state</span>
-            <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span> <span class=n>LEDPIN</span><span class=p>,</span> <span class=n>led_state</span> <span class=p>)</span>
-            <span class=nb>print</span> <span class=s2>&quot;led_state: </span><span class=si>%d</span><span class=s2> &quot;</span> <span class=o>%</span> <span class=n>led_state</span>
-            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.2</span><span class=p>)</span>
-<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
-    <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
-    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
-</code></pre></div></td></tr></table></p>
+try:
+    while True:
+        if( GPIO.input( LSPIN ) ):
+            led_state = 1 - led_state
+            GPIO.output( LEDPIN, led_state )
+            print &quot;led_state: %d &quot; % led_state
+            time.sleep(0.2)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+    sys.exit(0)
+</code></pre></p>
                 
               
               

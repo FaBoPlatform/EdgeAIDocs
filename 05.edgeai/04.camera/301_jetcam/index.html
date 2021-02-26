@@ -1338,54 +1338,36 @@
                 
                 
                 <h1 id="301-jetcam">301 JetCam</h1>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_fvjio335tzk1vkb checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_fvjio335tzk1vkb-panel role=tab><label for=tab-group-0-0_fvjio335tzk1vkb class=code-tab-label data-lang id=tab-group-0-0_fvjio335tzk1vkb-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_fvjio335tzk1vkb-panel aria-labelledby=tab-group-0-0_fvjio335tzk1vkb-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>git clone https://github.com/NVIDIA-AI-IOT/jetcam
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_l2wo6m89clhtxk4 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_l2wo6m89clhtxk4-panel role=tab><label for=tab-group-0-0_l2wo6m89clhtxk4 class=code-tab-label data-lang id=tab-group-0-0_l2wo6m89clhtxk4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_l2wo6m89clhtxk4-panel aria-labelledby=tab-group-0-0_l2wo6m89clhtxk4-label><pre><code class>git clone https://github.com/NVIDIA-AI-IOT/jetcam
 cd jetcam
 sudo python3 setup.py install
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_1t5ewfgykmla7gl class=code-tab data-lang aria-controls=tab-group-0-1_1t5ewfgykmla7gl-panel role=tab><label for=tab-group-0-1_1t5ewfgykmla7gl class=code-tab-label data-lang id=tab-group-0-1_1t5ewfgykmla7gl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_1t5ewfgykmla7gl-panel aria-labelledby=tab-group-0-1_1t5ewfgykmla7gl-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>from</span> <span class=nn>jetcam.csi_camera</span> <span class=kn>import</span> <span class=n>CSICamera</span>
-<span class=kn>import</span> <span class=nn>ipywidgets</span>
-<span class=kn>from</span> <span class=nn>IPython.display</span> <span class=kn>import</span> <span class=n>display</span>
-<span class=kn>from</span> <span class=nn>jetcam.utils</span> <span class=kn>import</span> <span class=n>bgr8_to_jpeg</span>
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_eb8nqisql83bqki class=code-tab data-lang aria-controls=tab-group-0-1_eb8nqisql83bqki-panel role=tab><label for=tab-group-0-1_eb8nqisql83bqki class=code-tab-label data-lang id=tab-group-0-1_eb8nqisql83bqki-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_eb8nqisql83bqki-panel aria-labelledby=tab-group-0-1_eb8nqisql83bqki-label><pre><code class>from jetcam.csi_camera import CSICamera
+import ipywidgets
+from IPython.display import display
+from jetcam.utils import bgr8_to_jpeg
 
-<span class=n>camera</span> <span class=o>=</span> <span class=n>CSICamera</span><span class=p>(</span><span class=n>width</span><span class=o>=</span><span class=mi>224</span><span class=p>,</span> <span class=n>height</span><span class=o>=</span><span class=mi>224</span><span class=p>)</span>
-<span class=n>image</span> <span class=o>=</span> <span class=n>camera</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
+camera = CSICamera(width=224, height=224)
+image = camera.read()
 
-<span class=n>image_widget</span> <span class=o>=</span> <span class=n>ipywidgets</span><span class=o>.</span><span class=n>Image</span><span class=p>(</span><span class=nb>format</span><span class=o>=</span><span class=s1>&#39;jpeg&#39;</span><span class=p>)</span>
-<span class=n>image_widget</span><span class=o>.</span><span class=n>value</span> <span class=o>=</span> <span class=n>bgr8_to_jpeg</span><span class=p>(</span><span class=n>image</span><span class=p>)</span>
-<span class=n>display</span><span class=p>(</span><span class=n>image_widget</span><span class=p>)</span>
-</code></pre></div></td></tr></table></div></div>
+image_widget = ipywidgets.Image(format='jpeg')
+image_widget.value = bgr8_to_jpeg(image)
+display(image_widget)
+</code></pre></div></div>
 <p>カメラ画像の更新</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span>
-<span class=normal>7</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=nb>camera</span><span class=err>.</span><span class=n>running</span> <span class=o>=</span> <span class=n>True</span>
+<p> <pre><code class>camera.running = True
 
-<span class=n>def</span> <span class=n>update_image</span><span class=p>(</span><span class=n>change</span><span class=p>)</span><span class=err>:</span>
-    <span class=n>image</span> <span class=o>=</span> <span class=n>change</span><span class=p>[</span><span class=err>&#39;</span><span class=n>new</span><span class=err>&#39;</span><span class=p>]</span>
-    <span class=n>image_widget</span><span class=err>.</span><span class=n>value</span> <span class=o>=</span> <span class=n>bgr8_to_jpeg</span><span class=p>(</span><span class=n>image</span><span class=p>)</span>
+def update_image(change):
+    image = change['new']
+    image_widget.value = bgr8_to_jpeg(image)
 
-<span class=nb>camera</span><span class=err>.</span><span class=n>observe</span><span class=p>(</span><span class=n>update_image</span><span class=p>,</span> <span class=n>names</span><span class=o>=</span><span class=err>&#39;</span><span class=n>value</span><span class=err>&#39;</span><span class=p>)</span>
-</code></pre></div></td></tr></table></p>
+camera.observe(update_image, names='value')
+</code></pre></p>
 <h2 id="camera">Cameraの再起動</h2>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>sudo</span> <span class=n>systemctl</span> <span class=n>restart</span> <span class=n>nvargus</span><span class=o>-</span><span class=n>daemon</span>
-</code></pre></div></td></tr></table></p>
+<p> <pre><code class>sudo systemctl restart nvargus-daemon
+</code></pre></p>
 <h2 id="camera_1">Cameraの状態を確認</h2>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>journalctl</span> <span class=o>-</span><span class=n>u</span> <span class=n>nvargus</span><span class=o>-</span><span class=n>daemon</span><span class=o>.</span><span class=n>service</span> <span class=o>-</span><span class=n>f</span>
-</code></pre></div></td></tr></table></p>
+<p> <pre><code class>journalctl -u nvargus-daemon.service -f
+</code></pre></p>
                 
               
               

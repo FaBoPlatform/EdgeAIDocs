@@ -1345,43 +1345,27 @@
 <p><img alt="" src="./../img/211_7Seg/i2cpin.jpg" /></p>
 <p>~写真〜</p>
 <p>FaBoのライブラリをインストール</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBo3Axis-ADXL345-Python.git
+<p> <pre><code class>git clone https://github.com/FaBoPlatform/FaBo3Axis-ADXL345-Python.git
 cd FaBo3Axis-ADXL345-Python
 sudo pip3 install .
-</code></pre></div></td></tr></table></p>
+</code></pre></p>
 <p>ソースコード</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span>
-<span class=normal>12</span>
-<span class=normal>13</span>
-<span class=normal>14</span>
-<span class=normal>15</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
-<span class=kn>import</span> <span class=nn>FaBo3Axis_ADXL345</span>
-<span class=kn>import</span> <span class=nn>time</span>
-<span class=kn>import</span> <span class=nn>sys</span>
+<p> <pre><code class># coding: utf-8
+import FaBo3Axis_ADXL345
+import time
+import sys
 
-<span class=n>adxl345</span> <span class=o>=</span> <span class=n>FaBo3Axis_ADXL345</span><span class=o>.</span><span class=n>ADXL345</span><span class=p>()</span>
+adxl345 = FaBo3Axis_ADXL345.ADXL345()
 
-<span class=k>try</span><span class=p>:</span>
-    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
-        <span class=n>axes</span> <span class=o>=</span> <span class=n>adxl345</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
-        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\r</span><span class=s2>x = </span><span class=si>%f</span><span class=s2>, y = </span><span class=si>%f</span><span class=s2>, z = </span><span class=si>%f</span><span class=s2>&quot;</span> <span class=o>%</span> <span class=p>(</span><span class=n>axes</span><span class=p>[</span><span class=s1>&#39;x&#39;</span><span class=p>],</span>  <span class=n>axes</span><span class=p>[</span><span class=s1>&#39;y&#39;</span><span class=p>],</span> <span class=n>axes</span><span class=p>[</span><span class=s1>&#39;z&#39;</span><span class=p>]))</span>
-        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>flush</span><span class=p>()</span>
-        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.1</span><span class=p>)</span>
-<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
-    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>()</span>
-</code></pre></div></td></tr></table></p>
+try:
+    while True:
+        axes = adxl345.read()
+        sys.stdout.write(&quot;\rx = %f, y = %f, z = %f&quot; % (axes['x'],  axes['y'], axes['z']))
+        sys.stdout.flush()
+        time.sleep(0.1)
+except KeyboardInterrupt:
+    sys.exit()
+</code></pre></p>
                 
               
               

@@ -1360,49 +1360,29 @@
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
 <p>FaBoのライブラリをインストール</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_guql1y50attj6ns checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_guql1y50attj6ns-panel role=tab><label for=tab-group-0-0_guql1y50attj6ns class=code-tab-label data-lang id=tab-group-0-0_guql1y50attj6ns-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_guql1y50attj6ns-panel aria-labelledby=tab-group-0-0_guql1y50attj6ns-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBoBarometer-MPL115-Python.git
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_cwfnjmz2fhknhet checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_cwfnjmz2fhknhet-panel role=tab><label for=tab-group-0-0_cwfnjmz2fhknhet class=code-tab-label data-lang id=tab-group-0-0_cwfnjmz2fhknhet-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_cwfnjmz2fhknhet-panel aria-labelledby=tab-group-0-0_cwfnjmz2fhknhet-label><pre><code class>git clone https://github.com/FaBoPlatform/FaBoBarometer-MPL115-Python.git
 cd FaBoBarometer-MPL115-Python
 sudo pip3 install .
-</code></pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_4v6kijyv5rpcicv class=code-tab data-lang aria-controls=tab-group-0-1_4v6kijyv5rpcicv-panel role=tab><label for=tab-group-0-1_4v6kijyv5rpcicv class=code-tab-label data-lang id=tab-group-0-1_4v6kijyv5rpcicv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_4v6kijyv5rpcicv-panel aria-labelledby=tab-group-0-1_4v6kijyv5rpcicv-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span>
-<span class=normal>12</span>
-<span class=normal>13</span>
-<span class=normal>14</span>
-<span class=normal>15</span>
-<span class=normal>16</span>
-<span class=normal>17</span>
-<span class=normal>18</span>
-<span class=normal>19</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
-<span class=kn>import</span> <span class=nn>FaBoBarometer_MPL115</span>
-<span class=kn>import</span> <span class=nn>time</span>
-<span class=kn>import</span> <span class=nn>sys</span>
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_arhb10bq37p9xar class=code-tab data-lang aria-controls=tab-group-0-1_arhb10bq37p9xar-panel role=tab><label for=tab-group-0-1_arhb10bq37p9xar class=code-tab-label data-lang id=tab-group-0-1_arhb10bq37p9xar-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_arhb10bq37p9xar-panel aria-labelledby=tab-group-0-1_arhb10bq37p9xar-label><pre><code class># coding: utf-8
+import FaBoBarometer_MPL115
+import time
+import sys
 
-<span class=n>mpl115</span> <span class=o>=</span> <span class=n>FaBoBarometer_MPL115</span><span class=o>.</span><span class=n>MPL115</span><span class=p>()</span>
+mpl115 = FaBoBarometer_MPL115.MPL115()
 
-<span class=k>try</span><span class=p>:</span>
-    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
-        <span class=n>d</span>  <span class=o>=</span> <span class=n>mpl115</span><span class=o>.</span><span class=n>readData</span><span class=p>()</span>
-        <span class=n>h</span> <span class=o>=</span> <span class=n>mpl115</span><span class=o>.</span><span class=n>readHpa</span><span class=p>(</span><span class=mf>212.0</span><span class=p>)</span>
+try:
+    while True:
+        d  = mpl115.readData()
+        h = mpl115.readHpa(212.0)
 
-        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\r</span><span class=s2>hda = </span><span class=si>%f</span><span class=s2>, temp = </span><span class=si>%f</span><span class=s2>, hda_aizu = </span><span class=si>%f</span><span class=s2>&quot;</span> <span class=o>%</span> <span class=p>(</span><span class=n>d</span><span class=p>[</span><span class=s1>&#39;hpa&#39;</span><span class=p>],</span>  <span class=n>d</span><span class=p>[</span><span class=s1>&#39;temp&#39;</span><span class=p>],</span> <span class=n>h</span><span class=p>))</span>
-        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>flush</span><span class=p>()</span>
+        sys.stdout.write(&quot;\rhda = %f, temp = %f, hda_aizu = %f&quot; % (d['hpa'],  d['temp'], h))
+        sys.stdout.flush()
 
-        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+        time.sleep(1)
 
-<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
-    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>()</span>
-</code></pre></div></td></tr></table></div></div>
+except KeyboardInterrupt:
+    sys.exit()
+</code></pre></div></div>
                 
               
               
