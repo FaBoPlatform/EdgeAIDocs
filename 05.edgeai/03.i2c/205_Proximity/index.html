@@ -1359,28 +1359,28 @@
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
 <p>FaBoのライブラリをインストール</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_bxurkz0ef6zmtcp checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_bxurkz0ef6zmtcp-panel role=tab><label for=tab-group-0-0_bxurkz0ef6zmtcp class=code-tab-label data-lang id=tab-group-0-0_bxurkz0ef6zmtcp-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_bxurkz0ef6zmtcp-panel aria-labelledby=tab-group-0-0_bxurkz0ef6zmtcp-label><pre><code class>git clone https://github.com/FaBoPlatform/FaBoProximity-VCNL4010-Python.git
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_ny0z2w0bqjh4aw5 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_ny0z2w0bqjh4aw5-panel role=tab><label for=tab-group-0-0_ny0z2w0bqjh4aw5 class=code-tab-label data-lang id=tab-group-0-0_ny0z2w0bqjh4aw5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_ny0z2w0bqjh4aw5-panel aria-labelledby=tab-group-0-0_ny0z2w0bqjh4aw5-label><div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBoProximity-VCNL4010-Python.git
 cd FaBoProximity-VCNL4010-Python
 sudo pip3 install .
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_95s2kyo7onac439 class=code-tab data-lang aria-controls=tab-group-0-1_95s2kyo7onac439-panel role=tab><label for=tab-group-0-1_95s2kyo7onac439 class=code-tab-label data-lang id=tab-group-0-1_95s2kyo7onac439-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_95s2kyo7onac439-panel aria-labelledby=tab-group-0-1_95s2kyo7onac439-label><pre><code class># coding: utf-8
-import FaBoProximity_VCNL4010
-import time
-import sys
+</code></pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-1_gqujry3wtw4rrbq class=code-tab data-lang aria-controls=tab-group-0-1_gqujry3wtw4rrbq-panel role=tab><label for=tab-group-0-1_gqujry3wtw4rrbq class=code-tab-label data-lang id=tab-group-0-1_gqujry3wtw4rrbq-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_gqujry3wtw4rrbq-panel aria-labelledby=tab-group-0-1_gqujry3wtw4rrbq-label><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>FaBoProximity_VCNL4010</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>import</span> <span class=nn>sys</span>
 
-vcnl4010 = FaBoProximity_VCNL4010.VCNL4010()
+<span class=n>vcnl4010</span> <span class=o>=</span> <span class=n>FaBoProximity_VCNL4010</span><span class=o>.</span><span class=n>VCNL4010</span><span class=p>()</span>
 
-try:
-    while True:
-        p = vcnl4010.readProx()
-        a = vcnl4010.readAmbi()
-        sys.stdout.write(&quot;\rProx=%f, Ambi=%f&quot; % (p,  a))
-        sys.stdout.flush()
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=n>p</span> <span class=o>=</span> <span class=n>vcnl4010</span><span class=o>.</span><span class=n>readProx</span><span class=p>()</span>
+        <span class=n>a</span> <span class=o>=</span> <span class=n>vcnl4010</span><span class=o>.</span><span class=n>readAmbi</span><span class=p>()</span>
+        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\r</span><span class=s2>Prox=</span><span class=si>%f</span><span class=s2>, Ambi=</span><span class=si>%f</span><span class=s2>&quot;</span> <span class=o>%</span> <span class=p>(</span><span class=n>p</span><span class=p>,</span>  <span class=n>a</span><span class=p>))</span>
+        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>flush</span><span class=p>()</span>
 
-        time.sleep(1)
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-except KeyboardInterrupt:
-    sys.exit()
-</code></pre></div></div>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>()</span>
+</code></pre></div></div></div>
                 
               
               

@@ -1279,33 +1279,33 @@
 <p>ここでは、Jetson NanoでRaspberryPiと同じAPIがあるPython（RPi.GPIO）によるGPIO制御を行うためには、Jetson GPIOライブラリをインストールする必要があります。</p>
 <p>JupyterからTerminalを起動します。</p>
 <p>pip3インストール</p>
-<p> <pre><code class>$sudo apt-get install python3-pip
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>$sudo apt-get install python3-pip
+</code></pre></div></p>
 <p>Pipでインストールされているパッケージを表示する</p>
-<p> <pre><code class>$pip3 list
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>$pip3 list
+</code></pre></div></p>
 <p>または、マニュアルインストール</p>
-<p> <pre><code class>$cd ~
+<p> <div class=codehilite><pre><span></span><code>$cd ~
 $git clone https://github.com/NVIDIA/jetson-gpio.git
 $cd jetson-gpio
 $sudo python3 setup.py install
-</code></pre></p>
+</code></pre></div></p>
 <p>Jetson.GPIOのインストール</p>
-<p> <pre><code class>$sudo pip3 install Jetson.GPIO
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>$sudo pip3 install Jetson.GPIO
+</code></pre></div></p>
 <p>ユーザの追加</p>
-<p> <pre><code class>$sudo groupadd -f -r gpio
+<p> <div class=codehilite><pre><span></span><code>$sudo groupadd -f -r gpio
 $sudo usermod -a -G gpio jetbot
-</code></pre></p>
+</code></pre></div></p>
 <p>udevのルールを追加</p>
-<p> <pre><code class>$sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d/
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>$sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d/
+</code></pre></div></p>
 <p>ルールを再読み込み</p>
-<p> <pre><code class>$sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code><span class=o>$</span><span class=n>sudo</span> <span class=n>udevadm</span> <span class=n>control</span> <span class=o>--</span><span class=n>reload</span><span class=o>-</span><span class=n>rules</span> <span class=o>&amp;&amp;</span> <span class=n>sudo</span> <span class=n>udevadm</span> <span class=n>trigger</span>
+</code></pre></div></p>
 <p>再起動</p>
-<p> <pre><code class>$sudo reboot
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>$sudo reboot
+</code></pre></div></p>
 <p>USBケーブルを抜いて、電源を抜いた上で再起動</p>
 <p>pythonライブラリ</p>
 <p><br></p>

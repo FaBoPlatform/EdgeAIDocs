@@ -1585,37 +1585,37 @@
 <p>Pinmux テーブルの設定</p>
 <p>~画像〜</p>
 <p>pip3がインストールされていない場合は、</p>
-<p> <pre><code class>$sudo apt-get install python3-pip
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>$sudo apt-get install python3-pip
+</code></pre></div></p>
 <p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<p> <pre><code class>$pip3 install spidev
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>$pip3 install spidev
+</code></pre></div></p>
 <p>SPIdevの使い方。
 https://pypi.org/project/spidev/</p>
 <h2 id="_4">サンプルコード</h2>
-<p> <pre><code class>import RPi.GPIO as GPIO
-import sys
+<p> <div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>RPi.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
+<span class=kn>import</span> <span class=nn>sys</span>
 
-LEDPIN = 4
-BUTTONPIN = 5
+<span class=n>LEDPIN</span> <span class=o>=</span> <span class=mi>4</span>
+<span class=n>BUTTONPIN</span> <span class=o>=</span> <span class=mi>5</span>
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(LEDPIN, GPIO.OUT)
-GPIO.setup(BUTTONPIN, GPIO.IN)
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setmode</span><span class=p>(</span><span class=n>GPIO</span><span class=o>.</span><span class=n>BCM</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>OUT</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>IN</span><span class=p>)</span>
 
-try:
-    while True:
-        # ボタン押下判定
-        if(GPIO.input(BUTTONPIN)):
-            # LED点灯
-            GPIO.output(LEDPIN, True)
-        else:
-            # LED消灯
-            GPIO.output(LEDPIN, False)
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
-</code></pre></p>
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=c1># ボタン押下判定</span>
+        <span class=k>if</span><span class=p>(</span><span class=n>GPIO</span><span class=o>.</span><span class=n>input</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>)):</span>
+            <span class=c1># LED点灯</span>
+            <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=c1># LED消灯</span>
+            <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+</code></pre></div></p>
                 
               
               

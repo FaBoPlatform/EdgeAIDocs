@@ -1363,46 +1363,46 @@
 <p><img alt="" src="./../img/share/Servo_pwm.jpg" /></p>
 <h2 id="_2">ライブラリ</h2>
 <p>smbus2をインストール</p>
-<p> <pre><code class>sudo pip3 install smbus2
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code>sudo pip3 install smbus2
+</code></pre></div></p>
 <p>FaBoPWMをインストール</p>
-<p> <pre><code class>git clone https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
+<p> <div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
 cd FaBoPWM-PCA9685-Python
 sudo pip3 install .
-</code></pre></p>
+</code></pre></div></p>
 <h2 id="_3">ソース</h2>
 <p>初期化</p>
-<p> <pre><code class># coding: utf-8
-import Fabo_PCA9685
-import time
-import pkg_resources
-SMBUS='smbus'
-for dist in pkg_resources.working_set:
-    #print(dist.project_name, dist.version)
-    if dist.project_name == 'smbus':
-        break
-    if dist.project_name == 'smbus2':
-        SMBUS='smbus2'
-        break
-if SMBUS == 'smbus':
-    import smbus
-elif SMBUS == 'smbus2':
-    import smbus2 as smbus
+<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>Fabo_PCA9685</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>import</span> <span class=nn>pkg_resources</span>
+<span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus&#39;</span>
+<span class=k>for</span> <span class=n>dist</span> <span class=ow>in</span> <span class=n>pkg_resources</span><span class=o>.</span><span class=n>working_set</span><span class=p>:</span>
+    <span class=c1>#print(dist.project_name, dist.version)</span>
+    <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
+        <span class=k>break</span>
+    <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
+        <span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus2&#39;</span>
+        <span class=k>break</span>
+<span class=k>if</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
+    <span class=kn>import</span> <span class=nn>smbus</span>
+<span class=k>elif</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
+    <span class=kn>import</span> <span class=nn>smbus2</span> <span class=k>as</span> <span class=nn>smbus</span>
 
-# init
-BUSNUM=1
-SERVO_HZ=50
-INITIAL_VALUE=300
-bus = smbus.SMBus(BUSNUM)
-PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
-PCA9685.set_hz(SERVO_HZ)
-</code></pre></p>
+<span class=c1># init</span>
+<span class=n>BUSNUM</span><span class=o>=</span><span class=mi>1</span>
+<span class=n>SERVO_HZ</span><span class=o>=</span><span class=mi>50</span>
+<span class=n>INITIAL_VALUE</span><span class=o>=</span><span class=mi>300</span>
+<span class=n>bus</span> <span class=o>=</span> <span class=n>smbus</span><span class=o>.</span><span class=n>SMBus</span><span class=p>(</span><span class=n>BUSNUM</span><span class=p>)</span>
+<span class=n>PCA9685</span> <span class=o>=</span> <span class=n>Fabo_PCA9685</span><span class=o>.</span><span class=n>PCA9685</span><span class=p>(</span><span class=n>bus</span><span class=p>,</span><span class=n>INITIAL_VALUE</span><span class=p>,</span><span class=n>address</span><span class=o>=</span><span class=mh>0x60</span><span class=p>)</span>
+<span class=n>PCA9685</span><span class=o>.</span><span class=n>set_hz</span><span class=p>(</span><span class=n>SERVO_HZ</span><span class=p>)</span>
+</code></pre></div></p>
 <p>値を設定</p>
-<p> <pre><code class># set value
+<p> <div class=codehilite><pre><span></span><code># set value
 value = 330
 channel = 0 # PWM0番目のピンのサーボ
 PCA9685.set_channel_value(channel,value)
-</code></pre></p>
+</code></pre></div></p>
                 
               
               

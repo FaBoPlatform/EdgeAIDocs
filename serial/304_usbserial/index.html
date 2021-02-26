@@ -1374,73 +1374,70 @@
 USBシリアルからは＃５１９へは、給電をしないでください。POWERジャンパピンをはずします。
 また、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。</p>
 <h2 id="_3">インストール</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_cavo6e9paqtqyry checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_cavo6e9paqtqyry-panel role=tab><label for=tab-group-0-0_cavo6e9paqtqyry class=code-tab-label data-lang id=tab-group-0-0_cavo6e9paqtqyry-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_cavo6e9paqtqyry-panel aria-labelledby=tab-group-0-0_cavo6e9paqtqyry-label><pre><code class>$pip3 install pyserial
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_9vc0zuis36oii24 class=code-tab data-lang aria-controls=tab-group-0-1_9vc0zuis36oii24-panel role=tab><label for=tab-group-0-1_9vc0zuis36oii24 class=code-tab-label data-lang id=tab-group-0-1_9vc0zuis36oii24-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_9vc0zuis36oii24-panel aria-labelledby=tab-group-0-1_9vc0zuis36oii24-label><pre><code class>$sudo chmod 666 /dev/ttyTHS1
-</code></pre></div></div>
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_qaaok3yj23v75fl checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_qaaok3yj23v75fl-panel role=tab><label for=tab-group-0-0_qaaok3yj23v75fl class=code-tab-label data-lang id=tab-group-0-0_qaaok3yj23v75fl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_qaaok3yj23v75fl-panel aria-labelledby=tab-group-0-0_qaaok3yj23v75fl-label><div class=codehilite><pre><span></span><code>$pip3 install pyserial
+</code></pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-1_lqo6w77wb339mut class=code-tab data-lang aria-controls=tab-group-0-1_lqo6w77wb339mut-panel role=tab><label for=tab-group-0-1_lqo6w77wb339mut class=code-tab-label data-lang id=tab-group-0-1_lqo6w77wb339mut-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_lqo6w77wb339mut-panel aria-labelledby=tab-group-0-1_lqo6w77wb339mut-label><div class=codehilite><pre><span></span><code>$sudo chmod 666 /dev/ttyTHS1
+</code></pre></div></div></div>
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_k7znekzhmlbodow checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_k7znekzhmlbodow-panel role=tab><label for=tab-group-1-0_k7znekzhmlbodow class=code-tab-label data-lang id=tab-group-1-0_k7znekzhmlbodow-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_k7znekzhmlbodow-panel aria-labelledby=tab-group-1-0_k7znekzhmlbodow-label><pre><code class>import serial
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_3fsfizwgw8aq942 class=code-tab data-lang aria-controls=tab-group-1-1_3fsfizwgw8aq942-panel role=tab><label for=tab-group-1-1_3fsfizwgw8aq942 class=code-tab-label data-lang id=tab-group-1-1_3fsfizwgw8aq942-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_3fsfizwgw8aq942-panel aria-labelledby=tab-group-1-1_3fsfizwgw8aq942-label><pre><code class># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial(&quot;/dev/ttyTHS1&quot;, baudrate=115200 ,parity=serial.PARITY_NONE)
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_mvsxk5twobktjgg checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_mvsxk5twobktjgg-panel role=tab><label for=tab-group-1-0_mvsxk5twobktjgg class=code-tab-label data-lang id=tab-group-1-0_mvsxk5twobktjgg-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_mvsxk5twobktjgg-panel aria-labelledby=tab-group-1-0_mvsxk5twobktjgg-label><div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>serial</span>
+</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-1_6sy3snbjmkxshq9 class=code-tab data-lang aria-controls=tab-group-1-1_6sy3snbjmkxshq9-panel role=tab><label for=tab-group-1-1_6sy3snbjmkxshq9 class=code-tab-label data-lang id=tab-group-1-1_6sy3snbjmkxshq9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_6sy3snbjmkxshq9-panel aria-labelledby=tab-group-1-1_6sy3snbjmkxshq9-label><div class=codehilite><pre><span></span><code><span class=o>#</span> <span class=o>/</span><span class=n>dev</span><span class=o>/</span><span class=n>ttyTHS1でボーレート115200</span><span class=err>、パリティビットなしで設定</span>
+<span class=n>ser</span> <span class=o>=</span> <span class=n>serial</span><span class=p>.</span><span class=n>Serial</span><span class=p>(</span><span class=s>&quot;/dev/ttyTHS1&quot;</span><span class=p>,</span> <span class=n>baudrate</span><span class=o>=</span><span class=mi>115200</span> <span class=p>,</span><span class=n>parity</span><span class=o>=</span><span class=n>serial</span><span class=p>.</span><span class=n>PARITY_NONE</span><span class=p>)</span>
 
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
-
-
-# シリアル通信もバイナリ形式で送る
-ser.write(b&quot;RECEIVE:hello FaBo 2020 Press any 10-character keyboard\r\n&quot;)
-print(&quot;send: hello FaBo 2020 Press any 10-character keyboard.&quot;)
-
-# 受け取ったデータもバイナリ形式
-# 引数は受け取る文字数
-recv_data = ser.read(10)
-print(recv_data)
-
-print(&quot;send: TestEnd&quot;)
-ser.write(recv_data)
-ser.write(b&quot;\r\nRECEIVE:TEST END&quot;)
-
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_m1ihfoyg5krx63q class=code-tab data-lang aria-controls=tab-group-1-2_m1ihfoyg5krx63q-panel role=tab><label for=tab-group-1-2_m1ihfoyg5krx63q class=code-tab-label data-lang id=tab-group-1-2_m1ihfoyg5krx63q-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_m1ihfoyg5krx63q-panel aria-labelledby=tab-group-1-2_m1ihfoyg5krx63q-label><pre><code class>
-## バーストテスト
-
-import serial
-import time
-from time import localtime
-
-# /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial(&quot;/dev/ttyTHS1&quot;, baudrate=115200 ,parity=serial.PARITY_NONE)
-
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
+<span class=o>#</span> <span class=err>ノイズデータがある場合があるのでバッファをクリアする</span>
+<span class=n>ser</span><span class=p>.</span><span class=n>reset_input_buffer</span><span class=p>()</span>
 
 
-# シリアル通信もバイナリ形式で送る
-for w in range(255):
-    ser.write(b&quot;RECEIVE:hello world! FaBo 2020-2021-2\r\n&quot;)
+<span class=o>#</span> <span class=err>シリアル通信もバイナリ形式で送る</span>
+<span class=n>ser</span><span class=p>.</span><span class=n>write</span><span class=p>(</span><span class=n>b</span><span class=s>&quot;RECEIVE:hello FaBo 2020 Press any 10-character keyboard\r\n&quot;</span><span class=p>)</span>
+<span class=n>print</span><span class=p>(</span><span class=s>&quot;send: hello FaBo 2020 Press any 10-character keyboard.&quot;</span><span class=p>)</span>
 
-ser.close()
+<span class=o>#</span> <span class=err>受け取ったデータもバイナリ形式</span>
+<span class=o>#</span> <span class=err>引数は受け取る文字数</span>
+<span class=n>recv_data</span> <span class=o>=</span> <span class=n>ser</span><span class=p>.</span><span class=n>read</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
+<span class=n>print</span><span class=p>(</span><span class=n>recv_data</span><span class=p>)</span>
 
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-3_pmfcwopyjhivkus class=code-tab data-lang aria-controls=tab-group-1-3_pmfcwopyjhivkus-panel role=tab><label for=tab-group-1-3_pmfcwopyjhivkus class=code-tab-label data-lang id=tab-group-1-3_pmfcwopyjhivkus-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_pmfcwopyjhivkus-panel aria-labelledby=tab-group-1-3_pmfcwopyjhivkus-label><pre><code class>#１００文字を入力して送信して表示する。QWERT入力確認
-import serial
+<span class=n>print</span><span class=p>(</span><span class=s>&quot;send: TestEnd&quot;</span><span class=p>)</span>
+<span class=n>ser</span><span class=p>.</span><span class=n>write</span><span class=p>(</span><span class=n>recv_data</span><span class=p>)</span>
+<span class=n>ser</span><span class=p>.</span><span class=n>write</span><span class=p>(</span><span class=n>b</span><span class=s>&quot;\r\nRECEIVE:TEST END&quot;</span><span class=p>)</span>
+</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-2_e2be4fyi77oa8ua class=code-tab data-lang aria-controls=tab-group-1-2_e2be4fyi77oa8ua-panel role=tab><label for=tab-group-1-2_e2be4fyi77oa8ua class=code-tab-label data-lang id=tab-group-1-2_e2be4fyi77oa8ua-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_e2be4fyi77oa8ua-panel aria-labelledby=tab-group-1-2_e2be4fyi77oa8ua-label><div class=codehilite><pre><span></span><code><span class=c1>## バーストテスト</span>
 
-# /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial(&quot;/dev/ttyTHS1&quot;, baudrate=115200 ,parity=serial.PARITY_NONE)
+<span class=kn>import</span> <span class=nn>serial</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>from</span> <span class=nn>time</span> <span class=kn>import</span> <span class=n>localtime</span>
 
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
+<span class=c1># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定</span>
+<span class=n>ser</span> <span class=o>=</span> <span class=n>serial</span><span class=o>.</span><span class=n>Serial</span><span class=p>(</span><span class=s2>&quot;/dev/ttyTHS1&quot;</span><span class=p>,</span> <span class=n>baudrate</span><span class=o>=</span><span class=mi>115200</span> <span class=p>,</span><span class=n>parity</span><span class=o>=</span><span class=n>serial</span><span class=o>.</span><span class=n>PARITY_NONE</span><span class=p>)</span>
 
-ser.write(b&quot;INPUT CHAR.\r\n&quot;)
+<span class=c1># ノイズデータがある場合があるのでバッファをクリアする</span>
+<span class=n>ser</span><span class=o>.</span><span class=n>reset_input_buffer</span><span class=p>()</span>
 
-# 受け取ったデータもバイナリ形式
-# 引数は受け取る文字数
-for w in range(100):
-    recv_data = ser.read(1)
-    ser.write(recv_data)
 
-ser.write(b&quot;TEST END.\r\n&quot;)
+<span class=c1># シリアル通信もバイナリ形式で送る</span>
+<span class=k>for</span> <span class=n>w</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>255</span><span class=p>):</span>
+    <span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=sa>b</span><span class=s2>&quot;RECEIVE:hello world! FaBo 2020-2021-2</span><span class=se>\r\n</span><span class=s2>&quot;</span><span class=p>)</span>
 
-ser.close()
-</code></pre></div></div>
+<span class=n>ser</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-3_bjg4qjj21n0gwkm class=code-tab data-lang aria-controls=tab-group-1-3_bjg4qjj21n0gwkm-panel role=tab><label for=tab-group-1-3_bjg4qjj21n0gwkm class=code-tab-label data-lang id=tab-group-1-3_bjg4qjj21n0gwkm-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_bjg4qjj21n0gwkm-panel aria-labelledby=tab-group-1-3_bjg4qjj21n0gwkm-label><div class=codehilite><pre><span></span><code><span class=c1>#１００文字を入力して送信して表示する。QWERT入力確認</span>
+<span class=kn>import</span> <span class=nn>serial</span>
+
+<span class=c1># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定</span>
+<span class=n>ser</span> <span class=o>=</span> <span class=n>serial</span><span class=o>.</span><span class=n>Serial</span><span class=p>(</span><span class=s2>&quot;/dev/ttyTHS1&quot;</span><span class=p>,</span> <span class=n>baudrate</span><span class=o>=</span><span class=mi>115200</span> <span class=p>,</span><span class=n>parity</span><span class=o>=</span><span class=n>serial</span><span class=o>.</span><span class=n>PARITY_NONE</span><span class=p>)</span>
+
+<span class=c1># ノイズデータがある場合があるのでバッファをクリアする</span>
+<span class=n>ser</span><span class=o>.</span><span class=n>reset_input_buffer</span><span class=p>()</span>
+
+<span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=sa>b</span><span class=s2>&quot;INPUT CHAR.</span><span class=se>\r\n</span><span class=s2>&quot;</span><span class=p>)</span>
+
+<span class=c1># 受け取ったデータもバイナリ形式</span>
+<span class=c1># 引数は受け取る文字数</span>
+<span class=k>for</span> <span class=n>w</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>100</span><span class=p>):</span>
+    <span class=n>recv_data</span> <span class=o>=</span> <span class=n>ser</span><span class=o>.</span><span class=n>read</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+    <span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=n>recv_data</span><span class=p>)</span>
+
+<span class=n>ser</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=sa>b</span><span class=s2>&quot;TEST END.</span><span class=se>\r\n</span><span class=s2>&quot;</span><span class=p>)</span>
+
+<span class=n>ser</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</code></pre></div></div></div>
                 
               
               

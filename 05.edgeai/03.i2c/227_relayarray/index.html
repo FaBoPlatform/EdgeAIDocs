@@ -1381,63 +1381,61 @@
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
 <p>FaBoのライブラリをインストール</p>
-<p> <pre><code class=sh>$git clone https://github.com/FaBoPlatform/FaBoGPIO-PCAL6408-Python.git
-$cd FaBoGPIO-PCAL6408-Python
-$sudo pip3 install .
-</code></pre></p>
+<p> <div class=codehilite><pre><span></span><code><span class=nv>$git</span> clone https://github.com/FaBoPlatform/FaBoGPIO-PCAL6408-Python.git
+<span class=nv>$cd</span> FaBoGPIO-PCAL6408-Python
+<span class=nv>$sudo</span> pip3 install .
+</code></pre></div></p>
 <p>リレーの動作チェックします。
 リレーの動作は、アティブローになりますのでご注意ください。</p>
-<p> <pre><code class=python>
-import FaBoGPIO_PCAL6408
-import time
-import sys
+<p> <div class=codehilite><pre><span></span><code><span class=kn>import</span> <span class=nn>FaBoGPIO_PCAL6408</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>import</span> <span class=nn>sys</span>
 
-BUSNUM=1
-pcal6408 = FaBoGPIO_PCAL6408.PCAL6408(busnum=BUSNUM)
+<span class=n>BUSNUM</span><span class=o>=</span><span class=mi>1</span>
+<span class=n>pcal6408</span> <span class=o>=</span> <span class=n>FaBoGPIO_PCAL6408</span><span class=o>.</span><span class=n>PCAL6408</span><span class=p>(</span><span class=n>busnum</span><span class=o>=</span><span class=n>BUSNUM</span><span class=p>)</span>
 
-pcal6408.setDigital(0xFF, 1)   #すべてOFF
-time.sleep(1)
+<span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>   <span class=c1>#すべてOFF</span>
+<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-try:
-    while True:
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
 
-        #順番にリレーON
-        for i in range(8):
-            pcal6408.setDigital(0x01&lt;&lt;i, 0)
-            time.sleep(1)
-            pcal6408.setDigital(0x01&lt;&lt;i, 1)
-            time.sleep(1)
+        <span class=c1>#順番にリレーON</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>8</span><span class=p>):</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0x01</span><span class=o>&lt;&lt;</span><span class=n>i</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0x01</span><span class=o>&lt;&lt;</span><span class=n>i</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-        time.sleep(2)
-        #すべてON
-        pcal6408.setDigital(0xFF, 0)
-        time.sleep(3)
-        #すべてOFF
-        pcal6408.setDigital(0xFF, 1)
-        time.sleep(3)
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+        <span class=c1>#すべてON</span>
+        <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span>
+        <span class=c1>#すべてOFF</span>
+        <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span>
 
-        #順次にリレーをON
-        for i in range(9):
-            pcal6408.setDigital((2 ** i)-1, 0)
-            time.sleep(1)
-            pcal6408.setDigital((2 ** i)-1, 1)
-            time.sleep(1)
+        <span class=c1>#順次にリレーをON</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>9</span><span class=p>):</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>((</span><span class=mi>2</span> <span class=o>**</span> <span class=n>i</span><span class=p>)</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>((</span><span class=mi>2</span> <span class=o>**</span> <span class=n>i</span><span class=p>)</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-        #リレー全数オンオフテスト
-        for i in range(5):
-            pcal6408.setDigital(0xFF, 1)
-            time.sleep(1)
-            pcal6408.setDigital(0xFF, 0)
-            time.sleep(1)
+        <span class=c1>#リレー全数オンオフテスト</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+            <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-        #すべてOFF
-        pcal6408.setDigital(0xFF, 1)
+        <span class=c1>#すべてOFF</span>
+        <span class=n>pcal6408</span><span class=o>.</span><span class=n>setDigital</span><span class=p>(</span><span class=mh>0xFF</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
 
-except KeyboardInterrupt:
-    pcal6408.setAllClear()
-    sys.exit()
-
-</code></pre></p>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>pcal6408</span><span class=o>.</span><span class=n>setAllClear</span><span class=p>()</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>()</span>
+</code></pre></div></p>
                 
               
               

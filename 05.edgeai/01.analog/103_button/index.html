@@ -1350,87 +1350,87 @@
 LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <p>GPIOの判定</p>
 <p>以下のコードは、ボタンが押されたのたえずチェックします。</p>
-<p> <pre><code class=python># coding: utf-8
-import Jetson.GPIO as GPIO
-import sys
+<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>Jetson.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
+<span class=kn>import</span> <span class=nn>sys</span>
 
-LEDPIN = 4
-BUTTONPIN = 5
+<span class=n>LEDPIN</span> <span class=o>=</span> <span class=mi>4</span>
+<span class=n>BUTTONPIN</span> <span class=o>=</span> <span class=mi>5</span>
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(LEDPIN, GPIO.OUT)
-GPIO.setup(BUTTONPIN, GPIO.IN)
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setmode</span><span class=p>(</span><span class=n>GPIO</span><span class=o>.</span><span class=n>BCM</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>OUT</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>IN</span><span class=p>)</span>
 
-try:
-    while True:
-        # ボタン押下判定
-        if( GPIO.input(BUTTONPIN)):
-            # LED点灯
-            GPIO.output(LEDPIN, True)
-        else:
-            # LED消灯
-            GPIO.output(LEDPIN, False)
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
-</code></pre></p>
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=c1># ボタン押下判定</span>
+        <span class=k>if</span><span class=p>(</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>input</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>)):</span>
+            <span class=c1># LED点灯</span>
+            <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=c1># LED消灯</span>
+            <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=kc>False</span><span class=p>)</span>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+</code></pre></div></p>
 <p>GPIOの入力待ち</p>
 <p>以下のコードはボタンがおされるまで待っています。</p>
-<p> <pre><code class># coding: utf-8
-import Jetson.GPIO as GPIO
-import sys
+<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>Jetson.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
+<span class=kn>import</span> <span class=nn>sys</span>
 
-LEDPIN = 4
-BUTTONPIN = 5
+<span class=n>LEDPIN</span> <span class=o>=</span> <span class=mi>4</span>
+<span class=n>BUTTONPIN</span> <span class=o>=</span> <span class=mi>5</span>
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(LEDPIN, GPIO.OUT)
-GPIO.setup(BUTTONPIN, GPIO.IN)
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setmode</span><span class=p>(</span><span class=n>GPIO</span><span class=o>.</span><span class=n>BCM</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>OUT</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>IN</span><span class=p>)</span>
 
-try:
-    while True:
-        GPIO.wait_for_edge(BUTTONPIN, GPIO.FALLING)
-        print(&quot;Button Pressed!&quot;)
-        GPIO.output(LEDPIN, GPIO.HIGH)
-        time.sleep(1)
-        GPIO.output(LEDPIN, GPIO.LOW)
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=n>GPIO</span><span class=o>.</span><span class=n>wait_for_edge</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>FALLING</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Button Pressed!&quot;</span><span class=p>)</span>
+        <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>HIGH</span><span class=p>)</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+        <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>LOW</span><span class=p>)</span>
 
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
-</code></pre></p>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+</code></pre></div></p>
 <p>イベントとして取得</p>
 <p>以下のコードは、処理中にボタンがおされたら、現在の処理を停止して、関数blinkを呼び、その関数の処理がおわったら、blink呼び出し前に戻ります。</p>
-<p> <pre><code class># coding: utf-8
-import Jetson.GPIO as GPIO
-import sys
+<p> <div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>Jetson.GPIO</span> <span class=k>as</span> <span class=nn>GPIO</span>
+<span class=kn>import</span> <span class=nn>sys</span>
 
-LEDPIN = 4
-BUTTONPIN = 5
+<span class=n>LEDPIN</span> <span class=o>=</span> <span class=mi>4</span>
+<span class=n>BUTTONPIN</span> <span class=o>=</span> <span class=mi>5</span>
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(LEDPIN, GPIO.OUT)
-GPIO.setup(BUTTONPIN, GPIO.IN)
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setmode</span><span class=p>(</span><span class=n>GPIO</span><span class=o>.</span><span class=n>BCM</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>OUT</span><span class=p>)</span>
+<span class=n>GPIO</span><span class=o>.</span><span class=n>setup</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>IN</span><span class=p>)</span>
 
-# blink LED 
-def blink(channel):
-    for i in range(5):
-        GPIO.output(LEDPIN, GPIO.HIGH)
-        time.sleep(0.5)
-        GPIO.output(LEDPIN, GPIO.LOW)
-        time.sleep(0.5)
+<span class=c1># blink LED </span>
+<span class=k>def</span> <span class=nf>blink</span><span class=p>(</span><span class=n>channel</span><span class=p>):</span>
+    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+        <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>HIGH</span><span class=p>)</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.5</span><span class=p>)</span>
+        <span class=n>GPIO</span><span class=o>.</span><span class=n>output</span><span class=p>(</span><span class=n>LEDPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>LOW</span><span class=p>)</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.5</span><span class=p>)</span>
 
-GPIO.add_event_detect(BUTTONPIN, GPIO.FALLING, callback=blink, bouncetime=10)
+<span class=n>GPIO</span><span class=o>.</span><span class=n>add_event_detect</span><span class=p>(</span><span class=n>BUTTONPIN</span><span class=p>,</span> <span class=n>GPIO</span><span class=o>.</span><span class=n>FALLING</span><span class=p>,</span> <span class=n>callback</span><span class=o>=</span><span class=n>blink</span><span class=p>,</span> <span class=n>bouncetime</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span>
 
-try:
-    while True:
-        print(&quot;Loop&quot;)
-        time.sleep(1)
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Loop&quot;</span><span class=p>)</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
-</code></pre></p>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>GPIO</span><span class=o>.</span><span class=n>cleanup</span><span class=p>()</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+</code></pre></div></p>
                 
               
               

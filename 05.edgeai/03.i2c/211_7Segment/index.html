@@ -1361,74 +1361,74 @@
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
 <p>FaBoのライブラリをインストール</p>
-<p> <pre><code class>git clone https://github.com/FaBoPlatform/FaBo7Segment-TLC59208-Python.git
+<p> <div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBo7Segment-TLC59208-Python.git
 cd FaBo7Segment-TLC59208-Python
 sudo pip3 install .
-</code></pre></p>
+</code></pre></div></p>
 <p>0~9をカウントアップします。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_gy7o714iwyvghx2 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_gy7o714iwyvghx2-panel role=tab><label for=tab-group-1-0_gy7o714iwyvghx2 class=code-tab-label data-lang id=tab-group-1-0_gy7o714iwyvghx2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_gy7o714iwyvghx2-panel aria-labelledby=tab-group-1-0_gy7o714iwyvghx2-label><pre><code class># coding: utf-8
-import FaBo7Seg_TLC59208
-import time
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_xwrpg46h2z2ey1a checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_xwrpg46h2z2ey1a-panel role=tab><label for=tab-group-1-0_xwrpg46h2z2ey1a class=code-tab-label data-lang id=tab-group-1-0_xwrpg46h2z2ey1a-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_xwrpg46h2z2ey1a-panel aria-labelledby=tab-group-1-0_xwrpg46h2z2ey1a-label><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>FaBo7Seg_TLC59208</span>
+<span class=kn>import</span> <span class=nn>time</span>
 
-tlc59208 = FaBo7Seg_TLC59208.TLC59208()
+<span class=n>tlc59208</span> <span class=o>=</span> <span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>TLC59208</span><span class=p>()</span>
 
-try:
-    while True:
-        for i in xrange(10):
-            tlc59208.showNumber(i)
-            time.sleep(0.5)
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>xrange</span><span class=p>(</span><span class=mi>10</span><span class=p>):</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showNumber</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.5</span><span class=p>)</span>
 
-except KeyboardInterrupt:
-    tlc59208.showNumber(10)
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_llltzudjbdflb6u class=code-tab data-lang aria-controls=tab-group-1-1_llltzudjbdflb6u-panel role=tab><label for=tab-group-1-1_llltzudjbdflb6u class=code-tab-label data-lang id=tab-group-1-1_llltzudjbdflb6u-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_llltzudjbdflb6u-panel aria-labelledby=tab-group-1-1_llltzudjbdflb6u-label><pre><code class># coding: utf-8
-import FaBo7Seg_TLC59208
-import time
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>tlc59208</span><span class=o>.</span><span class=n>showNumber</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span>
+</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-1_8fqzit3tcnc5ihx class=code-tab data-lang aria-controls=tab-group-1-1_8fqzit3tcnc5ihx-panel role=tab><label for=tab-group-1-1_8fqzit3tcnc5ihx class=code-tab-label data-lang id=tab-group-1-1_8fqzit3tcnc5ihx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_8fqzit3tcnc5ihx-panel aria-labelledby=tab-group-1-1_8fqzit3tcnc5ihx-label><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>FaBo7Seg_TLC59208</span>
+<span class=kn>import</span> <span class=nn>time</span>
 
-tlc59208 = FaBo7Seg_TLC59208.TLC59208()
+<span class=n>tlc59208</span> <span class=o>=</span> <span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>TLC59208</span><span class=p>()</span>
 
-try:
-    while True:
-        tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PIN_A | FaBo7Seg_TLC59208.LED_PIN_G | FaBo7Seg_TLC59208.LED_PIN_D);
-        time.sleep(1)
-        for i in xrange(10):
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM5)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM4)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM2)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM1)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM0)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM6)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM5)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM4)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM2)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM1)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM0)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM6)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_PWM5)
-            time.sleep(0.05)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_OFF)
-            time.sleep(0.05)
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PIN_A</span> <span class=o>|</span> <span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PIN_G</span> <span class=o>|</span> <span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PIN_D</span><span class=p>);</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>xrange</span><span class=p>(</span><span class=mi>10</span><span class=p>):</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM5</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM4</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM2</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM1</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM0</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM6</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM5</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM4</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM2</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM1</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM0</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM6</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_PWM5</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_OFF</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.05</span><span class=p>)</span>
 
-            tlc59208.showNumber(i)
-            time.sleep(1)
-            tlc59208.showDot()
-            time.sleep(1)
-            tlc59208.showPattern(FaBo7Seg_TLC59208.LED_OFF)
-            time.sleep(1)
-except KeyboardInterrupt:
-    tlc59208.showPattern(FaBo7Seg_TLC59208.LED_OFF)
-</code></pre></div></div>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showNumber</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showDot</span><span class=p>()</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+            <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_OFF</span><span class=p>)</span>
+            <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>tlc59208</span><span class=o>.</span><span class=n>showPattern</span><span class=p>(</span><span class=n>FaBo7Seg_TLC59208</span><span class=o>.</span><span class=n>LED_OFF</span><span class=p>)</span>
+</code></pre></div></div></div>
                 
               
               

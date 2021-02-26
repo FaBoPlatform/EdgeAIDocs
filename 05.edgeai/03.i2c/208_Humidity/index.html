@@ -1359,27 +1359,27 @@
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
 <p>FaBoのライブラリをインストール</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_6h5xqmnasfoc6az checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_6h5xqmnasfoc6az-panel role=tab><label for=tab-group-0-0_6h5xqmnasfoc6az class=code-tab-label data-lang id=tab-group-0-0_6h5xqmnasfoc6az-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_6h5xqmnasfoc6az-panel aria-labelledby=tab-group-0-0_6h5xqmnasfoc6az-label><pre><code class>git clone https://github.com/FaBoPlatform/FaBoHumidity-HTS221-Python.git
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_bf3ilyi4usx9f3k checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_bf3ilyi4usx9f3k-panel role=tab><label for=tab-group-0-0_bf3ilyi4usx9f3k class=code-tab-label data-lang id=tab-group-0-0_bf3ilyi4usx9f3k-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_bf3ilyi4usx9f3k-panel aria-labelledby=tab-group-0-0_bf3ilyi4usx9f3k-label><div class=codehilite><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBoHumidity-HTS221-Python.git
 cd FaBoHumidity-HTS221-Python
 sudo pip3 install .
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_ij8zna2xera8fxy class=code-tab data-lang aria-controls=tab-group-0-1_ij8zna2xera8fxy-panel role=tab><label for=tab-group-0-1_ij8zna2xera8fxy class=code-tab-label data-lang id=tab-group-0-1_ij8zna2xera8fxy-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_ij8zna2xera8fxy-panel aria-labelledby=tab-group-0-1_ij8zna2xera8fxy-label><pre><code class># coding: utf-8
-import FaBoHumidity_HTS221
-import time
-import sys
+</code></pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-1_enmyavr88okb499 class=code-tab data-lang aria-controls=tab-group-0-1_enmyavr88okb499-panel role=tab><label for=tab-group-0-1_enmyavr88okb499 class=code-tab-label data-lang id=tab-group-0-1_enmyavr88okb499-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_enmyavr88okb499-panel aria-labelledby=tab-group-0-1_enmyavr88okb499-label><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>FaBoHumidity_HTS221</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>import</span> <span class=nn>sys</span>
 
-hts221 = FaBoHumidity_HTS221.HTS221()
+<span class=n>hts221</span> <span class=o>=</span> <span class=n>FaBoHumidity_HTS221</span><span class=o>.</span><span class=n>HTS221</span><span class=p>()</span>
 
-try:
-    while True:
-        h = hts221.readHumi()
-        t = hts221.readTemp()
-        sys.stdout.write(&quot;\rHumidity=%f,Temp=%f&quot; % (h, t))
-        sys.stdout.flush()
-        time.sleep(1)
+<span class=k>try</span><span class=p>:</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=n>h</span> <span class=o>=</span> <span class=n>hts221</span><span class=o>.</span><span class=n>readHumi</span><span class=p>()</span>
+        <span class=n>t</span> <span class=o>=</span> <span class=n>hts221</span><span class=o>.</span><span class=n>readTemp</span><span class=p>()</span>
+        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\r</span><span class=s2>Humidity=</span><span class=si>%f</span><span class=s2>,Temp=</span><span class=si>%f</span><span class=s2>&quot;</span> <span class=o>%</span> <span class=p>(</span><span class=n>h</span><span class=p>,</span> <span class=n>t</span><span class=p>))</span>
+        <span class=n>sys</span><span class=o>.</span><span class=n>stdout</span><span class=o>.</span><span class=n>flush</span><span class=p>()</span>
+        <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
 
-except KeyboardInterrupt:
-    sys.exit()
-</code></pre></div></div>
+<span class=k>except</span> <span class=ne>KeyboardInterrupt</span><span class=p>:</span>
+    <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>()</span>
+</code></pre></div></div></div>
                 
               
               
