@@ -468,6 +468,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ソースの修正
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1332,6 +1339,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ソースの修正
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1349,6 +1363,48 @@
 <h2 id="_1">サンプルのコピー</h2>
 <p>Terminalで下記コマンドで、classificationのサンプルをpwmフォルダ以下にコピーします。</p>
 <p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/pwm/
+</code></pre></p>
+<h2 id="_2">ソースの修正</h2>
+<p><img alt="" src="../img/aipwm01.jpg" /></p>
+<p><img alt="" src="../img/aipwm02.jpg" /></p>
+<p> <pre><code class>import threading
+import time
+from utils import preprocess
+import torch.nn.functional as F
+
+import Fabo_PCA9685
+import time
+import pkg_resources
+SMBUS='smbus'
+BUSNUM=1
+SERVO_HZ=60
+INITIAL_VALUE=300
+bus = smbus.SMBus(BUSNUM)
+PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
+PCA9685.set_hz(SERVO_HZ)
+
+state_widget = ipywidgets.ToggleButtons(options=['stop', 'live'], description='state', value='stop')
+prediction_widget = ipywidgets.Text(description='prediction')
+score_widgets = []
+for category in dataset.categories:
+    score_widget = ipywidgets.FloatSlider(min=0.0, max=1.0, description=category, orientation='vertical')
+    score_widgets.append(score_widget)
+
+def live(state_widget, model, camera, prediction_widget, score_widget):
+    global dataset
+    while state_widget.value == 'live':
+        image = camera.value
+        preprocessed = preprocess(image)
+        output = model(preprocessed)
+        output = F.softmax(output, dim=1).detach().cpu().numpy().flatten()
+        category_index = output.argmax()
+        prediction_widget.value = dataset.categories[category_index]
+        if category_index == 0:
+            PCA9685.set_channel_value(0,150)
+        elif category_index == 1:
+            PCA9685.set_channel_value(0,650)
+        for i, score in enumerate(list(output)):
+            score_widgets[i].value = score
 </code></pre></p>
                 
               

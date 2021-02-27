@@ -1367,17 +1367,19 @@ elif SMBUS == 'smbus2':
 
 # init
 BUSNUM=1
-SERVO_HZ=50
+SERVO_HZ=60
 INITIAL_VALUE=300
 bus = smbus.SMBus(BUSNUM)
 PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
 PCA9685.set_hz(SERVO_HZ)
 </code></pre></p>
 <p>値を設定</p>
-<p> <pre><code class># set value
-value = 330
-channel = 0 # PWM0番目のピンのサーボ
-PCA9685.set_channel_value(channel,value)
+<p> <pre><code class>while True:
+    # Move servo on channel O between extremes.
+    PCA9685.set_channel_value(0,150)
+    time.sleep(1)
+    PCA9685.set_channel_value(0,650)
+    time.sleep(1)
 </code></pre></p>
                 
               
