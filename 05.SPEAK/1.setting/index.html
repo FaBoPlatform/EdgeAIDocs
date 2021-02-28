@@ -1437,8 +1437,43 @@
 <p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/speak/
 </code></pre></p>
 <h2 id="soundplay">Soundplay</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_o9wsord6yqnndsw checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_o9wsord6yqnndsw-panel role=tab><label for=tab-group-2-0_o9wsord6yqnndsw class=code-tab-label data-lang id=tab-group-2-0_o9wsord6yqnndsw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_o9wsord6yqnndsw-panel aria-labelledby=tab-group-2-0_o9wsord6yqnndsw-label><pre><code class>pip3 install playsound
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_elmknt7sqi64xck class=code-tab data-lang aria-controls=tab-group-2-1_elmknt7sqi64xck-panel role=tab><label for=tab-group-2-1_elmknt7sqi64xck class=code-tab-label data-lang id=tab-group-2-1_elmknt7sqi64xck-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_elmknt7sqi64xck-panel aria-labelledby=tab-group-2-1_elmknt7sqi64xck-label><pre><code class>apt install python3-gi python3-gst-1.0
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_cfwrzgye11lbfq3 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_cfwrzgye11lbfq3-panel role=tab><label for=tab-group-2-0_cfwrzgye11lbfq3 class=code-tab-label data-lang id=tab-group-2-0_cfwrzgye11lbfq3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_cfwrzgye11lbfq3-panel aria-labelledby=tab-group-2-0_cfwrzgye11lbfq3-label><pre><code class>pip3 install playsound
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_dnb1u6yxt6y164j class=code-tab data-lang aria-controls=tab-group-2-1_dnb1u6yxt6y164j-panel role=tab><label for=tab-group-2-1_dnb1u6yxt6y164j class=code-tab-label data-lang id=tab-group-2-1_dnb1u6yxt6y164j-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_dnb1u6yxt6y164j-panel aria-labelledby=tab-group-2-1_dnb1u6yxt6y164j-label><pre><code class>apt install alsa-utils
+apt install python3-gi python3-gst-1.0
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-2_f5rd7w9h7azfw88 class=code-tab data-lang aria-controls=tab-group-2-2_f5rd7w9h7azfw88-panel role=tab><label for=tab-group-2-2_f5rd7w9h7azfw88 class=code-tab-label data-lang id=tab-group-2-2_f5rd7w9h7azfw88-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-2_f5rd7w9h7azfw88-panel aria-labelledby=tab-group-2-2_f5rd7w9h7azfw88-label><pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
+--volume ~/nvdli-data:/nvdli-nano/data \
+--device /dev/snd \
+--privileged \
+nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-3_vll50juksqj6do3 class=code-tab data-lang aria-controls=tab-group-2-3_vll50juksqj6do3-panel role=tab><label for=tab-group-2-3_vll50juksqj6do3 class=code-tab-label data-lang id=tab-group-2-3_vll50juksqj6do3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-3_vll50juksqj6do3-panel aria-labelledby=tab-group-2-3_vll50juksqj6do3-label><pre><code class>speaker-test -Dplughw:CARD=AUDIO,DEV=0
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-4_tjvh3fkycipujuc class=code-tab data-lang aria-controls=tab-group-2-4_tjvh3fkycipujuc-panel role=tab><label for=tab-group-2-4_tjvh3fkycipujuc class=code-tab-label data-lang id=tab-group-2-4_tjvh3fkycipujuc-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-4_tjvh3fkycipujuc-panel aria-labelledby=tab-group-2-4_tjvh3fkycipujuc-label><pre><code class>pip3 install sounddevice, soundfile
+apt install libportaudio2 libportaudiocpp0 portaudio19-dev
+pip3 install pyaudio
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-5_b1h2590vapgyne2 class=code-tab data-lang aria-controls=tab-group-2-5_b1h2590vapgyne2-panel role=tab><label for=tab-group-2-5_b1h2590vapgyne2 class=code-tab-label data-lang id=tab-group-2-5_b1h2590vapgyne2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-5_b1h2590vapgyne2-panel aria-labelledby=tab-group-2-5_b1h2590vapgyne2-label><pre><code class>apt install ffmpeg
+pip3 install pypub
+pip3 install ffprobe
+pip3 install ffmpeg
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-6_xarfh4yk01uy76z class=code-tab data-lang aria-controls=tab-group-2-6_xarfh4yk01uy76z-panel role=tab><label for=tab-group-2-6_xarfh4yk01uy76z class=code-tab-label data-lang id=tab-group-2-6_xarfh4yk01uy76z-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-6_xarfh4yk01uy76z-panel aria-labelledby=tab-group-2-6_xarfh4yk01uy76z-label><pre><code class>import sounddevice as sd
+sd.default.device = 11
+print(sd)
+import time
+
+import numpy as np
+START = 440
+
+def soundplay():
+    fs = 48000 
+    f0 = 440
+    duration = 3
+
+    t = np.linspace(0, duration, duration * fs, endpoint=False)
+    x = np.sin(2*np.pi*f0*t)
+
+    sd.play(x, fs)
+    sd.wait()
+
+while True:
+    soundplay()
 </code></pre></div></div>
                 
               
