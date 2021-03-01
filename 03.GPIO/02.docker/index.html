@@ -14,7 +14,7 @@
     
     
       
-        <title>AIとの連携 - FaBo EdgeAI Docs</title>
+        <title>Dockerの保存 - FaBo EdgeAI Docs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai" class="md-skip">
+        <a href="#docker" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AIとの連携
+              Dockerの保存
             
           </span>
         </div>
@@ -351,18 +351,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../02.led/" class="md-nav__link">
-        LED
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -373,46 +361,34 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          AIとの連携
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        AIとの連携
+        Dockerの保存
       </a>
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="目次">
+    </li>
+  
+
+          
+            
   
   
-    
+  
+    <li class="md-nav__item">
+      <a href="../03.led/" class="md-nav__link">
+        LED
+      </a>
+    </li>
+  
+
+          
+            
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプルのコピー
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#led" class="md-nav__link">
-    LED部分の追加
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../04.ai/" class="md-nav__link">
+        AIとの連携
+      </a>
     </li>
   
 
@@ -1380,28 +1356,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプルのコピー
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#led" class="md-nav__link">
-    LED部分の追加
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1413,63 +1367,26 @@
               
                 
                 
-                <h1 id="ai">AIとの連携</h1>
-<h2 id="_1">サンプルのコピー</h2>
-<p>Terminalで下記コマンドで、classificationのサンプルをGPIO以下にコピーします。</p>
-<p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/GPIO/
+                <h1 id="docker">Dockerの保存</h1>
+<p>JupyterLab経由ではなく、ssh経由でJetson Nanoにログインします。</p>
+<p> <pre><code class>ssh jetson@192.168.55.1
 </code></pre></p>
-<h2 id="led">LED部分の追加</h2>
-<p>LEDとの連携は、下記部分にソースを追加します。</p>
-<p><img alt="" src="../img/ailed01.jpg" /></p>
-<p><img alt="" src="../img/ailed02.jpg" /></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_zc987xzctvey08n checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_zc987xzctvey08n-panel role=tab><label for=tab-group-1-0_zc987xzctvey08n class=code-tab-label data-lang id=tab-group-1-0_zc987xzctvey08n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_zc987xzctvey08n-panel aria-labelledby=tab-group-1-0_zc987xzctvey08n-label><pre><code class>import torchvision.transforms as transforms
-from dataset import ImageClassificationDataset
-
-TASK = 'leds'
-# TASK = 'emotions'
-# TASK = 'fingers'
-# TASK = 'diy'
-
-CATEGORIES = ['leds_red', 'leds_blue']
-# CATEGORIES = ['none', 'happy', 'sad', 'angry']
-# CATEGORIES = ['1', '2', '3', '4', '5']
-# CATEGORIES = [ 'diy_1', 'diy_2', 'diy_3']
-
-DATASETS = ['A', 'B']
-# DATASETS = ['A', 'B', 'C']
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_reywbv5wg9wevqw class=code-tab data-lang aria-controls=tab-group-1-1_reywbv5wg9wevqw-panel role=tab><label for=tab-group-1-1_reywbv5wg9wevqw class=code-tab-label data-lang id=tab-group-1-1_reywbv5wg9wevqw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_reywbv5wg9wevqw-panel aria-labelledby=tab-group-1-1_reywbv5wg9wevqw-label><pre><code class>import threading
-import time
-from utils import preprocess
-import torch.nn.functional as F
-import Jetson.GPIO as GPIO
-import time
-import sys
-
-LED_RED = 4
-LED_BLUE = 5
-
-GPIO.setwarnings(False)
-GPIO.setmode( GPIO.BCM )
-GPIO.setup( LED_RED, GPIO.OUT )
-GPIO.setup( LED_BLUE, GPIO.OUT )
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_b9u6tkpibe1vtsm class=code-tab data-lang aria-controls=tab-group-1-2_b9u6tkpibe1vtsm-panel role=tab><label for=tab-group-1-2_b9u6tkpibe1vtsm class=code-tab-label data-lang id=tab-group-1-2_b9u6tkpibe1vtsm-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_b9u6tkpibe1vtsm-panel aria-labelledby=tab-group-1-2_b9u6tkpibe1vtsm-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
-    global dataset
-    while state_widget.value == 'live':
-        image = camera.value
-        preprocessed = preprocess(image)
-        output = model(preprocessed)
-        output = F.softmax(output, dim=1).detach().cpu().numpy().flatten()
-        category_index = output.argmax()
-        prediction_widget.value = dataset.categories[category_index]
-        if category_index == 0:
-            GPIO.output( LED_RED, True )
-            GPIO.output( LED_BLUE, False )
-        elif category_index == 1:
-            GPIO.output( LED_RED, False )
-            GPIO.output( LED_BLUE, True )
-        for i, score in enumerate(list(output)):
-            score_widgets[i].value = score
-</code></pre></div></div>
+<p>DockerのIDを取得します。</p>
+<p> <pre><code class>sudo docker ps
+</code></pre></p>
+<p>Dockerを<code>handson</code>という名称で、commitします。</p>
+<p> <pre><code class>sudo docker commit ID(現在起動中のもの)  handson
+</code></pre></p>
+<p>現在起動中のDockerを停止します。</p>
+<p> <pre><code class>sudo docker stop ID(現在起動中のもの)
+</code></pre></p>
+<p>CommitしたDockerの起動</p>
+<p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
+--volume ~/nvdli-data:/nvdli-nano/data \
+--device /dev/video0 \
+--privileged \
+handson
+</code></pre></p>
                 
               
               
@@ -1487,7 +1404,7 @@ GPIO.setup( LED_BLUE, GPIO.OUT )
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../02.led/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../01.gpio/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1496,19 +1413,19 @@ GPIO.setup( LED_BLUE, GPIO.OUT )
               <span class="md-footer__direction">
                 前
               </span>
-              LED
+              GPIOの有効化
             </div>
           </div>
         </a>
       
       
-        <a href="../../04.PWM/1.setting/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../03.led/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              PWMの設定
+              LED
             </div>
           </div>
           <div class="md-footer__button md-icon">

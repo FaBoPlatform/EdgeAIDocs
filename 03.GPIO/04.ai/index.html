@@ -14,7 +14,7 @@
     
     
       
-        <title>LED - FaBo EdgeAI Docs</title>
+        <title>AIとの連携 - FaBo EdgeAI Docs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#led" class="md-skip">
+        <a href="#ai" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LED
+              AIとの連携
             
           </span>
         </div>
@@ -351,6 +351,30 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../02.docker/" class="md-nav__link">
+        Dockerの保存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.led/" class="md-nav__link">
+        LED
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -362,12 +386,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          LED
+          AIとの連携
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        LED
+        AIとの連携
       </a>
       
         
@@ -384,15 +408,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notebook" class="md-nav__link">
-    Notebookの新規作成
+  <a href="#_1" class="md-nav__link">
+    サンプルのコピー
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#led_1" class="md-nav__link">
-    LEDの点滅
+  <a href="#led" class="md-nav__link">
+    LED部分の追加
   </a>
   
 </li>
@@ -401,18 +425,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03.ai/" class="md-nav__link">
-        AIとの連携
-      </a>
     </li>
   
 
@@ -1387,15 +1399,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notebook" class="md-nav__link">
-    Notebookの新規作成
+  <a href="#_1" class="md-nav__link">
+    サンプルのコピー
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#led_1" class="md-nav__link">
-    LEDの点滅
+  <a href="#led" class="md-nav__link">
+    LED部分の追加
   </a>
   
 </li>
@@ -1413,43 +1425,63 @@
               
                 
                 
-                <h1 id="led">LED</h1>
-<p>LED(101)、LED2(128)を使用してLEDの点滅表示のサンプルを作成します。</p>
-<h2 id="notebook">Notebookの新規作成</h2>
-<p><img alt="" src="../img/led01.jpg" /></p>
-<p><img alt="" src="../img/led02.jpg" /></p>
-<p><img alt="" src="../img/led03.jpg" /></p>
-<p><img alt="" src="../img/led04.jpg" /></p>
-<p><img alt="" src="../img/led05.jpg" /></p>
-<p><img alt="" src="../img/led06.jpg" /></p>
-<p><img alt="" src="../img/led07.jpg" /></p>
-<p><img alt="" src="../img/led08.jpg" /></p>
-<h2 id="led_1">LEDの点滅</h2>
-<p>LEDをGPIO4に接続します。</p>
-<p><img alt="" src="../img/led09.jpg" /></p>
-<p> <pre><code class># coding: utf-8
+                <h1 id="ai">AIとの連携</h1>
+<h2 id="_1">サンプルのコピー</h2>
+<p>Terminalで下記コマンドで、classificationのサンプルをGPIO以下にコピーします。</p>
+<p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/GPIO/
+</code></pre></p>
+<h2 id="led">LED部分の追加</h2>
+<p>LEDとの連携は、下記部分にソースを追加します。</p>
+<p><img alt="" src="../img/ailed01.jpg" /></p>
+<p><img alt="" src="../img/ailed02.jpg" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_jmy55kg6zvdabnp checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_jmy55kg6zvdabnp-panel role=tab><label for=tab-group-1-0_jmy55kg6zvdabnp class=code-tab-label data-lang id=tab-group-1-0_jmy55kg6zvdabnp-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_jmy55kg6zvdabnp-panel aria-labelledby=tab-group-1-0_jmy55kg6zvdabnp-label><pre><code class>import torchvision.transforms as transforms
+from dataset import ImageClassificationDataset
+
+TASK = 'leds'
+# TASK = 'emotions'
+# TASK = 'fingers'
+# TASK = 'diy'
+
+CATEGORIES = ['leds_red', 'leds_blue']
+# CATEGORIES = ['none', 'happy', 'sad', 'angry']
+# CATEGORIES = ['1', '2', '3', '4', '5']
+# CATEGORIES = [ 'diy_1', 'diy_2', 'diy_3']
+
+DATASETS = ['A', 'B']
+# DATASETS = ['A', 'B', 'C']
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_5k0mo1b51xq3cm9 class=code-tab data-lang aria-controls=tab-group-1-1_5k0mo1b51xq3cm9-panel role=tab><label for=tab-group-1-1_5k0mo1b51xq3cm9 class=code-tab-label data-lang id=tab-group-1-1_5k0mo1b51xq3cm9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_5k0mo1b51xq3cm9-panel aria-labelledby=tab-group-1-1_5k0mo1b51xq3cm9-label><pre><code class>import threading
+import time
+from utils import preprocess
+import torch.nn.functional as F
 import Jetson.GPIO as GPIO
 import time
 import sys
 
-LEDPIN = 4
+LED_RED = 4
+LED_BLUE = 5
 
 GPIO.setwarnings(False)
 GPIO.setmode( GPIO.BCM )
-GPIO.setup( LEDPIN, GPIO.OUT )
-
-try:
-    while True:
-        GPIO.output( LEDPIN, True )
-        time.sleep( 1.0 )
-        GPIO.output( LEDPIN, False )
-        time.sleep( 1.0 ) 
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
-</code></pre></p>
-<p>停止は■をおします。</p>
-<p><img alt="" src="../img/led10.jpg" /></p>
+GPIO.setup( LED_RED, GPIO.OUT )
+GPIO.setup( LED_BLUE, GPIO.OUT )
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_7ce8b59msihhzvc class=code-tab data-lang aria-controls=tab-group-1-2_7ce8b59msihhzvc-panel role=tab><label for=tab-group-1-2_7ce8b59msihhzvc class=code-tab-label data-lang id=tab-group-1-2_7ce8b59msihhzvc-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_7ce8b59msihhzvc-panel aria-labelledby=tab-group-1-2_7ce8b59msihhzvc-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
+    global dataset
+    while state_widget.value == 'live':
+        image = camera.value
+        preprocessed = preprocess(image)
+        output = model(preprocessed)
+        output = F.softmax(output, dim=1).detach().cpu().numpy().flatten()
+        category_index = output.argmax()
+        prediction_widget.value = dataset.categories[category_index]
+        if category_index == 0:
+            GPIO.output( LED_RED, True )
+            GPIO.output( LED_BLUE, False )
+        elif category_index == 1:
+            GPIO.output( LED_RED, False )
+            GPIO.output( LED_BLUE, True )
+        for i, score in enumerate(list(output)):
+            score_widgets[i].value = score
+</code></pre></div></div>
                 
               
               
@@ -1467,7 +1499,7 @@ except KeyboardInterrupt:
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../01.gpio/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../03.led/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1476,19 +1508,19 @@ except KeyboardInterrupt:
               <span class="md-footer__direction">
                 前
               </span>
-              GPIOの有効化
+              LED
             </div>
           </div>
         </a>
       
       
-        <a href="../03.ai/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../04.PWM/1.setting/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              AIとの連携
+              PWMの設定
             </div>
           </div>
           <div class="md-footer__button md-icon">

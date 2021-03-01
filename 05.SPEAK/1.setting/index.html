@@ -351,7 +351,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03.GPIO/02.led/" class="md-nav__link">
+      <a href="../../03.GPIO/02.docker/" class="md-nav__link">
+        Dockerの保存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.GPIO/03.led/" class="md-nav__link">
         LED
       </a>
     </li>
@@ -363,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03.GPIO/03.ai/" class="md-nav__link">
+      <a href="../../03.GPIO/04.ai/" class="md-nav__link">
         AIとの連携
       </a>
     </li>
@@ -1544,10 +1556,10 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
 <p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/speak/
 </code></pre></p>
 <h2 id="soundplay">Soundplay</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_mlzis1s3sq3bv1m checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_mlzis1s3sq3bv1m-panel role=tab><label for=tab-group-4-0_mlzis1s3sq3bv1m class=code-tab-label data-lang id=tab-group-4-0_mlzis1s3sq3bv1m-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_mlzis1s3sq3bv1m-panel aria-labelledby=tab-group-4-0_mlzis1s3sq3bv1m-label><pre><code class>pip3 install playsound
-</code></pre></div><input name=tab-group-4 type=radio id=tab-group-4-1_3re6l4qpwn6t9pq class=code-tab data-lang aria-controls=tab-group-4-1_3re6l4qpwn6t9pq-panel role=tab><label for=tab-group-4-1_3re6l4qpwn6t9pq class=code-tab-label data-lang id=tab-group-4-1_3re6l4qpwn6t9pq-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_3re6l4qpwn6t9pq-panel aria-labelledby=tab-group-4-1_3re6l4qpwn6t9pq-label><pre><code class>apt install alsa-utils
+<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_jkttobvspm9mgij checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_jkttobvspm9mgij-panel role=tab><label for=tab-group-4-0_jkttobvspm9mgij class=code-tab-label data-lang id=tab-group-4-0_jkttobvspm9mgij-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_jkttobvspm9mgij-panel aria-labelledby=tab-group-4-0_jkttobvspm9mgij-label><pre><code class>pip3 install playsound
+</code></pre></div><input name=tab-group-4 type=radio id=tab-group-4-1_1m2oofd4junl7rn class=code-tab data-lang aria-controls=tab-group-4-1_1m2oofd4junl7rn-panel role=tab><label for=tab-group-4-1_1m2oofd4junl7rn class=code-tab-label data-lang id=tab-group-4-1_1m2oofd4junl7rn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_1m2oofd4junl7rn-panel aria-labelledby=tab-group-4-1_1m2oofd4junl7rn-label><pre><code class>apt install alsa-utils
 apt install python3-gi python3-gst-1.0
-</code></pre></div><input name=tab-group-4 type=radio id=tab-group-4-2_riplyebsf097p3u class=code-tab data-lang aria-controls=tab-group-4-2_riplyebsf097p3u-panel role=tab><label for=tab-group-4-2_riplyebsf097p3u class=code-tab-label data-lang id=tab-group-4-2_riplyebsf097p3u-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-2_riplyebsf097p3u-panel aria-labelledby=tab-group-4-2_riplyebsf097p3u-label><pre><code class>speaker-test -Dplughw:CARD=AUDIO,DEV=0
+</code></pre></div><input name=tab-group-4 type=radio id=tab-group-4-2_cnryqm7pldvvnac class=code-tab data-lang aria-controls=tab-group-4-2_cnryqm7pldvvnac-panel role=tab><label for=tab-group-4-2_cnryqm7pldvvnac class=code-tab-label data-lang id=tab-group-4-2_cnryqm7pldvvnac-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-2_cnryqm7pldvvnac-panel aria-labelledby=tab-group-4-2_cnryqm7pldvvnac-label><pre><code class>speaker-test -Dplughw:CARD=AUDIO,DEV=0
 </code></pre></div></div>
 <h2 id="sounddevice">sounddevice</h2>
 <p> <pre><code class>pip3 install sounddevice, soundfile
