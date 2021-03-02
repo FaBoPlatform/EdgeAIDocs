@@ -1476,13 +1476,13 @@
 USBシリアルからは＃５１９へは、給電をしないでください。POWERジャンパピンをはずします。
 また、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。</p>
 <h2 id="_3">インストール</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_topznzkjncicx8v checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_topznzkjncicx8v-panel role=tab><label for=tab-group-0-0_topznzkjncicx8v class=code-tab-label data-lang id=tab-group-0-0_topznzkjncicx8v-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_topznzkjncicx8v-panel aria-labelledby=tab-group-0-0_topznzkjncicx8v-label><pre><code class>$pip3 install pyserial
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_mpz8u54j1su1w3t class=code-tab data-lang aria-controls=tab-group-0-1_mpz8u54j1su1w3t-panel role=tab><label for=tab-group-0-1_mpz8u54j1su1w3t class=code-tab-label data-lang id=tab-group-0-1_mpz8u54j1su1w3t-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_mpz8u54j1su1w3t-panel aria-labelledby=tab-group-0-1_mpz8u54j1su1w3t-label><pre><code class>$sudo chmod 666 /dev/ttyTHS1
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_vmnpsuzj91dolbr checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_vmnpsuzj91dolbr-panel role=tab><label for=tab-group-0-0_vmnpsuzj91dolbr class=code-tab-label data-lang id=tab-group-0-0_vmnpsuzj91dolbr-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_vmnpsuzj91dolbr-panel aria-labelledby=tab-group-0-0_vmnpsuzj91dolbr-label><pre><code class>$pip3 install pyserial
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_b8x7jjppwoeap1i class=code-tab data-lang aria-controls=tab-group-0-1_b8x7jjppwoeap1i-panel role=tab><label for=tab-group-0-1_b8x7jjppwoeap1i class=code-tab-label data-lang id=tab-group-0-1_b8x7jjppwoeap1i-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_b8x7jjppwoeap1i-panel aria-labelledby=tab-group-0-1_b8x7jjppwoeap1i-label><pre><code class>$sudo chmod 666 /dev/ttyTHS1
 </code></pre></div></div>
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_ugqwsxdf54chs2z checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_ugqwsxdf54chs2z-panel role=tab><label for=tab-group-1-0_ugqwsxdf54chs2z class=code-tab-label data-lang id=tab-group-1-0_ugqwsxdf54chs2z-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_ugqwsxdf54chs2z-panel aria-labelledby=tab-group-1-0_ugqwsxdf54chs2z-label><pre><code class>import serial
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_pgk3eg8anx67ud2 class=code-tab data-lang aria-controls=tab-group-1-1_pgk3eg8anx67ud2-panel role=tab><label for=tab-group-1-1_pgk3eg8anx67ud2 class=code-tab-label data-lang id=tab-group-1-1_pgk3eg8anx67ud2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_pgk3eg8anx67ud2-panel aria-labelledby=tab-group-1-1_pgk3eg8anx67ud2-label><pre><code class># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_dyscskofed6iokv checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_dyscskofed6iokv-panel role=tab><label for=tab-group-1-0_dyscskofed6iokv class=code-tab-label data-lang id=tab-group-1-0_dyscskofed6iokv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_dyscskofed6iokv-panel aria-labelledby=tab-group-1-0_dyscskofed6iokv-label><pre><code class>import serial
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_t0oio5ilym9wr79 class=code-tab data-lang aria-controls=tab-group-1-1_t0oio5ilym9wr79-panel role=tab><label for=tab-group-1-1_t0oio5ilym9wr79 class=code-tab-label data-lang id=tab-group-1-1_t0oio5ilym9wr79-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_t0oio5ilym9wr79-panel aria-labelledby=tab-group-1-1_t0oio5ilym9wr79-label><pre><code class># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
 ser = serial.Serial(&quot;/dev/ttyTHS1&quot;, baudrate=115200 ,parity=serial.PARITY_NONE)
 
 # ノイズデータがある場合があるのでバッファをクリアする
@@ -1502,7 +1502,7 @@ print(&quot;send: TestEnd&quot;)
 ser.write(recv_data)
 ser.write(b&quot;\r\nRECEIVE:TEST END&quot;)
 
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_lyfg6hs5setk6mt class=code-tab data-lang aria-controls=tab-group-1-2_lyfg6hs5setk6mt-panel role=tab><label for=tab-group-1-2_lyfg6hs5setk6mt class=code-tab-label data-lang id=tab-group-1-2_lyfg6hs5setk6mt-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_lyfg6hs5setk6mt-panel aria-labelledby=tab-group-1-2_lyfg6hs5setk6mt-label><pre><code class>
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_soksa1v84ej81v2 class=code-tab data-lang aria-controls=tab-group-1-2_soksa1v84ej81v2-panel role=tab><label for=tab-group-1-2_soksa1v84ej81v2 class=code-tab-label data-lang id=tab-group-1-2_soksa1v84ej81v2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_soksa1v84ej81v2-panel aria-labelledby=tab-group-1-2_soksa1v84ej81v2-label><pre><code class>
 ## バーストテスト
 
 import serial
@@ -1522,7 +1522,7 @@ for w in range(255):
 
 ser.close()
 
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-3_wuw3dbo02ckqph6 class=code-tab data-lang aria-controls=tab-group-1-3_wuw3dbo02ckqph6-panel role=tab><label for=tab-group-1-3_wuw3dbo02ckqph6 class=code-tab-label data-lang id=tab-group-1-3_wuw3dbo02ckqph6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_wuw3dbo02ckqph6-panel aria-labelledby=tab-group-1-3_wuw3dbo02ckqph6-label><pre><code class>#１００文字を入力して送信して表示する。QWERT入力確認
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-3_i3y0o4x2w4agnmv class=code-tab data-lang aria-controls=tab-group-1-3_i3y0o4x2w4agnmv-panel role=tab><label for=tab-group-1-3_i3y0o4x2w4agnmv class=code-tab-label data-lang id=tab-group-1-3_i3y0o4x2w4agnmv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_i3y0o4x2w4agnmv-panel aria-labelledby=tab-group-1-3_i3y0o4x2w4agnmv-label><pre><code class>#１００文字を入力して送信して表示する。QWERT入力確認
 import serial
 
 # /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
