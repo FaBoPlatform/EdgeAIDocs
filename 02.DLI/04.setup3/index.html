@@ -501,7 +501,19 @@
   
     <li class="md-nav__item">
       <a href="../../04.PWM/04.aiservo/" class="md-nav__link">
-        ServoとAIの連携
+        ServoとAIの連携(分類)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/05.aiservo2/" class="md-nav__link">
+        ServoとAIの連携(回帰)
       </a>
     </li>
   
@@ -1442,8 +1454,8 @@
 <p>Keyboard, Mouse, HDMIを外し、USBでPCと接続します。</p>
 <p><img alt="" src="../img/headless01.jpg" /></p>
 <p>先程設定したユーザ名@192.168.55.1 でPCのターミナルからSSHでログインしてみましょう。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_2z289cfdjbbg239 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_2z289cfdjbbg239-panel role=tab><label for=tab-group-0-0_2z289cfdjbbg239 class=code-tab-label data-lang id=tab-group-0-0_2z289cfdjbbg239-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_2z289cfdjbbg239-panel aria-labelledby=tab-group-0-0_2z289cfdjbbg239-label><pre><code class>ssh jetson@192.168.55.1
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_2bsvjwaj3j32fmg class=code-tab data-lang aria-controls=tab-group-0-1_2bsvjwaj3j32fmg-panel role=tab><label for=tab-group-0-1_2bsvjwaj3j32fmg class=code-tab-label data-lang id=tab-group-0-1_2bsvjwaj3j32fmg-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_2bsvjwaj3j32fmg-panel aria-labelledby=tab-group-0-1_2bsvjwaj3j32fmg-label><pre><code class>mkdir -p ~/nvdli-data
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_me617buo6fbog9x checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_me617buo6fbog9x-panel role=tab><label for=tab-group-0-0_me617buo6fbog9x class=code-tab-label data-lang id=tab-group-0-0_me617buo6fbog9x-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_me617buo6fbog9x-panel aria-labelledby=tab-group-0-0_me617buo6fbog9x-label><pre><code class>ssh jetson@192.168.55.1
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_mbjujolpbtukxub class=code-tab data-lang aria-controls=tab-group-0-1_mbjujolpbtukxub-panel role=tab><label for=tab-group-0-1_mbjujolpbtukxub class=code-tab-label data-lang id=tab-group-0-1_mbjujolpbtukxub-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_mbjujolpbtukxub-panel aria-labelledby=tab-group-0-1_mbjujolpbtukxub-label><pre><code class>mkdir -p ~/nvdli-data
 </code></pre></div></div>
 <p><a href="https://ngc.nvidia.com/catalog/containers/nvidia:dli:dli-nano-ai">NVIDIA NGC</a>に公開されている最新のDockerを下記コマンドで、起動します。</p>
 <p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
