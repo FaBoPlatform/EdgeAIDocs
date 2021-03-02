@@ -14,7 +14,7 @@
     
     
       
-        <title>PWMの設定 - FaBo EdgeAI Docs</title>
+        <title>Dockerの保存 - FaBo EdgeAI Docs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pwm" class="md-skip">
+        <a href="#docker" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              PWMの設定
+              Dockerの保存
             
           </span>
         </div>
@@ -417,6 +417,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../01.setting/" class="md-nav__link">
+        PWMの設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -427,66 +439,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          PWMの設定
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        PWMの設定
+        Dockerの保存
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-2gb" class="md-nav__link">
-    Jetson Nano 2GBへのログイン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    Dockerを起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jupyterlab" class="md-nav__link">
-    JupyterLabへの接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    ライブラリ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pwm_1" class="md-nav__link">
-    pwmフォルダの作成
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -497,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.servo/" class="md-nav__link">
+      <a href="../03.servo/" class="md-nav__link">
         Servoの制御
       </a>
     </li>
@@ -509,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.aiservo/" class="md-nav__link">
+      <a href="../04.aiservo/" class="md-nav__link">
         ServoとAIの連携
       </a>
     </li>
@@ -1413,49 +1368,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-2gb" class="md-nav__link">
-    Jetson Nano 2GBへのログイン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    Dockerを起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jupyterlab" class="md-nav__link">
-    JupyterLabへの接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    ライブラリ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pwm_1" class="md-nav__link">
-    pwmフォルダの作成
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1467,58 +1379,26 @@
               
                 
                 
-                <h1 id="pwm">PWMの設定</h1>
-<p>＃５１９Jetson OUTINSHEILD搭載PCA9685（LEDドライバ）チップを利用してPWM信号を出力します。PCA9685のI2Cデバイスアドレスは0X60,サーボへのPWM信号周波数は５０Hzで入力します。</p>
-<h2 id="jetson-nano-2gb">Jetson Nano 2GBへのログイン</h2>
+                <h1 id="docker">Dockerの保存</h1>
+<p>JupyterLab経由ではなく、ssh経由でJetson Nanoにログインします。</p>
 <p> <pre><code class>ssh jetson@192.168.55.1
 </code></pre></p>
-<table>
-<thead>
-<tr>
-<th align="left">Password</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">jetson</td>
-</tr>
-</tbody>
-</table>
-<h2 id="docker">Dockerを起動</h2>
-<p><code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
+<p>DockerのID(handson)を取得します。</p>
+<p> <pre><code class>sudo docker ps
+</code></pre></p>
+<p>Dockerを<code>handson</code>という名称で、commitします。</p>
+<p> <pre><code class>sudo docker commit ID(現在起動中のもの)  handson
+</code></pre></p>
+<p>現在起動中のDockerを停止します。</p>
+<p> <pre><code class>sudo docker stop ID(現在起動中のもの)
+</code></pre></p>
+<p>CommitしたDockerの起動</p>
 <p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
-nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
+handson
 </code></pre></p>
-<h2 id="jupyterlab">JupyterLabへの接続</h2>
-<p><code>http://192.168.55.1:8888</code> にChromeで接続し、JupuyterLabに接続します。</p>
-<table>
-<thead>
-<tr>
-<th align="left">Password</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">dlinano</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_1">ライブラリ</h2>
-<p>Terminalを起動して、PWM関連の制御に必要なライブラリをインストールします。</p>
-<p>smbusをインストール</p>
-<p> <pre><code class>apt install python-smbus
-</code></pre></p>
-<p>FaBoPWMをインストール</p>
-<p> <pre><code class>cd ~
-git clone https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
-cd FaBoPWM-PCA9685-Python
-pip3 install .
-</code></pre></p>
-<h2 id="pwm_1">pwmフォルダの作成</h2>
-<p><img alt="" src="../img/pwm01.jpg" /></p>
                 
               
               
@@ -1536,7 +1416,7 @@ pip3 install .
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../../03.GPIO/04.ai/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../01.setting/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1545,13 +1425,13 @@ pip3 install .
               <span class="md-footer__direction">
                 前
               </span>
-              AIとの連携
+              PWMの設定
             </div>
           </div>
         </a>
       
       
-        <a href="../2.servo/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../03.servo/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">

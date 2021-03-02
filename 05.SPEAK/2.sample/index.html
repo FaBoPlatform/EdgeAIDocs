@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04.PWM/1.setting/" class="md-nav__link">
+      <a href="../../04.PWM/01.setting/" class="md-nav__link">
         PWMの設定
       </a>
     </li>
@@ -429,7 +429,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04.PWM/2.servo/" class="md-nav__link">
+      <a href="../../04.PWM/02.docker/" class="md-nav__link">
+        Dockerの保存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/03.servo/" class="md-nav__link">
         Servoの制御
       </a>
     </li>
@@ -441,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04.PWM/3.aiservo/" class="md-nav__link">
+      <a href="../../04.PWM/04.aiservo/" class="md-nav__link">
         ServoとAIの連携
       </a>
     </li>
@@ -1368,14 +1380,14 @@
                 
                 
                 <h1 id="_1">サンプル</h1>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_hb4a60pout93jee checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_hb4a60pout93jee-panel role=tab><label for=tab-group-0-0_hb4a60pout93jee class=code-tab-label data-lang id=tab-group-0-0_hb4a60pout93jee-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_hb4a60pout93jee-panel aria-labelledby=tab-group-0-0_hb4a60pout93jee-label><pre><code class>from gtts import gTTS
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_c9f0633qdark3rz checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_c9f0633qdark3rz-panel role=tab><label for=tab-group-0-0_c9f0633qdark3rz class=code-tab-label data-lang id=tab-group-0-0_c9f0633qdark3rz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_c9f0633qdark3rz-panel aria-labelledby=tab-group-0-0_c9f0633qdark3rz-label><pre><code class>from gtts import gTTS
 tts = gTTS('私はAIです。',lang='ja')
 tts.save('hello.mp3')
 
 from IPython.display import Audio
 sound_file = './hello.mp3'
 Audio(sound_file, autoplay=True)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_b5jd7mbbpymiqtq class=code-tab data-lang aria-controls=tab-group-0-1_b5jd7mbbpymiqtq-panel role=tab><label for=tab-group-0-1_b5jd7mbbpymiqtq class=code-tab-label data-lang id=tab-group-0-1_b5jd7mbbpymiqtq-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_b5jd7mbbpymiqtq-panel aria-labelledby=tab-group-0-1_b5jd7mbbpymiqtq-label><pre><code class>from IPython.display import Audio
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_ivdm2dhg497yyaw class=code-tab data-lang aria-controls=tab-group-0-1_ivdm2dhg497yyaw-panel role=tab><label for=tab-group-0-1_ivdm2dhg497yyaw class=code-tab-label data-lang id=tab-group-0-1_ivdm2dhg497yyaw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_ivdm2dhg497yyaw-panel aria-labelledby=tab-group-0-1_ivdm2dhg497yyaw-label><pre><code class>from IPython.display import Audio
 from gtts import gTTS
 tts = gTTS('指は1本です。',lang='ja')
 tts.save('one.mp3')
@@ -1392,19 +1404,19 @@ twoAudio = Audio(&quot;./two.mp3&quot;, autoplay=False)
 threeAudio = Audio(&quot;./three.mp3&quot;, autoplay=False)
 fourAudio = Audio(&quot;./four.mp3&quot;, autoplay=False)
 fiveAudio = Audio(&quot;./five.mp3&quot;, autoplay=False)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_z0yl78bgunoau8x class=code-tab data-lang aria-controls=tab-group-0-2_z0yl78bgunoau8x-panel role=tab><label for=tab-group-0-2_z0yl78bgunoau8x class=code-tab-label data-lang id=tab-group-0-2_z0yl78bgunoau8x-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_z0yl78bgunoau8x-panel aria-labelledby=tab-group-0-2_z0yl78bgunoau8x-label><pre><code class>from playsound import playsound
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_n8tstzggvt5qkcz class=code-tab data-lang aria-controls=tab-group-0-2_n8tstzggvt5qkcz-panel role=tab><label for=tab-group-0-2_n8tstzggvt5qkcz class=code-tab-label data-lang id=tab-group-0-2_n8tstzggvt5qkcz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_n8tstzggvt5qkcz-panel aria-labelledby=tab-group-0-2_n8tstzggvt5qkcz-label><pre><code class>from playsound import playsound
 playsound('/nvdli-nano/hello.mp3')
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-3_pm1ni8j0ebh40zf class=code-tab data-lang aria-controls=tab-group-0-3_pm1ni8j0ebh40zf-panel role=tab><label for=tab-group-0-3_pm1ni8j0ebh40zf class=code-tab-label data-lang id=tab-group-0-3_pm1ni8j0ebh40zf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_pm1ni8j0ebh40zf-panel aria-labelledby=tab-group-0-3_pm1ni8j0ebh40zf-label><pre><code class>from gtts import gTTS
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-3_1fsi9ex1h5o1ez4 class=code-tab data-lang aria-controls=tab-group-0-3_1fsi9ex1h5o1ez4-panel role=tab><label for=tab-group-0-3_1fsi9ex1h5o1ez4 class=code-tab-label data-lang id=tab-group-0-3_1fsi9ex1h5o1ez4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_1fsi9ex1h5o1ez4-panel aria-labelledby=tab-group-0-3_1fsi9ex1h5o1ez4-label><pre><code class>from gtts import gTTS
 tts = gTTS('私はAIです。',lang='ja')
 tts.save('/nvdli-nano/hello10.mp3')
 
 from IPython.display import Audio
 sound_file = '/nvdli-nano/hello10.mp3'
 Audio(sound_file, autoplay=True)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-4_ftlxp14gjgbplud class=code-tab data-lang aria-controls=tab-group-0-4_ftlxp14gjgbplud-panel role=tab><label for=tab-group-0-4_ftlxp14gjgbplud class=code-tab-label data-lang id=tab-group-0-4_ftlxp14gjgbplud-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-4_ftlxp14gjgbplud-panel aria-labelledby=tab-group-0-4_ftlxp14gjgbplud-label><pre><code class>from pydub import AudioSegment
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-4_wis34nyn5tf5ryt class=code-tab data-lang aria-controls=tab-group-0-4_wis34nyn5tf5ryt-panel role=tab><label for=tab-group-0-4_wis34nyn5tf5ryt class=code-tab-label data-lang id=tab-group-0-4_wis34nyn5tf5ryt-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-4_wis34nyn5tf5ryt-panel aria-labelledby=tab-group-0-4_wis34nyn5tf5ryt-label><pre><code class>from pydub import AudioSegment
 sound = AudioSegment.from_mp3(&quot;/nvdli-nano/hello10.mp3&quot;)
 sound.export(&quot;hello10.wav&quot;, format=&quot;wav&quot;)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-5_oprty5vjoasddq9 class=code-tab data-lang aria-controls=tab-group-0-5_oprty5vjoasddq9-panel role=tab><label for=tab-group-0-5_oprty5vjoasddq9 class=code-tab-label data-lang id=tab-group-0-5_oprty5vjoasddq9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-5_oprty5vjoasddq9-panel aria-labelledby=tab-group-0-5_oprty5vjoasddq9-label><pre><code class>import sounddevice as sd
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-5_8gbmdta13mn6ihi class=code-tab data-lang aria-controls=tab-group-0-5_8gbmdta13mn6ihi-panel role=tab><label for=tab-group-0-5_8gbmdta13mn6ihi class=code-tab-label data-lang id=tab-group-0-5_8gbmdta13mn6ihi-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-5_8gbmdta13mn6ihi-panel aria-labelledby=tab-group-0-5_8gbmdta13mn6ihi-label><pre><code class>import sounddevice as sd
 sd.default.device = 11
 print(sd)
 import time
