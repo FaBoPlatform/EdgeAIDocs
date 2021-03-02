@@ -1462,7 +1462,8 @@
 <p> <pre><code class>sd.default.device = 12
 </code></pre></p>
 <h2 id="sample">Sampleコード</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_vifkvnt35plleda checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_vifkvnt35plleda-panel role=tab><label for=tab-group-2-0_vifkvnt35plleda class=code-tab-label data-lang id=tab-group-2-0_vifkvnt35plleda-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_vifkvnt35plleda-panel aria-labelledby=tab-group-2-0_vifkvnt35plleda-label><pre><code class>from gtts import gTTS
+<p>mp3ファイルの作成</p>
+<p> <pre><code class>from gtts import gTTS
 from pydub import AudioSegment
 
 file_name = &quot;hello&quot;
@@ -1471,7 +1472,9 @@ tts = gTTS('こんにちわ',lang='ja')
 tts.save(file_name+&quot;.mp3&quot;)
 sound = AudioSegment.from_mp3(file_name+&quot;.mp3&quot;)
 sound.export(file_name+&quot;.wav&quot;, format=&quot;wav&quot;, parameters=['-ar', '48000'])
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_cvhycdew7y1cl1w class=code-tab data-lang aria-controls=tab-group-2-1_cvhycdew7y1cl1w-panel role=tab><label for=tab-group-2-1_cvhycdew7y1cl1w class=code-tab-label data-lang id=tab-group-2-1_cvhycdew7y1cl1w-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_cvhycdew7y1cl1w-panel aria-labelledby=tab-group-2-1_cvhycdew7y1cl1w-label><pre><code class>import sounddevice as sd
+</code></pre></p>
+<p>Jetsonでの再生</p>
+<p> <pre><code class>import sounddevice as sd
 import time
 import soundfile as sf
 
@@ -1480,8 +1483,9 @@ sd.default.device = 12
 print(fs)
 sd.play(data, frame_rate)
 sd.wait()
-</code></pre></div></div>
+</code></pre></p>
 <h2 id="_2">関数化</h2>
+<p>関数化します。</p>
 <p> <pre><code class>from gtts import gTTS
 from pydub import AudioSegment
 import sounddevice as sd
