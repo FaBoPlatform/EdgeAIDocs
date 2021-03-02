@@ -517,9 +517,52 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          サンプル
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         サンプル
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    Deviceを発見
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample" class="md-nav__link">
+    Sampleコード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    関数化
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1368,6 +1411,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    Deviceを発見
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample" class="md-nav__link">
+    Sampleコード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    関数化
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1380,54 +1452,58 @@
                 
                 
                 <h1 id="_1">サンプル</h1>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_2vz71zn01d9wl17 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_2vz71zn01d9wl17-panel role=tab><label for=tab-group-0-0_2vz71zn01d9wl17 class=code-tab-label data-lang id=tab-group-0-0_2vz71zn01d9wl17-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_2vz71zn01d9wl17-panel aria-labelledby=tab-group-0-0_2vz71zn01d9wl17-label><pre><code class>from gtts import gTTS
-tts = gTTS('私はAIです。',lang='ja')
-tts.save('hello.mp3')
+<h2 id="device">Deviceを発見</h2>
+<p>USB Speakerを接続し、デバイスの検索をおこないます。</p>
+<p> <pre><code class>!python3 -m sounddevice
+</code></pre></p>
+<p><img alt="" src="../img/sd01.jpg" /></p>
+<p><code>12 Audio Advantage MicroII: USB Audio (hw:3,0), ALSA (0 in, 2 out)</code> がUSB Speakerになります。
+上図のような結果から、12がUSB Speakerであることを見分けるポイントは、<code>2 out</code>の部分です。<code>2 out</code>の2の部分がSpeakerの数を示しています。12がUSB Speakerであることが明確になったので、sounddeviceで12を指定します。</p>
+<p> <pre><code class>sd.default.device = 12
+</code></pre></p>
+<h2 id="sample">Sampleコード</h2>
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_vifkvnt35plleda checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_vifkvnt35plleda-panel role=tab><label for=tab-group-2-0_vifkvnt35plleda class=code-tab-label data-lang id=tab-group-2-0_vifkvnt35plleda-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_vifkvnt35plleda-panel aria-labelledby=tab-group-2-0_vifkvnt35plleda-label><pre><code class>from gtts import gTTS
+from pydub import AudioSegment
 
-from IPython.display import Audio
-sound_file = './hello.mp3'
-Audio(sound_file, autoplay=True)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_7w81iyztw05vvck class=code-tab data-lang aria-controls=tab-group-0-1_7w81iyztw05vvck-panel role=tab><label for=tab-group-0-1_7w81iyztw05vvck class=code-tab-label data-lang id=tab-group-0-1_7w81iyztw05vvck-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_7w81iyztw05vvck-panel aria-labelledby=tab-group-0-1_7w81iyztw05vvck-label><pre><code class>from IPython.display import Audio
-from gtts import gTTS
-tts = gTTS('指は1本です。',lang='ja')
-tts.save('one.mp3')
-tts = gTTS('指は2本です。',lang='ja')
-tts.save('two.mp3')
-tts = gTTS('指は3本です。',lang='ja')
-tts.save('three.mp3')
-tts = gTTS('指は4本です。',lang='ja')
-tts.save('four.mp3')
-tts = gTTS('指は5本です。',lang='ja')
-tts.save('five.mp3')
-oneAudio = Audio(&quot;./one.mp3&quot;, autoplay=False)
-twoAudio = Audio(&quot;./two.mp3&quot;, autoplay=False)
-threeAudio = Audio(&quot;./three.mp3&quot;, autoplay=False)
-fourAudio = Audio(&quot;./four.mp3&quot;, autoplay=False)
-fiveAudio = Audio(&quot;./five.mp3&quot;, autoplay=False)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_kichtfpebi93otl class=code-tab data-lang aria-controls=tab-group-0-2_kichtfpebi93otl-panel role=tab><label for=tab-group-0-2_kichtfpebi93otl class=code-tab-label data-lang id=tab-group-0-2_kichtfpebi93otl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_kichtfpebi93otl-panel aria-labelledby=tab-group-0-2_kichtfpebi93otl-label><pre><code class>from playsound import playsound
-playsound('/nvdli-nano/hello.mp3')
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-3_hhh43gr2svhioar class=code-tab data-lang aria-controls=tab-group-0-3_hhh43gr2svhioar-panel role=tab><label for=tab-group-0-3_hhh43gr2svhioar class=code-tab-label data-lang id=tab-group-0-3_hhh43gr2svhioar-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-3_hhh43gr2svhioar-panel aria-labelledby=tab-group-0-3_hhh43gr2svhioar-label><pre><code class>from gtts import gTTS
-tts = gTTS('私はAIです。',lang='ja')
-tts.save('/nvdli-nano/hello10.mp3')
+file_name = &quot;hello&quot;
 
-from IPython.display import Audio
-sound_file = '/nvdli-nano/hello10.mp3'
-Audio(sound_file, autoplay=True)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-4_uzuq2xa4g9dsqbw class=code-tab data-lang aria-controls=tab-group-0-4_uzuq2xa4g9dsqbw-panel role=tab><label for=tab-group-0-4_uzuq2xa4g9dsqbw class=code-tab-label data-lang id=tab-group-0-4_uzuq2xa4g9dsqbw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-4_uzuq2xa4g9dsqbw-panel aria-labelledby=tab-group-0-4_uzuq2xa4g9dsqbw-label><pre><code class>from pydub import AudioSegment
-sound = AudioSegment.from_mp3(&quot;/nvdli-nano/hello10.mp3&quot;)
-sound.export(&quot;hello10.wav&quot;, format=&quot;wav&quot;)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-5_cm2e0s6gybpn318 class=code-tab data-lang aria-controls=tab-group-0-5_cm2e0s6gybpn318-panel role=tab><label for=tab-group-0-5_cm2e0s6gybpn318 class=code-tab-label data-lang id=tab-group-0-5_cm2e0s6gybpn318-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-5_cm2e0s6gybpn318-panel aria-labelledby=tab-group-0-5_cm2e0s6gybpn318-label><pre><code class>import sounddevice as sd
-sd.default.device = 11
-print(sd)
+tts = gTTS('こんにちわ',lang='ja')
+tts.save(file_name+&quot;.mp3&quot;)
+sound = AudioSegment.from_mp3(file_name+&quot;.mp3&quot;)
+sound.export(file_name+&quot;.wav&quot;, format=&quot;wav&quot;, parameters=['-ar', '48000'])
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_cvhycdew7y1cl1w class=code-tab data-lang aria-controls=tab-group-2-1_cvhycdew7y1cl1w-panel role=tab><label for=tab-group-2-1_cvhycdew7y1cl1w class=code-tab-label data-lang id=tab-group-2-1_cvhycdew7y1cl1w-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_cvhycdew7y1cl1w-panel aria-labelledby=tab-group-2-1_cvhycdew7y1cl1w-label><pre><code class>import sounddevice as sd
 import time
 import soundfile as sf
 
-import numpy as np
-
-(x, fs) = sf.read('/nvdli-nano/hello10.wav')
-sd.play(x, fs)
+sd.default.device = 12
+(data, frame_rate) = sf.read(file_name+&quot;.wav&quot;)
+print(fs)
+sd.play(data, frame_rate)
 sd.wait()
 </code></pre></div></div>
+<h2 id="_2">関数化</h2>
+<p> <pre><code class>from gtts import gTTS
+from pydub import AudioSegment
+import sounddevice as sd
+import time
+import soundfile as sf
+
+def make_speak(file_name, word):
+    tts = gTTS(word,lang='ja')
+    tts.save(file_name+&quot;.mp3&quot;)
+    sound = AudioSegment.from_mp3(filename+&quot;.mp3&quot;)
+    sound.export(file_name+&quot;.wav&quot;, format=&quot;wav&quot;, parameters=['-ar', '48000'])
+
+def speak(file_name):
+    sd.default.device = 12
+    (data, frame_rate) = sf.read(file_name+&quot;.wav&quot;)
+    print(fs)
+    sd.play(data, frame_rate)
+    sd.wait()
+
+make_speak(&quot;hello&quot;, &quot;おはようございます、朝です&quot;)
+speak(&quot;hello&quot;)
+</code></pre></p>
                 
               
               

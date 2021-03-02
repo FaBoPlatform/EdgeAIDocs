@@ -550,21 +550,21 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    ライブラリ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     プロジェクトフォルダの作成
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#soundplay" class="md-nav__link">
-    Soundplay
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gtts" class="md-nav__link">
+    gTTS
   </a>
   
 </li>
@@ -1475,21 +1475,21 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    ライブラリ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     プロジェクトフォルダの作成
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#soundplay" class="md-nav__link">
-    Soundplay
+  <a href="#update" class="md-nav__link">
+    Update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gtts" class="md-nav__link">
+    gTTS
   </a>
   
 </li>
@@ -1560,29 +1560,24 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
 </tr>
 </tbody>
 </table>
-<h2 id="_2">ライブラリ</h2>
-<p> <pre><code class>pip3 install gTTS
-</code></pre></p>
-<h2 id="_3">プロジェクトフォルダの作成</h2>
+<h2 id="_2">プロジェクトフォルダの作成</h2>
 <p>speakフォルダを作成します。</p>
 <p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/speak/
 </code></pre></p>
-<h2 id="soundplay">Soundplay</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_b9fo5y8yfmsoyl7 checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_b9fo5y8yfmsoyl7-panel role=tab><label for=tab-group-4-0_b9fo5y8yfmsoyl7 class=code-tab-label data-lang id=tab-group-4-0_b9fo5y8yfmsoyl7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_b9fo5y8yfmsoyl7-panel aria-labelledby=tab-group-4-0_b9fo5y8yfmsoyl7-label><pre><code class>pip3 install playsound
-</code></pre></div><input name=tab-group-4 type=radio id=tab-group-4-1_633m6clcew9viag class=code-tab data-lang aria-controls=tab-group-4-1_633m6clcew9viag-panel role=tab><label for=tab-group-4-1_633m6clcew9viag class=code-tab-label data-lang id=tab-group-4-1_633m6clcew9viag-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_633m6clcew9viag-panel aria-labelledby=tab-group-4-1_633m6clcew9viag-label><pre><code class>apt install alsa-utils
-apt install python3-gi python3-gst-1.0
-</code></pre></div><input name=tab-group-4 type=radio id=tab-group-4-2_i6clz8qp7v7enj9 class=code-tab data-lang aria-controls=tab-group-4-2_i6clz8qp7v7enj9-panel role=tab><label for=tab-group-4-2_i6clz8qp7v7enj9 class=code-tab-label data-lang id=tab-group-4-2_i6clz8qp7v7enj9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-2_i6clz8qp7v7enj9-panel aria-labelledby=tab-group-4-2_i6clz8qp7v7enj9-label><pre><code class>speaker-test -Dplughw:CARD=AUDIO,DEV=0
-</code></pre></div></div>
+<h2 id="update">Update</h2>
+<p> <pre><code class>apt update
+</code></pre></p>
+<h2 id="gtts">gTTS</h2>
+<p> <pre><code class>pip3 install gTTS
+</code></pre></p>
 <h2 id="sounddevice">sounddevice</h2>
-<p> <pre><code class>pip3 install sounddevice, soundfile
-apt install libportaudio2 libportaudiocpp0 portaudio19-dev
-pip3 install pyaudio
+<p> <pre><code class>pip3 install sounddevice
+pip3 install soundfile
+apt install portaudio19-dev
 </code></pre></p>
 <h2 id="pypub">pypub</h2>
 <p> <pre><code class>apt install ffmpeg
-pip3 install pypub
-pip3 install ffprobe
-pip3 install ffmpeg
+pip3 install pydub
 </code></pre></p>
                 
               
