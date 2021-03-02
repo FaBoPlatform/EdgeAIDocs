@@ -1446,7 +1446,7 @@
 <p>LEDとの連携は、下記部分にソースを追加します。</p>
 <p><img alt="" src="../img/ailed01.jpg" /></p>
 <p><img alt="" src="../img/ailed02.jpg" /></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_ut7v5l5lxtqtrop checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_ut7v5l5lxtqtrop-panel role=tab><label for=tab-group-1-0_ut7v5l5lxtqtrop class=code-tab-label data-lang id=tab-group-1-0_ut7v5l5lxtqtrop-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_ut7v5l5lxtqtrop-panel aria-labelledby=tab-group-1-0_ut7v5l5lxtqtrop-label><pre><code class>import torchvision.transforms as transforms
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_maf03fo4fte7pd6 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_maf03fo4fte7pd6-panel role=tab><label for=tab-group-1-0_maf03fo4fte7pd6 class=code-tab-label data-lang id=tab-group-1-0_maf03fo4fte7pd6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_maf03fo4fte7pd6-panel aria-labelledby=tab-group-1-0_maf03fo4fte7pd6-label><pre><code class>import torchvision.transforms as transforms
 from dataset import ImageClassificationDataset
 
 TASK = 'leds'
@@ -1461,7 +1461,7 @@ CATEGORIES = ['leds_red', 'leds_blue']
 
 DATASETS = ['A', 'B']
 # DATASETS = ['A', 'B', 'C']
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_8wrh5o0v29djk75 class=code-tab data-lang aria-controls=tab-group-1-1_8wrh5o0v29djk75-panel role=tab><label for=tab-group-1-1_8wrh5o0v29djk75 class=code-tab-label data-lang id=tab-group-1-1_8wrh5o0v29djk75-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_8wrh5o0v29djk75-panel aria-labelledby=tab-group-1-1_8wrh5o0v29djk75-label><pre><code class>import threading
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_1z5eagyjj5h47wl class=code-tab data-lang aria-controls=tab-group-1-1_1z5eagyjj5h47wl-panel role=tab><label for=tab-group-1-1_1z5eagyjj5h47wl class=code-tab-label data-lang id=tab-group-1-1_1z5eagyjj5h47wl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_1z5eagyjj5h47wl-panel aria-labelledby=tab-group-1-1_1z5eagyjj5h47wl-label><pre><code class>import threading
 import time
 from utils import preprocess
 import torch.nn.functional as F
@@ -1476,7 +1476,7 @@ GPIO.setwarnings(False)
 GPIO.setmode( GPIO.BCM )
 GPIO.setup( LED_RED, GPIO.OUT )
 GPIO.setup( LED_BLUE, GPIO.OUT )
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_l5otux9ra056ai3 class=code-tab data-lang aria-controls=tab-group-1-2_l5otux9ra056ai3-panel role=tab><label for=tab-group-1-2_l5otux9ra056ai3 class=code-tab-label data-lang id=tab-group-1-2_l5otux9ra056ai3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_l5otux9ra056ai3-panel aria-labelledby=tab-group-1-2_l5otux9ra056ai3-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_nsjeynhza8hqiau class=code-tab data-lang aria-controls=tab-group-1-2_nsjeynhza8hqiau-panel role=tab><label for=tab-group-1-2_nsjeynhza8hqiau class=code-tab-label data-lang id=tab-group-1-2_nsjeynhza8hqiau-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_nsjeynhza8hqiau-panel aria-labelledby=tab-group-1-2_nsjeynhza8hqiau-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
     global dataset
     while state_widget.value == 'live':
         image = camera.value
