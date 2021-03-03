@@ -810,6 +810,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    実行
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1407,6 +1414,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    実行
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1422,16 +1436,16 @@
                 
                 <h1 id="usb-camera">USB Camera</h1>
 <p>USB Cameraのパラメーターを取得します。</p>
-<p> <pre><code class>apt-get install v4l-utils
+<p> <pre><code class>apt install v4l-utils
 v4l2-ctl -d /dev/video0 --list-formats-ext
 </code></pre></p>
 <p>下記ソースのGstreamerの箇所にカメラオプションを反映します。</p>
-<p> <pre><code class>caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=120/1&quot;))
+<p> <pre><code class>caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
 </code></pre></p>
 <h2 id="source">Source</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_oyz5d9yd30mmn8y checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_oyz5d9yd30mmn8y-panel role=tab><label for=tab-group-2-0_oyz5d9yd30mmn8y class=code-tab-label data-lang id=tab-group-2-0_oyz5d9yd30mmn8y-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_oyz5d9yd30mmn8y-panel aria-labelledby=tab-group-2-0_oyz5d9yd30mmn8y-label><pre><code class>apt install vim
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_r1w3jgbmy0vsw81 class=code-tab data-lang aria-controls=tab-group-2-1_r1w3jgbmy0vsw81-panel role=tab><label for=tab-group-2-1_r1w3jgbmy0vsw81 class=code-tab-label data-lang id=tab-group-2-1_r1w3jgbmy0vsw81-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_r1w3jgbmy0vsw81-panel aria-labelledby=tab-group-2-1_r1w3jgbmy0vsw81-label><pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-2_bmk1g46iqx3hchb class=code-tab data-lang aria-controls=tab-group-2-2_bmk1g46iqx3hchb-panel role=tab><label for=tab-group-2-2_bmk1g46iqx3hchb class=code-tab-label data-lang id=tab-group-2-2_bmk1g46iqx3hchb-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-2_bmk1g46iqx3hchb-panel aria-labelledby=tab-group-2-2_bmk1g46iqx3hchb-label><pre><code class>vim deepstream_test_3_usb.py
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_4tbcz1whtrzce4h checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_4tbcz1whtrzce4h-panel role=tab><label for=tab-group-2-0_4tbcz1whtrzce4h class=code-tab-label data-lang id=tab-group-2-0_4tbcz1whtrzce4h-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_4tbcz1whtrzce4h-panel aria-labelledby=tab-group-2-0_4tbcz1whtrzce4h-label><pre><code class>apt install vim
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_rrz7iqulwf784b2 class=code-tab data-lang aria-controls=tab-group-2-1_rrz7iqulwf784b2-panel role=tab><label for=tab-group-2-1_rrz7iqulwf784b2 class=code-tab-label data-lang id=tab-group-2-1_rrz7iqulwf784b2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_rrz7iqulwf784b2-panel aria-labelledby=tab-group-2-1_rrz7iqulwf784b2-label><pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-2_eydpljdse2xgxqi class=code-tab data-lang aria-controls=tab-group-2-2_eydpljdse2xgxqi-panel role=tab><label for=tab-group-2-2_eydpljdse2xgxqi class=code-tab-label data-lang id=tab-group-2-2_eydpljdse2xgxqi-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-2_eydpljdse2xgxqi-panel aria-labelledby=tab-group-2-2_eydpljdse2xgxqi-label><pre><code class>vim deepstream_test_3_usb.py
 </code></pre></div></div>
 <p>deepstream_test_3_usb.pyを修正します。</p>
 <p> <pre><code class>#!/usr/bin/env python3
@@ -1486,7 +1500,7 @@ MUXER_OUTPUT_WIDTH=1280
 MUXER_OUTPUT_HEIGHT=720
 MUXER_BATCH_TIMEOUT_USEC=4000000
 TILED_OUTPUT_WIDTH=1280
-TILED_OUTPUT_HEIGHT=720 * 2
+TILED_OUTPUT_HEIGHT=720 
 GST_CAPS_FEATURES_NVMM=&quot;memory:NVMM&quot;
 OSD_PROCESS_MODE= 0
 OSD_DISPLAY_TEXT= 0
@@ -1816,10 +1830,8 @@ def main(args):
     if(pgie_batch_size != number_sources):
         print(&quot;WARNING: Overriding infer-config batch-size&quot;,pgie_batch_size,&quot; with number of sources &quot;, number_sources,&quot; \n&quot;)
         pgie.set_property(&quot;batch-size&quot;,number_sources)
-    #tiler_rows=int(math.sqrt(number_sources))
-    tiler_rows=2
-    #tiler_columns=int(math.ceil((1.0*number_sources)/tiler_rows))
-    tiler_columns=1
+    tiler_rows=int(math.sqrt(number_sources))
+    tiler_columns=int(math.ceil((1.0*number_sources)/tiler_rows))
     tiler.set_property(&quot;rows&quot;,tiler_rows)
     tiler.set_property(&quot;columns&quot;,tiler_columns)
     tiler.set_property(&quot;width&quot;, TILED_OUTPUT_WIDTH)
@@ -1882,6 +1894,10 @@ def main(args):
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
 </code></pre></p>
+<h2 id="_1">実行</h2>
+<p>```
+python3 deepstream_test_3_usb.py /dev/video
+````</p>
                 
               
               
