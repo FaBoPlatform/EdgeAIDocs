@@ -1469,9 +1469,9 @@
 </code></pre></p>
 <h2 id="jetsonssh">JetsonにSSHでログイン</h2>
 <p>Displayの設定をおこなう</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_o5forq0m36w7cie checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_o5forq0m36w7cie-panel role=tab><label for=tab-group-1-0_o5forq0m36w7cie class=code-tab-label data-lang id=tab-group-1-0_o5forq0m36w7cie-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_o5forq0m36w7cie-panel aria-labelledby=tab-group-1-0_o5forq0m36w7cie-label><pre><code class>export DISPLAY=:1
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_ja8myfcq0cn7nr7 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_ja8myfcq0cn7nr7-panel role=tab><label for=tab-group-1-0_ja8myfcq0cn7nr7 class=code-tab-label data-lang id=tab-group-1-0_ja8myfcq0cn7nr7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_ja8myfcq0cn7nr7-panel aria-labelledby=tab-group-1-0_ja8myfcq0cn7nr7-label><pre><code class>export DISPLAY=:1
 xhost
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_y7xvwgte9qn6bue class=code-tab data-lang aria-controls=tab-group-1-1_y7xvwgte9qn6bue-panel role=tab><label for=tab-group-1-1_y7xvwgte9qn6bue class=code-tab-label data-lang id=tab-group-1-1_y7xvwgte9qn6bue-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_y7xvwgte9qn6bue-panel aria-labelledby=tab-group-1-1_y7xvwgte9qn6bue-label><pre><code class>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  \
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_g1pn7yuvdy52yz0 class=code-tab data-lang aria-controls=tab-group-1-1_g1pn7yuvdy52yz0-panel role=tab><label for=tab-group-1-1_g1pn7yuvdy52yz0 class=code-tab-label data-lang id=tab-group-1-1_g1pn7yuvdy52yz0-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_g1pn7yuvdy52yz0-panel aria-labelledby=tab-group-1-1_g1pn7yuvdy52yz0-label><pre><code class>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  \
 --device /dev/video0:/dev/video0:mwr  \
 -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-5.0 \
 -v /tmp/argus_socket:/tmp/argus_socket -v \/tmp/.X11-unix/:/tmp/.X11-unix \
@@ -1484,10 +1484,10 @@ apt install libgstrtspserver-1.0-dev v4l-utils  vim python3-pip python3-gi pytho
 <h2 id="deepstream-python-appsclone">DeepStream Python appsをClone</h2>
 <p> <pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources
 git clone https://github.com/NVIDIA-AI-IOT/deepstream_python_apps
-cd deepstream_python_apps/apps/deepstream-test3
 </code></pre></p>
 <p>サンプルを実行</p>
-<p> <pre><code class>python3 deepstream_test_3.py file:///opt/nvidia/deepstream/deepstream-5.0/samples/streams/sample_1080p_h264.mp4
+<p> <pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
+python3 deepstream_test_3.py file:///opt/nvidia/deepstream/deepstream-5.0/samples/streams/sample_1080p_h264.mp4
 </code></pre></p>
                 
               
