@@ -1469,9 +1469,9 @@
 </code></pre></p>
 <h2 id="jetsonssh">JetsonにSSHでログイン</h2>
 <p>Displayの設定をおこなう</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_c8adpra1qe5wq0n checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_c8adpra1qe5wq0n-panel role=tab><label for=tab-group-1-0_c8adpra1qe5wq0n class=code-tab-label data-lang id=tab-group-1-0_c8adpra1qe5wq0n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_c8adpra1qe5wq0n-panel aria-labelledby=tab-group-1-0_c8adpra1qe5wq0n-label><pre><code class>export DISPLAY=:1
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_asxnu3e2whrc56h checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_asxnu3e2whrc56h-panel role=tab><label for=tab-group-1-0_asxnu3e2whrc56h class=code-tab-label data-lang id=tab-group-1-0_asxnu3e2whrc56h-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_asxnu3e2whrc56h-panel aria-labelledby=tab-group-1-0_asxnu3e2whrc56h-label><pre><code class>export DISPLAY=:1
 xhost
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_vpl3k0u1ihhu9mu class=code-tab data-lang aria-controls=tab-group-1-1_vpl3k0u1ihhu9mu-panel role=tab><label for=tab-group-1-1_vpl3k0u1ihhu9mu class=code-tab-label data-lang id=tab-group-1-1_vpl3k0u1ihhu9mu-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_vpl3k0u1ihhu9mu-panel aria-labelledby=tab-group-1-1_vpl3k0u1ihhu9mu-label><pre><code class>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  \
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_6m2x0xmhihh4zyk class=code-tab data-lang aria-controls=tab-group-1-1_6m2x0xmhihh4zyk-panel role=tab><label for=tab-group-1-1_6m2x0xmhihh4zyk class=code-tab-label data-lang id=tab-group-1-1_6m2x0xmhihh4zyk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_6m2x0xmhihh4zyk-panel aria-labelledby=tab-group-1-1_6m2x0xmhihh4zyk-label><pre><code class>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  \
 --device /dev/video0:/dev/video0:mwr  \
 -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-5.0 \
 -v /tmp/argus_socket:/tmp/argus_socket -v \/tmp/.X11-unix/:/tmp/.X11-unix \
