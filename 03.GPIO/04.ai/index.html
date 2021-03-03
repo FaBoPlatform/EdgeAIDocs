@@ -429,6 +429,30 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05.button/" class="md-nav__link">
+        103 Button
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06.Vibrator/" class="md-nav__link">
+        105 Vibrator
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1485,7 +1509,7 @@
 <p>LEDとの連携は、下記部分にソースを追加します。</p>
 <p><img alt="" src="../img/ailed01.jpg" /></p>
 <p><img alt="" src="../img/ailed02.jpg" /></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_dn2nj9lyodwwilv checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_dn2nj9lyodwwilv-panel role=tab><label for=tab-group-1-0_dn2nj9lyodwwilv class=code-tab-label data-lang id=tab-group-1-0_dn2nj9lyodwwilv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_dn2nj9lyodwwilv-panel aria-labelledby=tab-group-1-0_dn2nj9lyodwwilv-label><pre><code class>import torchvision.transforms as transforms
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_ru9erop1otb57jw checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_ru9erop1otb57jw-panel role=tab><label for=tab-group-1-0_ru9erop1otb57jw class=code-tab-label data-lang id=tab-group-1-0_ru9erop1otb57jw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_ru9erop1otb57jw-panel aria-labelledby=tab-group-1-0_ru9erop1otb57jw-label><pre><code class>import torchvision.transforms as transforms
 from dataset import ImageClassificationDataset
 
 TASK = 'leds'
@@ -1500,7 +1524,7 @@ CATEGORIES = ['leds_red', 'leds_blue']
 
 DATASETS = ['A', 'B']
 # DATASETS = ['A', 'B', 'C']
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_fc3nk3q42mlj2f7 class=code-tab data-lang aria-controls=tab-group-1-1_fc3nk3q42mlj2f7-panel role=tab><label for=tab-group-1-1_fc3nk3q42mlj2f7 class=code-tab-label data-lang id=tab-group-1-1_fc3nk3q42mlj2f7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_fc3nk3q42mlj2f7-panel aria-labelledby=tab-group-1-1_fc3nk3q42mlj2f7-label><pre><code class>import threading
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_diyuonknuts967g class=code-tab data-lang aria-controls=tab-group-1-1_diyuonknuts967g-panel role=tab><label for=tab-group-1-1_diyuonknuts967g class=code-tab-label data-lang id=tab-group-1-1_diyuonknuts967g-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_diyuonknuts967g-panel aria-labelledby=tab-group-1-1_diyuonknuts967g-label><pre><code class>import threading
 import time
 from utils import preprocess
 import torch.nn.functional as F
@@ -1515,7 +1539,7 @@ GPIO.setwarnings(False)
 GPIO.setmode( GPIO.BCM )
 GPIO.setup( LED_RED, GPIO.OUT )
 GPIO.setup( LED_BLUE, GPIO.OUT )
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_8e1hd1lrye1scl3 class=code-tab data-lang aria-controls=tab-group-1-2_8e1hd1lrye1scl3-panel role=tab><label for=tab-group-1-2_8e1hd1lrye1scl3 class=code-tab-label data-lang id=tab-group-1-2_8e1hd1lrye1scl3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_8e1hd1lrye1scl3-panel aria-labelledby=tab-group-1-2_8e1hd1lrye1scl3-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_7ukmva9zhltfvel class=code-tab data-lang aria-controls=tab-group-1-2_7ukmva9zhltfvel-panel role=tab><label for=tab-group-1-2_7ukmva9zhltfvel class=code-tab-label data-lang id=tab-group-1-2_7ukmva9zhltfvel-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_7ukmva9zhltfvel-panel aria-labelledby=tab-group-1-2_7ukmva9zhltfvel-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
     global dataset
     while state_widget.value == 'live':
         image = camera.value
@@ -1565,13 +1589,13 @@ GPIO.setup( LED_BLUE, GPIO.OUT )
         </a>
       
       
-        <a href="../../04.PWM/01.setting/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../05.button/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              PWMの設定
+              103 Button
             </div>
           </div>
           <div class="md-footer__button md-icon">
