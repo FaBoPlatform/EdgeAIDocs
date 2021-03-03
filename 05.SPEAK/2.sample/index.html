@@ -614,18 +614,30 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../06.IoT/201_3axis/" class="md-nav__link">
+        201 3Axis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
       
-      <label class="md-nav__link" for="__nav_7_1">
+      <label class="md-nav__link" for="__nav_7_2">
         01.setting
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="01.setting" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_1">
+        <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
           01.setting
         </label>
@@ -693,14 +705,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
       
-      <label class="md-nav__link" for="__nav_7_2">
+      <label class="md-nav__link" for="__nav_7_3">
         02.analog
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="02.analog" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_2">
+        <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
           02.analog
         </label>
@@ -936,14 +948,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
       
-      <label class="md-nav__link" for="__nav_7_3">
+      <label class="md-nav__link" for="__nav_7_4">
         03.pwm
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="03.pwm" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_3">
+        <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
           03.pwm
         </label>
@@ -987,14 +999,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
       
-      <label class="md-nav__link" for="__nav_7_4">
+      <label class="md-nav__link" for="__nav_7_5">
         04.i2c
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="04.i2c" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_4">
+        <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
           04.i2c
         </label>
@@ -1278,14 +1290,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" type="checkbox" id="__nav_7_6" >
       
-      <label class="md-nav__link" for="__nav_7_5">
+      <label class="md-nav__link" for="__nav_7_6">
         05.camera
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="05.camera" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_5">
+        <label class="md-nav__title" for="__nav_7_6">
           <span class="md-nav__icon md-icon"></span>
           05.camera
         </label>
@@ -1482,7 +1494,8 @@
 </code></pre></p>
 <p><img alt="" src="../img/sd01.jpg" /></p>
 <p><code>12 Audio Advantage MicroII: USB Audio (hw:3,0), ALSA (0 in, 2 out)</code> がUSB Speakerになります。
-上図のような結果から、12がUSB Speakerであることを見分けるポイントは、<code>2 out</code>の部分です。<code>2 out</code>の2の部分がSpeakerの数を示しています。12がUSB Speakerであることが明確になったので、sounddeviceで12を指定します。</p>
+上図のような結果から、12がUSB Speakerであることを見分けるポイントは、<code>2 out</code>の部分です。<code>2 out</code>の2の部分がSpeakerの数を示しています。12がUSB Speakerであることが明確になったので、sounddeviceで12を指定します。
+USB SpeakerのOutputが見つからない場合は、JetsonのDockerをCommitした上で、Jetsonを再起動します。</p>
 <p> <pre><code class>sd.default.device = 12
 </code></pre></p>
 <h2 id="sample">Sampleコード</h2>
@@ -1564,13 +1577,13 @@ speak(&quot;hello&quot;)
         </a>
       
       
-        <a href="../../06.IoT/01.setting/03.gpio/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../06.IoT/201_3axis/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              GPIOの有効化
+              201 3Axis
             </div>
           </div>
           <div class="md-footer__button md-icon">
