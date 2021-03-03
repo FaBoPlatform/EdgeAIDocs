@@ -806,8 +806,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07.DeepStream/201_3axis/" class="md-nav__link">
+      <a href="../../07.DeepStream/01.gettingstarted/" class="md-nav__link">
         DeepStream
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07.DeepStream/02.usbcamera/" class="md-nav__link">
+        USB Camera
       </a>
     </li>
   
@@ -1431,7 +1443,7 @@
 <p>LEDとの連携は、下記部分にソースを追加します。</p>
 <p><img alt="" src="../img/ailed01.jpg" /></p>
 <p><img alt="" src="../img/ailed02.jpg" /></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_eenq106k25fplgz checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_eenq106k25fplgz-panel role=tab><label for=tab-group-1-0_eenq106k25fplgz class=code-tab-label data-lang id=tab-group-1-0_eenq106k25fplgz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_eenq106k25fplgz-panel aria-labelledby=tab-group-1-0_eenq106k25fplgz-label><pre><code class>import torchvision.transforms as transforms
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_tz7lyat8vei2lus checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_tz7lyat8vei2lus-panel role=tab><label for=tab-group-1-0_tz7lyat8vei2lus class=code-tab-label data-lang id=tab-group-1-0_tz7lyat8vei2lus-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_tz7lyat8vei2lus-panel aria-labelledby=tab-group-1-0_tz7lyat8vei2lus-label><pre><code class>import torchvision.transforms as transforms
 from dataset import ImageClassificationDataset
 
 TASK = 'leds'
@@ -1446,7 +1458,7 @@ CATEGORIES = ['leds_red', 'leds_blue']
 
 DATASETS = ['A', 'B']
 # DATASETS = ['A', 'B', 'C']
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_kupogvyw9beeuk4 class=code-tab data-lang aria-controls=tab-group-1-1_kupogvyw9beeuk4-panel role=tab><label for=tab-group-1-1_kupogvyw9beeuk4 class=code-tab-label data-lang id=tab-group-1-1_kupogvyw9beeuk4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_kupogvyw9beeuk4-panel aria-labelledby=tab-group-1-1_kupogvyw9beeuk4-label><pre><code class>import threading
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_pympkkfq2dhopis class=code-tab data-lang aria-controls=tab-group-1-1_pympkkfq2dhopis-panel role=tab><label for=tab-group-1-1_pympkkfq2dhopis class=code-tab-label data-lang id=tab-group-1-1_pympkkfq2dhopis-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_pympkkfq2dhopis-panel aria-labelledby=tab-group-1-1_pympkkfq2dhopis-label><pre><code class>import threading
 import time
 from utils import preprocess
 import torch.nn.functional as F
@@ -1461,7 +1473,7 @@ GPIO.setwarnings(False)
 GPIO.setmode( GPIO.BCM )
 GPIO.setup( LED_RED, GPIO.OUT )
 GPIO.setup( LED_BLUE, GPIO.OUT )
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_hwx58enuus1q3g7 class=code-tab data-lang aria-controls=tab-group-1-2_hwx58enuus1q3g7-panel role=tab><label for=tab-group-1-2_hwx58enuus1q3g7 class=code-tab-label data-lang id=tab-group-1-2_hwx58enuus1q3g7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_hwx58enuus1q3g7-panel aria-labelledby=tab-group-1-2_hwx58enuus1q3g7-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_yw1tdhjiz4sx54l class=code-tab data-lang aria-controls=tab-group-1-2_yw1tdhjiz4sx54l-panel role=tab><label for=tab-group-1-2_yw1tdhjiz4sx54l class=code-tab-label data-lang id=tab-group-1-2_yw1tdhjiz4sx54l-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_yw1tdhjiz4sx54l-panel aria-labelledby=tab-group-1-2_yw1tdhjiz4sx54l-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
     global dataset
     while state_widget.value == 'live':
         image = camera.value
