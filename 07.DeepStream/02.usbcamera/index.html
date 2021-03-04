@@ -1431,9 +1431,9 @@ v4l2-ctl -d /dev/video0 --list-formats-ext
 <p> <pre><code class>caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
 </code></pre></p>
 <h2 id="source">Source</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_mt0swiz4gmpvpev checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_mt0swiz4gmpvpev-panel role=tab><label for=tab-group-2-0_mt0swiz4gmpvpev class=code-tab-label data-lang id=tab-group-2-0_mt0swiz4gmpvpev-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_mt0swiz4gmpvpev-panel aria-labelledby=tab-group-2-0_mt0swiz4gmpvpev-label><pre><code class>apt install vim
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_njcu3v6p86dcr76 class=code-tab data-lang aria-controls=tab-group-2-1_njcu3v6p86dcr76-panel role=tab><label for=tab-group-2-1_njcu3v6p86dcr76 class=code-tab-label data-lang id=tab-group-2-1_njcu3v6p86dcr76-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_njcu3v6p86dcr76-panel aria-labelledby=tab-group-2-1_njcu3v6p86dcr76-label><pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-2_odod216xqezooww class=code-tab data-lang aria-controls=tab-group-2-2_odod216xqezooww-panel role=tab><label for=tab-group-2-2_odod216xqezooww class=code-tab-label data-lang id=tab-group-2-2_odod216xqezooww-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-2_odod216xqezooww-panel aria-labelledby=tab-group-2-2_odod216xqezooww-label><pre><code class>vim deepstream_test_3_usb.py
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_3nbmaywao0l85bl checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_3nbmaywao0l85bl-panel role=tab><label for=tab-group-2-0_3nbmaywao0l85bl class=code-tab-label data-lang id=tab-group-2-0_3nbmaywao0l85bl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_3nbmaywao0l85bl-panel aria-labelledby=tab-group-2-0_3nbmaywao0l85bl-label><pre><code class>apt install vim
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_pgavr8zj5r8xwta class=code-tab data-lang aria-controls=tab-group-2-1_pgavr8zj5r8xwta-panel role=tab><label for=tab-group-2-1_pgavr8zj5r8xwta class=code-tab-label data-lang id=tab-group-2-1_pgavr8zj5r8xwta-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_pgavr8zj5r8xwta-panel aria-labelledby=tab-group-2-1_pgavr8zj5r8xwta-label><pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
+</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-2_3brp0dkkd2av5c1 class=code-tab data-lang aria-controls=tab-group-2-2_3brp0dkkd2av5c1-panel role=tab><label for=tab-group-2-2_3brp0dkkd2av5c1 class=code-tab-label data-lang id=tab-group-2-2_3brp0dkkd2av5c1-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-2_3brp0dkkd2av5c1-panel aria-labelledby=tab-group-2-2_3brp0dkkd2av5c1-label><pre><code class>vim deepstream_test_3_usb.py
 </code></pre></div></div>
 <p>deepstream_test_3_usb.pyを修正します。</p>
 <p> <pre><code class>#!/usr/bin/env python3
@@ -1669,7 +1669,7 @@ def create_source_bin(index,uri):
         sys.stderr.write(&quot; Unable to create capsfilter \n&quot;)
 
     #caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;video/x-raw, framerate=15/1&quot;))
-    caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=120/1&quot;))
+    caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
 
     caps_vidconvsrc.set_property('caps', Gst.Caps.from_string(&quot;video/x-raw(memory:NVMM)&quot;))
 
