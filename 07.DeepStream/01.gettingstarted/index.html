@@ -1480,7 +1480,7 @@ LOCAL:
 SI:localuser:jetbot
 </code></pre></p>
 <h2 id="docker">Dockerの起動</h2>
-<p> <pre><code class>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  --device /dev/video0:/dev/video0:mwr  -e &quot;DISPLAY&quot; -w /opt/nvidia/deepstream/deepstream-5.0 -v /tmp/argus_socket:/tmp/argus_socket -v \/tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/deepstream-l4t:5.1-21.02-base
+<p> <pre><code class>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  --device /dev/video0:/dev/video0:mwr  -e &quot;DISPLAY&quot; -w /opt/nvidia/deepstream/deepstream-5.0 -v /tmp/argus_socket:/tmp/argus_socket -v \/tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/deepstream-l4t:5.0.1-20.09-samples
 </code></pre></p>
 <h2 id="deepstreampython">DeepStreamをPythonで使用するためのパッケージをインストール</h2>
 <p> <pre><code class>apt update
