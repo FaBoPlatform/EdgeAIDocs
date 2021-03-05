@@ -1607,6 +1607,7 @@
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
+--volume /tmp/argus_socket:/tmp/argus_socket \
 nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
 </code></pre></p>
 <h2 id="jupyterlab">JupyterLabへの接続</h2>
@@ -1629,11 +1630,11 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
 <p> <pre><code class>apt install python-smbus
 </code></pre></p>
 <p>FaBoPWMをインストール</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_93nt0qm4ngyh6yy checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_93nt0qm4ngyh6yy-panel role=tab><label for=tab-group-3-0_93nt0qm4ngyh6yy class=code-tab-label data-lang id=tab-group-3-0_93nt0qm4ngyh6yy-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_93nt0qm4ngyh6yy-panel aria-labelledby=tab-group-3-0_93nt0qm4ngyh6yy-label><pre><code class>cd ~
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_1z0fcwip05zasj5 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_1z0fcwip05zasj5-panel role=tab><label for=tab-group-3-0_1z0fcwip05zasj5 class=code-tab-label data-lang id=tab-group-3-0_1z0fcwip05zasj5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_1z0fcwip05zasj5-panel aria-labelledby=tab-group-3-0_1z0fcwip05zasj5-label><pre><code class>cd ~
 git clone https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
 cd FaBoPWM-PCA9685-Python
 pip3 install .
-</code></pre></div><input name=tab-group-3 type=radio id=tab-group-3-1_e28nvxr83ecganj class=code-tab data-lang aria-controls=tab-group-3-1_e28nvxr83ecganj-panel role=tab><label for=tab-group-3-1_e28nvxr83ecganj class=code-tab-label data-lang id=tab-group-3-1_e28nvxr83ecganj-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_e28nvxr83ecganj-panel aria-labelledby=tab-group-3-1_e28nvxr83ecganj-label><pre><code class>pip3 install smbus
+</code></pre></div><input name=tab-group-3 type=radio id=tab-group-3-1_qw7fruifggd33dz class=code-tab data-lang aria-controls=tab-group-3-1_qw7fruifggd33dz-panel role=tab><label for=tab-group-3-1_qw7fruifggd33dz class=code-tab-label data-lang id=tab-group-3-1_qw7fruifggd33dz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_qw7fruifggd33dz-panel aria-labelledby=tab-group-3-1_qw7fruifggd33dz-label><pre><code class>pip3 install smbus
 </code></pre></div></div>
 <h2 id="_2">作業フォルダの作成</h2>
 <p>JupyterLabで作業フォルダ(<code>AICAR</code>)を作成します。</p>
