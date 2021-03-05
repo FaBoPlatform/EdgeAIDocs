@@ -1625,7 +1625,9 @@ BUSNUM=1
 SERVO_HZ=60
 INITIAL_VALUE=300
 bus = smbus.SMBus(BUSNUM)
-PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
+PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x40) # JetRacer Mini Board
+#PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60) # Edge AI Board
+
 
 # Move servo on channel O between extremes.
 PCA9685.set_channel_value(1,INIT)
