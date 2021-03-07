@@ -1034,18 +1034,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../04.power/" class="md-nav__link">
-        電力モード
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -1170,30 +1158,6 @@
           02.analog
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../02.analog/101_led/" class="md-nav__link">
-        101 LED
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../02.analog/103_button/" class="md-nav__link">
-        103 Button
-      </a>
-    </li>
-  
-
           
             
   
@@ -1390,18 +1354,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../03.pwm/servo/" class="md-nav__link">
-        Servo
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -1488,6 +1440,18 @@
           12.etc
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12.etc/04.power/" class="md-nav__link">
+        電力モード
+      </a>
+    </li>
+  
+
           
             
   
@@ -1680,10 +1644,10 @@
 </ol>
 <p>Jetson GPIOライブラリは、I / Oピンに番号を付ける4つの方法を提供します。最初の2つは、RPi.GPIOライブラリによって提供されるモードに対応しています。つまり、40ピンのGPIOヘッダーのピン番号とBroadcom SoCのGPIO番号をそれぞれ参照するBOARDとBCMです。残りの2つのモード、CVMおよびTEGRA_SOCは、CVM / CVBコネクタおよびTegra SoCの信号名にそれぞれ対応する番号の代わりに文字列を使用します。</p>
 <p>使用しているモードを指定するには（必須）、次の関数呼び出しを使用します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_obsxnzs8euodbl5 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_obsxnzs8euodbl5-panel role=tab><label for=tab-group-1-0_obsxnzs8euodbl5 class=code-tab-label data-lang id=tab-group-1-0_obsxnzs8euodbl5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_obsxnzs8euodbl5-panel aria-labelledby=tab-group-1-0_obsxnzs8euodbl5-label><pre><code class>GPIO.setmode(GPIO.BOARD)
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_ery2d7ymyfulimh class=code-tab data-lang aria-controls=tab-group-1-1_ery2d7ymyfulimh-panel role=tab><label for=tab-group-1-1_ery2d7ymyfulimh class=code-tab-label data-lang id=tab-group-1-1_ery2d7ymyfulimh-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_ery2d7ymyfulimh-panel aria-labelledby=tab-group-1-1_ery2d7ymyfulimh-label><pre><code class>GPIO.setmode(GPIO.BCM)
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_d43ksraoh1zu0uq class=code-tab data-lang aria-controls=tab-group-1-2_d43ksraoh1zu0uq-panel role=tab><label for=tab-group-1-2_d43ksraoh1zu0uq class=code-tab-label data-lang id=tab-group-1-2_d43ksraoh1zu0uq-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_d43ksraoh1zu0uq-panel aria-labelledby=tab-group-1-2_d43ksraoh1zu0uq-label><pre><code class>GPIO.setmode(GPIO.CVM)
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-3_k8ymd1d2bmp5ir2 class=code-tab data-lang aria-controls=tab-group-1-3_k8ymd1d2bmp5ir2-panel role=tab><label for=tab-group-1-3_k8ymd1d2bmp5ir2 class=code-tab-label data-lang id=tab-group-1-3_k8ymd1d2bmp5ir2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_k8ymd1d2bmp5ir2-panel aria-labelledby=tab-group-1-3_k8ymd1d2bmp5ir2-label><pre><code class>GPIO.setmode(GPIO.TEGRA_SOC)
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_2thzdy2eixdiyeu checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_2thzdy2eixdiyeu-panel role=tab><label for=tab-group-1-0_2thzdy2eixdiyeu class=code-tab-label data-lang id=tab-group-1-0_2thzdy2eixdiyeu-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_2thzdy2eixdiyeu-panel aria-labelledby=tab-group-1-0_2thzdy2eixdiyeu-label><pre><code class>GPIO.setmode(GPIO.BOARD)
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_ryzx6bm6vv4tdym class=code-tab data-lang aria-controls=tab-group-1-1_ryzx6bm6vv4tdym-panel role=tab><label for=tab-group-1-1_ryzx6bm6vv4tdym class=code-tab-label data-lang id=tab-group-1-1_ryzx6bm6vv4tdym-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_ryzx6bm6vv4tdym-panel aria-labelledby=tab-group-1-1_ryzx6bm6vv4tdym-label><pre><code class>GPIO.setmode(GPIO.BCM)
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_pi2oozmzykzi3bc class=code-tab data-lang aria-controls=tab-group-1-2_pi2oozmzykzi3bc-panel role=tab><label for=tab-group-1-2_pi2oozmzykzi3bc class=code-tab-label data-lang id=tab-group-1-2_pi2oozmzykzi3bc-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_pi2oozmzykzi3bc-panel aria-labelledby=tab-group-1-2_pi2oozmzykzi3bc-label><pre><code class>GPIO.setmode(GPIO.CVM)
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-3_1495pjqrqkgqrl0 class=code-tab data-lang aria-controls=tab-group-1-3_1495pjqrqkgqrl0-panel role=tab><label for=tab-group-1-3_1495pjqrqkgqrl0 class=code-tab-label data-lang id=tab-group-1-3_1495pjqrqkgqrl0-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-3_1495pjqrqkgqrl0-panel aria-labelledby=tab-group-1-3_1495pjqrqkgqrl0-label><pre><code class>GPIO.setmode(GPIO.TEGRA_SOC)
 </code></pre></div></div>
 <p>設定されているモードを確認するには、次を呼び出します。</p>
 <p> <pre><code class>mode = GPIO.getmode()
@@ -1847,7 +1811,7 @@ docs.nvidia.com
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../04.power/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../../10.Dustin-NV/01.setting/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1856,19 +1820,19 @@ docs.nvidia.com
               <span class="md-footer__direction">
                 前
               </span>
-              電力モード
+              Dustin-NV
             </div>
           </div>
         </a>
       
       
-        <a href="../../02.analog/101_led/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../02.analog/105_Vibrator/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              101 LED
+              105 Vibrator
             </div>
           </div>
           <div class="md-footer__button md-icon">
