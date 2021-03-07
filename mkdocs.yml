@@ -7,10 +7,12 @@ extra:
         language: 'jp'
 markdown_extensions:
   - fontawesome_markdown
-  - codehilite:
-      linenums: true
   - admonition
-  - pymdownx.keys
+  - pymdownx.highlight:
+      use_pygments: true
+      noclasses: true
+      pygments_style: monokai
+      linenums: true
   - markdown_fenced_code_tabs
 extra_css:
   - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"  
