@@ -760,7 +760,7 @@
   
     <li class="md-nav__item">
       <a href="../../07.SPI/1.spi/" class="md-nav__link">
-        1.spi
+        SPIの設定
       </a>
     </li>
   
@@ -1580,16 +1580,16 @@
                 
                 <h1 id="vnc">VNC</h1>
 <h2 id="jetsonvnc">JetsonのVNCのインストール</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_z97wc57c5ryjizn checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_z97wc57c5ryjizn-panel role=tab><label for=tab-group-0-0_z97wc57c5ryjizn class=code-tab-label data-lang id=tab-group-0-0_z97wc57c5ryjizn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_z97wc57c5ryjizn-panel aria-labelledby=tab-group-0-0_z97wc57c5ryjizn-label><pre><code class>mkdir -p ~/.config/autostart
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_3sueo71yiwl178l checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_3sueo71yiwl178l-panel role=tab><label for=tab-group-0-0_3sueo71yiwl178l class=code-tab-label data-lang id=tab-group-0-0_3sueo71yiwl178l-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_3sueo71yiwl178l-panel aria-labelledby=tab-group-0-0_3sueo71yiwl178l-label><pre><code class>mkdir -p ~/.config/autostart
 cp /usr/share/applications/vino-server.desktop ~/.config/autostart/.
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_fy9mijvrk3rliew class=code-tab data-lang aria-controls=tab-group-0-1_fy9mijvrk3rliew-panel role=tab><label for=tab-group-0-1_fy9mijvrk3rliew class=code-tab-label data-lang id=tab-group-0-1_fy9mijvrk3rliew-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_fy9mijvrk3rliew-panel aria-labelledby=tab-group-0-1_fy9mijvrk3rliew-label><pre><code class>cd /usr/lib/systemd/user/graphical-session.target.wants
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_tdjl0o39bmecz1t class=code-tab data-lang aria-controls=tab-group-0-1_tdjl0o39bmecz1t-panel role=tab><label for=tab-group-0-1_tdjl0o39bmecz1t class=code-tab-label data-lang id=tab-group-0-1_tdjl0o39bmecz1t-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_tdjl0o39bmecz1t-panel aria-labelledby=tab-group-0-1_tdjl0o39bmecz1t-label><pre><code class>cd /usr/lib/systemd/user/graphical-session.target.wants
 sudo ln -s ../vino-server.service ./.
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_anjc81udhj11dad class=code-tab data-lang aria-controls=tab-group-0-2_anjc81udhj11dad-panel role=tab><label for=tab-group-0-2_anjc81udhj11dad class=code-tab-label data-lang id=tab-group-0-2_anjc81udhj11dad-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_anjc81udhj11dad-panel aria-labelledby=tab-group-0-2_anjc81udhj11dad-label><pre><code class>gsettings set org.gnome.Vino prompt-enabled false
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_a2yh30f1yc200wg class=code-tab data-lang aria-controls=tab-group-0-2_a2yh30f1yc200wg-panel role=tab><label for=tab-group-0-2_a2yh30f1yc200wg class=code-tab-label data-lang id=tab-group-0-2_a2yh30f1yc200wg-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_a2yh30f1yc200wg-panel aria-labelledby=tab-group-0-2_a2yh30f1yc200wg-label><pre><code class>gsettings set org.gnome.Vino prompt-enabled false
 gsettings set org.gnome.Vino require-encryption false
 </code></pre></div></div>
 <h2 id="x-windows">X-Windowsのサイズ</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_bw4fqrlg8gkkuee checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_bw4fqrlg8gkkuee-panel role=tab><label for=tab-group-1-0_bw4fqrlg8gkkuee class=code-tab-label data-lang id=tab-group-1-0_bw4fqrlg8gkkuee-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_bw4fqrlg8gkkuee-panel aria-labelledby=tab-group-1-0_bw4fqrlg8gkkuee-label><pre><code class>sudo vim /etc/X11/xorg.conf
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_b5en85cs0o6vhi3 class=code-tab data-lang aria-controls=tab-group-1-1_b5en85cs0o6vhi3-panel role=tab><label for=tab-group-1-1_b5en85cs0o6vhi3 class=code-tab-label data-lang id=tab-group-1-1_b5en85cs0o6vhi3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_b5en85cs0o6vhi3-panel aria-labelledby=tab-group-1-1_b5en85cs0o6vhi3-label><pre><code class>Section &quot;Screen&quot;
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_amkz039fxugl8b7 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_amkz039fxugl8b7-panel role=tab><label for=tab-group-1-0_amkz039fxugl8b7 class=code-tab-label data-lang id=tab-group-1-0_amkz039fxugl8b7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_amkz039fxugl8b7-panel aria-labelledby=tab-group-1-0_amkz039fxugl8b7-label><pre><code class>sudo vim /etc/X11/xorg.conf
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_j6u3abfk28fru3f class=code-tab data-lang aria-controls=tab-group-1-1_j6u3abfk28fru3f-panel role=tab><label for=tab-group-1-1_j6u3abfk28fru3f class=code-tab-label data-lang id=tab-group-1-1_j6u3abfk28fru3f-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_j6u3abfk28fru3f-panel aria-labelledby=tab-group-1-1_j6u3abfk28fru3f-label><pre><code class>Section &quot;Screen&quot;
    Identifier    &quot;Default Screen&quot;
    Monitor       &quot;Configured Monitor&quot;
    Device        &quot;Tegra0&quot;
