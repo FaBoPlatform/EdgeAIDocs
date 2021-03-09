@@ -1745,9 +1745,6 @@ def readadc(channel):
     data = ((adc[1]&amp;3) &lt;&lt; 8) + adc[2]
     return data
 
-def arduino_map(x, in_min, in_max, out_min, out_max):
-    return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
-
 # 初期化
 spi = spidev.SpiDev()
 spi.open(0,0)
