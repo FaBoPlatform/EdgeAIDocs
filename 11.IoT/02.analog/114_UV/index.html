@@ -1168,13 +1168,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" title="準備" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
       
       
       
@@ -1460,13 +1453,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" title="準備" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
       
       
       
@@ -1485,12 +1471,12 @@
                 
                 
                 <h1 id="114-uv">114 UV</h1>
-<p><img alt="" src="./../img/114UV/114UV.jpg" /></p>
+<p><img alt="" src="../../../img/114UV/114UV.jpg" /></p>
 <h2 id="_1">サンプルコードの動作</h2>
 <p>FaBo #114 UVを使用して１秒ごとに紫外線強度を計測します。</p>
 <h2 id="_2">サンプルコード使用時の接続</h2>
-<p>GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。</p>
-<p><img alt="" src="./../img/104_angle/Analogpinass.jpg" /></p>
+<p>A0にAnalog Brickを接続します。</p>
+<p><img alt="" src="../../../img/104_angle/Analogpinass.jpg" /></p>
 <h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
 <table>
 <thead>
@@ -1667,13 +1653,58 @@
 </tbody>
 </table>
 <h2 id="brick">Brick回路図</h2>
-<p>~画像〜</p>
+<p><img alt="" src="../../../img/114_UV/114_uv_sch.png" /></p>
+<p>紫外線センサーには、G6262使用
+紫外線強度により増幅度を選択します。
+紫外線強度が増加すると数値が上昇します。</p>
 <p><br></p>
-<h2 id="_3">準備</h2>
-<p>Python（RPi.GPIO）と同じAPIも持つPythonでGPIOを制御するためにはパッケージのインストールが必要になります。
-GPIOの章を参照してください。</p>
 <p> <pre><code class=python>
-工事中
+# coding: utf-8
+import Jetson.GPIO as GPIO
+import spidev
+import time
+import sys
+
+# A0コネクタにAngleを接続
+ANGLEPIN = 0
+
+#######################################################################
+def readadc(channel):
+    &quot;&quot;&quot;
+    Analog Data Converterの値を読み込む
+    @channel チャンネル番号
+    &quot;&quot;&quot;
+    adc = spi.xfer2([1,(8+channel)&lt;&lt;4,0])
+    data = ((adc[1]&amp;3) &lt;&lt; 8) + adc[2]
+    return data
+
+#######################################################################
+def map(x, in_min, in_max, out_min, out_max):
+    &quot;&quot;&quot;
+    map関数
+    @x 変換したい値
+    @in_min 変換前の最小値
+    @in_max 変換前の最大値
+    @out_min 変換後の最小
+    @out_max 変換後の最大値
+    @return 変換された値
+    &quot;&quot;&quot;
+    return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
+
+# 初期化
+spi = spidev.SpiDev()
+spi.open(0,0)
+spi.max_speed_hz = 5000
+
+try:
+    while True:
+        data = readadc(ANGLEPIN)
+        print(&quot;UV : {:8} &quot;.format(data))
+        time.sleep(1)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+    spi.close()
+    sys.exit(0)
 
 </code></pre></p>
                 
