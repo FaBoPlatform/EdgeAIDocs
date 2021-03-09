@@ -1,4 +1,4 @@
-# 113_ir_led
+# 112_ir_led
 
 ## サンプルコードの動作
 FaBo #1 LED Brickを使用して１秒ごとにLEDを点滅します。
