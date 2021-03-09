@@ -96,7 +96,7 @@ https://pypi.org/project/spidev/
 
 ## サンプルコード
 
-```
+```python
 # coding: utf-8
 import Jetson.GPIO as GPIO
 import spidev
