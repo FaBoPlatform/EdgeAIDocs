@@ -1500,13 +1500,17 @@
 </tbody>
 </table>
 <h2 id="docker">Dockerを起動</h2>
-<p><code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
-<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --rm --network host \
+<p><code>--rm</code>オプションをなくし,<code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
+<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
 nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>--rmオプションをつけて起動するとdockerをexitした際にプロセスも一緒に削除されます。GPIOの実行に特権(privileged)が必要となるために、--privilegedオプションをつけて起動します。</p>
+</div>
 <h2 id="jupyterlab">JupyterLabへの接続</h2>
 <p><code>http://192.168.55.1:8888</code> にChromeで接続し、JupuyterLabに接続します。</p>
 <table>
