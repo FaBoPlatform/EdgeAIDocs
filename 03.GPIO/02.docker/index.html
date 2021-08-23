@@ -408,6 +408,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1410,7 +1422,7 @@
 <div class="highlight"><pre><span></span><code>sudo docker stop ID(現在起動中のもの)
 </code></pre></div>
 <p>CommitしたDockerの起動</p>
-<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --rm --network host \
+<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
