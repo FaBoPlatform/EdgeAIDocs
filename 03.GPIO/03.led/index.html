@@ -1480,26 +1480,26 @@
 <h2 id="led_1">LEDの点滅</h2>
 <p>LEDをGPIO4に接続します。</p>
 <p><img alt="" src="../img/led09.jpg" /></p>
-<div class="highlight"><pre><span></span><code># coding: utf-8
-import Jetson.GPIO as GPIO
-import time
-import sys
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">Jetson.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-LEDPIN = 4
+<span class="n">LEDPIN</span> <span class="o">=</span> <span class="mi">4</span>
 
-GPIO.setwarnings(False)
-GPIO.setmode( GPIO.BCM )
-GPIO.setup( LEDPIN, GPIO.OUT )
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setwarnings</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span> <span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span> <span class="n">LEDPIN</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span> <span class="p">)</span>
 
-try:
-    while True:
-        GPIO.output( LEDPIN, True )
-        time.sleep( 1.0 )
-        GPIO.output( LEDPIN, False )
-        time.sleep( 1.0 ) 
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span> <span class="n">LEDPIN</span><span class="p">,</span> <span class="kc">True</span> <span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span> <span class="mf">1.0</span> <span class="p">)</span>
+        <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span> <span class="n">LEDPIN</span><span class="p">,</span> <span class="kc">False</span> <span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span> <span class="mf">1.0</span> <span class="p">)</span> 
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
 <p>停止は■をおします。</p>
 <p><img alt="" src="../img/led10.jpg" /></p>
