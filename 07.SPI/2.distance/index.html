@@ -1711,16 +1711,16 @@
 <p>$sudo /opt/nvidia/jetson-io/jetson-io.py</p>
 <p>Pinmux テーブルの設定</p>
 <p>~画像〜</p>
-<p>pip3がインストールされていない場合は、</p>
-<p> <pre><code class>$sudo apt-get install python3-pip
-</code></pre></p>
+<p>pip3がインストールされていない場合は、
+<div class="highlight"><pre><span></span><code>$sudo apt-get install python3-pip
+</code></pre></div></p>
 <p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<p> <pre><code class>$pip3 install spidev
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>$pip3 install spidev
+</code></pre></div>
 <p>SPIdevの使い方。
 https://pypi.org/project/spidev/</p>
 <h2 id="_4">サンプルコード</h2>
-<p> <pre><code class># coding: utf-8
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import Jetson.GPIO as GPIO
 import spidev
 import time
@@ -1780,7 +1780,7 @@ except KeyboardInterrupt:
     GPIO.cleanup()
     spi.close()
     sys.exit(0)
-</code></pre></p>
+</code></pre></div>
                 
               
               

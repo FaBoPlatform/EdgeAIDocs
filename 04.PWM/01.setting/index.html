@@ -1509,8 +1509,8 @@
                 <h1 id="pwm">PWMの設定</h1>
 <p>＃５１９Jetson OUTINSHEILD搭載PCA9685（LEDドライバ）チップを利用してPWM信号を出力します。PCA9685のI2Cデバイスアドレスは0X60,サーボへのPWM信号周波数は５０Hzで入力します。</p>
 <h2 id="jetson-nano-2gb">Jetson Nano 2GBへのログイン</h2>
-<p> <pre><code class>ssh jetson@192.168.55.1
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1525,12 +1525,12 @@
 </table>
 <h2 id="docker">Dockerを起動</h2>
 <p><code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
-<p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
+<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --rm --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
 nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
-</code></pre></p>
+</code></pre></div>
 <h2 id="jupyterlab">JupyterLabへの接続</h2>
 <p><code>http://192.168.55.1:8888</code> にChromeで接続し、JupuyterLabに接続します。</p>
 <table>
@@ -1548,15 +1548,16 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
 <h2 id="_1">ライブラリ</h2>
 <p>Terminalを起動して、PWM関連の制御に必要なライブラリをインストールします。</p>
 <p>smbusをインストール</p>
-<p> <pre><code class>apt install python-smbus
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>apt install python-smbus
+</code></pre></div>
 <p>FaBoPWMをインストール</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_sffn45kgfabfwra checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_sffn45kgfabfwra-panel role=tab><label for=tab-group-3-0_sffn45kgfabfwra class=code-tab-label data-lang id=tab-group-3-0_sffn45kgfabfwra-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_sffn45kgfabfwra-panel aria-labelledby=tab-group-3-0_sffn45kgfabfwra-label><pre><code class>cd ~
+<div class="highlight"><pre><span></span><code>cd ~
 git clone https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
 cd FaBoPWM-PCA9685-Python
 pip3 install .
-</code></pre></div><input name=tab-group-3 type=radio id=tab-group-3-1_d7kbcfyowbad6fi class=code-tab data-lang aria-controls=tab-group-3-1_d7kbcfyowbad6fi-panel role=tab><label for=tab-group-3-1_d7kbcfyowbad6fi class=code-tab-label data-lang id=tab-group-3-1_d7kbcfyowbad6fi-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_d7kbcfyowbad6fi-panel aria-labelledby=tab-group-3-1_d7kbcfyowbad6fi-label><pre><code class>pip3 install smbus
-</code></pre></div></div>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>pip3 install smbus
+</code></pre></div>
 <h2 id="pwm_1">pwmフォルダの作成</h2>
 <p><img alt="" src="../img/pwm01.jpg" /></p>
                 

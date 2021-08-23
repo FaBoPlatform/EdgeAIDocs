@@ -1467,28 +1467,29 @@
                 <h1 id="ai">AIとの連携</h1>
 <h2 id="_1">サンプルのコピー</h2>
 <p>Terminalで下記コマンドで、classificationのサンプルをGPIO以下にコピーします。</p>
-<p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/GPIO/
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>cp /nvdli-nano/classification/* /nvdli-nano/GPIO/
+</code></pre></div>
 <h2 id="led">LED部分の追加</h2>
 <p>LEDとの連携は、下記部分にソースを追加します。</p>
 <p><img alt="" src="../img/ailed01.jpg" /></p>
 <p><img alt="" src="../img/ailed02.jpg" /></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_bwksdqwryrbkeud checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_bwksdqwryrbkeud-panel role=tab><label for=tab-group-1-0_bwksdqwryrbkeud class=code-tab-label data-lang id=tab-group-1-0_bwksdqwryrbkeud-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_bwksdqwryrbkeud-panel aria-labelledby=tab-group-1-0_bwksdqwryrbkeud-label><pre><code class>import torchvision.transforms as transforms
+<div class="highlight"><pre><span></span><code>import torchvision.transforms as transforms
 from dataset import ImageClassificationDataset
 
-TASK = 'leds'
-# TASK = 'emotions'
-# TASK = 'fingers'
-# TASK = 'diy'
+TASK = &#39;leds&#39;
+# TASK = &#39;emotions&#39;
+# TASK = &#39;fingers&#39;
+# TASK = &#39;diy&#39;
 
-CATEGORIES = ['leds_red', 'leds_blue']
-# CATEGORIES = ['none', 'happy', 'sad', 'angry']
-# CATEGORIES = ['1', '2', '3', '4', '5']
-# CATEGORIES = [ 'diy_1', 'diy_2', 'diy_3']
+CATEGORIES = [&#39;leds_red&#39;, &#39;leds_blue&#39;]
+# CATEGORIES = [&#39;none&#39;, &#39;happy&#39;, &#39;sad&#39;, &#39;angry&#39;]
+# CATEGORIES = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+# CATEGORIES = [ &#39;diy_1&#39;, &#39;diy_2&#39;, &#39;diy_3&#39;]
 
-DATASETS = ['A', 'B']
-# DATASETS = ['A', 'B', 'C']
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_jgfk6xd00ywydwk class=code-tab data-lang aria-controls=tab-group-1-1_jgfk6xd00ywydwk-panel role=tab><label for=tab-group-1-1_jgfk6xd00ywydwk class=code-tab-label data-lang id=tab-group-1-1_jgfk6xd00ywydwk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_jgfk6xd00ywydwk-panel aria-labelledby=tab-group-1-1_jgfk6xd00ywydwk-label><pre><code class>import threading
+DATASETS = [&#39;A&#39;, &#39;B&#39;]
+# DATASETS = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>import threading
 import time
 from utils import preprocess
 import torch.nn.functional as F
@@ -1503,9 +1504,10 @@ GPIO.setwarnings(False)
 GPIO.setmode( GPIO.BCM )
 GPIO.setup( LED_RED, GPIO.OUT )
 GPIO.setup( LED_BLUE, GPIO.OUT )
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-2_e0d9fpf54jyv52v class=code-tab data-lang aria-controls=tab-group-1-2_e0d9fpf54jyv52v-panel role=tab><label for=tab-group-1-2_e0d9fpf54jyv52v class=code-tab-label data-lang id=tab-group-1-2_e0d9fpf54jyv52v-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-2_e0d9fpf54jyv52v-panel aria-labelledby=tab-group-1-2_e0d9fpf54jyv52v-label><pre><code class>def live(state_widget, model, camera, prediction_widget, score_widget):
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>def live(state_widget, model, camera, prediction_widget, score_widget):
     global dataset
-    while state_widget.value == 'live':
+    while state_widget.value == &#39;live&#39;:
         image = camera.value
         preprocessed = preprocess(image)
         output = model(preprocessed)
@@ -1520,7 +1522,7 @@ GPIO.setup( LED_BLUE, GPIO.OUT )
             GPIO.output( LED_BLUE, True )
         for i, score in enumerate(list(output)):
             score_widgets[i].value = score
-</code></pre></div></div>
+</code></pre></div>
                 
               
               

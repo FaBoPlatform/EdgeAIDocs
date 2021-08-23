@@ -1680,55 +1680,53 @@
 紫外線強度により増幅度を選択します。
 紫外線強度が増加すると数値が上昇します。</p>
 <p><br></p>
-<p> <pre><code class=python>
-# coding: utf-8
-import Jetson.GPIO as GPIO
-import spidev
-import time
-import sys
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">Jetson.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">spidev</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-# A0コネクタにAngleを接続
-ANGLEPIN = 0
+<span class="c1"># A0コネクタにAngleを接続</span>
+<span class="n">ANGLEPIN</span> <span class="o">=</span> <span class="mi">0</span>
 
-#######################################################################
-def readadc(channel):
-    &quot;&quot;&quot;
-    Analog Data Converterの値を読み込む
-    @channel チャンネル番号
-    &quot;&quot;&quot;
-    adc = spi.xfer2([1,(8+channel)&lt;&lt;4,0])
-    data = ((adc[1]&amp;3) &lt;&lt; 8) + adc[2]
-    return data
+<span class="c1">#######################################################################</span>
+<span class="k">def</span> <span class="nf">readadc</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analog Data Converterの値を読み込む</span>
+<span class="sd">    @channel チャンネル番号</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">adc</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">xfer2</span><span class="p">([</span><span class="mi">1</span><span class="p">,(</span><span class="mi">8</span><span class="o">+</span><span class="n">channel</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">((</span><span class="n">adc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&amp;</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="n">adc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">data</span>
 
-#######################################################################
-def map(x, in_min, in_max, out_min, out_max):
-    &quot;&quot;&quot;
-    map関数
-    @x 変換したい値
-    @in_min 変換前の最小値
-    @in_max 変換前の最大値
-    @out_min 変換後の最小
-    @out_max 変換後の最大値
-    @return 変換された値
-    &quot;&quot;&quot;
-    return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
+<span class="c1">#######################################################################</span>
+<span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">in_min</span><span class="p">,</span> <span class="n">in_max</span><span class="p">,</span> <span class="n">out_min</span><span class="p">,</span> <span class="n">out_max</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    map関数</span>
+<span class="sd">    @x 変換したい値</span>
+<span class="sd">    @in_min 変換前の最小値</span>
+<span class="sd">    @in_max 変換前の最大値</span>
+<span class="sd">    @out_min 変換後の最小</span>
+<span class="sd">    @out_max 変換後の最大値</span>
+<span class="sd">    @return 変換された値</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">out_max</span> <span class="o">-</span> <span class="n">out_min</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">in_max</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">+</span> <span class="n">out_min</span>
 
-# 初期化
-spi = spidev.SpiDev()
-spi.open(0,0)
-spi.max_speed_hz = 5000
+<span class="c1"># 初期化</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">spidev</span><span class="o">.</span><span class="n">SpiDev</span><span class="p">()</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">max_speed_hz</span> <span class="o">=</span> <span class="mi">5000</span>
 
-try:
-    while True:
-        data = readadc(ANGLEPIN)
-        print(&quot;UV : {:8} &quot;.format(data))
-        time.sleep(1)
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    spi.close()
-    sys.exit(0)
-
-</code></pre></p>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">readadc</span><span class="p">(</span><span class="n">ANGLEPIN</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UV : </span><span class="si">{:8}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">spi</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

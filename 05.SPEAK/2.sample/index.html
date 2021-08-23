@@ -1481,28 +1481,28 @@
                 <h1 id="_1">サンプル</h1>
 <h2 id="device">Deviceを発見</h2>
 <p>USB Speakerを接続し、デバイスの検索をおこないます。</p>
-<p> <pre><code class>!python3 -m sounddevice
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>!python3 -m sounddevice
+</code></pre></div>
 <p><img alt="" src="../img/sd01.jpg" /></p>
 <p><code>12 Audio Advantage MicroII: USB Audio (hw:3,0), ALSA (0 in, 2 out)</code> がUSB Speakerになります。
 上図のような結果から、12がUSB Speakerであることを見分けるポイントは、<code>2 out</code>の部分です。<code>2 out</code>の2の部分がSpeakerの数を示しています。12がUSB Speakerであることが明確になったので、sounddeviceで12を指定します。
 USB SpeakerのOutputが見つからない場合は、JetsonのDockerをCommitした上で、Jetsonを再起動します。</p>
-<p> <pre><code class>sd.default.device = 12
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>sd.default.device = 12
+</code></pre></div>
 <h2 id="sample">Sampleコード</h2>
-<p>mp3ファイルの作成</p>
-<p> <pre><code class>from gtts import gTTS
+<p>mp3ファイルの作成
+<div class="highlight"><pre><span></span><code>from gtts import gTTS
 from pydub import AudioSegment
 
 file_name = &quot;hello&quot;
 
-tts = gTTS('こんにちわ',lang='ja')
+tts = gTTS(&#39;こんにちわ&#39;,lang=&#39;ja&#39;)
 tts.save(file_name+&quot;.mp3&quot;)
 sound = AudioSegment.from_mp3(file_name+&quot;.mp3&quot;)
-sound.export(file_name+&quot;.wav&quot;, format=&quot;wav&quot;, parameters=['-ar', '48000'])
-</code></pre></p>
-<p>Jetsonでの再生</p>
-<p> <pre><code class>import sounddevice as sd
+sound.export(file_name+&quot;.wav&quot;, format=&quot;wav&quot;, parameters=[&#39;-ar&#39;, &#39;48000&#39;])
+</code></pre></div></p>
+<p>Jetsonでの再生
+<div class="highlight"><pre><span></span><code>import sounddevice as sd
 import time
 import soundfile as sf
 
@@ -1511,20 +1511,20 @@ sd.default.device = 12
 print(fs)
 sd.play(data, frame_rate)
 sd.wait()
-</code></pre></p>
+</code></pre></div></p>
 <h2 id="_2">関数化</h2>
 <p>関数化します。</p>
-<p> <pre><code class>from gtts import gTTS
+<div class="highlight"><pre><span></span><code>from gtts import gTTS
 from pydub import AudioSegment
 import sounddevice as sd
 import time
 import soundfile as sf
 
 def make_speak(file_name, word):
-    tts = gTTS(word,lang='ja')
+    tts = gTTS(word,lang=&#39;ja&#39;)
     tts.save(file_name+&quot;.mp3&quot;)
     sound = AudioSegment.from_mp3(filename+&quot;.mp3&quot;)
-    sound.export(file_name+&quot;.wav&quot;, format=&quot;wav&quot;, parameters=['-ar', '48000'])
+    sound.export(file_name+&quot;.wav&quot;, format=&quot;wav&quot;, parameters=[&#39;-ar&#39;, &#39;48000&#39;])
 
 def speak(file_name):
     sd.default.device = 12
@@ -1535,7 +1535,7 @@ def speak(file_name):
 
 make_speak(&quot;hello&quot;, &quot;おはようございます、朝です&quot;)
 speak(&quot;hello&quot;)
-</code></pre></p>
+</code></pre></div>
                 
               
               

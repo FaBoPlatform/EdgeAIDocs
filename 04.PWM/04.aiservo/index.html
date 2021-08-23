@@ -1467,12 +1467,12 @@
                 <h1 id="servoai">ServoとAIの連携(分類)</h1>
 <h2 id="_1">サンプルのコピー</h2>
 <p>Terminalで下記コマンドで、classificationのサンプルをpwmフォルダ以下にコピーします。</p>
-<p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/pwm/
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>cp /nvdli-nano/classification/* /nvdli-nano/pwm/
+</code></pre></div>
 <h2 id="_2">ソースの修正</h2>
 <p><img alt="" src="../img/aipwm01.jpg" /></p>
 <p><img alt="" src="../img/aipwm02.jpg" /></p>
-<p> <pre><code class>import threading
+<div class="highlight"><pre><span></span><code>import threading
 import time
 from utils import preprocess
 import torch.nn.functional as F
@@ -1480,7 +1480,7 @@ import torch.nn.functional as F
 import Fabo_PCA9685
 import time
 import pkg_resources
-SMBUS='smbus'
+SMBUS=&#39;smbus&#39;
 BUSNUM=1
 SERVO_HZ=60
 INITIAL_VALUE=300
@@ -1488,16 +1488,16 @@ bus = smbus.SMBus(BUSNUM)
 PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
 PCA9685.set_hz(SERVO_HZ)
 
-state_widget = ipywidgets.ToggleButtons(options=['stop', 'live'], description='state', value='stop')
-prediction_widget = ipywidgets.Text(description='prediction')
+state_widget = ipywidgets.ToggleButtons(options=[&#39;stop&#39;, &#39;live&#39;], description=&#39;state&#39;, value=&#39;stop&#39;)
+prediction_widget = ipywidgets.Text(description=&#39;prediction&#39;)
 score_widgets = []
 for category in dataset.categories:
-    score_widget = ipywidgets.FloatSlider(min=0.0, max=1.0, description=category, orientation='vertical')
+    score_widget = ipywidgets.FloatSlider(min=0.0, max=1.0, description=category, orientation=&#39;vertical&#39;)
     score_widgets.append(score_widget)
 
 def live(state_widget, model, camera, prediction_widget, score_widget):
     global dataset
-    while state_widget.value == 'live':
+    while state_widget.value == &#39;live&#39;:
         image = camera.value
         preprocessed = preprocess(image)
         output = model(preprocessed)
@@ -1510,7 +1510,7 @@ def live(state_widget, model, camera, prediction_widget, score_widget):
             PCA9685.set_channel_value(0,650)
         for i, score in enumerate(list(output)):
             score_widgets[i].value = score
-</code></pre></p>
+</code></pre></div>
                 
               
               

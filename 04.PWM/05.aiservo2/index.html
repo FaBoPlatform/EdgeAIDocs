@@ -1453,7 +1453,7 @@
                 <h1 id="servoai">ServoとAIの連携(回帰)</h1>
 <h2 id="_1">ソースの修正</h2>
 <p><img alt="" src="../img/aipwm03.jpg" /></p>
-<p> <pre><code class>import threading
+<div class="highlight"><pre><span></span><code>import threading
 import time
 from utils import preprocess
 import torch.nn.functional as F
@@ -1461,7 +1461,7 @@ import Fabo_PCA9685
 import time
 import pkg_resources
 import smbus
-SMBUS='smbus'
+SMBUS=&#39;smbus&#39;
 BUSNUM=1
 SERVO_HZ=60
 INITIAL_VALUE=300
@@ -1469,14 +1469,14 @@ bus = smbus.SMBus(BUSNUM)
 PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
 PCA9685.set_hz(SERVO_HZ)
 
-state_widget = ipywidgets.ToggleButtons(options=['stop', 'live'], description='state', value='stop')
+state_widget = ipywidgets.ToggleButtons(options=[&#39;stop&#39;, &#39;live&#39;], description=&#39;state&#39;, value=&#39;stop&#39;)
 with open(&quot;../images/ready_img.jpg&quot;, &quot;rb&quot;) as file:
     default_image = file.read()
-prediction_widget = ipywidgets.Image(format='jpeg', width=camera.width, height=camera.height, value=default_image)
+prediction_widget = ipywidgets.Image(format=&#39;jpeg&#39;, width=camera.width, height=camera.height, value=default_image)
 
 def live(state_widget, model, camera, prediction_widget):
     global dataset
-    while state_widget.value == 'live':
+    while state_widget.value == &#39;live&#39;:
         image = camera.value
         preprocessed = preprocess(image)
         output = model(preprocessed).detach().cpu().numpy().flatten()
@@ -1495,11 +1495,11 @@ def live(state_widget, model, camera, prediction_widget):
         prediction_widget.value = bgr8_to_jpeg(prediction)
 
 def start_live(change):
-    if change['new'] == 'live':
+    if change[&#39;new&#39;] == &#39;live&#39;:
         execute_thread = threading.Thread(target=live, args=(state_widget, model, camera, prediction_widget))
         execute_thread.start()
 
-state_widget.observe(start_live, names='value')
+state_widget.observe(start_live, names=&#39;value&#39;)
 
 live_execution_widget = ipywidgets.VBox([
     prediction_widget,
@@ -1508,7 +1508,7 @@ live_execution_widget = ipywidgets.VBox([
 
 # display(live_execution_widget)
 print(&quot;live_execution_widget created&quot;)
-</code></pre></p>
+</code></pre></div>
                 
               
               

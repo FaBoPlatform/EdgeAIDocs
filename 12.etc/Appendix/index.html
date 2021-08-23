@@ -1449,19 +1449,16 @@
                 <h2 id="appendix">Appendix</h2>
 <p>i2cデバイスをスキャン
 i2cデバイスが反応するかしらべます。</p>
-<p> <pre><code class=sh>$sudo i2cdetect -y -r 1
-</code></pre></p>
+<div class="highlight"><pre><span></span><code><span class="nv">$sudo</span> i2cdetect -y -r <span class="m">1</span>
+</code></pre></div>
 <p>JetPackのバージョンをしらべる。</p>
-<p> <pre><code class=sh>$ cat /etc/nv_tegra_release
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/nv_tegra_release
+</code></pre></div>
 <p>pipでインストールされているパッケージをしらべる。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_sh checked=checked class=code-tab data-lang=sh aria-controls=tab-group-2-0_sh-panel role=tab><label for=tab-group-2-0_sh class=code-tab-label data-lang=sh id=tab-group-2-0_sh-label>Sh</label><div class=code-tabpanel role=tabpanel data-lang=sh id=tab-group-2-0_sh-panel aria-labelledby=tab-group-2-0_sh-label><pre><code class=sh>
-$pip3 list
-
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_sh class=code-tab data-lang=sh aria-controls=tab-group-2-1_sh-panel role=tab><label for=tab-group-2-1_sh class=code-tab-label data-lang=sh id=tab-group-2-1_sh-label>Sh</label><div class=code-tabpanel role=tabpanel data-lang=sh id=tab-group-2-1_sh-panel aria-labelledby=tab-group-2-1_sh-label><pre><code class=sh>
-$pip3 freeze
-
-</code></pre></div></div>
+<div class="highlight"><pre><span></span><code><span class="nv">$pip3</span> list
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">$pip3</span> freeze
+</code></pre></div>
 <p>pip freezeに関して</p>
 <p>https://pip.pypa.io/en/stable/reference/pip_freeze/</p>
                 

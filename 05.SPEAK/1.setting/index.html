@@ -1551,8 +1551,8 @@
                 <h1 id="_1">音声再生</h1>
 <p>音声再生のライブラリをインストールします。</p>
 <h2 id="jetson-nano-2gb">Jetson Nano 2GBへのログイン</h2>
-<p> <pre><code class>ssh jetson@192.168.55.1
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1567,12 +1567,12 @@
 </table>
 <h2 id="docker">Dockerを起動</h2>
 <p><code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
-<p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
+<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --rm --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
 nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
-</code></pre></p>
+</code></pre></div>
 <h2 id="jupyterlab">JupyterLabへの接続</h2>
 <p><code>http://192.168.55.1:8888</code> にChromeで接続し、JupuyterLabに接続します。</p>
 <table>
@@ -1589,23 +1589,23 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
 </table>
 <h2 id="_2">プロジェクトフォルダの作成</h2>
 <p>speakフォルダを作成します。</p>
-<p> <pre><code class>cp /nvdli-nano/classification/* /nvdli-nano/speak/
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>cp /nvdli-nano/classification/* /nvdli-nano/speak/
+</code></pre></div>
 <h2 id="update">Update</h2>
-<p> <pre><code class>apt update
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>apt update
+</code></pre></div>
 <h2 id="gtts">gTTS</h2>
-<p> <pre><code class>pip3 install gTTS
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>pip3 install gTTS
+</code></pre></div>
 <h2 id="sounddevice">sounddevice</h2>
-<p> <pre><code class>pip3 install sounddevice
+<div class="highlight"><pre><span></span><code>pip3 install sounddevice
 pip3 install soundfile
 apt install portaudio19-dev
-</code></pre></p>
+</code></pre></div>
 <h2 id="pypub">pypub</h2>
-<p> <pre><code class>apt install ffmpeg
+<div class="highlight"><pre><span></span><code>apt install ffmpeg
 pip3 install pydub
-</code></pre></p>
+</code></pre></div>
                 
               
               

@@ -1407,25 +1407,25 @@
                 
                 <h1 id="docker">Dockerの保存</h1>
 <p>JupyterLab経由ではなく、ssh経由でJetson Nanoにログインします。</p>
-<p> <pre><code class>ssh jetson@192.168.55.1
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
+</code></pre></div>
 <p>DockerのIDを取得します。</p>
-<p> <pre><code class>sudo docker ps
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>sudo docker ps
+</code></pre></div>
 <p>Dockerを<code>aicar</code>という名称で、commitします。</p>
-<p> <pre><code class>sudo docker commit ID(現在起動中のもの)  aicar
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>sudo docker commit ID(現在起動中のもの)  aicar
+</code></pre></div>
 <p>現在起動中のDockerを停止します。</p>
-<p> <pre><code class>sudo docker stop ID(現在起動中のもの)
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>sudo docker stop ID(現在起動中のもの)
+</code></pre></div>
 <p>CommitしたDockerの起動</p>
-<p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
+<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --rm --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
 --volume /tmp/argus_socket:/tmp/argus_socket \
 aicar
-</code></pre></p>
+</code></pre></div>
                 
               
               

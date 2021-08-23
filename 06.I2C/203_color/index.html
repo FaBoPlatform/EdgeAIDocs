@@ -1486,13 +1486,13 @@
 <p><img alt="" src="../../img/211_7Seg/i2cpin.jpg" /></p>
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
-<p>FaBoのライブラリをインストール</p>
-<p> <pre><code class>git clone https://github.com/FaBoPlatform/FaBoColor-S11059-Python.git
+<p>FaBoのライブラリをインストール
+<div class="highlight"><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBoColor-S11059-Python.git
 cd FaBoColor-S11059-Python
 sudo pip3 install .
-</code></pre></p>
-<p>ソースコード</p>
-<p> <pre><code class># coding: utf-8
+</code></pre></div></p>
+<p>ソースコード
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import FaBoColor_S11059
 import time
 import sys
@@ -1502,12 +1502,12 @@ s11059 = FaBoColor_S11059.S11059()
 try:
     while True:
         c = s11059.read()
-        sys.stdout.write(&quot;\rr=%f, g=%f, b=%f, ir=%f&quot; % (c['r'],  c['g'], c['b'], c['ir']))
+        sys.stdout.write(&quot;\rr=%f, g=%f, b=%f, ir=%f&quot; % (c[&#39;r&#39;],  c[&#39;g&#39;], c[&#39;b&#39;], c[&#39;ir&#39;]))
         sys.stdout.flush()
         time.sleep(1)
 except KeyboardInterrupt:
     sys.exit()
-</code></pre></p>
+</code></pre></div></p>
                 
               
               

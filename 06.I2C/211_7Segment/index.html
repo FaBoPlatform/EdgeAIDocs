@@ -1488,12 +1488,12 @@
 <h2 id="brick">Brick回路図</h2>
 <p>~画像〜</p>
 <p>FaBoのライブラリをインストール</p>
-<p> <pre><code class>git clone https://github.com/FaBoPlatform/FaBo7Segment-TLC59208-Python.git
+<div class="highlight"><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBo7Segment-TLC59208-Python.git
 cd FaBo7Segment-TLC59208-Python
 sudo pip3 install .
-</code></pre></p>
-<p>0~9をカウントアップします。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_woyhecgnpzvnth1 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_woyhecgnpzvnth1-panel role=tab><label for=tab-group-1-0_woyhecgnpzvnth1 class=code-tab-label data-lang id=tab-group-1-0_woyhecgnpzvnth1-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_woyhecgnpzvnth1-panel aria-labelledby=tab-group-1-0_woyhecgnpzvnth1-label><pre><code class># coding: utf-8
+</code></pre></div>
+<p>0~9をカウントアップします。
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import FaBo7Seg_TLC59208
 import time
 
@@ -1507,7 +1507,8 @@ try:
 
 except KeyboardInterrupt:
     tlc59208.showNumber(10)
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_mszt43vpze9wwu9 class=code-tab data-lang aria-controls=tab-group-1-1_mszt43vpze9wwu9-panel role=tab><label for=tab-group-1-1_mszt43vpze9wwu9 class=code-tab-label data-lang id=tab-group-1-1_mszt43vpze9wwu9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_mszt43vpze9wwu9-panel aria-labelledby=tab-group-1-1_mszt43vpze9wwu9-label><pre><code class># coding: utf-8
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import FaBo7Seg_TLC59208
 import time
 
@@ -1555,7 +1556,7 @@ try:
             time.sleep(1)
 except KeyboardInterrupt:
     tlc59208.showPattern(FaBo7Seg_TLC59208.LED_OFF)
-</code></pre></div></div>
+</code></pre></div>
                 
               
               

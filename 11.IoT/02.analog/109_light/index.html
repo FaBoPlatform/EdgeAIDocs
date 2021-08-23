@@ -1693,8 +1693,8 @@
 <h2 id="_3">準備</h2>
 <p>SPIとPWMをつかえるようにしましょう。（設定済みの場合は不要です。）</p>
 <p>Jetson-IO toolを起動します。</p>
-<p> <pre><code class>$sudo /opt/nvidia/jetson-io/jetson-io.py
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>$sudo /opt/nvidia/jetson-io/jetson-io.py
+</code></pre></div>
 <p>Pinmux テーブルの設定</p>
 <p>Configure 40-pin expansion headerを選択します。</p>
 <p>PWM０はLED、SPI1は、ADコンバータICと接続するため、</p>
@@ -1702,64 +1702,64 @@
 <p>Backを選択します。</p>
 <p>Save and reboot to reconfigure pins を選択します。</p>
 <p>再起動します。</p>
-<p>pip3がインストールされていない場合は、</p>
-<p> <pre><code class>$sudo apt-get install python3-pip
-</code></pre></p>
+<p>pip3がインストールされていない場合は、
+<div class="highlight"><pre><span></span><code>$sudo apt-get install python3-pip
+</code></pre></div></p>
 <p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<p> <pre><code class>$pip3 install spidev
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>$pip3 install spidev
+</code></pre></div>
 <p>SPIdevの使い方。</p>
 <p>https://pypi.org/project/spidev/</p>
 <p><br></p>
 <h2 id="_4">サンプルコード</h2>
-<p> <pre><code class=python># coding: utf-8
-import Jetson.GPIO as GPIO
-import spidev
-import time
-import sys
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">Jetson.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">spidev</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-# A0コネクタにLightを接続
-LIGHTPIN = 0
+<span class="c1"># A0コネクタにLightを接続</span>
+<span class="n">LIGHTPIN</span> <span class="o">=</span> <span class="mi">0</span>
 
-# GPIO12コネクタにLEDを接続
-LEDPIN = 12
+<span class="c1"># GPIO12コネクタにLEDを接続</span>
+<span class="n">LEDPIN</span> <span class="o">=</span> <span class="mi">12</span>
 
-# GPIOポートを設定
-GPIO.setwarnings(False)
-GPIO.setmode( GPIO.BCM )
-GPIO.setup( LEDPIN, GPIO.OUT )
+<span class="c1"># GPIOポートを設定</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setwarnings</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span> <span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span> <span class="n">LEDPIN</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span> <span class="p">)</span>
 
-def readadc(channel):
-    adc = spi.xfer2([1,(8+channel)&lt;&lt;4,0])
-    data = ((adc[1]&amp;3) &lt;&lt; 8) + adc[2]
-    return data
+<span class="k">def</span> <span class="nf">readadc</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
+    <span class="n">adc</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">xfer2</span><span class="p">([</span><span class="mi">1</span><span class="p">,(</span><span class="mi">8</span><span class="o">+</span><span class="n">channel</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">((</span><span class="n">adc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&amp;</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="n">adc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">data</span>
 
-def arduino_map(x, in_min, in_max, out_min, out_max):
-    return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
+<span class="k">def</span> <span class="nf">arduino_map</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">in_min</span><span class="p">,</span> <span class="n">in_max</span><span class="p">,</span> <span class="n">out_min</span><span class="p">,</span> <span class="n">out_max</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">out_max</span> <span class="o">-</span> <span class="n">out_min</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">in_max</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">+</span> <span class="n">out_min</span>
 
-# PWM/100Hzに設定
-LED = GPIO.PWM(LEDPIN, 100)
+<span class="c1"># PWM/100Hzに設定</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">LEDPIN</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
-# 初期化
-LED.start(0)
-spi = spidev.SpiDev()
-spi.open(0,0)
-spi.max_speed_hz = 5000
+<span class="c1"># 初期化</span>
+<span class="n">LED</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">spidev</span><span class="o">.</span><span class="n">SpiDev</span><span class="p">()</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">max_speed_hz</span> <span class="o">=</span> <span class="mi">5000</span>
 
-try:
-    while True:
-        ambient = readadc(LIGHTPIN)
-        sys.stdout.write(&quot;\rambient = %f&quot; % (ambient))
-        sys.stdout.flush()
-        value = arduino_map(ambient, 0, 1023, 0, 100)
-        LED.ChangeDutyCycle(value)
-        time.sleep( 0.01 )
-except KeyboardInterrupt:
-    LED.stop()
-    GPIO.cleanup()
-    spi.close()
-    sys.exit(0)
-</code></pre></p>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">ambient</span> <span class="o">=</span> <span class="n">readadc</span><span class="p">(</span><span class="n">LIGHTPIN</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">ambient = </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ambient</span><span class="p">))</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">arduino_map</span><span class="p">(</span><span class="n">ambient</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">ChangeDutyCycle</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span> <span class="mf">0.01</span> <span class="p">)</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">LED</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">spi</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
                 
               
               

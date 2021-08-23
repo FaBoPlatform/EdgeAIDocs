@@ -1452,14 +1452,15 @@
                 
                 <h1 id="dustin-nv">Dustin-NV</h1>
 <p>豊富な実装サンプルがあるDustin-NVのRepoを参考にする。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_o924uxtanxwsi5s checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_o924uxtanxwsi5s-panel role=tab><label for=tab-group-0-0_o924uxtanxwsi5s class=code-tab-label data-lang id=tab-group-0-0_o924uxtanxwsi5s-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_o924uxtanxwsi5s-panel aria-labelledby=tab-group-0-0_o924uxtanxwsi5s-label><pre><code class>[https://github.com/dusty-nv/jetson-inference](https://github.com/dusty-nv/jetson-inference)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_upjxhwz74hr9sji class=code-tab data-lang aria-controls=tab-group-0-1_upjxhwz74hr9sji-panel role=tab><label for=tab-group-0-1_upjxhwz74hr9sji class=code-tab-label data-lang id=tab-group-0-1_upjxhwz74hr9sji-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_upjxhwz74hr9sji-panel aria-labelledby=tab-group-0-1_upjxhwz74hr9sji-label><pre><code class>git clone --recursive https://github.com/dusty-nv/jetson-inference
+<div class="highlight"><pre><span></span><code>[https://github.com/dusty-nv/jetson-inference](https://github.com/dusty-nv/jetson-inference)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/dusty-nv/jetson-inference
 cd jetson-inference
 docker/run.sh
-</code></pre></div></div>
+</code></pre></div>
 <h2 id="sample-code">Sample code</h2>
-<p>Recognition</p>
-<p> <pre><code class>import jetson.inference
+<p>Recognition
+<div class="highlight"><pre><span></span><code>import jetson.inference
 import jetson.utils
 
 net = jetson.inference.imageNet(&quot;googlenet&quot;)
@@ -1475,9 +1476,9 @@ while display.IsOpen():
         display.RenderOnce(img, width, height)
         display.SetTitle(&quot;{:s} | Network {:.0f} FPS&quot;.format(net.GetNetworkName(), net.GetNetworkFPS()))
         net.PrintProfilerTimes()
-</code></pre></p>
-<p>Segmentation</p>
-<p> <pre><code class>import jetson.inference
+</code></pre></div></p>
+<p>Segmentation
+<div class="highlight"><pre><span></span><code>import jetson.inference
 import jetson.utils
 import ctypes
 
@@ -1504,11 +1505,9 @@ while display.IsOpen():
     display.EndRender()
 
     display.SetTitle(&quot;Segmentation | Network {:.0f} FPS&quot;.format(net.GetNetworkFPS()))
-</code></pre></p>
-<p>Object detection</p>
-<p> <pre><code class>
-
-import jetson.inference
+</code></pre></div></p>
+<p>Object detection
+<div class="highlight"><pre><span></span><code>import jetson.inference
 import jetson.utils
 
 net = jetson.inference.detectNet(&quot;ssd-mobilenet-v2&quot;, threshold=0.5)
@@ -1520,7 +1519,7 @@ while display.IsOpen():
     detections = net.Detect(img, width, height)
     display.RenderOnce(img, width, height)
     display.SetTitle(&quot;Object Detection | Network {:.0f} FPS&quot;.format(net.GetNetworkFPS()))
-</code></pre></p>
+</code></pre></div></p>
                 
               
               

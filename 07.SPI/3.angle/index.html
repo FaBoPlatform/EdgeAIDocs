@@ -1691,24 +1691,24 @@
 <h2 id="_3">準備</h2>
 <p>GPIOインターフェースをSPIとPWMをつかえるように設定しましょう。</p>
 <p>Jetson-IO toolを起動します。</p>
-<p> <pre><code class>sudo /opt/nvidia/jetson-io/jetson-io.py
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>sudo /opt/nvidia/jetson-io/jetson-io.py
+</code></pre></div>
 <p>Pinmux テーブルの設定</p>
 <p>Configure 40-pin expansion headerを選択します。</p>
 <p>上下のカーソルで合わせ、スペースキーで有効にします。</p>
 <p>GPIO１２（３２ピン）がPWM 1、A0は、A/Dコンバーターを使うのでSPI 1（１９、２１、２３、２４、２６ピン）をそれぞれ有効にします。</p>
 <p>Backを選択して復帰します。</p>
-<p>pip3がインストールされていない場合は、</p>
-<p> <pre><code class>$sudo apt-get install python3-pip
-</code></pre></p>
+<p>pip3がインストールされていない場合は、
+<div class="highlight"><pre><span></span><code>$sudo apt-get install python3-pip
+</code></pre></div></p>
 <p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<p> <pre><code class>$pip3 install spidev
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>$pip3 install spidev
+</code></pre></div>
 <p>SPIdevの使い方。
 https://pypi.org/project/spidev/</p>
 <h2 id="_4">サンプルコード</h2>
 <p>サンプルは、#104 AngleをA０、#128 LED２を１２に接続します。</p>
-<p> <pre><code class># coding: utf-8
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import Jetson.GPIO as GPIO
 import spidev
 import time
@@ -1768,7 +1768,7 @@ except KeyboardInterrupt:
     GPIO.cleanup()
     spi.close()
     sys.exit(0)
-</code></pre></p>
+</code></pre></div>
                 
               
               
