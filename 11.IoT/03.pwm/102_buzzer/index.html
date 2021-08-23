@@ -1193,18 +1193,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02.analog/117_switch/" class="md-nav__link">
-        117 switch
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../02.analog/123_relay/" class="md-nav__link">
         123 RELAY
       </a>
@@ -1408,18 +1396,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../12.etc/jupyterlab/" class="md-nav__link">
-        Jupyterlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../12.etc/vnc/" class="md-nav__link">
         VNC
       </a>
@@ -1505,28 +1481,20 @@
                 
                 
                 <h1 id="102-buzzer">102 buzzer</h1>
-<p><img alt="" src="./../img/102_Buzzer/FaBo102.jpg" /></p>
 <h2 id="_1">サンプルコードの動作</h2>
 <p>JetsonのGPIOからPWM信号を出力し矩形波ドレミの音階を出力します。</p>
 <h2 id="_2">サンプルコード使用時の接続</h2>
 <p>FaBo #102 buzzerをGPIO12（32pin）,GPIO13(33pin)
 )に接続します。</p>
-<p><img alt="" src="./../img/102_Buzzer/fabo519_pwm_pin.jpg" /></p>
 <p>JetsonからPWM信号を出力します。ハードウェアPWM信号でのピンは決まっておりFaBo519の場合は、PWM0とPWM2が利用可能となっており、以下を設定します。</p>
 <p>Jupyter labを起動して、＋ボタンをおして、Lancherを起動し、ターミナルを選択します。</p>
-<p><img alt="" src="./../img/102_Buzzer/terminalboot.png" /></p>
 <p>以下を入力し</p>
 <p> <pre><code class>＄sudo /opt/nvidia/jetson-io/jetson-io.py
 </code></pre></p>
-<p><img alt="" src="./../img/102_Buzzer/pronpt.jpg" /></p>
 <p>Jetson Expansion Header Toolが起動します。</p>
-<p><img alt="" src="./../img/102_Buzzer/headertoolselect.png" /></p>
 <p>カーソルキー下を押してConfigure 40-pin expansion headerを選んでエンターキーを押します。</p>
-<p><img alt="" src="./../img/102_Buzzer/headertoolselect.png" /></p>
 <p>有効にしたいピン（pwm０または、pwm２）をカーソルとスペースキーで有効にします。選択が終わったらBack選んでエンターキーを押します。</p>
-<p><img alt="" src="./../img/102_Buzzer/PWMselect.png" /></p>
 <p>Exitを選択してエンターキーで終了します。</p>
-<p><img alt="" src="./../img/102_Buzzer/headertool_exit.png" /></p>
 <h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
 <table>
 <thead>

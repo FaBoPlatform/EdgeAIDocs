@@ -1191,18 +1191,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11.IoT/02.analog/117_switch/" class="md-nav__link">
-        117 switch
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../11.IoT/02.analog/123_relay/" class="md-nav__link">
         123 RELAY
       </a>
@@ -1342,18 +1330,6 @@
     <li class="md-nav__item">
       <a href="../demo/" class="md-nav__link">
         デモ
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jupyterlab/" class="md-nav__link">
-        Jupyterlab
       </a>
     </li>
   
@@ -1532,16 +1508,16 @@
                 
                 <h1 id="vnc">VNC</h1>
 <h2 id="jetsonvnc">JetsonのVNCのインストール</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_21m1h855w7bnei5 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_21m1h855w7bnei5-panel role=tab><label for=tab-group-0-0_21m1h855w7bnei5 class=code-tab-label data-lang id=tab-group-0-0_21m1h855w7bnei5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_21m1h855w7bnei5-panel aria-labelledby=tab-group-0-0_21m1h855w7bnei5-label><pre><code class>mkdir -p ~/.config/autostart
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_9zi6xoy5konhd2y checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_9zi6xoy5konhd2y-panel role=tab><label for=tab-group-0-0_9zi6xoy5konhd2y class=code-tab-label data-lang id=tab-group-0-0_9zi6xoy5konhd2y-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_9zi6xoy5konhd2y-panel aria-labelledby=tab-group-0-0_9zi6xoy5konhd2y-label><pre><code class>mkdir -p ~/.config/autostart
 cp /usr/share/applications/vino-server.desktop ~/.config/autostart/.
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_rr17qry2c5pppd3 class=code-tab data-lang aria-controls=tab-group-0-1_rr17qry2c5pppd3-panel role=tab><label for=tab-group-0-1_rr17qry2c5pppd3 class=code-tab-label data-lang id=tab-group-0-1_rr17qry2c5pppd3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_rr17qry2c5pppd3-panel aria-labelledby=tab-group-0-1_rr17qry2c5pppd3-label><pre><code class>cd /usr/lib/systemd/user/graphical-session.target.wants
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_m92bb5efc57g0sb class=code-tab data-lang aria-controls=tab-group-0-1_m92bb5efc57g0sb-panel role=tab><label for=tab-group-0-1_m92bb5efc57g0sb class=code-tab-label data-lang id=tab-group-0-1_m92bb5efc57g0sb-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_m92bb5efc57g0sb-panel aria-labelledby=tab-group-0-1_m92bb5efc57g0sb-label><pre><code class>cd /usr/lib/systemd/user/graphical-session.target.wants
 sudo ln -s ../vino-server.service ./.
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_kxnt5421wkl56dh class=code-tab data-lang aria-controls=tab-group-0-2_kxnt5421wkl56dh-panel role=tab><label for=tab-group-0-2_kxnt5421wkl56dh class=code-tab-label data-lang id=tab-group-0-2_kxnt5421wkl56dh-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_kxnt5421wkl56dh-panel aria-labelledby=tab-group-0-2_kxnt5421wkl56dh-label><pre><code class>gsettings set org.gnome.Vino prompt-enabled false
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_437k0yqmfjd8hki class=code-tab data-lang aria-controls=tab-group-0-2_437k0yqmfjd8hki-panel role=tab><label for=tab-group-0-2_437k0yqmfjd8hki class=code-tab-label data-lang id=tab-group-0-2_437k0yqmfjd8hki-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_437k0yqmfjd8hki-panel aria-labelledby=tab-group-0-2_437k0yqmfjd8hki-label><pre><code class>gsettings set org.gnome.Vino prompt-enabled false
 gsettings set org.gnome.Vino require-encryption false
 </code></pre></div></div>
 <h2 id="x-windows">X-Windowsのサイズ</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_0b8v3cm09uyvmmk checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_0b8v3cm09uyvmmk-panel role=tab><label for=tab-group-1-0_0b8v3cm09uyvmmk class=code-tab-label data-lang id=tab-group-1-0_0b8v3cm09uyvmmk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_0b8v3cm09uyvmmk-panel aria-labelledby=tab-group-1-0_0b8v3cm09uyvmmk-label><pre><code class>sudo vim /etc/X11/xorg.conf
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_qp7qqxv6brlczlk class=code-tab data-lang aria-controls=tab-group-1-1_qp7qqxv6brlczlk-panel role=tab><label for=tab-group-1-1_qp7qqxv6brlczlk class=code-tab-label data-lang id=tab-group-1-1_qp7qqxv6brlczlk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_qp7qqxv6brlczlk-panel aria-labelledby=tab-group-1-1_qp7qqxv6brlczlk-label><pre><code class>Section &quot;Screen&quot;
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_cu8pzxr4li1nb30 checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_cu8pzxr4li1nb30-panel role=tab><label for=tab-group-1-0_cu8pzxr4li1nb30 class=code-tab-label data-lang id=tab-group-1-0_cu8pzxr4li1nb30-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_cu8pzxr4li1nb30-panel aria-labelledby=tab-group-1-0_cu8pzxr4li1nb30-label><pre><code class>sudo vim /etc/X11/xorg.conf
+</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_r5i2qxwyno3d1si class=code-tab data-lang aria-controls=tab-group-1-1_r5i2qxwyno3d1si-panel role=tab><label for=tab-group-1-1_r5i2qxwyno3d1si class=code-tab-label data-lang id=tab-group-1-1_r5i2qxwyno3d1si-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_r5i2qxwyno3d1si-panel aria-labelledby=tab-group-1-1_r5i2qxwyno3d1si-label><pre><code class>Section &quot;Screen&quot;
    Identifier    &quot;Default Screen&quot;
    Monitor       &quot;Configured Monitor&quot;
    Device        &quot;Tegra0&quot;
@@ -1596,7 +1572,7 @@ EndSection
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../jupyterlab/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../demo/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1605,7 +1581,7 @@ EndSection
               <span class="md-footer__direction">
                 前
               </span>
-              Jupyterlab
+              デモ
             </div>
           </div>
         </a>
