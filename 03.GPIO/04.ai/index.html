@@ -1475,21 +1475,21 @@
 <p>LEDとの連携は、下記部分にソースを追加します。</p>
 <p><img alt="" src="../img/ailed01.jpg" /></p>
 <p><img alt="" src="../img/ailed02.jpg" /></p>
-<div class="highlight"><pre><span></span><code>import torchvision.transforms as transforms
-from dataset import ImageClassificationDataset
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">dataset</span> <span class="kn">import</span> <span class="n">ImageClassificationDataset</span>
+</span><span class="hll">
+</span><span class="n">TASK</span> <span class="o">=</span> <span class="s1">&#39;leds&#39;</span>
+<span class="c1"># TASK = &#39;emotions&#39;</span>
+<span class="c1"># TASK = &#39;fingers&#39;</span>
+<span class="c1"># TASK = &#39;diy&#39;</span>
 
-TASK = &#39;leds&#39;
-# TASK = &#39;emotions&#39;
-# TASK = &#39;fingers&#39;
-# TASK = &#39;diy&#39;
+<span class="n">CATEGORIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;leds_red&#39;</span><span class="p">,</span> <span class="s1">&#39;leds_blue&#39;</span><span class="p">]</span>
+<span class="c1"># CATEGORIES = [&#39;none&#39;, &#39;happy&#39;, &#39;sad&#39;, &#39;angry&#39;]</span>
+<span class="c1"># CATEGORIES = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</span>
+<span class="c1"># CATEGORIES = [ &#39;diy_1&#39;, &#39;diy_2&#39;, &#39;diy_3&#39;]</span>
 
-CATEGORIES = [&#39;leds_red&#39;, &#39;leds_blue&#39;]
-# CATEGORIES = [&#39;none&#39;, &#39;happy&#39;, &#39;sad&#39;, &#39;angry&#39;]
-# CATEGORIES = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
-# CATEGORIES = [ &#39;diy_1&#39;, &#39;diy_2&#39;, &#39;diy_3&#39;]
-
-DATASETS = [&#39;A&#39;, &#39;B&#39;]
-# DATASETS = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+<span class="n">DATASETS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="c1"># DATASETS = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>import threading
 import time
