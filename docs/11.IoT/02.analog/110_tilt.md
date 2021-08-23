@@ -4,7 +4,7 @@ FaBo #110 Tilt Brickを使用して傾斜を検知します。
 
 GPIOは4,5,6,12,13,16
 
-![](./../img/share/gpio_pin.jpg)
+![](./img/gpio_pin.jpg)
 
 
 ```

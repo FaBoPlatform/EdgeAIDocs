@@ -1,7 +1,5 @@
 # 102 buzzer
 
-![](./../img/102_Buzzer/FaBo102.jpg)
-
 ## サンプルコードの動作
 JetsonのGPIOからPWM信号を出力し矩形波ドレミの音階を出力します。
 
@@ -9,13 +7,11 @@ JetsonのGPIOからPWM信号を出力し矩形波ドレミの音階を出力し�
 FaBo #102 buzzerをGPIO12（32pin）,GPIO13(33pin)
 )に接続します。
 
-![](./../img/102_Buzzer/fabo519_pwm_pin.jpg)
 
 JetsonからPWM信号を出力します。ハードウェアPWM信号でのピンは決まっておりFaBo519の場合は、PWM0とPWM2が利用可能となっており、以下を設定します。
 
 Jupyter labを起動して、＋ボタンをおして、Lancherを起動し、ターミナルを選択します。
 
-![](./../img/102_Buzzer/terminalboot.png)
 
 
 以下を入力し
@@ -24,26 +20,19 @@ Jupyter labを起動して、＋ボタンをおして、Lancherを起動し、�
 ```
 
 
-![](./../img/102_Buzzer/pronpt.jpg)
 
 Jetson Expansion Header Toolが起動します。
 
-![](./../img/102_Buzzer/headertoolselect.png)
 
 カーソルキー下を押してConfigure 40-pin expansion headerを選んでエンターキーを押します。
-
-![](./../img/102_Buzzer/headertoolselect.png)
 
 
 
 有効にしたいピン（pwm０または、pwm２）をカーソルとスペースキーで有効にします。選択が終わったらBack選んでエンターキーを押します。
 
-![](./../img/102_Buzzer/PWMselect.png)
-
 
 Exitを選択してエンターキーで終了します。
 
-![](./../img/102_Buzzer/headertool_exit.png)
 
 
 ## JETSON NANO GPIO40ピン

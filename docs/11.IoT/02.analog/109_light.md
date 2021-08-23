@@ -8,8 +8,6 @@ FaBo #109 light Brickを使用して光の強さを計測
 
 A0にAnalog Brickを接続,GPIO12にLED2を接続します。
 
-![](./../../img/109_Light/109_light.jpg)
-
 ## JETSON NANO GPIO40ピン
 | ピン番号 |  Jetson.GPIO番号  |  NAME  | ピン番号 |  Jetson.GPIO番号  |  NAME  |
 | :---: | :---: |---- | :---: | :---: |---- |
@@ -34,9 +32,6 @@ A0にAnalog Brickを接続,GPIO12にLED2を接続します。
 |  37  | 26 |  SPI_2_MOSI  | 38  | 20 |  I2S_4_SDIN  |
 |  39  | - |  GND  | 40  | 21 |  I2S_4_SDOUT  |
 
-## Brick回路図
-
-![](./../../img/109_Light/109_light_sch.png)
 
 光が当てると数値は、低くなり。光が遮ると数値が高くなります。
 
@@ -55,27 +50,17 @@ $sudo /opt/nvidia/jetson-io/jetson-io.py
 Pinmux テーブルの設定
 
 
-![](./../../img/109_Light/JetsonExpansion01.png)
-
 Configure 40-pin expansion headerを選択します。
-
-![](./../../img/109_Light/JetsonExpansion02.png)
 
 PWM０はLED、SPI1は、ADコンバータICと接続するため、
 
 PWM0とSPI１を有効化します。スペースバーで決定。
 
-![](./../../img/109_Light/JetsonExpansion03.png)
-
 Backを選択します。
-
-![](./../../img/109_Light/JetsonExpansion04.png)
 
 Save and reboot to reconfigure pins を選択します。
 
 再起動します。
-
-![](./../../img/109_Light/JetsonExpansion05.png)
 
 
 pip3がインストールされていない場合は、
@@ -90,6 +75,7 @@ $pip3 install spidev
 ```
 
 SPIdevの使い方。
+
 https://pypi.org/project/spidev/
 
 <br>

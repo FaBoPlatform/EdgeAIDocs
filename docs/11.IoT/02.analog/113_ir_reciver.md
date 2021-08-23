@@ -8,7 +8,7 @@ LED BrickをGPIO４に接続します。
 
 GPIOは4,5,6,12,13,16
 
-![](./../img/share/gpio_pin.jpg)
+![](./img/gpio_pin.jpg)
 
 
 ~写真〜

@@ -839,13 +839,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     準備
   </a>
@@ -1268,18 +1261,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11.IoT/02.analog/117_switch/" class="md-nav__link">
-        117 switch
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../11.IoT/02.analog/123_relay/" class="md-nav__link">
         123 RELAY
       </a>
@@ -1427,18 +1408,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../12.etc/jupyterlab/" class="md-nav__link">
-        Jupyterlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../12.etc/vnc/" class="md-nav__link">
         VNC
       </a>
@@ -1506,13 +1475,6 @@
         <li class="md-nav__item">
   <a href="#jetson-nano-gpio40" class="md-nav__link">
     JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
   </a>
   
 </li>
@@ -1726,17 +1688,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="brick">Brick回路図</h2>
-<p>~画像〜</p>
-<p><br></p>
 <h2 id="_3">準備</h2>
 <p>GPIOインターフェースをSPIとPWMをつかえるように設定しましょう。</p>
 <p>Jetson-IO toolを起動します。</p>
-<p>$sudo /opt/nvidia/jetson-io/jetson-io.py</p>
+<p> <pre><code class>sudo /opt/nvidia/jetson-io/jetson-io.py
+</code></pre></p>
 <p>Pinmux テーブルの設定</p>
-<p><img alt="" src="./../img/104_angle/JETSONHEADTOOL.png" /></p>
 <p>Configure 40-pin expansion headerを選択します。</p>
-<p><img alt="" src="./../img/104_angle/PWMSPIEANBLE.png" /></p>
 <p>上下のカーソルで合わせ、スペースキーで有効にします。</p>
 <p>GPIO１２（３２ピン）がPWM 1、A0は、A/Dコンバーターを使うのでSPI 1（１９、２１、２３、２４、２６ピン）をそれぞれ有効にします。</p>
 <p>Backを選択して復帰します。</p>

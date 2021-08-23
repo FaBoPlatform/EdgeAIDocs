@@ -9,8 +9,6 @@ UV BrickをGPIO４に接続します。
 
 GPIOは4,5,6,12,13,16
 
-![](./../img/123_RELAY/123_RELAY.jpg)
-
 
 ~写真〜
 

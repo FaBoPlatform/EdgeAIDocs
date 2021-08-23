@@ -851,13 +851,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     準備
   </a>
@@ -1268,18 +1261,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../11.IoT/02.analog/117_switch/" class="md-nav__link">
-        117 switch
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../11.IoT/02.analog/123_relay/" class="md-nav__link">
         123 RELAY
       </a>
@@ -1427,18 +1408,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../12.etc/jupyterlab/" class="md-nav__link">
-        Jupyterlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../12.etc/vnc/" class="md-nav__link">
         VNC
       </a>
@@ -1511,13 +1480,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     準備
   </a>
@@ -1550,7 +1512,6 @@
 <h2 id="_2">サンプルコード使用時の接続</h2>
 <p>GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。</p>
 <p><img alt="" src="../../img/104_angle/Analogpinass.jpg" /></p>
-<p>~写真〜</p>
 <h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
 <table>
 <thead>
@@ -1726,15 +1687,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="brick">Brick回路図</h2>
-<p>~画像〜</p>
-<p><br></p>
 <h2 id="_3">準備</h2>
 <p>SPIをつかえるようにしましょう。</p>
 <p>Jetson-IO toolを起動します。</p>
-<p>$sudo /opt/nvidia/jetson-io/jetson-io.py</p>
-<p>Pinmux テーブルの設定</p>
-<p>~画像〜</p>
+<p> <pre><code class>sudo /opt/nvidia/jetson-io/jetson-io.py
+</code></pre></p>
 <p>pip3がインストールされていない場合は、</p>
 <p> <pre><code class>$sudo apt-get install python3-pip
 </code></pre></p>

@@ -8,7 +8,7 @@ FaBo #111 Microphone Brickを使用して音の大きさを計測します。
 
 GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。
 
-![](./../img/104_angle/Analogpinass.jpg)
+![](./img/Analogpinass.jpg)
 
 
 ~写真〜

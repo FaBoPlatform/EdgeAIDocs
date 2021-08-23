@@ -1165,13 +1165,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     準備
   </a>
@@ -1260,18 +1253,6 @@
     <li class="md-nav__item">
       <a href="../115_hunidity/" class="md-nav__link">
         115 hunidity
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../117_switch/" class="md-nav__link">
-        117 switch
       </a>
     </li>
   
@@ -1429,18 +1410,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../12.etc/jupyterlab/" class="md-nav__link">
-        Jupyterlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../12.etc/vnc/" class="md-nav__link">
         VNC
       </a>
@@ -1513,13 +1482,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     準備
   </a>
@@ -1551,7 +1513,6 @@
 <p>FaBo #109 light Brickを使用して光の強さを計測</p>
 <h2 id="_2">サンプルコード使用時の接続</h2>
 <p>A0にAnalog Brickを接続,GPIO12にLED2を接続します。</p>
-<p><img alt="" src="./../../img/109_Light/109_light.jpg" /></p>
 <h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
 <table>
 <thead>
@@ -1727,8 +1688,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="brick">Brick回路図</h2>
-<p><img alt="" src="./../../img/109_Light/109_light_sch.png" /></p>
 <p>光が当てると数値は、低くなり。光が遮ると数値が高くなります。</p>
 <p><br></p>
 <h2 id="_3">準備</h2>
@@ -1737,25 +1696,20 @@
 <p> <pre><code class>$sudo /opt/nvidia/jetson-io/jetson-io.py
 </code></pre></p>
 <p>Pinmux テーブルの設定</p>
-<p><img alt="" src="./../../img/109_Light/JetsonExpansion01.png" /></p>
 <p>Configure 40-pin expansion headerを選択します。</p>
-<p><img alt="" src="./../../img/109_Light/JetsonExpansion02.png" /></p>
 <p>PWM０はLED、SPI1は、ADコンバータICと接続するため、</p>
 <p>PWM0とSPI１を有効化します。スペースバーで決定。</p>
-<p><img alt="" src="./../../img/109_Light/JetsonExpansion03.png" /></p>
 <p>Backを選択します。</p>
-<p><img alt="" src="./../../img/109_Light/JetsonExpansion04.png" /></p>
 <p>Save and reboot to reconfigure pins を選択します。</p>
 <p>再起動します。</p>
-<p><img alt="" src="./../../img/109_Light/JetsonExpansion05.png" /></p>
 <p>pip3がインストールされていない場合は、</p>
 <p> <pre><code class>$sudo apt-get install python3-pip
 </code></pre></p>
 <p>pythonでSPIをつかうためのspidevをインストールします。</p>
 <p> <pre><code class>$pip3 install spidev
 </code></pre></p>
-<p>SPIdevの使い方。
-https://pypi.org/project/spidev/</p>
+<p>SPIdevの使い方。</p>
+<p>https://pypi.org/project/spidev/</p>
 <p><br></p>
 <h2 id="_4">サンプルコード</h2>
 <p> <pre><code class=python># coding: utf-8
