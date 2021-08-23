@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1471,13 +1473,13 @@
 <p>FaBo #202 9AxiをI2C0,I2C1,I2C2のいずれかに接続します。 </p>
 <p><img alt="" src="../../img/211_7Seg/i2cpin.jpg" /></p>
 <p>~写真〜</p>
-<p>FaBoのライブラリをインストール</p>
-<p> <pre><code class>git clone https://github.com/FaBoPlatform/FaBo9AXIS-MPU9250-Python.git
+<p>FaBoのライブラリをインストール
+<div class="highlight"><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBo9AXIS-MPU9250-Python.git
 cd FaBo9AXIS-MPU9250-Python
 sudo pip3 install .
-</code></pre></p>
-<p>ソースコード</p>
-<p> <pre><code class>import FaBo9Axis_MPU9250
+</code></pre></div></p>
+<p>ソースコード
+<div class="highlight"><pre><span></span><code>import FaBo9Axis_MPU9250
 import time
 import sys
 
@@ -1489,13 +1491,13 @@ try:
         gyro = mpu9250.readGyro()
         mag = mpu9250.readMagnet()
 
-        sys.stdout.write(&quot;\rx=%f,y=%f,z=%f,gx=%f,gy=%f,gz=%f,mx=%f,my=%f,mz=%f &quot; % (accel['x'], accel['y'], accel['z'],  gyro['x'],  gyro['y'],  gyro['z'], mag['x'], mag['y'], mag['z']))
+        sys.stdout.write(&quot;\rx=%f,y=%f,z=%f,gx=%f,gy=%f,gz=%f,mx=%f,my=%f,mz=%f &quot; % (accel[&#39;x&#39;], accel[&#39;y&#39;], accel[&#39;z&#39;],  gyro[&#39;x&#39;],  gyro[&#39;y&#39;],  gyro[&#39;z&#39;], mag[&#39;x&#39;], mag[&#39;y&#39;], mag[&#39;z&#39;]))
         sys.stdout.flush()
         time.sleep(0.1)
 
 except KeyboardInterrupt:
     sys.exit()
-</code></pre></p>
+</code></pre></div></p>
                 
               
               
@@ -1568,6 +1570,10 @@ except KeyboardInterrupt:
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

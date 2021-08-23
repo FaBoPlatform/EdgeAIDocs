@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1452,14 +1454,15 @@
                 
                 <h1 id="dustin-nv">Dustin-NV</h1>
 <p>豊富な実装サンプルがあるDustin-NVのRepoを参考にする。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_ogrd8abv6yslhut checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_ogrd8abv6yslhut-panel role=tab><label for=tab-group-0-0_ogrd8abv6yslhut class=code-tab-label data-lang id=tab-group-0-0_ogrd8abv6yslhut-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_ogrd8abv6yslhut-panel aria-labelledby=tab-group-0-0_ogrd8abv6yslhut-label><pre><code class>[https://github.com/dusty-nv/jetson-inference](https://github.com/dusty-nv/jetson-inference)
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_li509tntlybbyon class=code-tab data-lang aria-controls=tab-group-0-1_li509tntlybbyon-panel role=tab><label for=tab-group-0-1_li509tntlybbyon class=code-tab-label data-lang id=tab-group-0-1_li509tntlybbyon-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_li509tntlybbyon-panel aria-labelledby=tab-group-0-1_li509tntlybbyon-label><pre><code class>git clone --recursive https://github.com/dusty-nv/jetson-inference
+<div class="highlight"><pre><span></span><code>[https://github.com/dusty-nv/jetson-inference](https://github.com/dusty-nv/jetson-inference)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/dusty-nv/jetson-inference
 cd jetson-inference
 docker/run.sh
-</code></pre></div></div>
+</code></pre></div>
 <h2 id="sample-code">Sample code</h2>
-<p>Recognition</p>
-<p> <pre><code class>import jetson.inference
+<p>Recognition
+<div class="highlight"><pre><span></span><code>import jetson.inference
 import jetson.utils
 
 net = jetson.inference.imageNet(&quot;googlenet&quot;)
@@ -1475,9 +1478,9 @@ while display.IsOpen():
         display.RenderOnce(img, width, height)
         display.SetTitle(&quot;{:s} | Network {:.0f} FPS&quot;.format(net.GetNetworkName(), net.GetNetworkFPS()))
         net.PrintProfilerTimes()
-</code></pre></p>
-<p>Segmentation</p>
-<p> <pre><code class>import jetson.inference
+</code></pre></div></p>
+<p>Segmentation
+<div class="highlight"><pre><span></span><code>import jetson.inference
 import jetson.utils
 import ctypes
 
@@ -1504,11 +1507,9 @@ while display.IsOpen():
     display.EndRender()
 
     display.SetTitle(&quot;Segmentation | Network {:.0f} FPS&quot;.format(net.GetNetworkFPS()))
-</code></pre></p>
-<p>Object detection</p>
-<p> <pre><code class>
-
-import jetson.inference
+</code></pre></div></p>
+<p>Object detection
+<div class="highlight"><pre><span></span><code>import jetson.inference
 import jetson.utils
 
 net = jetson.inference.detectNet(&quot;ssd-mobilenet-v2&quot;, threshold=0.5)
@@ -1520,7 +1521,7 @@ while display.IsOpen():
     detections = net.Detect(img, width, height)
     display.RenderOnce(img, width, height)
     display.SetTitle(&quot;Object Detection | Network {:.0f} FPS&quot;.format(net.GetNetworkFPS()))
-</code></pre></p>
+</code></pre></div></p>
                 
               
               
@@ -1593,6 +1594,10 @@ while display.IsOpen():
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1481,17 +1483,17 @@
                 <h1 id="servoai">ServoとAIの連携(回帰)</h1>
 <h2 id="_1">カテゴリ名の修正</h2>
 <p><img alt="" src="../img/aicar001.jpg" /></p>
-<p> <pre><code class>import torchvision.transforms as transforms
+<div class="highlight"><pre><span></span><code>import torchvision.transforms as transforms
 from dataset import XYDataset
 
-TASK = 'car'
-# TASK = 'diy'
+TASK = &#39;car&#39;
+# TASK = &#39;diy&#39;
 
-CATEGORIES = ['xy', 'speed']
-# CATEGORIES = [ 'diy_1', 'diy_2', 'diy_3']
+CATEGORIES = [&#39;xy&#39;, &#39;speed&#39;]
+# CATEGORIES = [ &#39;diy_1&#39;, &#39;diy_2&#39;, &#39;diy_3&#39;]
 
-DATASETS = ['A', 'B']
-# DATASETS = ['A', 'B', 'C']
+DATASETS = [&#39;A&#39;, &#39;B&#39;]
+# DATASETS = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
 
 TRANSFORMS = transforms.Compose([
     transforms.ColorJitter(0.2, 0.2, 0.2, 0.2),
@@ -1502,13 +1504,13 @@ TRANSFORMS = transforms.Compose([
 
 datasets = {}
 for name in DATASETS:
-    datasets[name] = XYDataset('../data/regression/' + TASK + '_' + name, CATEGORIES, TRANSFORMS)
+    datasets[name] = XYDataset(&#39;../data/regression/&#39; + TASK + &#39;_&#39; + name, CATEGORIES, TRANSFORMS)
 
 print(&quot;{} task with {} categories defined&quot;.format(TASK, CATEGORIES))
-</code></pre></p>
+</code></pre></div>
 <h2 id="_2">ボタンと処理の追加</h2>
 <p><img alt="" src="../img/aicar002.jpg" /></p>
-<p> <pre><code class>import torch
+<div class="highlight"><pre><span></span><code>import torch
 import torchvision
 
 import Fabo_PCA9685
@@ -1527,7 +1529,7 @@ time.sleep(1)
 PCA9685.set_channel_value(THROTTLE,400)
 PCA9685.set_channel_value(HANDLE,300)
 
-device = torch.device('cuda')
+device = torch.device(&#39;cuda&#39;)
 output_dim = 2 * len(dataset.categories)  # x, y coordinate for each category
 
 # ALEXNET
@@ -1549,16 +1551,16 @@ model.fc = torch.nn.Linear(512, output_dim)
 
 model = model.to(device)
 
-model_save_button = ipywidgets.Button(description='save model')
-model_load_button = ipywidgets.Button(description='load model')
-model_path_widget = ipywidgets.Text(description='model path', value='/nvdli-nano/data/regression/my_xy_model.pth')
+model_save_button = ipywidgets.Button(description=&#39;save model&#39;)
+model_load_button = ipywidgets.Button(description=&#39;load model&#39;)
+model_path_widget = ipywidgets.Text(description=&#39;model path&#39;, value=&#39;/nvdli-nano/data/regression/my_xy_model.pth&#39;)
 
-run_button = ipywidgets.Button(description='run')
-stop_button = ipywidgets.Button(description='stop')
-pwm_widget = ipywidgets.IntText(description='pwm')
-x_widget = ipywidgets.IntText(description='x')
-center_widget = ipywidgets.IntSlider(min=0, max=600, description='center', orientation='horizontal')
-gain_widget = ipywidgets.FloatSlider(min=0.0, max=3.0, description='gain', orientation='horizontal')
+run_button = ipywidgets.Button(description=&#39;run&#39;)
+stop_button = ipywidgets.Button(description=&#39;stop&#39;)
+pwm_widget = ipywidgets.IntText(description=&#39;pwm&#39;)
+x_widget = ipywidgets.IntText(description=&#39;x&#39;)
+center_widget = ipywidgets.IntSlider(min=0, max=600, description=&#39;center&#39;, orientation=&#39;horizontal&#39;)
+gain_widget = ipywidgets.FloatSlider(min=0.0, max=3.0, description=&#39;gain&#39;, orientation=&#39;horizontal&#39;)
 
 def load_model(c):
     model.load_state_dict(torch.load(model_path_widget.value))
@@ -1589,22 +1591,22 @@ model_widget = ipywidgets.VBox([
 
 # display(model_widget)
 print(&quot;model configured and model_widget created&quot;)
-</code></pre></p>
+</code></pre></div>
 <h2 id="_3">推論結果でサーボを制御</h2>
 <p><img alt="" src="../img/aicar003.jpg" /></p>
-<p> <pre><code class>import threading
+<div class="highlight"><pre><span></span><code>import threading
 import time
 from utils import preprocess
 import torch.nn.functional as F
 
-state_widget = ipywidgets.ToggleButtons(options=['stop', 'live'], description='state', value='stop')
+state_widget = ipywidgets.ToggleButtons(options=[&#39;stop&#39;, &#39;live&#39;], description=&#39;state&#39;, value=&#39;stop&#39;)
 with open(&quot;../images/ready_img.jpg&quot;, &quot;rb&quot;) as file:
     default_image = file.read()
-prediction_widget = ipywidgets.Image(format='jpeg', width=camera.width, height=camera.height, value=default_image)
+prediction_widget = ipywidgets.Image(format=&#39;jpeg&#39;, width=camera.width, height=camera.height, value=default_image)
 
 def live(state_widget, model, camera, prediction_widget):
     global dataset
-    while state_widget.value == 'live':
+    while state_widget.value == &#39;live&#39;:
         image = camera.value
         preprocessed = preprocess(image)
         output = model(preprocessed).detach().cpu().numpy().flatten()
@@ -1625,11 +1627,11 @@ def live(state_widget, model, camera, prediction_widget):
         pwm_widget.value = pwm
 
 def start_live(change):
-    if change['new'] == 'live':
+    if change[&#39;new&#39;] == &#39;live&#39;:
         execute_thread = threading.Thread(target=live, args=(state_widget, model, camera, prediction_widget))
         execute_thread.start()
 
-state_widget.observe(start_live, names='value')
+state_widget.observe(start_live, names=&#39;value&#39;)
 
 live_execution_widget = ipywidgets.VBox([
     prediction_widget,
@@ -1638,7 +1640,7 @@ live_execution_widget = ipywidgets.VBox([
 
 # display(live_execution_widget)
 print(&quot;live_execution_widget created&quot;)
-</code></pre></p>
+</code></pre></div>
                 
               
               
@@ -1711,6 +1713,10 @@ print(&quot;live_execution_widget created&quot;)
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

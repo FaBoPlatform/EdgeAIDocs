@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1454,8 +1456,9 @@
 <p>JetPackには、サンプルが用意されております。ここでは、その一部を紹介します。</p>
 <h2 id="visionworks16">VisionWorks1.6</h2>
 <p>jupyter labのターミナルを選択し、以下を入力。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_sh checked=checked class=code-tab data-lang=sh aria-controls=tab-group-0-0_sh-panel role=tab><label for=tab-group-0-0_sh class=code-tab-label data-lang=sh id=tab-group-0-0_sh-label>Sh</label><div class=code-tabpanel role=tabpanel data-lang=sh id=tab-group-0-0_sh-panel aria-labelledby=tab-group-0-0_sh-label><pre><code class=sh>$cd /usr/share/visionworks/sources
-</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_sh class=code-tab data-lang=sh aria-controls=tab-group-0-1_sh-panel role=tab><label for=tab-group-0-1_sh class=code-tab-label data-lang=sh id=tab-group-0-1_sh-label>Sh</label><div class=code-tabpanel role=tabpanel data-lang=sh id=tab-group-0-1_sh-panel aria-labelledby=tab-group-0-1_sh-label><pre><code class=sh>$ls
+<div class="highlight"><pre><span></span><code><span class="nv">$cd</span> /usr/share/visionworks/sources
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">$ls</span>
 
 3rdparty
 data
@@ -1465,32 +1468,33 @@ Makefile
 nvxio
 samples
 user_guide_linux.md
-</code></pre></div></div>
-<p>サンプルガイド詳細</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_sh checked=checked class=code-tab data-lang=sh aria-controls=tab-group-1-0_sh-panel role=tab><label for=tab-group-1-0_sh class=code-tab-label data-lang=sh id=tab-group-1-0_sh-label>Sh</label><div class=code-tabpanel role=tabpanel data-lang=sh id=tab-group-1-0_sh-panel aria-labelledby=tab-group-1-0_sh-label><pre><code class=sh>$cat user_guide_linux.md
-</code></pre></div><input name=tab-group-1 type=radio id=tab-group-1-1_sh class=code-tab data-lang=sh aria-controls=tab-group-1-1_sh-panel role=tab><label for=tab-group-1-1_sh class=code-tab-label data-lang=sh id=tab-group-1-1_sh-label>Sh</label><div class=code-tabpanel role=tabpanel data-lang=sh id=tab-group-1-1_sh-panel aria-labelledby=tab-group-1-1_sh-label><pre><code class=sh>$ /usr/share/visionworks/sources/install-samples.sh ~/
-</code></pre></div></div>
-<p>実行結果</p>
-<p> <pre><code class=sh>~/es.sh ~
+</code></pre></div>
+<p>サンプルガイド詳細
+<div class="highlight"><pre><span></span><code><span class="nv">$cat</span> user_guide_linux.md
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>$ /usr/share/visionworks/sources/install-samples.sh ~/
+</code></pre></div>
+<p>実行結果
+<div class="highlight"><pre><span></span><code>~/es.sh ~
 Creating the /home/takeo//VisionWorks-1.6-Samples directory...
 Copying VisionWorks samples to /home/takeo//VisionWorks-1.6-Samples...
 Finished copying VisionWorks samples
-</code></pre></p>
-<p>Makefileがあるところまで移動</p>
-<p> <pre><code class=sh>$cd /home/takeo/VisionWorks-1.6-Samples
-</code></pre></p>
-<p>ビルドします。</p>
-<p> <pre><code class=sh>$ make -j4 # add dbg=1 to make debug build
-</code></pre></p>
-<p>実行結果（抜粋 最後の部分）</p>
-<p> <pre><code class>make[1]: Leaving directory '/home/takeo/VisionWorks-1.6-Samples/samples/object_tracker_nvxcu'
-make[1]: Leaving directory '/home/takeo/VisionWorks-1.6-Samples/samples/opencv_npp_interop'
-</code></pre></p>
-<p>実行ファイルができます。</p>
-<p> <pre><code class=sh>$/home/takeo/VisionWorks-1.6-Samples/bin/aarch64/linux/releas
-</code></pre></p>
-<p>デモファイル一覧</p>
-<p> <pre><code class=sh>$ls
+</code></pre></div></p>
+<p>Makefileがあるところまで移動
+<div class="highlight"><pre><span></span><code><span class="nv">$cd</span> /home/takeo/VisionWorks-1.6-Samples
+</code></pre></div></p>
+<p>ビルドします。
+<div class="highlight"><pre><span></span><code>$ make -j4 <span class="c1"># add dbg=1 to make debug build</span>
+</code></pre></div></p>
+<p>実行結果（抜粋 最後の部分）
+<div class="highlight"><pre><span></span><code>make[1]: Leaving directory &#39;/home/takeo/VisionWorks-1.6-Samples/samples/object_tracker_nvxcu&#39;
+make[1]: Leaving directory &#39;/home/takeo/VisionWorks-1.6-Samples/samples/opencv_npp_interop&#39;
+</code></pre></div></p>
+<p>実行ファイルができます。
+<div class="highlight"><pre><span></span><code>$/home/takeo/VisionWorks-1.6-Samples/bin/aarch64/linux/releas
+</code></pre></div></p>
+<p>デモファイル一覧
+<div class="highlight"><pre><span></span><code><span class="nv">$ls</span>
 nvx_demo_feature_tracker        
 nvx_demo_stereo_matching         
 nvx_sample_opencv_npp_interop
@@ -1502,10 +1506,10 @@ nvx_sample_nvgstcamera_capture
 nvx_sample_player
 nvx_demo_motion_estimation      
 nvx_sample_object_tracker_nvxcu
-</code></pre></p>
-<p>デモファイル実行します。</p>
-<p> <pre><code class=sh>$ ./nvx_demo_feature_tracker
-</code></pre></p>
+</code></pre></div></p>
+<p>デモファイル実行します。
+<div class="highlight"><pre><span></span><code>$ ./nvx_demo_feature_tracker
+</code></pre></div></p>
 <p>デモが実行されるとログが表示され検出された特徴点の数と検出時間が表示されます。</p>
 <p><img alt="" src="../../img/jupyterlab/log.png" /></p>
 <p>デモが実行された様子がHDMI機器に表示されます。
@@ -1585,6 +1589,10 @@ https://developer.nvidia.com/embedded/visionworks</p>
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

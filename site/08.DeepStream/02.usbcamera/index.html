@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1466,19 +1468,21 @@
                 
                 <h1 id="usb-camera">USB Camera</h1>
 <p>USB Cameraのパラメーターを取得します。</p>
-<p> <pre><code class>apt install v4l-utils
+<div class="highlight"><pre><span></span><code>apt install v4l-utils
 v4l2-ctl -d /dev/video0 --list-formats-ext
-</code></pre></p>
+</code></pre></div>
 <p>下記ソースのGstreamerの箇所にカメラオプションを反映します。</p>
-<p> <pre><code class>caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>caps_v4l2src.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
+</code></pre></div>
 <h2 id="source">Source</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_dk9cp01rfk1gajv checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_dk9cp01rfk1gajv-panel role=tab><label for=tab-group-2-0_dk9cp01rfk1gajv class=code-tab-label data-lang id=tab-group-2-0_dk9cp01rfk1gajv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_dk9cp01rfk1gajv-panel aria-labelledby=tab-group-2-0_dk9cp01rfk1gajv-label><pre><code class>apt install vim
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-1_s7a4ydsjckq0y0y class=code-tab data-lang aria-controls=tab-group-2-1_s7a4ydsjckq0y0y-panel role=tab><label for=tab-group-2-1_s7a4ydsjckq0y0y class=code-tab-label data-lang id=tab-group-2-1_s7a4ydsjckq0y0y-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_s7a4ydsjckq0y0y-panel aria-labelledby=tab-group-2-1_s7a4ydsjckq0y0y-label><pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
-</code></pre></div><input name=tab-group-2 type=radio id=tab-group-2-2_9l89kkn5x4hyc8t class=code-tab data-lang aria-controls=tab-group-2-2_9l89kkn5x4hyc8t-panel role=tab><label for=tab-group-2-2_9l89kkn5x4hyc8t class=code-tab-label data-lang id=tab-group-2-2_9l89kkn5x4hyc8t-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-2_9l89kkn5x4hyc8t-panel aria-labelledby=tab-group-2-2_9l89kkn5x4hyc8t-label><pre><code class>vim deepstream_test_3_usb.py
-</code></pre></div></div>
-<p>deepstream_test_3_usb.pyを修正します。</p>
-<p> <pre><code class>#!/usr/bin/env python3
+<div class="highlight"><pre><span></span><code>apt install vim
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>vim deepstream_test_3_usb.py
+</code></pre></div>
+<p>deepstream_test_3_usb.pyを修正します。
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env python3
 ################################################################################
 # Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
 #
@@ -1502,10 +1506,10 @@ v4l2-ctl -d /dev/video0 --list-formats-ext
 ################################################################################
 
 import sys
-sys.path.append('../')
+sys.path.append(&#39;../&#39;)
 import gi
 import configparser
-gi.require_version('Gst', '1.0')
+gi.require_version(&#39;Gst&#39;, &#39;1.0&#39;)
 from gi.repository import GObject, Gst
 from gi.repository import GLib
 from ctypes import *
@@ -1562,14 +1566,14 @@ def tiler_src_pad_buffer_probe(pad,info,u_data):
         except StopIteration:
             break
 
-        '''
+        &#39;&#39;&#39;
         print(&quot;Frame Number is &quot;, frame_meta.frame_num)
         print(&quot;Source id is &quot;, frame_meta.source_id)
         print(&quot;Batch id is &quot;, frame_meta.batch_id)
         print(&quot;Source Frame Width &quot;, frame_meta.source_frame_width)
         print(&quot;Source Frame Height &quot;, frame_meta.source_frame_height)
         print(&quot;Num object meta &quot;, frame_meta.num_obj_meta)
-        '''
+        &#39;&#39;&#39;
         frame_number=frame_meta.frame_num
         l_obj=frame_meta.obj_meta_list
         num_rects = frame_meta.num_obj_meta
@@ -1670,7 +1674,7 @@ def create_source_bin(index,uri):
         sys.stderr.write(&quot; Unable to create NvJPEG Decoder \n&quot;)
 
 
-    # Create a source GstBin to abstract this bin's content from the rest of the
+    # Create a source GstBin to abstract this bin&#39;s content from the rest of the
     # pipeline
     bin_name=&quot;source-bin-%02d&quot; %index
     print(bin_name)
@@ -1710,12 +1714,12 @@ def create_source_bin(index,uri):
     if not caps_vidconvsrc:
         sys.stderr.write(&quot; Unable to create capsfilter \n&quot;)
 
-    #caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;video/x-raw, framerate=15/1&quot;))
-    caps_v4l2src.set_property('caps', Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
+    #caps_v4l2src.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;video/x-raw, framerate=15/1&quot;))
+    caps_v4l2src.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
 
-    caps_vidconvsrc.set_property('caps', Gst.Caps.from_string(&quot;video/x-raw(memory:NVMM)&quot;))
+    caps_vidconvsrc.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;video/x-raw(memory:NVMM)&quot;))
 
-    source.set_property('device', uri)
+    source.set_property(&#39;device&#39;, uri)
 
     nbin.add(source)
     nbin.add(caps_v4l2src)
@@ -1832,8 +1836,8 @@ def main(args):
     nvosd = Gst.ElementFactory.make(&quot;nvdsosd&quot;, &quot;onscreendisplay&quot;)
     if not nvosd:
         sys.stderr.write(&quot; Unable to create nvosd \n&quot;)
-    nvosd.set_property('process-mode',OSD_PROCESS_MODE)
-    nvosd.set_property('display-text',OSD_DISPLAY_TEXT)
+    nvosd.set_property(&#39;process-mode&#39;,OSD_PROCESS_MODE)
+    nvosd.set_property(&#39;display-text&#39;,OSD_DISPLAY_TEXT)
     if(is_aarch64()):
         print(&quot;Creating transform \n &quot;)
         transform=Gst.ElementFactory.make(&quot;nvegltransform&quot;, &quot;nvegl-transform&quot;)
@@ -1843,19 +1847,19 @@ def main(args):
     print(&quot;Creating EGLSink \n&quot;)
     sink = Gst.ElementFactory.make(&quot;nveglglessink&quot;, &quot;nvvideo-renderer&quot;)
     #sink = Gst.ElementFactory.make(&quot;nvoverlaysink&quot;, &quot;nvvideo-renderer&quot;)
-    sink.set_property('sync', 0)
+    sink.set_property(&#39;sync&#39;, 0)
     if not sink:
         sys.stderr.write(&quot; Unable to create egl sink \n&quot;)
 
     if is_live:
         print(&quot;Atleast one of the sources is live&quot;)
-        streammux.set_property('live-source', 1)
+        streammux.set_property(&#39;live-source&#39;, 1)
 
-    streammux.set_property('width', 1280)
-    streammux.set_property('height', 720)
-    streammux.set_property('batch-size', number_sources)
-    streammux.set_property('batched-push-timeout', 4000000)
-    pgie.set_property('config-file-path', &quot;dstest3_pgie_config.txt&quot;)
+    streammux.set_property(&#39;width&#39;, 1280)
+    streammux.set_property(&#39;height&#39;, 720)
+    streammux.set_property(&#39;batch-size&#39;, number_sources)
+    streammux.set_property(&#39;batched-push-timeout&#39;, 4000000)
+    pgie.set_property(&#39;config-file-path&#39;, &quot;dstest3_pgie_config.txt&quot;)
     pgie_batch_size=pgie.get_property(&quot;batch-size&quot;)
     if(pgie_batch_size != number_sources):
         print(&quot;WARNING: Overriding infer-config batch-size&quot;,pgie_batch_size,&quot; with number of sources &quot;, number_sources,&quot; \n&quot;)
@@ -1921,12 +1925,12 @@ def main(args):
     print(&quot;Exiting app\n&quot;)
     pipeline.set_state(Gst.State.NULL)
 
-if __name__ == '__main__':
+if __name__ == &#39;__main__&#39;:
     sys.exit(main(sys.argv))
-</code></pre></p>
+</code></pre></div></p>
 <h2 id="_1">実行</h2>
-<p> <pre><code class>python3 deepstream_test_3_usb.py /dev/video0
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>python3 deepstream_test_3_usb.py /dev/video0
+</code></pre></div>
                 
               
               
@@ -1999,6 +2003,10 @@ if __name__ == '__main__':
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

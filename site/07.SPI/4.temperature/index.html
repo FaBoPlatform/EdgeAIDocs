@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1690,18 +1692,18 @@
 <h2 id="_3">準備</h2>
 <p>SPIをつかえるようにしましょう。</p>
 <p>Jetson-IO toolを起動します。</p>
-<p> <pre><code class>sudo /opt/nvidia/jetson-io/jetson-io.py
-</code></pre></p>
-<p>pip3がインストールされていない場合は、</p>
-<p> <pre><code class>$sudo apt-get install python3-pip
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>sudo /opt/nvidia/jetson-io/jetson-io.py
+</code></pre></div>
+<p>pip3がインストールされていない場合は、
+<div class="highlight"><pre><span></span><code>$sudo apt-get install python3-pip
+</code></pre></div></p>
 <p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<p> <pre><code class>$pip3 install spidev
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>$pip3 install spidev
+</code></pre></div>
 <p>SPIdevの使い方。
 https://pypi.org/project/spidev/</p>
 <h2 id="_4">サンプルコード</h2>
-<p> <pre><code class># coding: utf-8
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import spidev
 import time
 import sys
@@ -1733,7 +1735,7 @@ try:
 except KeyboardInterrupt:
     spi.close()
     sys.exit(0)
-</code></pre></p>
+</code></pre></div>
                 
               
               
@@ -1806,6 +1808,10 @@ except KeyboardInterrupt:
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

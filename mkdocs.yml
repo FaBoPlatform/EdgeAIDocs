@@ -12,14 +12,14 @@ extra:
 markdown_extensions:
   - fontawesome_markdown
   - admonition
-  - pymdownx.highlight:
-      use_pygments: true
-      noclasses: true
-      pygments_style: monokai
-      linenums: true
-  - markdown_fenced_code_tabs
+  - pymdownx.highlight
+  - pymdownx.superfences
 extra_css:
   - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"  
   - 'stylesheets/extra.css'
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/config.js
 plugins:
   - macros

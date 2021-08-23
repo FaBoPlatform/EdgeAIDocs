@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1495,8 +1497,8 @@
                 <h1 id="gpio">GPIOの有効化</h1>
 <p>Jetson NanoでAIを始めるを無事終了したら、再度 Jetson Nanoを再起動します。</p>
 <h2 id="jetson-nano-2gb">Jetson Nano 2GBへのログイン</h2>
-<p> <pre><code class>ssh jetson@192.168.55.1
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
+</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1511,12 +1513,12 @@
 </table>
 <h2 id="docker">Dockerを起動</h2>
 <p><code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
-<p> <pre><code class>sudo docker run --runtime nvidia -it --rm --network host \
+<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --rm --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
 nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
-</code></pre></p>
+</code></pre></div>
 <h2 id="jupyterlab">JupyterLabへの接続</h2>
 <p><code>http://192.168.55.1:8888</code> にChromeで接続し、JupuyterLabに接続します。</p>
 <table>
@@ -1535,8 +1537,8 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
 <p><img alt="" src="../img/gpio01.jpg" /></p>
 <p><img alt="" src="../img/gpio02.jpg" /></p>
 <p>Jetson.GPIOのインストール</p>
-<p> <pre><code class>pip3 install Jetson.GPIO
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>pip3 install Jetson.GPIO
+</code></pre></div>
                 
               
               
@@ -1609,6 +1611,10 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

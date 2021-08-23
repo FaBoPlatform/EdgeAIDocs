@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1453,7 +1455,7 @@
                 <h1 id="servo">Servoの制御</h1>
 <h2 id="pwm">PWMサーボの制御</h2>
 <p>初期化</p>
-<p> <pre><code class># coding: utf-8
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import Fabo_PCA9685
 import time
 import pkg_resources
@@ -1466,15 +1468,15 @@ INITIAL_VALUE=300
 bus = smbus.SMBus(BUSNUM)
 PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
 PCA9685.set_hz(SERVO_HZ)
-</code></pre></p>
+</code></pre></div>
 <p>値を設定</p>
-<p> <pre><code class>while True:
+<div class="highlight"><pre><span></span><code>while True:
     # Move servo on channel O between extremes.
     PCA9685.set_channel_value(0,150)
     time.sleep(1)
     PCA9685.set_channel_value(0,300)
     time.sleep(1)
-</code></pre></p>
+</code></pre></div>
                 
               
               
@@ -1547,6 +1549,10 @@ PCA9685.set_hz(SERVO_HZ)
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

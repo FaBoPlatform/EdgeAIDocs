@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1471,13 +1473,13 @@
 <p>FaBo #201 ３AxiをI2C0,I2C1,I2C2のいずれかに接続します。 </p>
 <p><img alt="" src="../../img/211_7Seg/i2cpin.jpg" /></p>
 <p>~写真〜</p>
-<p>FaBoのライブラリをインストール</p>
-<p> <pre><code class>git clone https://github.com/FaBoPlatform/FaBo3Axis-ADXL345-Python.git
+<p>FaBoのライブラリをインストール
+<div class="highlight"><pre><span></span><code>git clone https://github.com/FaBoPlatform/FaBo3Axis-ADXL345-Python.git
 cd FaBo3Axis-ADXL345-Python
 sudo pip3 install .
-</code></pre></p>
-<p>ソースコード</p>
-<p> <pre><code class># coding: utf-8
+</code></pre></div></p>
+<p>ソースコード
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import FaBo3Axis_ADXL345
 import time
 import sys
@@ -1487,12 +1489,12 @@ adxl345 = FaBo3Axis_ADXL345.ADXL345()
 try:
     while True:
         axes = adxl345.read()
-        sys.stdout.write(&quot;\rx = %f, y = %f, z = %f&quot; % (axes['x'],  axes['y'], axes['z']))
+        sys.stdout.write(&quot;\rx = %f, y = %f, z = %f&quot; % (axes[&#39;x&#39;],  axes[&#39;y&#39;], axes[&#39;z&#39;]))
         sys.stdout.flush()
         time.sleep(0.1)
 except KeyboardInterrupt:
     sys.exit()
-</code></pre></p>
+</code></pre></div></p>
                 
               
               
@@ -1565,6 +1567,10 @@ except KeyboardInterrupt:
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

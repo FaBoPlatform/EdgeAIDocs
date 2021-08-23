@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1508,35 +1510,35 @@
                 
                 <h1 id="deepstream">DeepStream</h1>
 <h2 id="jetsonhmdi">JetsonにHMDIケーブルをつなげログイン</h2>
-<p>Terminalでxhost +を実行</p>
-<p> <pre><code class>xhost +
-</code></pre></p>
+<p>Terminalでxhost +を実行
+<div class="highlight"><pre><span></span><code>xhost +
+</code></pre></div></p>
 <h2 id="jetsonssh">JetsonにSSHでログイン</h2>
-<p>Displayの設定をおこなう(Jetson Nano 2GB)</p>
-<p> <pre><code class>export DISPLAY=:0
+<p>Displayの設定をおこなう(Jetson Nano 2GB)
+<div class="highlight"><pre><span></span><code>export DISPLAY=:0
 xhost
-</code></pre></p>
-<p>下記のメッセージが戻ってくれば、X-Windowへの画面転送ができる状態になっている。</p>
-<p> <pre><code class>access control disabled, clients can connect from any host
+</code></pre></div></p>
+<p>下記のメッセージが戻ってくれば、X-Windowへの画面転送ができる状態になっている。
+<div class="highlight"><pre><span></span><code>access control disabled, clients can connect from any host
 LOCAL:
 SI:localuser:jetbot
-</code></pre></p>
+</code></pre></div></p>
 <h2 id="docker">Dockerの起動</h2>
-<p> <pre><code class>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  --device /dev/video0:/dev/video0:mwr  -e &quot;DISPLAY&quot; -w /opt/nvidia/deepstream/deepstream-5.0 -v /tmp/argus_socket:/tmp/argus_socket -v \/tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/deepstream-l4t:5.0.1-20.09-samples
-</code></pre></p>
+<div class="highlight"><pre><span></span><code>sudo docker run -it --rm --ipc=host --net=host --runtime nvidia  --device /dev/video0:/dev/video0:mwr  -e &quot;DISPLAY&quot; -w /opt/nvidia/deepstream/deepstream-5.0 -v /tmp/argus_socket:/tmp/argus_socket -v \/tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/deepstream-l4t:5.0.1-20.09-samples
+</code></pre></div>
 <h2 id="deepstreampython">DeepStreamをPythonで使用するためのパッケージをインストール</h2>
-<p> <pre><code class>apt update
+<div class="highlight"><pre><span></span><code>apt update
 apt install libgstrtspserver-1.0-dev v4l-utils  vim python3-pip python3-gi python3-dev python3-gst-1.0 -y
-</code></pre></p>
+</code></pre></div>
 <h2 id="deepstream-python-appsclone">DeepStream Python appsをClone</h2>
-<p> <pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources
+<div class="highlight"><pre><span></span><code>cd /opt/nvidia/deepstream/deepstream-5.0/sources
 git clone https://github.com/NVIDIA-AI-IOT/deepstream_python_apps
 cd deepstream_python_apps
-</code></pre></p>
+</code></pre></div>
 <p>サンプルを実行</p>
-<p> <pre><code class>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
+<div class="highlight"><pre><span></span><code>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
 python3 deepstream_test_3.py file:///opt/nvidia/deepstream/deepstream-5.0/samples/streams/sample_1080p_h264.mp4
-</code></pre></p>
+</code></pre></div>
                 
               
               
@@ -1609,6 +1611,10 @@ python3 deepstream_test_3.py file:///opt/nvidia/deepstream/deepstream-5.0/sample
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
       
     
   </body>

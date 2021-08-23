@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
     
       
     
@@ -1414,7 +1416,7 @@ LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <p><img alt="" src="../img/gpio_pin.jpg" /></p>
 <p>GPIOの判定</p>
 <p>以下のコードは、ボタンが押されたのたえずチェックします。</p>
-<p> <pre><code class># coding: utf-8
+<div class="highlight"><pre><span></span><code># coding: utf-8
 import RPi.GPIO as GPIO
 import time
 
@@ -1438,7 +1440,7 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
     sys.exit(0)
-</code></pre></p>
+</code></pre></div>
                 
               
               
@@ -1511,6 +1513,10 @@ except KeyboardInterrupt:
     
     
       <script src="../../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
       
     
   </body>
