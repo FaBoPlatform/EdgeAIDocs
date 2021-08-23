@@ -1514,15 +1514,16 @@
 </tbody>
 </table>
 <h2 id="docker">Dockerを起動</h2>
-<p><code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
-<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --rm --network host \
+<p>Dockerが起動中の場合は、起動中のDockerを使ってください。</p>
+<p>Dockerを停止している場合は、下記コマンドでDockerを起動します。</p>
+<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --network host \
 --volume ~/nvdli-data:/nvdli-nano/data \
 --device /dev/video0 \
 --privileged \
-nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.5.0
+handson
 </code></pre></div>
 <h2 id="jupyterlab">JupyterLabへの接続</h2>
-<p><code>http://192.168.55.1:8888</code> にChromeで接続し、JupuyterLabに接続します。</p>
+<p>Chromeブラウザを起動し、<code>http://192.168.55.1:8888</code> にアクセスし、JupuyterLabに接続します。</p>
 <table>
 <thead>
 <tr>
