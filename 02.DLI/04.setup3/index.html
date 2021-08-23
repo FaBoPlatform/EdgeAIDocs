@@ -1471,9 +1471,9 @@
 <p>Keyboard, Mouse, HDMIを外し、USBでPCと接続します。</p>
 <p><img alt="" src="../img/headless01.jpg" /></p>
 <p><code>先程設定したユーザ名@192.168.55.1</code> でPCのターミナルからSSHでログインしてみましょう。</p>
-<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
+<div class="highlight"><pre><span></span><code><span class="go">ssh jetson@192.168.55.1</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>mkdir -p ~/nvdli-data
+<div class="highlight"><pre><span></span><code><span class="go">mkdir -p ~/nvdli-data</span>
 </code></pre></div>
 <p><a href="https://ngc.nvidia.com/catalog/containers/nvidia:dli:dli-nano-ai">NVIDIA NGC</a>に公開されている最新のDockerを下記コマンドで、起動します。</p>
 <div class="highlight"><pre><span></span><code><span class="go">sudo docker run --runtime nvidia -it --rm --network host \</span>
