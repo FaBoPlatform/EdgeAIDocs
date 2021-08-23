@@ -1472,8 +1472,7 @@
 <div class="highlight"><pre><span></span><code>cp /nvdli-nano/classification/* /nvdli-nano/GPIO/
 </code></pre></div>
 <h2 id="led">LED部分の追加</h2>
-<p>LEDとの連携は、下記部分にソースを追加します。</p>
-<p><img alt="" src="../img/ailed01.jpg" /></p>
+<p>LEDとの連携は、<code>classification_interactive.ipynb</code>に下記部分を追加します。</p>
 <p><img alt="" src="../img/ai_gpio001.jpg" /></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
 <span class="kn">from</span> <span class="nn">dataset</span> <span class="kn">import</span> <span class="n">ImageClassificationDataset</span>
@@ -1506,6 +1505,7 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> task with </span><span class="si">{}</span><span class="s2"> categories defined&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">TASK</span><span class="p">,</span> <span class="n">CATEGORIES</span><span class="p">))</span>
 </code></pre></div>
+<p><img alt="" src="../img/ai_gpio002.jpg" /></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">threading</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">preprocess</span>
