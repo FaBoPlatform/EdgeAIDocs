@@ -1561,6 +1561,10 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
 </tr>
 </tbody>
 </table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>JetsonをWi-Fiにつなぐには、Jetson本体(Dockerではなく)にSSHでログインして、<code>sudo nmcli device wifi connect 'アクセスポイント名' password 'パスワード' ifname wlan0</code> でコマンドラインからWi-Fiに接続する事も可能です。</p>
+</div>
 <h2 id="gpio_1">GPIOの設定</h2>
 <p><img alt="" src="../img/gpio01.jpg" /></p>
 <p><img alt="" src="../img/gpio02.jpg" /></p>
