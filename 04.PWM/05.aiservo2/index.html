@@ -1514,11 +1514,11 @@
         <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">camera</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">))</span>
         <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">camera</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">))</span>
 
-        <span class="k">if</span> <span class="n">category_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="hll">            <span class="n">pwm</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">+</span> <span class="n">x</span>
+<span class="hll">        <span class="k">if</span> <span class="n">category_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">pwm</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">+</span> <span class="n">x</span>
 </span><span class="hll">            <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pwm</span><span class="p">)</span>
-</span><span class="hll">
-</span>        <span class="n">prediction</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">prediction</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
         <span class="n">prediction_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bgr8_to_jpeg</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 
