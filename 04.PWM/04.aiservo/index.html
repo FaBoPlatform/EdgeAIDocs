@@ -1498,45 +1498,47 @@
 <h2 id="_2">ソースの修正</h2>
 <p><img alt="" src="../img/aipwm01.jpg" /></p>
 <p><img alt="" src="../img/aipwm02.jpg" /></p>
-<div class="highlight"><pre><span></span><code>import threading
-import time
-from utils import preprocess
-import torch.nn.functional as F
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">preprocess</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
-import Fabo_PCA9685
-import time
-import pkg_resources
-SMBUS=&#39;smbus&#39;
-BUSNUM=1
-SERVO_HZ=60
-INITIAL_VALUE=300
-bus = smbus.SMBus(BUSNUM)
-PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
-PCA9685.set_hz(SERVO_HZ)
+<span class="hll"><span class="kn">import</span> <span class="nn">Fabo_PCA9685</span>
+</span><span class="hll"><span class="kn">import</span> <span class="nn">time</span>
+</span><span class="hll"><span class="kn">import</span> <span class="nn">pkg_resources</span>
+</span><span class="hll"><span class="n">SMBUS</span><span class="o">=</span><span class="s1">&#39;smbus&#39;</span>
+</span><span class="hll"><span class="n">BUSNUM</span><span class="o">=</span><span class="mi">1</span>
+</span><span class="hll"><span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">60</span>
+</span><span class="hll"><span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">300</span>
+</span><span class="hll"><span class="n">bus</span> <span class="o">=</span> <span class="n">smbus</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">BUSNUM</span><span class="p">)</span>
+</span><span class="hll"><span class="n">PCA9685</span> <span class="o">=</span> <span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">PCA9685</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="n">INITIAL_VALUE</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="mh">0x40</span><span class="p">)</span>
+</span><span class="hll"><span class="n">PCA9685</span><span class="o">.</span><span class="n">set_hz</span><span class="p">(</span><span class="n">SERVO_HZ</span><span class="p">)</span>
+</span>
+<span class="n">state_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stop&#39;</span><span class="p">,</span> <span class="s1">&#39;live&#39;</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span>
+<span class="n">prediction_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;prediction&#39;</span><span class="p">)</span>
+<span class="n">score_widgets</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+    <span class="n">score_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">category</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
+    <span class="n">score_widgets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score_widget</span><span class="p">)</span>
 
-state_widget = ipywidgets.ToggleButtons(options=[&#39;stop&#39;, &#39;live&#39;], description=&#39;state&#39;, value=&#39;stop&#39;)
-prediction_widget = ipywidgets.Text(description=&#39;prediction&#39;)
-score_widgets = []
-for category in dataset.categories:
-    score_widget = ipywidgets.FloatSlider(min=0.0, max=1.0, description=category, orientation=&#39;vertical&#39;)
-    score_widgets.append(score_widget)
-
-def live(state_widget, model, camera, prediction_widget, score_widget):
-    global dataset
-    while state_widget.value == &#39;live&#39;:
-        image = camera.value
-        preprocessed = preprocess(image)
-        output = model(preprocessed)
-        output = F.softmax(output, dim=1).detach().cpu().numpy().flatten()
-        category_index = output.argmax()
-        prediction_widget.value = dataset.categories[category_index]
-        if category_index == 0:
-            PCA9685.set_channel_value(0,150)
-        elif category_index == 1:
-            PCA9685.set_channel_value(0,650)
-        for i, score in enumerate(list(output)):
-            score_widgets[i].value = score
-</code></pre></div>
+<span class="k">def</span> <span class="nf">live</span><span class="p">(</span><span class="n">state_widget</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">prediction_widget</span><span class="p">,</span> <span class="n">score_widget</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">dataset</span>
+    <span class="k">while</span> <span class="n">state_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s1">&#39;live&#39;</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">preprocessed</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">preprocessed</span><span class="p">)</span>
+<span class="hll">        <span class="n">output</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</span><span class="hll">        <span class="n">category_index</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+</span><span class="hll">        <span class="n">prediction_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">categories</span><span class="p">[</span><span class="n">category_index</span><span class="p">]</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">if</span> <span class="n">category_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+</span><span class="hll">        <span class="k">elif</span> <span class="n">category_index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">650</span><span class="p">)</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)):</span>
+</span><span class="hll">            <span class="n">score_widgets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">score</span>
+</span></code></pre></div>
                 
               
               
