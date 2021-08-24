@@ -491,6 +491,13 @@
       
         <li class="md-nav__item">
   <a href="#pwm" class="md-nav__link">
+    PWM用チップの認識
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwm_1" class="md-nav__link">
     PWMサーボの制御
   </a>
   
@@ -1458,6 +1465,13 @@
       
         <li class="md-nav__item">
   <a href="#pwm" class="md-nav__link">
+    PWM用チップの認識
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwm_1" class="md-nav__link">
     PWMサーボの制御
   </a>
   
@@ -1477,29 +1491,38 @@
                 
                 
                 <h1 id="servo">Servoの制御</h1>
-<h2 id="pwm">PWMサーボの制御</h2>
+<p><img alt="" src="../img/set_pwm01.jpg" /></p>
+<p><img alt="" src="../img/set_pwm02.jpg" /></p>
+<p><img alt="" src="../img/set_pwm03.jpg" /></p>
+<h2 id="pwm">PWM用チップの認識</h2>
+<p><img alt="" src="../img/set_pwm04.jpg" /></p>
+<div class="highlight"><pre><span></span><code>!i2cdetect -y -r 1
+</code></pre></div>
+<p><code>0x40</code>がPCA9685のアドレス番号になっています。</p>
+<h2 id="pwm_1">PWMサーボの制御</h2>
+<p><img alt="" src="../img/program01.jpg" /></p>
 <p>初期化</p>
-<div class="highlight"><pre><span></span><code># coding: utf-8
-import Fabo_PCA9685
-import time
-import pkg_resources
-import smbus
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">Fabo_PCA9685</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+<span class="kn">import</span> <span class="nn">smbus</span>
 
-# init
-BUSNUM=1
-SERVO_HZ=60
-INITIAL_VALUE=300
-bus = smbus.SMBus(BUSNUM)
-PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x60)
-PCA9685.set_hz(SERVO_HZ)
+<span class="c1"># init</span>
+<span class="n">BUSNUM</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">300</span>
+<span class="n">bus</span> <span class="o">=</span> <span class="n">smbus</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">BUSNUM</span><span class="p">)</span>
+<span class="n">PCA9685</span> <span class="o">=</span> <span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">PCA9685</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="n">INITIAL_VALUE</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="mh">0x40</span><span class="p">)</span>
+<span class="n">PCA9685</span><span class="o">.</span><span class="n">set_hz</span><span class="p">(</span><span class="n">SERVO_HZ</span><span class="p">)</span>
 </code></pre></div>
 <p>値を設定</p>
-<div class="highlight"><pre><span></span><code>while True:
-    # Move servo on channel O between extremes.
-    PCA9685.set_channel_value(0,150)
-    time.sleep(1)
-    PCA9685.set_channel_value(0,300)
-    time.sleep(1)
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Move servo on channel O between extremes.</span>
+    <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
                 
               
