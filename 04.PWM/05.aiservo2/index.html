@@ -1478,6 +1478,33 @@
                 
                 <h1 id="servoai">ServoとAIの連携(回帰)</h1>
 <h2 id="_1">ソースの修正</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+<span class="kn">from</span> <span class="nn">dataset</span> <span class="kn">import</span> <span class="n">XYDataset</span>
+
+<span class="hll"><span class="n">TASK</span> <span class="o">=</span> <span class="s1">&#39;servo&#39;</span>
+</span><span class="hll"><span class="c1"># TASK = &#39;face&#39;</span>
+</span><span class="hll"><span class="c1"># TASK = &#39;diy&#39;</span>
+</span>
+<span class="hll"><span class="n">CATEGORIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;finger&#39;</span><span class="p">,</span> <span class="s1">&#39;left_eye&#39;</span><span class="p">,</span> <span class="s1">&#39;right_eye&#39;</span><span class="p">]</span>
+</span><span class="hll"><span class="c1"># CATEGORIES = [&#39;nose&#39;, &#39;left_eye&#39;, &#39;right_eye&#39;]</span>
+</span><span class="hll"><span class="c1"># CATEGORIES = [ &#39;diy_1&#39;, &#39;diy_2&#39;, &#39;diy_3&#39;]</span>
+</span>
+<span class="n">DATASETS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="c1"># DATASETS = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]</span>
+
+<span class="n">TRANSFORMS</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ColorJitter</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">([</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">])</span>
+<span class="p">])</span>
+
+<span class="n">datasets</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">DATASETS</span><span class="p">:</span>
+    <span class="n">datasets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">XYDataset</span><span class="p">(</span><span class="s1">&#39;../data/regression/&#39;</span> <span class="o">+</span> <span class="n">TASK</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">,</span> <span class="n">CATEGORIES</span><span class="p">,</span> <span class="n">TRANSFORMS</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> task with </span><span class="si">{}</span><span class="s2"> categories defined&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">TASK</span><span class="p">,</span> <span class="n">CATEGORIES</span><span class="p">))</span>
+</code></pre></div>
 <p><img alt="" src="../img/aipwm03.jpg" /></p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">threading</span>
 <span class="kn">import</span> <span class="nn">time</span>
