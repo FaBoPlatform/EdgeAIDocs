@@ -14,7 +14,7 @@
     
     
       
-        <title>108 temperature - FaBo EdgeAI Docs</title>
+        <title>Servo連携 - FaBo EdgeAI Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#108-temperature" class="md-skip">
+        <a href="#servo" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              108 temperature
+              Servo連携
             
           </span>
         </div>
@@ -510,12 +510,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         05.TRT POSE
@@ -533,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/01.setting/" class="md-nav__link">
+      <a href="../01.setting/" class="md-nav__link">
         TRT Pose
       </a>
     </li>
@@ -545,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/02.pytorch/" class="md-nav__link">
+      <a href="../02.pytorch/" class="md-nav__link">
         必要なパッケージのインストール
       </a>
     </li>
@@ -557,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/03.docker/" class="md-nav__link">
+      <a href="../03.docker/" class="md-nav__link">
         Dockerの保存
       </a>
     </li>
@@ -569,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/04.live/" class="md-nav__link">
+      <a href="../04.live/" class="md-nav__link">
         Demoの実行
       </a>
     </li>
@@ -581,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/05.log/" class="md-nav__link">
+      <a href="../05.log/" class="md-nav__link">
         Logを出してみる
       </a>
     </li>
@@ -591,11 +593,58 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/06.servo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Servo連携
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Servo連携
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pwm" class="md-nav__link">
+    PWMの設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwm_1" class="md-nav__link">
+    PWMサーボと連携
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -605,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/07.stop/" class="md-nav__link">
+      <a href="../07.stop/" class="md-nav__link">
         Dockerの保存と停止
       </a>
     </li>
@@ -864,14 +913,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       <label class="md-nav__link" for="__nav_9">
         08.SPI
@@ -889,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.spi/" class="md-nav__link">
+      <a href="../../08.SPI/1.spi/" class="md-nav__link">
         SPIの設定
       </a>
     </li>
@@ -901,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.distance/" class="md-nav__link">
+      <a href="../../08.SPI/2.distance/" class="md-nav__link">
         116 Distance
       </a>
     </li>
@@ -913,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.angle/" class="md-nav__link">
+      <a href="../../08.SPI/3.angle/" class="md-nav__link">
         104 Angle
       </a>
     </li>
@@ -923,79 +970,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          108 temperature
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../08.SPI/4.temperature/" class="md-nav__link">
         108 temperature
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプルコードの動作
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    サンプルコード使用時の接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    サンプルコード
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1641,36 +1620,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプルコードの動作
+  <a href="#pwm" class="md-nav__link">
+    PWMの設定
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    サンプルコード使用時の接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    サンプルコード
+  <a href="#pwm_1" class="md-nav__link">
+    PWMサーボと連携
   </a>
   
 </li>
@@ -1688,233 +1646,54 @@
               
                 
                 
-                <h1 id="108-temperature">108 temperature</h1>
-<h2 id="_1">サンプルコードの動作</h2>
-<p>FaBo #108 temprature Brickを使用してアナログ値を計測</p>
-<h2 id="_2">サンプルコード使用時の接続</h2>
-<p>GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。</p>
-<p><img alt="" src="../../img/104_angle/Analogpinass.jpg" /></p>
-<h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
-<table>
-<thead>
-<tr>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">2</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">2</td>
-<td>I2C_2_SDA</td>
-<td align="center">4</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">3</td>
-<td>I2C_2_SCL</td>
-<td align="center">6</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">4</td>
-<td>AUDIO_MCLK</td>
-<td align="center">8</td>
-<td align="center">14</td>
-<td>UART_2_TX</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">10</td>
-<td align="center">15</td>
-<td>UART_2_RX</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">17</td>
-<td>UART_2_RTS</td>
-<td align="center">12</td>
-<td align="center">18</td>
-<td>I2S_4_SCLK</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">27</td>
-<td>SPI_2_SCK</td>
-<td align="center">14</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td align="center">22</td>
-<td>LCD_TE</td>
-<td align="center">16</td>
-<td align="center">23</td>
-<td>SPI_2_CS1</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">18</td>
-<td align="center">24</td>
-<td>SPI_2_CS0</td>
-</tr>
-<tr>
-<td align="center">19</td>
-<td align="center">10</td>
-<td>SPI_1_MOSI</td>
-<td align="center">20</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">21</td>
-<td align="center">9</td>
-<td>SPI_1_MISO</td>
-<td align="center">22</td>
-<td align="center">25</td>
-<td>SPI_2_MISO</td>
-</tr>
-<tr>
-<td align="center">23</td>
-<td align="center">11</td>
-<td>SPI_1_SCK</td>
-<td align="center">24</td>
-<td align="center">8</td>
-<td>SPI_1_CS0</td>
-</tr>
-<tr>
-<td align="center">25</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">26</td>
-<td align="center">7</td>
-<td>SPI_1_CS1</td>
-</tr>
-<tr>
-<td align="center">27</td>
-<td align="center">-</td>
-<td>I2C_1_SDA</td>
-<td align="center">28</td>
-<td align="center">-</td>
-<td>I2C_1_SCL</td>
-</tr>
-<tr>
-<td align="center">29</td>
-<td align="center">5</td>
-<td>CAM_AF_EN</td>
-<td align="center">30</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">31</td>
-<td align="center">6</td>
-<td>GPIO_OZ0</td>
-<td align="center">32</td>
-<td align="center">12</td>
-<td>LCD_BL_PWM</td>
-</tr>
-<tr>
-<td align="center">33</td>
-<td align="center">13</td>
-<td>GPIO_PE6</td>
-<td align="center">34</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">35</td>
-<td align="center">19</td>
-<td>I2S_4_LRCK</td>
-<td align="center">36</td>
-<td align="center">16</td>
-<td>UART_2_CTS</td>
-</tr>
-<tr>
-<td align="center">37</td>
-<td align="center">26</td>
-<td>SPI_2_MOSI</td>
-<td align="center">38</td>
-<td align="center">20</td>
-<td>I2S_4_SDIN</td>
-</tr>
-<tr>
-<td align="center">39</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">40</td>
-<td align="center">21</td>
-<td>I2S_4_SDOUT</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_3">準備</h2>
-<p>SPIをつかえるようにしましょう。</p>
-<p>Jetson-IO toolを起動します。</p>
-<div class="highlight"><pre><span></span><code>sudo /opt/nvidia/jetson-io/jetson-io.py
+                <h1 id="servo">Servo連携</h1>
+<h2 id="pwm">PWMの設定</h2>
+<p>smbusをインストール</p>
+<div class="highlight"><pre><span></span><code>apt install python-smbus
 </code></pre></div>
-<p>pip3がインストールされていない場合は、
-<div class="highlight"><pre><span></span><code>$sudo apt-get install python3-pip
-</code></pre></div></p>
-<p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<div class="highlight"><pre><span></span><code>$pip3 install spidev
+<p>FaBoPWMをインストール</p>
+<div class="highlight"><pre><span></span><code>cd /nvdli-nano/
+git clone -b jupyterlab https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
+cd FaBoPWM-PCA9685-Python
+pip3 install .
 </code></pre></div>
-<p>SPIdevの使い方。
-https://pypi.org/project/spidev/</p>
-<h2 id="_4">サンプルコード</h2>
-<div class="highlight"><pre><span></span><code># coding: utf-8
-import spidev
-import time
-import sys
-
-# A0コネクタにTemperatureを接続
-TEMPPIN = 0
-
-def readadc(channel):
-    adc = spi.xfer2([1,(8+channel)&lt;&lt;4,0])
-    data = ((adc[1]&amp;3) &lt;&lt; 8) + adc[2]
-    return data
-
-def arduino_map(x, in_min, in_max, out_min, out_max):
-    return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
-
-# 初期化
-spi = spidev.SpiDev()
-spi.open(0,0)
-spi.max_speed_hz = 5000
-
-try:
-    while True:
-        data = readadc(TEMPPIN)
-        volt = arduino_map(data, 0, 1023, 0, 5000)
-        temp = arduino_map(volt, 300, 1600, -30, 100)
-        sys.stdout.write(&quot;\rtemp = %f&quot; % (temp))
-        sys.stdout.flush()
-        time.sleep( 0.5 )
-except KeyboardInterrupt:
-    spi.close()
-    sys.exit(0)
+<div class="highlight"><pre><span></span><code>pip3 install smbus
+</code></pre></div>
+<h2 id="pwm_1">PWMサーボと連携</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">Fabo_PCA9685</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">pkg_resources</span>
+<span class="kn">import</span> <span class="nn">smbus</span>
+<span class="n">SMBUS</span><span class="o">=</span><span class="s1">&#39;smbus&#39;</span>
+<span class="n">BUSNUM</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">300</span>
+<span class="n">bus</span> <span class="o">=</span> <span class="n">smbus</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">BUSNUM</span><span class="p">)</span>
+<span class="hll"><span class="n">PCA9685</span> <span class="o">=</span> <span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">PCA9685</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="n">INITIAL_VALUE</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="mh">0x40</span><span class="p">)</span>
+</span><span class="hll"><span class="n">PCA9685</span><span class="o">.</span><span class="n">set_hz</span><span class="p">(</span><span class="n">SERVO_HZ</span><span class="p">)</span>
+</span><span class="hll">
+</span><span class="hll"><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+</span><span class="hll">    <span class="n">image</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span>
+</span><span class="hll">    <span class="n">data</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">model_trt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">paf</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
+</span><span class="hll">    <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span> <span class="o">=</span> <span class="n">parse_objects</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span><span class="p">)</span><span class="c1">#, cmap_threshold=0.15, link_threshold=0.15)</span>
+</span>    <span class="n">human</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">human</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;human&#39;s num=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">human</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">peak</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>  
+            <span class="n">peak</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;index=</span><span class="si">%d</span><span class="s1"> : k=</span><span class="si">%d</span><span class="s1">,[x,y]=[</span><span class="si">%5.3f</span><span class="s1">, </span><span class="si">%5.3f</span><span class="s1">]&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">peak</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">pwm</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">+</span> <span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pwm</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;index=</span><span class="si">%d</span><span class="s1"> : k=</span><span class="si">%d</span><span class="s1">,[x,y]=None&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+    <span class="n">draw_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span><span class="p">)</span>
+    <span class="n">image_w</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bgr8_to_jpeg</span><span class="p">(</span><span class="n">image</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
 </code></pre></div>
                 
               
@@ -1934,7 +1713,7 @@ except KeyboardInterrupt:
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../3.angle/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../05.log/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1943,19 +1722,19 @@ except KeyboardInterrupt:
               <span class="md-footer__direction">
                 前
               </span>
-              104 Angle
+              Logを出してみる
             </div>
           </div>
         </a>
       
       
-        <a href="../../09.DeepStream/01.gettingstarted/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../07.stop/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              DeepStream
+              Dockerの保存と停止
             </div>
           </div>
           <div class="md-footer__button md-icon">

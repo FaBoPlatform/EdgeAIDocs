@@ -14,7 +14,7 @@
     
     
       
-        <title>Dockerの保存と停止 - FaBo EdgeAI Docs</title>
+        <title>Logを出してみる - FaBo EdgeAI Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#log" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dockerの保存と停止
+              Logを出してみる
             
           </span>
         </div>
@@ -592,10 +592,64 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Logを出してみる
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Dockerの保存と停止
+        Logを出してみる
       </a>
       
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#log_1" class="md-nav__link">
+    Logの表示
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06.servo/" class="md-nav__link">
+        Servo連携
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
     </li>
   
 
@@ -1552,6 +1606,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#log_1" class="md-nav__link">
+    Logの表示
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1563,19 +1632,27 @@
               
                 
                 
-                <h1 id="docker">Dockerの保存と停止</h1>
-<p>JupyterLab経由ではなく、ssh経由でJetson Nanoにログインします。</p>
-<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
-</code></pre></div>
-<p>DockerのIDを取得します。</p>
-<div class="highlight"><pre><span></span><code>sudo docker ps
-</code></pre></div>
-<p><img alt="" src="../img/docker01.jpg" /></p>
-<p>Dockerを<code>trt_pose</code>という名称で、commitします。</p>
-<div class="highlight"><pre><span></span><code>sudo docker commit ID(現在起動中のもの)  trt_pose
-</code></pre></div>
-<p>現在起動中のDockerを停止します。</p>
-<div class="highlight"><pre><span></span><code>sudo docker stop ID(現在起動中のもの)
+                <h1 id="log">Logを出してみる</h1>
+<h2 id="log_1">Logの表示</h2>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">model_trt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">paf</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
+    <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span> <span class="o">=</span> <span class="n">parse_objects</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span><span class="p">)</span><span class="c1">#, cmap_threshold=0.15, link_threshold=0.15)</span>
+    <span class="n">human</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">human</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;human&#39;s num=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="hll">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+</span><span class="hll">        <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">human</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span><span class="hll">        <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">peak</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>  
+</span><span class="hll">            <span class="n">peak</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;index=</span><span class="si">%d</span><span class="s1"> : k=</span><span class="si">%d</span><span class="s1">,[x,y]=[</span><span class="si">%5.3f</span><span class="s1">, </span><span class="si">%5.3f</span><span class="s1">]&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">peak</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</span><span class="hll">        <span class="k">else</span><span class="p">:</span>
+</span><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;index=</span><span class="si">%d</span><span class="s1"> : k=</span><span class="si">%d</span><span class="s1">,[x,y]=None&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+</span><span class="hll">    <span class="n">draw_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span><span class="p">)</span>
+</span>    <span class="n">image_w</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bgr8_to_jpeg</span><span class="p">(</span><span class="n">image</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
 </code></pre></div>
                 
               
@@ -1610,13 +1687,13 @@
         </a>
       
       
-        <a href="../../06.SPEAK/01.setting/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../06.servo/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              音声再生
+              Servo連携
             </div>
           </div>
           <div class="md-footer__button md-icon">
