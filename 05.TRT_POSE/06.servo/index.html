@@ -1691,6 +1691,89 @@ pip3 install .
 </span>    <span class="n">draw_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span><span class="p">)</span>
     <span class="n">image_w</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bgr8_to_jpeg</span><span class="p">(</span><span class="n">image</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
 </code></pre></div>
+<p><code>j == 0</code>はnoseのポイントを指している。kの値はpointが検出できれば0, 出来ない場合は-1が取得される。</p>
+<table>
+<thead>
+<tr>
+<th align="left">point no</th>
+<th align="left">部位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">"nose"</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">"left_eye"</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">"right_eye"</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">"left_ear"</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">"right_ear"</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">"left_shoulder"</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">"right_shoulder"</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">"left_elbow"</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">"right_elbow"</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">"left_wrist"</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">"right_wrist"</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left">"left_hip"</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left">"right_hip"</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">"left_knee"</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">"right_knee"</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left">left_ankle"</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left">"right_ankle"</td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left">"neck"</td>
+</tr>
+</tbody>
+</table>
                 
               
               
