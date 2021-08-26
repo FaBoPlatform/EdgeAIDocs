@@ -14,7 +14,7 @@
     
     
       
-        <title>Jetson Inference - FaBo EdgeAI Docs</title>
+        <title>Demoの実行 - FaBo EdgeAI Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jetson-inference" class="md-skip">
+        <a href="#demo" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jetson Inference
+              Demoの実行
             
           </span>
         </div>
@@ -510,12 +510,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         05.TRT POSE
@@ -533,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/01.setting/" class="md-nav__link">
+      <a href="../01.setting/" class="md-nav__link">
         TRT Pose
       </a>
     </li>
@@ -545,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/02.pytorch/" class="md-nav__link">
+      <a href="../02.pytorch/" class="md-nav__link">
         必要なパッケージのインストール
       </a>
     </li>
@@ -557,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/03.docker/" class="md-nav__link">
+      <a href="../03.docker/" class="md-nav__link">
         Dockerの保存
       </a>
     </li>
@@ -567,11 +569,65 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/04.live/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Demoの実行
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Demoの実行
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    フォルダ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    学習済みモデルのアップロード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live_demo" class="md-nav__link">
+    live_demoの実行
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -581,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05.TRT_POSE/06.stop/" class="md-nav__link">
+      <a href="../06.stop/" class="md-nav__link">
         Dockerの保存と停止
       </a>
     </li>
@@ -1050,14 +1106,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
       
       <label class="md-nav__link" for="__nav_12">
         11.Jetson Inference
@@ -1073,51 +1127,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Jetson Inference
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../11.Jetson%20Inference/01.setting/" class="md-nav__link">
         Jetson Inference
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sample-code" class="md-nav__link">
-    Sample code
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1589,8 +1603,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sample-code" class="md-nav__link">
-    Sample code
+  <a href="#_1" class="md-nav__link">
+    フォルダ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    学習済みモデルのアップロード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live_demo" class="md-nav__link">
+    live_demoの実行
   </a>
   
 </li>
@@ -1608,75 +1636,15 @@
               
                 
                 
-                <h1 id="jetson-inference">Jetson Inference</h1>
-<p>豊富な実装サンプルがあるDustin-NVのRepoを参考にする。</p>
-<p><a href="https://github.com/dusty-nv/jetson-inference">https://github.com/dusty-nv/jetson-inference</a></p>
-<div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/dusty-nv/jetson-inference
-cd jetson-inference
-docker/run.sh
-</code></pre></div>
-<h2 id="sample-code">Sample code</h2>
-<p>Recognition
-<div class="highlight"><pre><span></span><code>import jetson.inference
-import jetson.utils
-
-net = jetson.inference.imageNet(&quot;googlenet&quot;)
-font = jetson.utils.cudaFont()
-camera = jetson.utils.gstCamera(1280, 720, &quot;/dev/video0&quot;)
-display = jetson.utils.glDisplay()
-
-while display.IsOpen():
-        img, width, height = camera.CaptureRGBA()
-        class_idx, confidence = net.Classify(img, width, height)
-        class_desc = net.GetClassDesc(class_idx)     
-        font.OverlayText(img, width, height, &quot;{:05.2f}% {:s}&quot;.format(confidence * 100, class_desc), 5, 5, font.White, font.Gray40)
-        display.RenderOnce(img, width, height)
-        display.SetTitle(&quot;{:s} | Network {:.0f} FPS&quot;.format(net.GetNetworkName(), net.GetNetworkFPS()))
-        net.PrintProfilerTimes()
-</code></pre></div></p>
-<p>Segmentation
-<div class="highlight"><pre><span></span><code>import jetson.inference
-import jetson.utils
-import ctypes
-
-width = 1280
-height = 720
-cam = &quot;/dev/video0&quot;
-net = jetson.inference.segNet(&quot;fcn-resnet18-voc&quot;)
-net.SetOverlayAlpha(175.0)
-img_overlay = jetson.utils.cudaAllocMapped(width * height * 4 * ctypes.sizeof(ctypes.c_float))
-img_mask = jetson.utils.cudaAllocMapped(width/2 * height/2 * 4 * ctypes.sizeof(ctypes.c_float))
-
-camera = jetson.utils.gstCamera(width, height, cam)
-display = jetson.utils.glDisplay()
-
-while display.IsOpen():
-    img, width, height = camera.CaptureRGBA()
-    net.Process(img, width, height, &quot;void&quot;)
-    net.Overlay(img_overlay, width, height, &quot;linear&quot;)
-    net.Mask(img_mask, width/2, height/2, &quot;linear&quot;)
-
-    display.BeginRender()
-    display.Render(img_overlay, width, height)
-    display.Render(img_mask, width/2, height/2, width)
-    display.EndRender()
-
-    display.SetTitle(&quot;Segmentation | Network {:.0f} FPS&quot;.format(net.GetNetworkFPS()))
-</code></pre></div></p>
-<p>Object detection
-<div class="highlight"><pre><span></span><code>import jetson.inference
-import jetson.utils
-
-net = jetson.inference.detectNet(&quot;ssd-mobilenet-v2&quot;, threshold=0.5)
-camera = jetson.utils.gstCamera(1280, 720, &quot;/dev/video0&quot;)  # using V4L2
-display = jetson.utils.glDisplay()
-
-while display.IsOpen():
-    img, width, height = camera.CaptureRGBA()
-    detections = net.Detect(img, width, height)
-    display.RenderOnce(img, width, height)
-    display.SetTitle(&quot;Object Detection | Network {:.0f} FPS&quot;.format(net.GetNetworkFPS()))
-</code></pre></div></p>
+                <h1 id="demo">Demoの実行</h1>
+<h2 id="_1">フォルダ</h2>
+<p><img alt="" src="../img/live01.jpg" /></p>
+<h2 id="_2">学習済みモデルのアップロード</h2>
+<p><img alt="" src="../img/live02.jpg" /></p>
+<p><img alt="" src="../img/live03.jpg" /></p>
+<p><img alt="" src="../img/live04.jpg" /></p>
+<h2 id="live_demo">live_demoの実行</h2>
+<p><img alt="" src="../img/live05.jpg" /></p>
                 
               
               
@@ -1695,7 +1663,7 @@ while display.IsOpen():
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../../10.AICar/04.aicar/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../03.docker/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1704,19 +1672,19 @@ while display.IsOpen():
               <span class="md-footer__direction">
                 前
               </span>
-              ServoとAIの連携(回帰)
+              Dockerの保存
             </div>
           </div>
         </a>
       
       
-        <a href="../../12.IoT/01.setting/Jetson_GPIO_API/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../06.stop/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              Jetson GPIO API
+              Dockerの保存と停止
             </div>
           </div>
           <div class="md-footer__button md-icon">
