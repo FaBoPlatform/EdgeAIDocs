@@ -1,0 +1,2271 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>USB Camera - FaBo EdgeAI Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="black">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usb-camera" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="FaBo EdgeAI Docs" class="md-header__button md-logo" aria-label="FaBo EdgeAI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FaBo EdgeAI Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              USB Camera
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FaBo EdgeAI Docs" class="md-nav__button md-logo" aria-label="FaBo EdgeAI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FaBo EdgeAI Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        FaBo EdgeAI Docs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        01.GettingStarted
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="01.GettingStarted" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          01.GettingStarted
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.GettingStarted/01.this/" class="md-nav__link">
+        目標到達点
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.GettingStarted/02.hardware/" class="md-nav__link">
+        使用するハードウェア
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.GettingStarted/03.course/" class="md-nav__link">
+        最初に受講するコース
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        02.DLI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="02.DLI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          02.DLI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.DLI/00.start/" class="md-nav__link">
+        進め方
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.DLI/01.welcome/" class="md-nav__link">
+        ようこその解説
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.DLI/02.setup1/" class="md-nav__link">
+        セットアップ①
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.DLI/03.setup2/" class="md-nav__link">
+        セットアップ②
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.DLI/04.setup3/" class="md-nav__link">
+        セットアップ③
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        03.GPIO
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="03.GPIO" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          03.GPIO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.GPIO/01.gpio/" class="md-nav__link">
+        GPIOの有効化
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.GPIO/02.docker/" class="md-nav__link">
+        Dockerの保存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.GPIO/03.led/" class="md-nav__link">
+        LED
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.GPIO/04.ai/" class="md-nav__link">
+        AIとの連携
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.GPIO/05.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        04.PWM
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="04.PWM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          04.PWM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/01.setting/" class="md-nav__link">
+        PWMの設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/02.docker/" class="md-nav__link">
+        Dockerの保存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/03.servo/" class="md-nav__link">
+        Servoの制御
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/04.aiservo/" class="md-nav__link">
+        ServoとAIの連携(分類)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/05.aiservo2/" class="md-nav__link">
+        ServoとAIの連携(回帰)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.PWM/06.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        05.TRT POSE
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="05.TRT POSE" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          05.TRT POSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.TRT_POSE/01.setting/" class="md-nav__link">
+        TRT Pose
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.TRT_POSE/02.pytorch/" class="md-nav__link">
+        必要なパッケージのインストール
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.TRT_POSE/03.docker/" class="md-nav__link">
+        Dockerの保存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.TRT_POSE/04.live/" class="md-nav__link">
+        Demoの実行
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.TRT_POSE/05.log/" class="md-nav__link">
+        Logを出してみる
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.TRT_POSE/06.servo/" class="md-nav__link">
+        Servo連携
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.TRT_POSE/07.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        06.OCR
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="06.OCR" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          06.OCR
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.OCR/01.setting/" class="md-nav__link">
+        TRT Pose
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.OCR/02.pytorch/" class="md-nav__link">
+        サンプルの取得
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.OCR/03.demo/" class="md-nav__link">
+        Demoの実行
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.OCR/04.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        07.SPEAK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="07.SPEAK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          07.SPEAK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07.SPEAK/01.setting/" class="md-nav__link">
+        音声再生
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07.SPEAK/02.sample/" class="md-nav__link">
+        サンプル
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07.SPEAK/03.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        08.I2C
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="08.I2C" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          08.I2C
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/201_3axis/" class="md-nav__link">
+        201 3Axis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/202_9axis/" class="md-nav__link">
+        202 9Axis
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/203_color/" class="md-nav__link">
+        203 Color
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/204_barometer/" class="md-nav__link">
+        204 Barometer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/205_Proximity/" class="md-nav__link">
+        205 Proximty
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/207_Temperature/" class="md-nav__link">
+        207 Temperature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/208_Humidity/" class="md-nav__link">
+        208 Humidity
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/210_gpio/" class="md-nav__link">
+        210 GPIO
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/211_7Segment/" class="md-nav__link">
+        211 7Segment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/214_OLED/" class="md-nav__link">
+        214 OLED
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/227_relayarray/" class="md-nav__link">
+        227 relayArray
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08.I2C/241_currentmeasurement/" class="md-nav__link">
+        241 CurrentMeasurement
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        09.SPI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="09.SPI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          09.SPI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09.SPI/1.spi/" class="md-nav__link">
+        SPIの設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09.SPI/2.distance/" class="md-nav__link">
+        116 Distance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09.SPI/3.angle/" class="md-nav__link">
+        104 Angle
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09.SPI/4.temperature/" class="md-nav__link">
+        108 temperature
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
+      
+      <label class="md-nav__link" for="__nav_11">
+        10.DeepStream
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="10.DeepStream" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          10.DeepStream
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01.gettingstarted/" class="md-nav__link">
+        DeepStream
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          USB Camera
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        USB Camera
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    実行
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        11.AICar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="11.AICar" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          11.AICar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11.AICar/01.setting/" class="md-nav__link">
+        AI Carの自作
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11.AICar/02.docker/" class="md-nav__link">
+        Dockerの保存
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11.AICar/03.servo/" class="md-nav__link">
+        Servoの制御
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11.AICar/04.aicar/" class="md-nav__link">
+        ServoとAIの連携(回帰)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        12.Jetson Inference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="12.Jetson Inference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          12.Jetson Inference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12.Jetson%20Inference/01.setting/" class="md-nav__link">
+        Jetson Inference
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        13.IoT
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="13.IoT" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          13.IoT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_1" type="checkbox" id="__nav_14_1" >
+      
+      <label class="md-nav__link" for="__nav_14_1">
+        01.setting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="01.setting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_14_1">
+          <span class="md-nav__icon md-icon"></span>
+          01.setting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/01.setting/Jetson_GPIO_API/" class="md-nav__link">
+        Jetson GPIO API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_2" type="checkbox" id="__nav_14_2" >
+      
+      <label class="md-nav__link" for="__nav_14_2">
+        02.analog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="02.analog" data-md-level="2">
+        <label class="md-nav__title" for="__nav_14_2">
+          <span class="md-nav__icon md-icon"></span>
+          02.analog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/103_button/" class="md-nav__link">
+        Button
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/105_Vibrator/" class="md-nav__link">
+        105 Vibrator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/106_touch/" class="md-nav__link">
+        106 touch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/107_limitswitch/" class="md-nav__link">
+        107 limitswitch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/109_light/" class="md-nav__link">
+        109 light
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/110_tilt/" class="md-nav__link">
+        110 Tilt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/111_microphone/" class="md-nav__link">
+        111 Microphone
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/112_ir_led/" class="md-nav__link">
+        112_ir_led
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/113_ir_reciver/" class="md-nav__link">
+        113_ir_reciver
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/114_UV/" class="md-nav__link">
+        114 UV
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/115_hunidity/" class="md-nav__link">
+        115 hunidity
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/123_relay/" class="md-nav__link">
+        123 RELAY
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/02.analog/128_led2/" class="md-nav__link">
+        128 LED2
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_3" type="checkbox" id="__nav_14_3" >
+      
+      <label class="md-nav__link" for="__nav_14_3">
+        03.pwm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="03.pwm" data-md-level="2">
+        <label class="md-nav__title" for="__nav_14_3">
+          <span class="md-nav__icon md-icon"></span>
+          03.pwm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.IoT/03.pwm/102_buzzer/" class="md-nav__link">
+        102 buzzer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+      
+      <label class="md-nav__link" for="__nav_15">
+        14.etc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="14.etc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          14.etc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14.etc/04.power/" class="md-nav__link">
+        電力モード
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14.etc/304_usbserial/" class="md-nav__link">
+        304 USBserial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14.etc/Appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14.etc/demo/" class="md-nav__link">
+        デモ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14.etc/vnc/" class="md-nav__link">
+        VNC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14.etc/wifi/" class="md-nav__link">
+        WiFI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+      
+      <label class="md-nav__link" for="__nav_16">
+        15.Tips
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="15.Tips" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          15.Tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15.Tips/01.tips/" class="md-nav__link">
+        便利なコマンド
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    実行
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="usb-camera">USB Camera</h1>
+<p>USB Cameraのパラメーターを取得します。</p>
+<div class="highlight"><pre><span></span><code>apt install v4l-utils
+v4l2-ctl -d /dev/video0 --list-formats-ext
+</code></pre></div>
+<p>下記ソースのGstreamerの箇所にカメラオプションを反映します。</p>
+<div class="highlight"><pre><span></span><code>caps_v4l2src.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
+</code></pre></div>
+<h2 id="source">Source</h2>
+<div class="highlight"><pre><span></span><code>apt install vim
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cd /opt/nvidia/deepstream/deepstream-5.0/sources/deepstream_python_apps/apps/deepstream-test3
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>vim deepstream_test_3_usb.py
+</code></pre></div>
+<p>deepstream_test_3_usb.pyを修正します。
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env python3
+################################################################################
+# Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the &quot;Software&quot;),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+################################################################################
+
+import sys
+sys.path.append(&#39;../&#39;)
+import gi
+import configparser
+gi.require_version(&#39;Gst&#39;, &#39;1.0&#39;)
+from gi.repository import GObject, Gst
+from gi.repository import GLib
+from ctypes import *
+import time
+import sys
+import math
+import platform
+from common.is_aarch_64 import is_aarch64
+from common.bus_call import bus_call
+from common.FPS import GETFPS
+
+import pyds
+
+fps_streams={}
+
+MAX_DISPLAY_LEN=64
+PGIE_CLASS_ID_VEHICLE = 0
+PGIE_CLASS_ID_BICYCLE = 1
+PGIE_CLASS_ID_PERSON = 2
+PGIE_CLASS_ID_ROADSIGN = 3
+MUXER_OUTPUT_WIDTH=1280
+MUXER_OUTPUT_HEIGHT=720
+MUXER_BATCH_TIMEOUT_USEC=4000000
+TILED_OUTPUT_WIDTH=1280
+TILED_OUTPUT_HEIGHT=720 
+GST_CAPS_FEATURES_NVMM=&quot;memory:NVMM&quot;
+OSD_PROCESS_MODE= 0
+OSD_DISPLAY_TEXT= 0
+pgie_classes_str= [&quot;Vehicle&quot;, &quot;TwoWheeler&quot;, &quot;Person&quot;,&quot;RoadSign&quot;]
+
+# tiler_sink_pad_buffer_probe  will extract metadata received on OSD sink pad
+# and update params for drawing rectangle, object information etc.
+def tiler_src_pad_buffer_probe(pad,info,u_data):
+    frame_number=0
+    num_rects=0
+    gst_buffer = info.get_buffer()
+    if not gst_buffer:
+        print(&quot;Unable to get GstBuffer &quot;)
+        return
+
+    # Retrieve batch metadata from the gst_buffer
+    # Note that pyds.gst_buffer_get_nvds_batch_meta() expects the
+    # C address of gst_buffer as input, which is obtained with hash(gst_buffer)
+    batch_meta = pyds.gst_buffer_get_nvds_batch_meta(hash(gst_buffer))
+    l_frame = batch_meta.frame_meta_list
+    while l_frame is not None:
+        try:
+            # Note that l_frame.data needs a cast to pyds.NvDsFrameMeta
+            # The casting is done by pyds.NvDsFrameMeta.cast()
+            # The casting also keeps ownership of the underlying memory
+            # in the C code, so the Python garbage collector will leave
+            # it alone.
+            frame_meta = pyds.NvDsFrameMeta.cast(l_frame.data)
+        except StopIteration:
+            break
+
+        &#39;&#39;&#39;
+        print(&quot;Frame Number is &quot;, frame_meta.frame_num)
+        print(&quot;Source id is &quot;, frame_meta.source_id)
+        print(&quot;Batch id is &quot;, frame_meta.batch_id)
+        print(&quot;Source Frame Width &quot;, frame_meta.source_frame_width)
+        print(&quot;Source Frame Height &quot;, frame_meta.source_frame_height)
+        print(&quot;Num object meta &quot;, frame_meta.num_obj_meta)
+        &#39;&#39;&#39;
+        frame_number=frame_meta.frame_num
+        l_obj=frame_meta.obj_meta_list
+        num_rects = frame_meta.num_obj_meta
+        obj_counter = {
+        PGIE_CLASS_ID_VEHICLE:0,
+        PGIE_CLASS_ID_PERSON:0,
+        PGIE_CLASS_ID_BICYCLE:0,
+        PGIE_CLASS_ID_ROADSIGN:0
+        }
+        while l_obj is not None:
+            try: 
+                # Casting l_obj.data to pyds.NvDsObjectMeta
+                obj_meta=pyds.NvDsObjectMeta.cast(l_obj.data)
+            except StopIteration:
+                break
+            obj_counter[obj_meta.class_id] += 1
+            try: 
+                l_obj=l_obj.next
+            except StopIteration:
+                break
+        &quot;&quot;&quot;display_meta=pyds.nvds_acquire_display_meta_from_pool(batch_meta)
+        display_meta.num_labels = 1
+        py_nvosd_text_params = display_meta.text_params[0]
+        py_nvosd_text_params.display_text = &quot;Frame Number={} Number of Objects={} Vehicle_count={} Person_count={}&quot;.format(frame_number, num_rects, vehicle_count, person)
+        py_nvosd_text_params.x_offset = 10;
+        py_nvosd_text_params.y_offset = 12;
+        py_nvosd_text_params.font_params.font_name = &quot;Serif&quot;
+        py_nvosd_text_params.font_params.font_size = 10
+        py_nvosd_text_params.font_params.font_color.red = 1.0
+        py_nvosd_text_params.font_params.font_color.green = 1.0
+        py_nvosd_text_params.font_params.font_color.blue = 1.0
+        py_nvosd_text_params.font_params.font_color.alpha = 1.0
+        py_nvosd_text_params.set_bg_clr = 1
+        py_nvosd_text_params.text_bg_clr.red = 0.0
+        py_nvosd_text_params.text_bg_clr.green = 0.0
+        py_nvosd_text_params.text_bg_clr.blue = 0.0
+        py_nvosd_text_params.text_bg_clr.alpha = 1.0
+        #print(&quot;Frame Number=&quot;, frame_number, &quot;Number of Objects=&quot;,num_rects,&quot;Vehicle_count=&quot;,vehicle_count,&quot;Person_count=&quot;,person)
+        pyds.nvds_add_display_meta_to_frame(frame_meta, display_meta)&quot;&quot;&quot;
+        print(&quot;Frame Number=&quot;, frame_number, &quot;Number of Objects=&quot;,num_rects,&quot;Vehicle_count=&quot;,obj_counter[PGIE_CLASS_ID_VEHICLE],&quot;Person_count=&quot;,obj_counter[PGIE_CLASS_ID_PERSON])
+
+        # Get frame rate through this probe
+        fps_streams[&quot;stream{0}&quot;.format(frame_meta.pad_index)].get_fps()
+        try:
+            l_frame=l_frame.next
+        except StopIteration:
+            break
+
+    return Gst.PadProbeReturn.OK
+
+
+
+def cb_newpad(decodebin, decoder_src_pad,data):
+    print(&quot;In cb_newpad\n&quot;)
+    caps=decoder_src_pad.get_current_caps()
+    gststruct=caps.get_structure(0)
+    gstname=gststruct.get_name()
+    source_bin=data
+    features=caps.get_features(0)
+
+    # Need to check if the pad created by the decodebin is for video and not
+    # audio.
+    print(&quot;gstname=&quot;,gstname)
+    if(gstname.find(&quot;video&quot;)!=-1):
+        # Link the decodebin pad only if decodebin has picked nvidia
+        # decoder plugin nvdec_*. We do this by checking if the pad caps contain
+        # NVMM memory features.
+        print(&quot;features=&quot;,features)
+        if features.contains(&quot;memory:NVMM&quot;):
+            # Get the source bin ghost pad
+            bin_ghost_pad=source_bin.get_static_pad(&quot;src&quot;)
+            if not bin_ghost_pad.set_target(decoder_src_pad):
+                sys.stderr.write(&quot;Failed to link decoder src pad to source bin ghost pad\n&quot;)
+        else:
+            sys.stderr.write(&quot; Error: Decodebin did not pick nvidia decoder plugin.\n&quot;)
+
+def decodebin_child_added(child_proxy,Object,name,user_data):
+    print(&quot;Decodebin child added:&quot;, name, &quot;\n&quot;)
+    if(name.find(&quot;decodebin&quot;) != -1):
+        Object.connect(&quot;child-added&quot;,decodebin_child_added,user_data)   
+    if(is_aarch64() and name.find(&quot;nvv4l2decoder&quot;) != -1):
+        print(&quot;Seting bufapi_version\n&quot;)
+        Object.set_property(&quot;bufapi-version&quot;,True)
+
+def create_source_bin(index,uri):
+    print(&quot;Creating source bin&quot;)
+
+    # we need a jpegparser
+    print(&quot;Creating JPEGParser \n&quot;)
+    jpegparser = Gst.ElementFactory.make(&quot;jpegparse&quot;, &quot;jpeg-parser&quot;)
+    if not jpegparser:
+        sys.stderr.write(&quot; Unable to create jpeg parser \n&quot;)
+
+    # Use nvjpegdec for hardware accelerated decode on GPU
+    print(&quot;Creating Decoder \n&quot;)
+    decoder = Gst.ElementFactory.make(&quot;jpegdec&quot;, &quot;jpeg-decoder&quot;)
+    if not decoder:
+        sys.stderr.write(&quot; Unable to create NvJPEG Decoder \n&quot;)
+
+
+    # Create a source GstBin to abstract this bin&#39;s content from the rest of the
+    # pipeline
+    bin_name=&quot;source-bin-%02d&quot; %index
+    print(bin_name)
+    nbin=Gst.Bin.new(bin_name)
+    if not nbin:
+        sys.stderr.write(&quot; Unable to create source bin \n&quot;)
+
+    # Source element for reading from the uri.
+    # We will use decodebin and let it figure out the container format of the
+    # stream and the codec and plug the appropriate demux and decode plugins.
+
+    # uri_decode_bin=Gst.ElementFactory.make(&quot;uridecodebin&quot;, &quot;uri-decode-bin&quot;)
+    # if not uri_decode_bin:
+    #     sys.stderr.write(&quot; Unable to create uri decode bin \n&quot;)
+    # # We set the input uri to the source element
+    # uri_decode_bin.set_property(&quot;uri&quot;,uri)
+    print(&quot;Creating Source \n &quot;)
+    source = Gst.ElementFactory.make(&quot;v4l2src&quot;, &quot;usb-cam-source&quot;)
+    if not source:
+        sys.stderr.write(&quot; Unable to create source \n&quot;)
+
+    caps_v4l2src = Gst.ElementFactory.make(&quot;capsfilter&quot;, &quot;v4l2src_caps&quot;)
+    if not caps_v4l2src:
+        sys.stderr.write(&quot;Could not create caps_v4l2src&quot;)
+
+        # videoconvert to make sure a superset of raw formats are supported
+    vidconvsrc = Gst.ElementFactory.make(&quot;videoconvert&quot;, &quot;convertor_src1&quot;)
+    if not vidconvsrc:
+        sys.stderr.write(&quot; Unable to create videoconvert \n&quot;)
+
+    # nvvideoconvert to convert incoming raw buffers to NVMM Mem (NvBufSurface API)
+    nvvidconvsrc = Gst.ElementFactory.make(&quot;nvvideoconvert&quot;, &quot;convertor_src2&quot;)
+    if not nvvidconvsrc:
+        sys.stderr.write(&quot; Unable to create Nvvideoconvert \n&quot;)
+
+    caps_vidconvsrc = Gst.ElementFactory.make(&quot;capsfilter&quot;, &quot;nvmm_caps&quot;)
+    if not caps_vidconvsrc:
+        sys.stderr.write(&quot; Unable to create capsfilter \n&quot;)
+
+    #caps_v4l2src.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;video/x-raw, framerate=15/1&quot;))
+    caps_v4l2src.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;image/jpeg, width=1280, height=720,framerate=30/1&quot;))
+
+    caps_vidconvsrc.set_property(&#39;caps&#39;, Gst.Caps.from_string(&quot;video/x-raw(memory:NVMM)&quot;))
+
+    source.set_property(&#39;device&#39;, uri)
+
+    nbin.add(source)
+    nbin.add(caps_v4l2src)
+    nbin.add(jpegparser)
+    nbin.add(decoder)
+    nbin.add(vidconvsrc)
+    nbin.add(nvvidconvsrc)
+    nbin.add(caps_vidconvsrc)
+
+    source.link(caps_v4l2src)
+    caps_v4l2src.link(jpegparser)
+    jpegparser.link(decoder)
+    decoder.link(vidconvsrc)
+    vidconvsrc.link(nvvidconvsrc)
+    nvvidconvsrc.link(caps_vidconvsrc)
+
+    # Connect to the &quot;pad-added&quot; signal of the decodebin which generates a
+    # callback once a new pad for raw data has beed created by the decodebin
+
+    # uri_decode_bin.connect(&quot;pad-added&quot;,cb_newpad,nbin)
+    # uri_decode_bin.connect(&quot;child-added&quot;,decodebin_child_added,nbin)
+
+    # We need to create a ghost pad for the source bin which will act as a proxy
+    # for the video decoder src pad. The ghost pad will not have a target right
+    # now. Once the decode bin creates the video decoder and generates the
+    # cb_newpad callback, we will set the ghost pad target to the video decoder
+    # src pad.
+
+    # Gst.Bin.add(nbin,uri_decode_bin)
+
+    srcpad = caps_vidconvsrc.get_static_pad(&quot;src&quot;)
+
+    bin_pad=nbin.add_pad(Gst.GhostPad.new(&quot;src&quot;,srcpad))
+
+    if not bin_pad:
+        sys.stderr.write(&quot; Failed to add ghost pad in source bin \n&quot;)
+        return None
+    return nbin
+
+#For reference here is the code for setting up the pipelines and the linking for the app:
+
+def main(args):
+    # Check input arguments
+    if len(args) &lt; 2:
+        sys.stderr.write(&quot;usage: %s &lt;uri1&gt; [uri2] ... [uriN]\n&quot; % args[0])
+        sys.exit(1)
+
+    for i in range(0,len(args)-1):
+        fps_streams[&quot;stream{0}&quot;.format(i)]=GETFPS(i)
+        print(GETFPS(i))
+    number_sources=len(args)-1
+
+    # Standard GStreamer initialization
+    GObject.threads_init()
+    Gst.init(None)
+
+
+    # Create gstreamer elements */
+    # Create Pipeline element that will form a connection of other elements
+    print(&quot;Creating Pipeline \n &quot;)
+    pipeline = Gst.Pipeline()
+    is_live = False
+
+    if not pipeline:
+        sys.stderr.write(&quot; Unable to create Pipeline \n&quot;)
+    print(&quot;Creating streamux \n &quot;)
+
+    # Create nvstreammux instance to form batches from one or more sources.
+    streammux = Gst.ElementFactory.make(&quot;nvstreammux&quot;, &quot;Stream-muxer&quot;)
+    if not streammux:
+        sys.stderr.write(&quot; Unable to create NvStreamMux \n&quot;)
+
+    pipeline.add(streammux)
+    for i in range(number_sources):
+        print(&quot;Creating source_bin &quot;,i,&quot; \n &quot;)
+        usb_cam=args[i+1]
+        # if uri_name.find(&quot;rtsp://&quot;) == 0 :
+        is_live = True
+        source_bin=create_source_bin(i, usb_cam)
+        if not source_bin:
+            sys.stderr.write(&quot;Unable to create source bin \n&quot;)
+        pipeline.add(source_bin)
+        padname=&quot;sink_%u&quot; %i
+        sinkpad= streammux.get_request_pad(padname) 
+        if not sinkpad:
+            sys.stderr.write(&quot;Unable to create sink pad bin \n&quot;)
+        srcpad=source_bin.get_static_pad(&quot;src&quot;)
+        if not srcpad:
+            sys.stderr.write(&quot;Unable to create src pad bin \n&quot;)
+        srcpad.link(sinkpad)
+    queue1=Gst.ElementFactory.make(&quot;queue&quot;,&quot;queue1&quot;)
+    queue2=Gst.ElementFactory.make(&quot;queue&quot;,&quot;queue2&quot;)
+    queue3=Gst.ElementFactory.make(&quot;queue&quot;,&quot;queue3&quot;)
+    queue4=Gst.ElementFactory.make(&quot;queue&quot;,&quot;queue4&quot;)
+    queue5=Gst.ElementFactory.make(&quot;queue&quot;,&quot;queue5&quot;)
+    pipeline.add(queue1)
+    pipeline.add(queue2)
+    pipeline.add(queue3)
+    pipeline.add(queue4)
+    pipeline.add(queue5)
+    print(&quot;Creating Pgie \n &quot;)
+    pgie = Gst.ElementFactory.make(&quot;nvinfer&quot;, &quot;p376rimary-inference&quot;)
+    if not pgie:
+        sys.stderr.write(&quot; Unable to create pgie \n&quot;)
+    print(&quot;Creating tiler \n &quot;)
+    tiler=Gst.ElementFactory.make(&quot;nvmultistreamtiler&quot;, &quot;nvtiler&quot;)
+    if not tiler:
+        sys.stderr.write(&quot; Unable to create tiler \n&quot;)
+    print(&quot;Creating nvvidconv \n &quot;)
+    nvvidconv = Gst.ElementFactory.make(&quot;nvvideoconvert&quot;, &quot;convertor&quot;)
+    if not nvvidconv:
+        sys.stderr.write(&quot; Unable to create nvvidconv \n&quot;)
+    print(&quot;Creating nvosd \n &quot;)
+    nvosd = Gst.ElementFactory.make(&quot;nvdsosd&quot;, &quot;onscreendisplay&quot;)
+    if not nvosd:
+        sys.stderr.write(&quot; Unable to create nvosd \n&quot;)
+    nvosd.set_property(&#39;process-mode&#39;,OSD_PROCESS_MODE)
+    nvosd.set_property(&#39;display-text&#39;,OSD_DISPLAY_TEXT)
+    if(is_aarch64()):
+        print(&quot;Creating transform \n &quot;)
+        transform=Gst.ElementFactory.make(&quot;nvegltransform&quot;, &quot;nvegl-transform&quot;)
+        if not transform:
+            sys.stderr.write(&quot; Unable to create transform \n&quot;)
+
+    print(&quot;Creating EGLSink \n&quot;)
+    sink = Gst.ElementFactory.make(&quot;nveglglessink&quot;, &quot;nvvideo-renderer&quot;)
+    #sink = Gst.ElementFactory.make(&quot;nvoverlaysink&quot;, &quot;nvvideo-renderer&quot;)
+    sink.set_property(&#39;sync&#39;, 0)
+    if not sink:
+        sys.stderr.write(&quot; Unable to create egl sink \n&quot;)
+
+    if is_live:
+        print(&quot;Atleast one of the sources is live&quot;)
+        streammux.set_property(&#39;live-source&#39;, 1)
+
+    streammux.set_property(&#39;width&#39;, 1280)
+    streammux.set_property(&#39;height&#39;, 720)
+    streammux.set_property(&#39;batch-size&#39;, number_sources)
+    streammux.set_property(&#39;batched-push-timeout&#39;, 4000000)
+    pgie.set_property(&#39;config-file-path&#39;, &quot;dstest3_pgie_config.txt&quot;)
+    pgie_batch_size=pgie.get_property(&quot;batch-size&quot;)
+    if(pgie_batch_size != number_sources):
+        print(&quot;WARNING: Overriding infer-config batch-size&quot;,pgie_batch_size,&quot; with number of sources &quot;, number_sources,&quot; \n&quot;)
+        pgie.set_property(&quot;batch-size&quot;,number_sources)
+    tiler_rows=int(math.sqrt(number_sources))
+    tiler_columns=int(math.ceil((1.0*number_sources)/tiler_rows))
+    tiler.set_property(&quot;rows&quot;,tiler_rows)
+    tiler.set_property(&quot;columns&quot;,tiler_columns)
+    tiler.set_property(&quot;width&quot;, TILED_OUTPUT_WIDTH)
+    tiler.set_property(&quot;height&quot;, TILED_OUTPUT_HEIGHT)
+    sink.set_property(&quot;qos&quot;,0)
+
+    print(&quot;Adding elements to Pipeline \n&quot;)
+    pipeline.add(pgie)
+    pipeline.add(tiler)
+    pipeline.add(nvvidconv)
+    pipeline.add(nvosd)
+    if is_aarch64():
+        pipeline.add(transform)
+    pipeline.add(sink)
+
+    print(&quot;Linking elements in the Pipeline \n&quot;)
+    streammux.link(queue1)
+    queue1.link(pgie)
+    pgie.link(queue2)
+    queue2.link(tiler)
+    tiler.link(queue3)
+    queue3.link(nvvidconv)
+    nvvidconv.link(queue4)
+    queue4.link(nvosd)
+    if is_aarch64():
+        nvosd.link(queue5)
+        queue5.link(transform)
+        transform.link(sink)
+    else:
+        nvosd.link(queue5)
+        queue5.link(sink)   
+    # create an event loop and feed gstreamer bus mesages to it
+    loop = GObject.MainLoop()
+    bus = pipeline.get_bus()
+    bus.add_signal_watch()
+    bus.connect (&quot;message&quot;, bus_call, loop)
+    tiler_src_pad=pgie.get_static_pad(&quot;src&quot;)
+    if not tiler_src_pad:
+        sys.stderr.write(&quot; Unable to get src pad \n&quot;)
+    else:
+        tiler_src_pad.add_probe(Gst.PadProbeType.BUFFER, tiler_src_pad_buffer_probe, 0)
+
+    # List the sources
+    print(&quot;Now playing...&quot;)
+    for i, source in enumerate(args):
+        if (i != 0):
+            print(i, &quot;: &quot;, source)
+
+    print(&quot;Starting pipeline \n&quot;)
+    # start play back and listed to events      
+    pipeline.set_state(Gst.State.PLAYING)
+    try:
+        loop.run()
+    except:
+        pass
+    # cleanup
+    print(&quot;Exiting app\n&quot;)
+    pipeline.set_state(Gst.State.NULL)
+
+if __name__ == &#39;__main__&#39;:
+    sys.exit(main(sys.argv))
+</code></pre></div></p>
+<h2 id="_1">実行</h2>
+<div class="highlight"><pre><span></span><code>python3 deepstream_test_3_usb.py /dev/video0
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        <a href="../01.gettingstarted/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              DeepStream
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../../11.AICar/01.setting/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              AI Carの自作
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>
