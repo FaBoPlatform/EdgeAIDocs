@@ -14,7 +14,7 @@
     
     
       
-        <title>Dockerの保存と停止 - FaBo EdgeAI Docs</title>
+        <title>Demoの実行 - FaBo EdgeAI Docs</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#demo" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dockerの保存と停止
+              Demoの実行
             
           </span>
         </div>
@@ -634,13 +634,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
-        06.Face recognision
+        06.Face recognition
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="06.Face recognision" data-md-level="1">
+      <nav class="md-nav" aria-label="06.Face recognition" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
-          06.Face recognision
+          06.Face recognition
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -671,18 +671,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../03.demo/" class="md-nav__link">
-        Demoの実行
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -694,10 +682,59 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Demoの実行
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Dockerの保存と停止
+        Demoの実行
       </a>
       
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notebookgit-clone" class="md-nav__link">
+    Notebookをgit clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    Demoの実行
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04.stop/" class="md-nav__link">
+        Dockerの保存と停止
+      </a>
     </li>
   
 
@@ -1732,6 +1769,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notebookgit-clone" class="md-nav__link">
+    Notebookをgit clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    Demoの実行
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1743,20 +1802,14 @@
               
                 
                 
-                <h1 id="docker">Dockerの保存と停止</h1>
-<p>JupyterLab経由ではなく、ssh経由でJetson Nanoにログインします。</p>
-<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
+                <h1 id="demo">Demoの実行</h1>
+<h2 id="notebookgit-clone">Notebookをgit clone</h2>
+<p>JupyterLabでTerminalを開き、下記コマンドでサンプルをCloneします。</p>
+<div class="highlight"><pre><span></span><code>cd /nvdli-nano/
+git clone https://github.com/FaBoPlatform/EdgeAIKit_HandsOn
 </code></pre></div>
-<p>DockerのIDを取得します。</p>
-<div class="highlight"><pre><span></span><code>sudo docker ps
-</code></pre></div>
-<p><img alt="" src="../img/docker01.jpg" /></p>
-<p>Dockerを<code>ocr</code>という名称で、commitします。</p>
-<div class="highlight"><pre><span></span><code>sudo docker commit ID(現在起動中のもの) face
-</code></pre></div>
-<p>現在起動中のDockerを停止します。</p>
-<div class="highlight"><pre><span></span><code>sudo docker stop ID(現在起動中のもの)
-</code></pre></div>
+<h2 id="demo_1">Demoの実行</h2>
+<p><img alt="" src="../img/demo01.jpg" /></p>
                 
               
               
@@ -1775,7 +1828,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../03.demo/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../02.clone/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1784,19 +1837,19 @@
               <span class="md-footer__direction">
                 前
               </span>
-              Demoの実行
+              Build
             </div>
           </div>
         </a>
       
       
-        <a href="../../07.OCR/01.setting/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../04.stop/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              OCR
+              Dockerの保存と停止
             </div>
           </div>
           <div class="md-footer__button md-icon">
