@@ -1746,34 +1746,34 @@ pip3 install .
 
 <h2 id="pwm_1">PWMサーボと連携</h2>
 <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">Fabo_PCA9685</span>
-</span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">pkg_resources</span>
-<span class="kn">import</span> <span class="nn">smbus</span>
-<span class="n">SMBUS</span><span class="o">=</span><span class="s1">&#39;smbus&#39;</span>
-<span class="n">BUSNUM</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">60</span>
-<span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">300</span>
-<span class="n">bus</span> <span class="o">=</span> <span class="n">smbus</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">BUSNUM</span><span class="p">)</span>
-<span class="n">PCA9685</span> <span class="o">=</span> <span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">PCA9685</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="n">INITIAL_VALUE</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="mh">0x40</span><span class="p">)</span>
-<span class="n">PCA9685</span><span class="o">.</span><span class="n">set_hz</span><span class="p">(</span><span class="n">SERVO_HZ</span><span class="p">)</span>
-
+</span><span class="hll"><span class="kn">import</span> <span class="nn">time</span>
+</span><span class="hll"><span class="kn">import</span> <span class="nn">pkg_resources</span>
+</span><span class="hll"><span class="kn">import</span> <span class="nn">smbus</span>
+</span><span class="hll"><span class="n">SMBUS</span><span class="o">=</span><span class="s1">&#39;smbus&#39;</span>
+</span><span class="hll"><span class="n">BUSNUM</span><span class="o">=</span><span class="mi">1</span>
+</span><span class="hll"><span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">60</span>
+</span><span class="hll"><span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">300</span>
+</span><span class="hll"><span class="n">bus</span> <span class="o">=</span> <span class="n">smbus</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">BUSNUM</span><span class="p">)</span>
+</span><span class="hll"><span class="n">PCA9685</span> <span class="o">=</span> <span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">PCA9685</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="n">INITIAL_VALUE</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="mh">0x40</span><span class="p">)</span>
+</span><span class="hll"><span class="n">PCA9685</span><span class="o">.</span><span class="n">set_hz</span><span class="p">(</span><span class="n">SERVO_HZ</span><span class="p">)</span>
+</span>
 <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
     <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">model_trt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">paf</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
     <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span> <span class="o">=</span> <span class="n">parse_objects</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span><span class="p">)</span><span class="c1">#, cmap_threshold=0.15, link_threshold=0.15)</span>
-    <span class="n">human</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">C</span> <span class="o">=</span> <span class="n">human</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
-        <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">human</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">peak</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>  
-            <span class="n">peak</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">pwm</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">+</span> <span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">400</span>
-                <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pwm</span><span class="p">)</span>
-    <span class="n">draw_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span><span class="p">)</span>
+<span class="hll">    <span class="n">human</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll">    <span class="n">C</span> <span class="o">=</span> <span class="n">human</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
+</span><span class="hll">        <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">human</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span><span class="hll">        <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">peak</span> <span class="o">=</span> <span class="n">peaks</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>  
+</span><span class="hll">            <span class="n">peak</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span><span class="hll">            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">                <span class="n">pwm</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">+</span> <span class="n">peak</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">400</span>
+</span><span class="hll">                <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pwm</span><span class="p">)</span>
+</span>    <span class="n">draw_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span><span class="p">)</span>
     <span class="n">image_w</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bgr8_to_jpeg</span><span class="p">(</span><span class="n">image</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
 </code></pre></div>
 
