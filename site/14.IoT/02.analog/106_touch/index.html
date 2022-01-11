@@ -1292,8 +1292,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../103_button/" title="Button" class="md-nav__link">
-      Button
+    <a href="../103_button/" title="103 Button" class="md-nav__link">
+      103 Button
     </a>
   </li>
 
@@ -1352,20 +1352,6 @@
         <li class="md-nav__item">
   <a href="#_2" title="サンプルコード使用時の接続" class="md-nav__link">
     サンプルコード使用時の接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" title="JETSON NANO GPIO40ピン" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brick" title="Brick回路図" class="md-nav__link">
-    Brick回路図
   </a>
   
 </li>
@@ -1485,8 +1471,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../115_hunidity/" title="115 hunidity" class="md-nav__link">
-      115 hunidity
+    <a href="../115_hunidity/" title="112_Humidity" class="md-nav__link">
+      112_Humidity
     </a>
   </li>
 
@@ -1728,20 +1714,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" title="JETSON NANO GPIO40ピン" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brick" title="Brick回路図" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" title="準備" class="md-nav__link">
     準備
   </a>
@@ -1776,225 +1748,74 @@
 <h2 id="_1">サンプルコードの動作</h2>
 <p>FaBo #104 LED Brickを使用してアナログ値を計測</p>
 <h2 id="_2">サンプルコード使用時の接続</h2>
-<p>GPIO4にLED Brickを接続、A0にAnalog Brickを接続します。</p>
-<p><img alt="" src="../img/Analogpinass.jpg" /></p>
-<p>~写真〜</p>
-<h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
-<table>
-<thead>
-<tr>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">2</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">2</td>
-<td>I2C_2_SDA</td>
-<td align="center">4</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">3</td>
-<td>I2C_2_SCL</td>
-<td align="center">6</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">4</td>
-<td>AUDIO_MCLK</td>
-<td align="center">8</td>
-<td align="center">14</td>
-<td>UART_2_TX</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">10</td>
-<td align="center">15</td>
-<td>UART_2_RX</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">17</td>
-<td>UART_2_RTS</td>
-<td align="center">12</td>
-<td align="center">18</td>
-<td>I2S_4_SCLK</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">27</td>
-<td>SPI_2_SCK</td>
-<td align="center">14</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td align="center">22</td>
-<td>LCD_TE</td>
-<td align="center">16</td>
-<td align="center">23</td>
-<td>SPI_2_CS1</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">18</td>
-<td align="center">24</td>
-<td>SPI_2_CS0</td>
-</tr>
-<tr>
-<td align="center">19</td>
-<td align="center">10</td>
-<td>SPI_1_MOSI</td>
-<td align="center">20</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">21</td>
-<td align="center">9</td>
-<td>SPI_1_MISO</td>
-<td align="center">22</td>
-<td align="center">25</td>
-<td>SPI_2_MISO</td>
-</tr>
-<tr>
-<td align="center">23</td>
-<td align="center">11</td>
-<td>SPI_1_SCK</td>
-<td align="center">24</td>
-<td align="center">8</td>
-<td>SPI_1_CS0</td>
-</tr>
-<tr>
-<td align="center">25</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">26</td>
-<td align="center">7</td>
-<td>SPI_1_CS1</td>
-</tr>
-<tr>
-<td align="center">27</td>
-<td align="center">-</td>
-<td>I2C_1_SDA</td>
-<td align="center">28</td>
-<td align="center">-</td>
-<td>I2C_1_SCL</td>
-</tr>
-<tr>
-<td align="center">29</td>
-<td align="center">5</td>
-<td>CAM_AF_EN</td>
-<td align="center">30</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">31</td>
-<td align="center">6</td>
-<td>GPIO_OZ0</td>
-<td align="center">32</td>
-<td align="center">12</td>
-<td>LCD_BL_PWM</td>
-</tr>
-<tr>
-<td align="center">33</td>
-<td align="center">13</td>
-<td>GPIO_PE6</td>
-<td align="center">34</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">35</td>
-<td align="center">19</td>
-<td>I2S_4_LRCK</td>
-<td align="center">36</td>
-<td align="center">16</td>
-<td>UART_2_CTS</td>
-</tr>
-<tr>
-<td align="center">37</td>
-<td align="center">26</td>
-<td>SPI_2_MOSI</td>
-<td align="center">38</td>
-<td align="center">20</td>
-<td>I2S_4_SDIN</td>
-</tr>
-<tr>
-<td align="center">39</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">40</td>
-<td align="center">21</td>
-<td>I2S_4_SDOUT</td>
-</tr>
-</tbody>
-</table>
-<h2 id="brick">Brick回路図</h2>
-<p>~画像〜</p>
-<p><br></p>
+<p>GPIO12にLED Brickを接続、A0にAnalog Brickを接続します。</p>
+<p>感圧センサーの状態により数値が変化します。</p>
 <h2 id="_3">準備</h2>
-<p>SPIをつかえるようにしましょう。</p>
-<p>Jetson-IO toolを起動します。</p>
-<p>$sudo /opt/nvidia/jetson-io/jetson-io.py</p>
-<p>Pinmux テーブルの設定</p>
-<p>~画像〜</p>
-<p>pip3がインストールされていない場合は、
-<div class="highlight"><pre><span></span><code>$sudo apt-get install python3-pip
-</code></pre></div></p>
-<p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<div class="highlight"><pre><span></span><code>$pip3 install spidev
+<p>JetPack4.6の環境でSPIを使用するには、docker起動前に、以下を実行します。</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$modprobe</span> spidev
 </code></pre></div>
 
-<p>SPIdevの使い方。
-https://pypi.org/project/spidev/</p>
 <h2 id="_4">サンプルコード</h2>
-<div class="highlight"><pre><span></span><code>import RPi.GPIO as GPIO
-import sys
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">Jetson.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">spidev</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-LEDPIN = 4
-BUTTONPIN = 5
+<span class="c1"># A0コネクタにAngleを接続</span>
+<span class="n">ANGLEPIN</span> <span class="o">=</span> <span class="mi">0</span>
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(LEDPIN, GPIO.OUT)
-GPIO.setup(BUTTONPIN, GPIO.IN)
+<span class="c1"># GPIO12コネクタにLEDを接続</span>
+<span class="n">LEDPIN</span> <span class="o">=</span> <span class="mi">12</span>
 
-try:
-    while True:
-        # ボタン押下判定
-        if(GPIO.input(BUTTONPIN)):
-            # LED点灯
-            GPIO.output(LEDPIN, True)
-        else:
-            # LED消灯
-            GPIO.output(LEDPIN, False)
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
+<span class="c1">#######################################################################</span>
+<span class="k">def</span> <span class="nf">readadc</span><span class="p">(</span><span class="n">channel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analog Data Converterの値を読み込む</span>
+<span class="sd">    @channel チャンネル番号</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">adc</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">xfer2</span><span class="p">([</span><span class="mi">1</span><span class="p">,(</span><span class="mi">8</span><span class="o">+</span><span class="n">channel</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">((</span><span class="n">adc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&amp;</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="n">adc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="c1">#######################################################################</span>
+<span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">in_min</span><span class="p">,</span> <span class="n">in_max</span><span class="p">,</span> <span class="n">out_min</span><span class="p">,</span> <span class="n">out_max</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    map関数</span>
+<span class="sd">    @x 変換したい値</span>
+<span class="sd">    @in_min 変換前の最小値</span>
+<span class="sd">    @in_max 変換前の最大値</span>
+<span class="sd">    @out_min 変換後の最小</span>
+<span class="sd">    @out_max 変換後の最大値</span>
+<span class="sd">    @return 変換された値</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">out_max</span> <span class="o">-</span> <span class="n">out_min</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">in_max</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">+</span> <span class="n">out_min</span>
+
+<span class="c1"># GPIOポートを設定</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span> <span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span> <span class="n">LEDPIN</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span> <span class="p">)</span>
+
+<span class="c1"># PWM/100Hzに設定</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">PWM</span><span class="p">(</span><span class="n">LEDPIN</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># 初期化</span>
+<span class="n">LED</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">spidev</span><span class="o">.</span><span class="n">SpiDev</span><span class="p">()</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">max_speed_hz</span> <span class="o">=</span> <span class="mi">5000</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">readadc</span><span class="p">(</span><span class="n">ANGLEPIN</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;adc : </span><span class="si">{:8}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">LED</span><span class="o">.</span><span class="n">ChangeDutyCycle</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span> <span class="mf">0.01</span> <span class="p">)</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">LED</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">spi</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
                 
                   

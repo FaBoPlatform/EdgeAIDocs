@@ -1,4 +1,4 @@
-# Button
+# 103 Button
 
 ![](./img/button103.jpg)
 
@@ -24,7 +24,7 @@ GPIOの判定
 
 以下のコードは、ボタンが押されたのたえずチェックします。
 
-```python
+```Python
 # coding: utf-8
 import Jetson.GPIO as GPIO
 import sys
@@ -55,7 +55,7 @@ GPIOの入力待ち
 
 以下のコードはボタンがおされるまで待っています。
 
-```
+```Python
 # coding: utf-8
 import Jetson.GPIO as GPIO
 import sys
@@ -84,7 +84,7 @@ except KeyboardInterrupt:
 
 以下のコードは、処理中にボタンがおされたら、現在の処理を停止して、関数blinkを呼び、その関数の処理がおわったら、blink呼び出し前に戻ります。
 
-```
+```Python
 # coding: utf-8
 import Jetson.GPIO as GPIO
 import sys

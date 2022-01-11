@@ -1292,8 +1292,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../103_button/" title="Button" class="md-nav__link">
-      Button
+    <a href="../103_button/" title="103 Button" class="md-nav__link">
+      103 Button
     </a>
   </li>
 
@@ -1421,8 +1421,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../115_hunidity/" title="115 hunidity" class="md-nav__link">
-      115 hunidity
+    <a href="../115_hunidity/" title="112_Humidity" class="md-nav__link">
+      112_Humidity
     </a>
   </li>
 
@@ -1659,28 +1659,29 @@
                 
                 <h1 id="110-tilt">110 Tilt</h1>
 <p>FaBo #110 Tilt Brickを使用して傾斜を検知します。</p>
-<p>GPIOは4,5,6,12,13,16</p>
-<p><img alt="" src="../img/gpio_pin.jpg" /></p>
-<div class="highlight"><pre><span></span><code>import RPi.GPIO as GPIO
-import sys
+<p>GPIO４にLED2を接続し、GPIO5にTiltを接続します</p>
+<p>傾斜を検知するとLEDが光ります。</p>
+<p>※プルアップ抵抗は、1KΩが付いているもをご使用ください。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-LED_PIN = 4
-TILT_PIN = 5
+<span class="n">LED_PIN</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">TILT_PIN</span> <span class="o">=</span> <span class="mi">5</span>
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(LED_PIN, GPIO.OUT)
-GPIO.setup(TILT_PIN, GPIO.IN)
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">TILT_PIN</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
 
-try:
-    while True:
-        if(GPIO.input(TILT_PIN)):
-            GPIO.output(LED_PIN, True)
-        else:
-            GPIO.output(LED_PIN, False)
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">TILT_PIN</span><span class="p">)):</span>
+            <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit()
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </code></pre></div>
                 
                   

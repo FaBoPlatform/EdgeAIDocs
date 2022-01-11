@@ -1292,8 +1292,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../103_button/" title="Button" class="md-nav__link">
-      Button
+    <a href="../103_button/" title="103 Button" class="md-nav__link">
+      103 Button
     </a>
   </li>
 
@@ -1421,8 +1421,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../115_hunidity/" title="115 hunidity" class="md-nav__link">
-      115 hunidity
+    <a href="../115_hunidity/" title="112_Humidity" class="md-nav__link">
+      112_Humidity
     </a>
   </li>
 
@@ -1658,36 +1658,34 @@
                 
                 
                 <h1 id="107-limitswitch">107 limitswitch</h1>
-<p>FaBo #107 limitswitch Brickを使用してスイッチをおしたら、LED点灯させます。
-LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
-<p>GPIOは4,5,6,12,13,16</p>
-<p><img alt="" src="../img/gpio_pin.jpg" /></p>
+<p>FaBo #107 limitswitch Brickを使用してスイッチを押したら、LED点灯させます。</p>
+<p>LED BrickをGPIO４に接続、BUTTON Brickは、GPIO5に接続します。</p>
 <p>GPIOの判定</p>
-<p>以下のコードは、ボタンが押されたのたえずチェックします。</p>
-<div class="highlight"><pre><span></span><code># coding: utf-8
-import RPi.GPIO as GPIO
-import time
+<p>GPIO5コネクタにLimitSwitch Brickを接続し、GPIO4コネクタに接続したLED Brickの点灯/消灯を制御しています。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">Jetson.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-LEDPIN = 4
-LSPIN = 5   #LimitSwitch pin
+<span class="n">LEDPIN</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">LSPIN</span> <span class="o">=</span> <span class="mi">5</span>   <span class="c1">#LimitSwitch pin</span>
 
-led_state = 0
+<span class="n">led_state</span> <span class="o">=</span> <span class="mi">0</span>
 
-GPIO.setwarnings(False)
-GPIO.setmode( GPIO.BCM )
-GPIO.setup( LEDPIN, GPIO.OUT )
-GPIO.setup( LSPIN, GPIO.IN)
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setwarnings</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span> <span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span> <span class="n">LEDPIN</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span> <span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span> <span class="n">LSPIN</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
 
-try:
-    while True:
-        if( GPIO.input( LSPIN ) ):
-            led_state = 1 - led_state
-            GPIO.output( LEDPIN, led_state )
-            print &quot;led_state: %d &quot; % led_state
-            time.sleep(0.2)
-except KeyboardInterrupt:
-    GPIO.cleanup()
-    sys.exit(0)
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span> <span class="n">LSPIN</span> <span class="p">)</span> <span class="p">):</span>
+            <span class="n">led_state</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">led_state</span>
+            <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span> <span class="n">LEDPIN</span><span class="p">,</span> <span class="n">led_state</span> <span class="p">)</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;led_state: </span><span class="si">%d</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">led_state</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
                 
                   

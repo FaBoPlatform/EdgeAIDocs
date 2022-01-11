@@ -2,12 +2,13 @@
 
 FaBo #110 Tilt Brickを使用して傾斜を検知します。
 
-GPIOは4,5,6,12,13,16
+GPIO４にLED2を接続し、GPIO5にTiltを接続します
 
-![](./img/gpio_pin.jpg)
+傾斜を検知するとLEDが光ります。
 
+※プルアップ抵抗は、1KΩが付いているもをご使用ください。
 
-```
+```Python
 import RPi.GPIO as GPIO
 import sys
 

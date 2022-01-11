@@ -3,18 +3,24 @@
 ![](./../img/304_usbserial/usbserial304.jpg)
 
 ## サンプルコードの動作
-FaBo USB Serialを使いUARTで通信いたします。
+FaBo USB Serialを使いUARTでシリアルで通信いたします。
 
 ## サンプルコード使用時の接続
 FaBo #304 USB serial を SERIALに接続します。
 
-![](./../img/share/serial_pin.jpg)
+※注意　#519 Rev1.0.14では#519への信号レベルは3.3Vになります。ジャンパーを3.3Vにセットしてください。#519 Rev1.0.15以降では、信号レベルは5Vとなります。ジャンパーを5Vにセットしてください。
+USBシリアルからは＃519へは、給電をしないでください。POWERジャンパピンをはずします。
+また、#519 Rev1.0.14以降では、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。
 
-※注意　#519への信号レベルは3.3Vになります。ジャンパーを3.3Vにセットしてください。
-USBシリアルからは＃５１９へは、給電をしないでください。POWERジャンパピンをはずします。
-また、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。
+## インストール（Dockerの場合）
 
-## インストール
+dockerの場合は、jupyter labから以下を実行します。
+
+```
+!pip3 install pyserial
+```
+
+## インストール（Dockerでない場合）
 
 ```
 $pip3 install pyserial
@@ -24,62 +30,10 @@ $pip3 install pyserial
 $sudo chmod 666 /dev/ttyTHS1
 ```
 
+## サンプルコード
 
-## Brick回路図
+```Python
 
-~画像〜
-
-```
-import serial
-```
-
-```
-# /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial("/dev/ttyTHS1", baudrate=115200 ,parity=serial.PARITY_NONE)
-
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
-
-
-# シリアル通信もバイナリ形式で送る
-ser.write(b"RECEIVE:hello FaBo 2020 Press any 10-character keyboard\r\n")
-print("send: hello FaBo 2020 Press any 10-character keyboard.")
-
-# 受け取ったデータもバイナリ形式
-# 引数は受け取る文字数
-recv_data = ser.read(10)
-print(recv_data)
-
-print("send: TestEnd")
-ser.write(recv_data)
-ser.write(b"\r\nRECEIVE:TEST END")
-
-```
-
-```
-
-## バーストテスト
-
-import serial
-import time
-from time import localtime
-
-# /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial("/dev/ttyTHS1", baudrate=115200 ,parity=serial.PARITY_NONE)
-
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
-
-
-# シリアル通信もバイナリ形式で送る
-for w in range(255):
-    ser.write(b"RECEIVE:hello world! FaBo 2020-2021-2\r\n")
-
-ser.close()
-
-```
-
-```
 #１００文字を入力して送信して表示する。QWERT入力確認
 import serial
 
