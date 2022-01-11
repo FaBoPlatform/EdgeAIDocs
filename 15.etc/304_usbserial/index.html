@@ -1408,8 +1408,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../14.IoT/02.analog/115_hunidity/" title="115 hunidity" class="md-nav__link">
-      115 hunidity
+    <a href="../../14.IoT/02.analog/115_hunidity/" title="112_Humidity" class="md-nav__link">
+      112_Humidity
     </a>
   </li>
 
@@ -1564,15 +1564,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="インストール" class="md-nav__link">
-    インストール
+  <a href="#docker" title="インストール（Dockerの場合）" class="md-nav__link">
+    インストール（Dockerの場合）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#brick" title="Brick回路図" class="md-nav__link">
-    Brick回路図
+  <a href="#docker_1" title="インストール（Dockerでない場合）" class="md-nav__link">
+    インストール（Dockerでない場合）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="サンプルコード" class="md-nav__link">
+    サンプルコード
   </a>
   
 </li>
@@ -1712,15 +1719,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="インストール" class="md-nav__link">
-    インストール
+  <a href="#docker" title="インストール（Dockerの場合）" class="md-nav__link">
+    インストール（Dockerの場合）
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#brick" title="Brick回路図" class="md-nav__link">
-    Brick回路図
+  <a href="#docker_1" title="インストール（Dockerでない場合）" class="md-nav__link">
+    インストール（Dockerでない場合）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="サンプルコード" class="md-nav__link">
+    サンプルコード
   </a>
   
 </li>
@@ -1745,86 +1759,45 @@
                 <h1 id="304-usbserial">304 USBserial</h1>
 <p><img alt="" src="../../img/304_usbserial/usbserial304.jpg" /></p>
 <h2 id="_1">サンプルコードの動作</h2>
-<p>FaBo USB Serialを使いUARTで通信いたします。</p>
+<p>FaBo USB Serialを使いUARTでシリアルで通信いたします。</p>
 <h2 id="_2">サンプルコード使用時の接続</h2>
 <p>FaBo #304 USB serial を SERIALに接続します。</p>
-<p><img alt="" src="../../img/share/serial_pin.jpg" /></p>
-<p>※注意　#519への信号レベルは3.3Vになります。ジャンパーを3.3Vにセットしてください。
-USBシリアルからは＃５１９へは、給電をしないでください。POWERジャンパピンをはずします。
-また、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。</p>
-<h2 id="_3">インストール</h2>
+<p>※注意　#519 Rev1.0.14では#519への信号レベルは3.3Vになります。ジャンパーを3.3Vにセットしてください。#519 Rev1.0.15以降では、信号レベルは5Vとなります。ジャンパーを5Vにセットしてください。
+USBシリアルからは＃519へは、給電をしないでください。POWERジャンパピンをはずします。
+また、#519 Rev1.0.14以降では、デフォルトでは、SERIALピンのVCC（５V）からは給電されません。</p>
+<h2 id="docker">インストール（Dockerの場合）</h2>
+<p>dockerの場合は、jupyter labから以下を実行します。</p>
+<div class="highlight"><pre><span></span><code>!pip3 install pyserial
+</code></pre></div>
+
+<h2 id="docker_1">インストール（Dockerでない場合）</h2>
 <div class="highlight"><pre><span></span><code>$pip3 install pyserial
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>$sudo chmod 666 /dev/ttyTHS1
 </code></pre></div>
 
-<h2 id="brick">Brick回路図</h2>
-<p>~画像〜</p>
-<div class="highlight"><pre><span></span><code>import serial
-</code></pre></div>
+<h2 id="_3">サンプルコード</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">#１００文字を入力して送信して表示する。QWERT入力確認</span>
+<span class="kn">import</span> <span class="nn">serial</span>
 
-<div class="highlight"><pre><span></span><code># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial(&quot;/dev/ttyTHS1&quot;, baudrate=115200 ,parity=serial.PARITY_NONE)
+<span class="c1"># /dev/ttyTHS1でボーレート115200、パリティビットなしで設定</span>
+<span class="n">ser</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="s2">&quot;/dev/ttyTHS1&quot;</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">115200</span> <span class="p">,</span><span class="n">parity</span><span class="o">=</span><span class="n">serial</span><span class="o">.</span><span class="n">PARITY_NONE</span><span class="p">)</span>
 
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
+<span class="c1"># ノイズデータがある場合があるのでバッファをクリアする</span>
+<span class="n">ser</span><span class="o">.</span><span class="n">reset_input_buffer</span><span class="p">()</span>
 
+<span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;INPUT CHAR.</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-# シリアル通信もバイナリ形式で送る
-ser.write(b&quot;RECEIVE:hello FaBo 2020 Press any 10-character keyboard\r\n&quot;)
-print(&quot;send: hello FaBo 2020 Press any 10-character keyboard.&quot;)
+<span class="c1"># 受け取ったデータもバイナリ形式</span>
+<span class="c1"># 引数は受け取る文字数</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">recv_data</span> <span class="o">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">recv_data</span><span class="p">)</span>
 
-# 受け取ったデータもバイナリ形式
-# 引数は受け取る文字数
-recv_data = ser.read(10)
-print(recv_data)
+<span class="n">ser</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;TEST END.</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-print(&quot;send: TestEnd&quot;)
-ser.write(recv_data)
-ser.write(b&quot;\r\nRECEIVE:TEST END&quot;)
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>## バーストテスト
-
-import serial
-import time
-from time import localtime
-
-# /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial(&quot;/dev/ttyTHS1&quot;, baudrate=115200 ,parity=serial.PARITY_NONE)
-
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
-
-
-# シリアル通信もバイナリ形式で送る
-for w in range(255):
-    ser.write(b&quot;RECEIVE:hello world! FaBo 2020-2021-2\r\n&quot;)
-
-ser.close()
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>#１００文字を入力して送信して表示する。QWERT入力確認
-import serial
-
-# /dev/ttyTHS1でボーレート115200、パリティビットなしで設定
-ser = serial.Serial(&quot;/dev/ttyTHS1&quot;, baudrate=115200 ,parity=serial.PARITY_NONE)
-
-# ノイズデータがある場合があるのでバッファをクリアする
-ser.reset_input_buffer()
-
-ser.write(b&quot;INPUT CHAR.\r\n&quot;)
-
-# 受け取ったデータもバイナリ形式
-# 引数は受け取る文字数
-for w in range(100):
-    recv_data = ser.read(1)
-    ser.write(recv_data)
-
-ser.write(b&quot;TEST END.\r\n&quot;)
-
-ser.close()
+<span class="n">ser</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
                 
                   

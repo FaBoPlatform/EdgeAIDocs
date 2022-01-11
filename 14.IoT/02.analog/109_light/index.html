@@ -1381,13 +1381,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" title="JETSON NANO GPIO40ピン" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" title="準備" class="md-nav__link">
     準備
   </a>
@@ -1478,8 +1471,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../115_hunidity/" title="115 hunidity" class="md-nav__link">
-      115 hunidity
+    <a href="../115_hunidity/" title="112_Humidity" class="md-nav__link">
+      112_Humidity
     </a>
   </li>
 
@@ -1721,13 +1714,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" title="JETSON NANO GPIO40ピン" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_3" title="準備" class="md-nav__link">
     準備
   </a>
@@ -1763,193 +1749,18 @@
 <p>FaBo #109 light Brickを使用して光の強さを計測</p>
 <h2 id="_2">サンプルコード使用時の接続</h2>
 <p>A0にAnalog Brickを接続,GPIO12にLED2を接続します。</p>
-<h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
-<table>
-<thead>
-<tr>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">2</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">2</td>
-<td>I2C_2_SDA</td>
-<td align="center">4</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">3</td>
-<td>I2C_2_SCL</td>
-<td align="center">6</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">4</td>
-<td>AUDIO_MCLK</td>
-<td align="center">8</td>
-<td align="center">14</td>
-<td>UART_2_TX</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">10</td>
-<td align="center">15</td>
-<td>UART_2_RX</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">17</td>
-<td>UART_2_RTS</td>
-<td align="center">12</td>
-<td align="center">18</td>
-<td>I2S_4_SCLK</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">27</td>
-<td>SPI_2_SCK</td>
-<td align="center">14</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td align="center">22</td>
-<td>LCD_TE</td>
-<td align="center">16</td>
-<td align="center">23</td>
-<td>SPI_2_CS1</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">18</td>
-<td align="center">24</td>
-<td>SPI_2_CS0</td>
-</tr>
-<tr>
-<td align="center">19</td>
-<td align="center">10</td>
-<td>SPI_1_MOSI</td>
-<td align="center">20</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">21</td>
-<td align="center">9</td>
-<td>SPI_1_MISO</td>
-<td align="center">22</td>
-<td align="center">25</td>
-<td>SPI_2_MISO</td>
-</tr>
-<tr>
-<td align="center">23</td>
-<td align="center">11</td>
-<td>SPI_1_SCK</td>
-<td align="center">24</td>
-<td align="center">8</td>
-<td>SPI_1_CS0</td>
-</tr>
-<tr>
-<td align="center">25</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">26</td>
-<td align="center">7</td>
-<td>SPI_1_CS1</td>
-</tr>
-<tr>
-<td align="center">27</td>
-<td align="center">-</td>
-<td>I2C_1_SDA</td>
-<td align="center">28</td>
-<td align="center">-</td>
-<td>I2C_1_SCL</td>
-</tr>
-<tr>
-<td align="center">29</td>
-<td align="center">5</td>
-<td>CAM_AF_EN</td>
-<td align="center">30</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">31</td>
-<td align="center">6</td>
-<td>GPIO_OZ0</td>
-<td align="center">32</td>
-<td align="center">12</td>
-<td>LCD_BL_PWM</td>
-</tr>
-<tr>
-<td align="center">33</td>
-<td align="center">13</td>
-<td>GPIO_PE6</td>
-<td align="center">34</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">35</td>
-<td align="center">19</td>
-<td>I2S_4_LRCK</td>
-<td align="center">36</td>
-<td align="center">16</td>
-<td>UART_2_CTS</td>
-</tr>
-<tr>
-<td align="center">37</td>
-<td align="center">26</td>
-<td>SPI_2_MOSI</td>
-<td align="center">38</td>
-<td align="center">20</td>
-<td>I2S_4_SDIN</td>
-</tr>
-<tr>
-<td align="center">39</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">40</td>
-<td align="center">21</td>
-<td>I2S_4_SDOUT</td>
-</tr>
-</tbody>
-</table>
 <p>光が当てると数値は、低くなり。光が遮ると数値が高くなります。</p>
 <p><br></p>
 <h2 id="_3">準備</h2>
-<p>SPIとPWMをつかえるようにしましょう。（設定済みの場合は不要です。）</p>
+<p>SPIとPWMを使えるようにしましょう。（設定済みの場合は不要です。）</p>
 <p>Jetson-IO toolを起動します。</p>
 <div class="highlight"><pre><span></span><code>$sudo /opt/nvidia/jetson-io/jetson-io.py
 </code></pre></div>
 
 <p>Pinmux テーブルの設定</p>
 <p>Configure 40-pin expansion headerを選択します。</p>
-<p>PWM０はLED、SPI1は、ADコンバータICと接続するため、</p>
-<p>PWM0とSPI１を有効化します。スペースバーで決定。</p>
+<p>PWM０はLED、SPI0は、ADコンバータICと接続するため、</p>
+<p>PWM0とSPI0を有効化します。スペースバーで決定。</p>
 <p>Backを選択します。</p>
 <p>Save and reboot to reconfigure pins を選択します。</p>
 <p>再起動します。</p>
