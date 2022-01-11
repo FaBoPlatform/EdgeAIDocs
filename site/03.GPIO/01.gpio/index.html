@@ -381,6 +381,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#swap" title="Swap領域を追加します" class="md-nav__link">
+    Swap領域を追加します
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker" title="Dockerを起動" class="md-nav__link">
     Dockerを起動
   </a>
@@ -1705,6 +1712,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#swap" title="Swap領域を追加します" class="md-nav__link">
+    Swap領域を追加します
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker" title="Dockerを起動" class="md-nav__link">
     Dockerを起動
   </a>
@@ -1760,6 +1774,28 @@
 </tr>
 </tbody>
 </table>
+<h2 id="swap">Swap領域を追加します</h2>
+<p>重い作業には動作が遅くなったり、途中でフリーズしてしまうので、スワップ領域を追加します。</p>
+<p>現在のswapメモリを確認します。</p>
+<div class="highlight"><pre><span></span><code>$free -h
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>cd ~
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$git clone https://github.com/JetsonHacksNano/installSwapfile
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$cd installSwapfile
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>$./installSwapfile.sh
+</code></pre></div>
+
+<p>スワップ領域が追加されたかを確認します。</p>
+<div class="highlight"><pre><span></span><code>$free -free h
+</code></pre></div>
+
 <h2 id="docker">Dockerを起動</h2>
 <p><code>--rm</code>オプションをなくし,<code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
 <div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --network host \
