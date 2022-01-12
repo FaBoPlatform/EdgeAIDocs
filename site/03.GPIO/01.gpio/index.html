@@ -374,8 +374,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jetson-nano-2gb" title="Jetson Nano 2GBへのログイン" class="md-nav__link">
-    Jetson Nano 2GBへのログイン
+  <a href="#jetson-nano" title="Jetson Nano へのログイン" class="md-nav__link">
+    Jetson Nano へのログイン
   </a>
   
 </li>
@@ -1705,8 +1705,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jetson-nano-2gb" title="Jetson Nano 2GBへのログイン" class="md-nav__link">
-    Jetson Nano 2GBへのログイン
+  <a href="#jetson-nano" title="Jetson Nano へのログイン" class="md-nav__link">
+    Jetson Nano へのログイン
   </a>
   
 </li>
@@ -1758,7 +1758,9 @@
                 
                 <h1 id="gpio">GPIOの有効化</h1>
 <p>Jetson NanoでAIを始めるを無事終了したら、再度 Jetson Nanoを再起動します。</p>
-<h2 id="jetson-nano-2gb">Jetson Nano 2GBへのログイン</h2>
+<p><br></p>
+<p>付属のマイクロUSBのケーブルを使用して接続の場合</p>
+<h2 id="jetson-nano">Jetson Nano へのログイン</h2>
 <div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
 </code></pre></div>
 
@@ -1830,11 +1832,11 @@ nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.6.1
 <h2 id="gpio_1">GPIOの設定</h2>
 <p><img alt="" src="../img/gpio01.jpg" /></p>
 <p><img alt="" src="../img/gpio02.jpg" /></p>
-<p>必要なパッケージのインストール</p>
-<div class="highlight"><pre><span></span><code>apt update
-apt install -y portaudio19-dev ffmpeg v4l-utils vim
+<p>必要なパッケージの更新とインストール</p>
+<p><div class="highlight"><pre><span></span><code>apt update
 </code></pre></div>
-
+<div class="highlight"><pre><span></span><code>apt install -y portaudio19-dev ffmpeg v4l-utils vim
+</code></pre></div></p>
 <p>Jetson.GPIOのインストール</p>
 <div class="highlight"><pre><span></span><code>pip3 install Jetson.GPIO
 </code></pre></div>

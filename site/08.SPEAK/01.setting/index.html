@@ -1800,6 +1800,8 @@
                 
                 <h1 id="_1">音声再生</h1>
 <p>音声再生のライブラリをインストールします。</p>
+<p><br></p>
+<p>付属のマイクロUSBのケーブルを使用して接続の場合</p>
 <h2 id="jetson-nano-2gb">Jetson Nano 2GBへのログイン</h2>
 <div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
 </code></pre></div>
@@ -1839,6 +1841,7 @@ handson
 </tr>
 </tbody>
 </table>
+<p>※パスワードはjetsonではないことに注意します。</p>
 <h2 id="_2">プロジェクトフォルダの作成</h2>
 <p>speakフォルダを作成します。</p>
 <div class="highlight"><pre><span></span><code>cp /nvdli-nano/classification/* /nvdli-nano/speak/
@@ -1848,19 +1851,32 @@ handson
 <div class="highlight"><pre><span></span><code>apt update
 </code></pre></div>
 
+<p>音声を扱うので、以下のライブラリをインストールします。</p>
 <h2 id="gtts">gTTS</h2>
+<p>gTTSは文章読み上げのライブラリです。インストールします。</p>
 <div class="highlight"><pre><span></span><code>pip3 install gTTS
 </code></pre></div>
 
 <h2 id="sounddevice">sounddevice</h2>
+<p>sounddeviceは、Pythonで音声再生、録音をするためのライブラリです。</p>
 <div class="highlight"><pre><span></span><code>pip3 install sounddevice
-pip3 install soundfile
-apt install portaudio19-dev
+</code></pre></div>
+
+<p>soundfileはPythonでオーディオファイルを扱うためのライブラリです。</p>
+<div class="highlight"><pre><span></span><code>pip3 install soundfile
+</code></pre></div>
+
+<p>portaudio19-devは、ポータブルオーディオI / Oライブラリです。</p>
+<div class="highlight"><pre><span></span><code>apt install portaudio19-dev
 </code></pre></div>
 
 <h2 id="pypub">pypub</h2>
+<p>ビデオと音声を記録、変換、ストリーミングするためのライブラリです。pydubを使用するいろいろな形式に対応するために必要になります。</p>
 <div class="highlight"><pre><span></span><code>apt install ffmpeg
-pip3 install pydub
+</code></pre></div>
+
+<p>シンプルなインターフェイスでオーディオを操作するライブラリです。</p>
+<div class="highlight"><pre><span></span><code>pip3 install pydub
 </code></pre></div>
                 
                   

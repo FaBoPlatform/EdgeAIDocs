@@ -1715,16 +1715,23 @@
                 
                 
                 <h1 id="servo">Servoの制御</h1>
+<p>~/pwm/のディレクトリに移動し、プラスボタンをクリックします。</p>
 <p><img alt="" src="../img/set_pwm01.jpg" /></p>
+<p>Python3のアイコンをクリックします。</p>
 <p><img alt="" src="../img/set_pwm02.jpg" /></p>
+<p>Renameを選択し、ファイル名を変更します。</p>
 <p><img alt="" src="../img/set_pwm03.jpg" /></p>
 <h2 id="pwm">PWM用チップの認識</h2>
+<p>#519 Jetson OUT/INボードにあるPWM出力用のIC
+チップPCA9685が反応するか確認します。</p>
+<p>I2Cアドレス0x40が表示されれば、動作OKです。（旧タイプは0x60 )</p>
 <p><img alt="" src="../img/set_pwm04.jpg" /></p>
 <div class="highlight"><pre><span></span><code>!i2cdetect -y -r 1
 </code></pre></div>
 
 <p><code>0x40</code>がPCA9685のアドレス番号になっています。</p>
 <h2 id="pwm_1">PWMサーボの制御</h2>
+<p>付属のマイクロデジタルサーボSG-90を制御します。SG-90を #519 OUT/INボードのPWM０に接続します。</p>
 <p><img alt="" src="../img/program01.jpg" /></p>
 <p>初期化</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
@@ -1750,6 +1757,8 @@
     <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
+
+<p>サーボホーンが約０度から約１８０度動くことが確認できましたら、次のページへ。</p>
                 
                   
                 
