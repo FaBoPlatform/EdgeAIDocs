@@ -1730,15 +1730,16 @@
                 
                 <h1 id="log">Logを出してみる</h1>
 <h2 id="log_1">Logの表示</h2>
+<p>ログを表示するため、以下のコードを追記します。</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
     <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">model_trt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">paf</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
     <span class="n">counts</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">peaks</span> <span class="o">=</span> <span class="n">parse_objects</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">paf</span><span class="p">)</span><span class="c1">#, cmap_threshold=0.15, link_threshold=0.15)</span>
-    <span class="n">human</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">C</span> <span class="o">=</span> <span class="n">human</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;human&#39;s num=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="hll">    <span class="n">human</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll">    <span class="n">C</span> <span class="o">=</span> <span class="n">human</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;human&#39;s num=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </span><span class="hll">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">C</span><span class="p">):</span>
 </span><span class="hll">        <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">human</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
 </span><span class="hll">        <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
@@ -1752,9 +1753,13 @@
 </code></pre></div>
 
 <h2 id="log_2">Log画面を別出しにする</h2>
+<p>viewを選択し、Show Log Consoleを選択します。</p>
 <p><img alt="" src="../img/log01.jpg" /></p>
+<p>ログのタブをドラック＆ドロップします。</p>
 <p><img alt="" src="../img/log02.jpg" /></p>
+<p>青い枠が表示するまで移動します。</p>
 <p><img alt="" src="../img/log03.jpg" /></p>
+<p>画面が分割されログが見やすくなります。認識されてるかどうか確認しましょう。</p>
 <p><img alt="" src="../img/log04.jpg" /></p>
 <h2 id="_1">参考</h2>
 <p><a href="https://spyjetson.blogspot.com/2019/12/jetsonnano-human-pose-estimation-using.html">https://spyjetson.blogspot.com/2019/12/jetsonnano-human-pose-estimation-using.html</a></p>
