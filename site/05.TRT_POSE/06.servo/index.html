@@ -1729,22 +1729,29 @@
                 
                 
                 <h1 id="servo">Servo連携</h1>
+<p>#519 基板にあるPCA9685チップからPWM信号を発生させデジタルマイクロサーボを制御するためのライブラリをインストールします。</p>
 <h2 id="pwm">PWMの設定</h2>
+<p>Jupyter labのターミナルを開きます。</p>
+<p>pythonでi2cバスを利用するため以下をインストールします。</p>
 <p>smbusをインストール</p>
 <div class="highlight"><pre><span></span><code>apt install python-smbus
 </code></pre></div>
 
-<p>FaBoPWMをインストール</p>
-<div class="highlight"><pre><span></span><code>cd /nvdli-nano/
-git clone -b jupyterlab https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
-cd FaBoPWM-PCA9685-Python
-pip3 install .
+<p>PCA9685を制御するためのライブラリをFaBoPWMインストールします。</p>
+<p><div class="highlight"><pre><span></span><code>cd /nvdli-nano/
 </code></pre></div>
-
+<div class="highlight"><pre><span></span><code>git clone -b jupyterlab https://github.com/FaBoPlatform/FaBoPWM-PCA9685-Python
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cd FaBoPWM-PCA9685-Python
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>pip3 install .
+</code></pre></div></p>
 <div class="highlight"><pre><span></span><code>pip3 install smbus
 </code></pre></div>
 
 <h2 id="pwm_1">PWMサーボと連携</h2>
+<p>以下の黄色い領域のコードを追加します。</p>
+<p>顔の部位を認識した座標からサーボを動かします。</p>
 <div class="highlight"><pre><span></span><code><span class="hll"><span class="kn">import</span> <span class="nn">Fabo_PCA9685</span>
 </span><span class="hll"><span class="kn">import</span> <span class="nn">time</span>
 </span><span class="hll"><span class="kn">import</span> <span class="nn">pkg_resources</span>

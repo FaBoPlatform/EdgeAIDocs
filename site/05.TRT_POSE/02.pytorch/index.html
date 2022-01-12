@@ -1716,34 +1716,37 @@
                 
                 <h1 id="_1">必要なパッケージのインストール</h1>
 <h2 id="torch2trt">Torch2trtのインストール</h2>
-<div class="highlight"><pre><span></span><code>cd /nvdli-nano/
-git clone https://github.com/NVIDIA-AI-IOT/torch2trt
-cd torch2trt
+<p>Jupyter labのターミナルを開き、以下を入力します。</p>
+<p><div class="highlight"><pre><span></span><code>cd /nvdli-nano/
 </code></pre></div>
-
+<div class="highlight"><pre><span></span><code>git clone https://github.com/NVIDIA-AI-IOT/torch2trt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cd torch2trt
+</code></pre></div></p>
 <p>TensorRT8に対応するためのPull requestを反映</p>
-<div class="highlight"><pre><span></span><code>git fetch origin pull/581/head:support_trt_8
-git checkout support_trt_8
+<p><div class="highlight"><pre><span></span><code>git fetch origin pull/581/head:support_trt_8
 </code></pre></div>
-
-<div class="highlight"><pre><span></span><code>sudo python3 setup.py install 
+<div class="highlight"><pre><span></span><code>git checkout support_trt_8
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>python3 setup.py install 
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>pip3 install tqdm cython pycocotools
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>apt-get update
-apt-get install python3-matplotlib
+<p><div class="highlight"><pre><span></span><code>apt-get update
 </code></pre></div>
-
+<div class="highlight"><pre><span></span><code>apt-get install python3-matplotlib
+</code></pre></div></p>
 <h2 id="trt_pose">TRT_Poseのインストール</h2>
-<div class="highlight"><pre><span></span><code>cd /nvdli-nano/
-git clone https://github.com/NVIDIA-AI-IOT/trt_pose
+<p><div class="highlight"><pre><span></span><code>cd /nvdli-nano/
 </code></pre></div>
-
-<div class="highlight"><pre><span></span><code>cd trt_pose
-python3 setup.py install
+<div class="highlight"><pre><span></span><code>git clone https://github.com/NVIDIA-AI-IOT/trt_pose
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code>cd trt_pose
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>python3 setup.py install
+</code></pre></div></p>
                 
                   
                 
