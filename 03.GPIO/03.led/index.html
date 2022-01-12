@@ -1717,17 +1717,27 @@
                 <h1 id="led">LED</h1>
 <p>LED(101)、LED2(128)を使用してLEDの点滅表示のサンプルを作成します。</p>
 <h2 id="notebook">Notebookの新規作成</h2>
+<p>これから、GPIOというフォルダを作り、led.ipynbというPython3で動くファイルを作成します。
+右クリック、New Folderを選択します。</p>
 <p><img alt="" src="../img/led01.jpg" /></p>
+<p>GPIOを入力します。</p>
 <p><img alt="" src="../img/led02.jpg" /></p>
+<p>GPIOフォルダの中へ移動します。</p>
 <p><img alt="" src="../img/led03.jpg" /></p>
+<p>ファイルの新規作成します。</p>
 <p><img alt="" src="../img/led04.jpg" /></p>
+<p>Python3のファイルを作成します。Python3アイコンをクリックします。</p>
 <p><img alt="" src="../img/led05.jpg" /></p>
+<p>Untitled.ipynbというファイルができます。</p>
 <p><img alt="" src="../img/led06.jpg" /></p>
+<p>ファイル名上で右クリックして、Renameを選択します。</p>
 <p><img alt="" src="../img/led07.jpg" /></p>
+<p>led.ipynbと入力します。</p>
 <p><img alt="" src="../img/led08.jpg" /></p>
 <h2 id="led_1">LEDの点滅</h2>
-<p>LEDをGPIO4に接続します。</p>
+<p>LED Brick(#101,#128)をGPIO4に接続し、下のサンプルコードをコピーして貼り付けます。その次に、以下の示す▶︎ボタンをクリックしてコードを実行します。</p>
 <p><img alt="" src="../img/led09.jpg" /></p>
+<p>LED点滅のサンプルコード</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
 <span class="kn">import</span> <span class="nn">Jetson.GPIO</span> <span class="k">as</span> <span class="nn">GPIO</span>
 <span class="kn">import</span> <span class="nn">time</span>
