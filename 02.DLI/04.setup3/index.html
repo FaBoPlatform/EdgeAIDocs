@@ -2110,11 +2110,19 @@
 <div class="highlight"><pre><span></span><code><span class="go">mkdir -p ~/nvdli-data</span>
 </code></pre></div>
 <p><a href="https://ngc.nvidia.com/catalog/containers/nvidia:dli:dli-nano-ai">NVIDIA NGC</a>に公開されている最新のDockerを下記コマンドで、起動します。(下記はJetpack 4.6.1向けの実行コマンド例です)</p>
+<p>英語</p>
 <div class="highlight"><pre><span></span><code><span class="go">sudo docker run --runtime nvidia -itd --restart always --network host \</span>
 <span class="go">--volume ~/nvdli-data:/nvdli-nano/data \</span>
 <span class="go">--device /dev/video0 \</span>
 <span class="go">--privileged \</span>
-<span class="go">nvcr.io/nvidia/dli/dli-nano-ai:v2.0.1-r32.7.1</span>
+<span class="go">nvcr.io/nvidia/dli/dli-nano-ai:v2.0.2-r32.7.1</span>
+</code></pre></div>
+<p>日本語</p>
+<div class="highlight"><pre><span></span><code><span class="go">sudo docker run --runtime nvidia -itd --restart always --network host \</span>
+<span class="go">--volume ~/nvdli-data:/nvdli-nano/data \</span>
+<span class="go">--device /dev/video0 \</span>
+<span class="go">--privileged \</span>
+<span class="go">nvcr.io/nvidia/dli/dli-nano-ai:v2.0.2-r32.7.1ja</span>
 </code></pre></div>
 <h2 id="pc">PCからの接続</h2>
 <p>Dockerが起動すると、Jetson Nano 2GB上に、JupyterLabが起動します。 Chromeブラウザを起動して、<code>http://192.168.55.1:8888</code>に接続します。</p>
