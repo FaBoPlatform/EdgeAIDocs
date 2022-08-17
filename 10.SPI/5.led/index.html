@@ -13,7 +13,7 @@
     
     
       
-        <title>116 Distance - FaBo EdgeAI Docs</title>
+        <title>Color LED - FaBo EdgeAI Docs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#116-distance" class="md-skip">
+        <a href="#color-led" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              116 Distance
+              Color LED
             
           </span>
         </div>
@@ -1231,87 +1231,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          116 Distance
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2.distance/" class="md-nav__link">
         116 Distance
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプルコードの動作
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    サンプルコード使用時の接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    サンプルコード
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1349,11 +1273,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../5.led/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Color LED
       </a>
+      
     </li>
   
 
@@ -2094,56 +2028,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプルコードの動作
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    サンプルコード使用時の接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jetson-nano-gpio40" class="md-nav__link">
-    JETSON NANO GPIO40ピン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#brick" class="md-nav__link">
-    Brick回路図
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    準備
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    サンプルコード
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2156,266 +2040,40 @@
                 
 
 
-<h1 id="116-distance">116 Distance</h1>
-<h2 id="_1">サンプルコードの動作</h2>
-<p>FaBo #116 Distance Brickを使用してアナログ値を計測</p>
-<h2 id="_2">サンプルコード使用時の接続</h2>
-<p>A0にAnalog Brickを接続します。</p>
-<p><img alt="" src="../../img/104_angle/Analogpinass.jpg" /></p>
-<p>~写真〜</p>
-<h2 id="jetson-nano-gpio40">JETSON NANO GPIO40ピン</h2>
-<table>
-<thead>
-<tr>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-<th align="center">ピン番号</th>
-<th align="center">Jetson.GPIO番号</th>
-<th>NAME</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">2</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">2</td>
-<td>I2C_2_SDA</td>
-<td align="center">4</td>
-<td align="center">-</td>
-<td>5V</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">3</td>
-<td>I2C_2_SCL</td>
-<td align="center">6</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">4</td>
-<td>AUDIO_MCLK</td>
-<td align="center">8</td>
-<td align="center">14</td>
-<td>UART_2_TX</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">10</td>
-<td align="center">15</td>
-<td>UART_2_RX</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">17</td>
-<td>UART_2_RTS</td>
-<td align="center">12</td>
-<td align="center">18</td>
-<td>I2S_4_SCLK</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">27</td>
-<td>SPI_2_SCK</td>
-<td align="center">14</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">15</td>
-<td align="center">22</td>
-<td>LCD_TE</td>
-<td align="center">16</td>
-<td align="center">23</td>
-<td>SPI_2_CS1</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">-</td>
-<td>3.3V</td>
-<td align="center">18</td>
-<td align="center">24</td>
-<td>SPI_2_CS0</td>
-</tr>
-<tr>
-<td align="center">19</td>
-<td align="center">10</td>
-<td>SPI_1_MOSI</td>
-<td align="center">20</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">21</td>
-<td align="center">9</td>
-<td>SPI_1_MISO</td>
-<td align="center">22</td>
-<td align="center">25</td>
-<td>SPI_2_MISO</td>
-</tr>
-<tr>
-<td align="center">23</td>
-<td align="center">11</td>
-<td>SPI_1_SCK</td>
-<td align="center">24</td>
-<td align="center">8</td>
-<td>SPI_1_CS0</td>
-</tr>
-<tr>
-<td align="center">25</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">26</td>
-<td align="center">7</td>
-<td>SPI_1_CS1</td>
-</tr>
-<tr>
-<td align="center">27</td>
-<td align="center">-</td>
-<td>I2C_1_SDA</td>
-<td align="center">28</td>
-<td align="center">-</td>
-<td>I2C_1_SCL</td>
-</tr>
-<tr>
-<td align="center">29</td>
-<td align="center">5</td>
-<td>CAM_AF_EN</td>
-<td align="center">30</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">31</td>
-<td align="center">6</td>
-<td>GPIO_OZ0</td>
-<td align="center">32</td>
-<td align="center">12</td>
-<td>LCD_BL_PWM</td>
-</tr>
-<tr>
-<td align="center">33</td>
-<td align="center">13</td>
-<td>GPIO_PE6</td>
-<td align="center">34</td>
-<td align="center">-</td>
-<td>GND</td>
-</tr>
-<tr>
-<td align="center">35</td>
-<td align="center">19</td>
-<td>I2S_4_LRCK</td>
-<td align="center">36</td>
-<td align="center">16</td>
-<td>UART_2_CTS</td>
-</tr>
-<tr>
-<td align="center">37</td>
-<td align="center">26</td>
-<td>SPI_2_MOSI</td>
-<td align="center">38</td>
-<td align="center">20</td>
-<td>I2S_4_SDIN</td>
-</tr>
-<tr>
-<td align="center">39</td>
-<td align="center">-</td>
-<td>GND</td>
-<td align="center">40</td>
-<td align="center">21</td>
-<td>I2S_4_SDOUT</td>
-</tr>
-</tbody>
-</table>
-<h2 id="brick">Brick回路図</h2>
-<p>~画像〜</p>
-<p><br></p>
-<h2 id="_3">準備</h2>
-<p>SPIをつかえるようにしましょう。</p>
-<p>Jetson-IO toolを起動します。</p>
-<p>$sudo /opt/nvidia/jetson-io/jetson-io.py</p>
-<p>Pinmux テーブルの設定</p>
-<p>~画像〜</p>
-<p>pip3がインストールされていない場合は、
-<div class="highlight"><pre><span></span><code>$sudo apt-get install python3-pip
-</code></pre></div></p>
-<p>pythonでSPIをつかうためのspidevをインストールします。</p>
-<div class="highlight"><pre><span></span><code>$pip3 install spidev
+<h1 id="color-led">Color LED</h1>
+<div class="highlight"><pre><span></span><code>pip3 install adafruit-circuitpython-neopixel-spi
 </code></pre></div>
-<p>SPIdevの使い方。
-https://pypi.org/project/spidev/</p>
-<h2 id="_4">サンプルコード</h2>
-<div class="highlight"><pre><span></span><code># coding: utf-8
-import Jetson.GPIO as GPIO
-import spidev
+<div class="highlight"><pre><span></span><code>import board
+import neopixel_spi
+
+pixels = neopixel_spi.NeoPixel_SPI(board.SPI(), 10)
+pixels.fill(0x00ffff)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
+# SPDX-License-Identifier: MIT
+
 import time
-import sys
+import board
+import neopixel_spi as neopixel
 
-# A0コネクタにAngleを接続
-ANGLEPIN = 0
+NUM_PIXELS = 10
+PIXEL_ORDER = neopixel.GRB
+COLORS = (0xFF0000, 0x00FF00, 0x0000FF)
+DELAY = 0.1
 
-# GPIO4コネクタにLEDを接続
-LEDPIN = 4
+spi = board.SPI()
 
-#######################################################################
-def readadc(channel):
-    &quot;&quot;&quot;
-    Analog Data Converterの値を読み込む
-    @channel チャンネル番号
-    &quot;&quot;&quot;
-    adc = spi.xfer2([1,(8+channel)&lt;&lt;4,0])
-    data = ((adc[1]&amp;3) &lt;&lt; 8) + adc[2]
-    return data
+pixels = neopixel.NeoPixel_SPI(
+    spi, NUM_PIXELS, pixel_order=PIXEL_ORDER, auto_write=False
+)
 
-#######################################################################
-def map(x, in_min, in_max, out_min, out_max):
-    &quot;&quot;&quot;
-    map関数
-    @x 変換したい値
-    @in_min 変換前の最小値
-    @in_max 変換前の最大値
-    @out_min 変換後の最小
-    @out_max 変換後の最大値
-    @return 変換された値
-    &quot;&quot;&quot;
-    return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
-
-# GPIOポートを設定
-GPIO.setmode( GPIO.BCM )
-GPIO.setup( LEDPIN, GPIO.OUT )
-
-# PWM/100Hzに設定
-LED = GPIO.PWM(LEDPIN, 100)
-
-# 初期化
-LED.start(0)
-spi = spidev.SpiDev()
-spi.open(0,0)
-spi.max_speed_hz = 5000
-
-try:
-    while True:
-        data = readadc(ANGLEPIN)
-        print(&quot;adc : {:8} &quot;.format(data))
-        value = map(data, 0, 1023, 0, 100)
-        LED.ChangeDutyCycle(value)
-        time.sleep( 0.01 )
-except KeyboardInterrupt:
-    LED.stop()
-    GPIO.cleanup()
-    spi.close()
-    sys.exit(0)
+while True:
+    for color in COLORS:
+        for i in range(NUM_PIXELS):
+            pixels[i] = color
+            pixels.show()
+            time.sleep(DELAY)
+            pixels.fill(0)
 </code></pre></div>
 
 
@@ -2435,7 +2093,7 @@ except KeyboardInterrupt:
     <nav class="md-footer__inner md-grid" aria-label="フッター" >
       
         
-        <a href="../1.spi/" class="md-footer__link md-footer__link--prev" aria-label="前: SPIの設定" rel="prev">
+        <a href="../4.temperature/" class="md-footer__link md-footer__link--prev" aria-label="前: 108 temperature" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2444,20 +2102,20 @@ except KeyboardInterrupt:
               <span class="md-footer__direction">
                 前
               </span>
-              SPIの設定
+              108 temperature
             </div>
           </div>
         </a>
       
       
         
-        <a href="../3.angle/" class="md-footer__link md-footer__link--next" aria-label="次: 104 Angle" rel="next">
+        <a href="../../11.DeepStream/01.gettingstarted/" class="md-footer__link md-footer__link--next" aria-label="次: DeepStream" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              104 Angle
+              DeepStream
             </div>
           </div>
           <div class="md-footer__button md-icon">
