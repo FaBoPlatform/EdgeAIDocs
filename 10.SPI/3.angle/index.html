@@ -2395,7 +2395,7 @@ spi.max_speed_hz = 5000
 try:
     while True:
         data = readadc(ANGLEPIN)
-        print(&quot;adc : {:8} &quot;.format(data))
+        print(&quot;\radc : {:8} &quot;.format(data), end=&#39;&#39;)
         value = map(data, 0, 1023, 0, 100)
         LED.ChangeDutyCycle(value)
         time.sleep( 0.01 )
