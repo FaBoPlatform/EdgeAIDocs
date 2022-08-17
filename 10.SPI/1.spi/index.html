@@ -1259,6 +1259,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#spi_2" class="md-nav__link">
+    再起動時にSPIを有効にする
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2058,6 +2065,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#spi_2" class="md-nav__link">
+    再起動時にSPIを有効にする
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2090,9 +2104,11 @@
 <img alt="" src="../img/customdtb.png" /></p>
 <p>再起動されます。</p>
 <p>※注意　JetPack4.6をお使いの方はDockerを起動する前に、</p>
-<div class="highlight"><pre><span></span><code>modprobe spidev
+<h2 id="spi_2">再起動時にSPIを有効にする</h2>
+<p>/etc/modules-load.d/modules.conf</p>
+<div class="highlight"><pre><span></span><code>spidev
 </code></pre></div>
-<p>を実行してください。</p>
+<p>を追記すると再起動時にspidevが呼び込まれます。</p>
 
 
 
