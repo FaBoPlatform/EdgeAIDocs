@@ -1,4 +1,4 @@
-# OLED
+# FB OLED
 
 ```
 # SPDX-FileCopyrightText: 2017 Tony DiCola for Adafruit Industries

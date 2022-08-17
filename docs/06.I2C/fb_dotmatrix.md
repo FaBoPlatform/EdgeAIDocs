@@ -1,8 +1,11 @@
-# Dotmatrix
+# FB Dotmatrix
 
-## サンプルコードの動作
+## Driverのインストール
 
-Dotmatrixを制御します。
+
+```
+pip3 install adafruit-circuitpython-ht16k33
+```
 
 ## サンプルコード使用時の接続
 
