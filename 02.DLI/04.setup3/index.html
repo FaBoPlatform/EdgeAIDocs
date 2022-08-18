@@ -2141,15 +2141,17 @@
 <p>英語</p>
 <div class="highlight"><pre><span></span><code><span class="go">sudo docker run --runtime nvidia -itd --restart always --network host \</span>
 <span class="go">--volume ~/nvdli-data:/nvdli-nano/data \</span>
-<span class="go">--device /dev/video0 \</span>
+<span class="go">--volume /dev/:/dev/ \</span>
 <span class="go">--privileged \</span>
+<span class="go">--volume /tmp/argus_socket:/tmp/argus_socket \</span>
 <span class="go">nvcr.io/nvidia/dli/dli-nano-ai:v2.0.2-r32.7.1</span>
 </code></pre></div>
 <p>日本語</p>
 <div class="highlight"><pre><span></span><code><span class="go">sudo docker run --runtime nvidia -itd --restart always --network host \</span>
 <span class="go">--volume ~/nvdli-data:/nvdli-nano/data \</span>
-<span class="go">--device /dev/video0 \</span>
+<span class="go">--volume /dev/:/dev/ \</span>
 <span class="go">--privileged \</span>
+<span class="go">--volume /tmp/argus_socket:/tmp/argus_socket \</span>
 <span class="go">nvcr.io/nvidia/dli/dli-nano-ai:v2.0.2-r32.7.1ja</span>
 </code></pre></div>
 <h2 id="pc">PCからの接続</h2>
