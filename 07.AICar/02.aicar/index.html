@@ -2157,25 +2157,22 @@
 </span><span class="hll"><span class="kn">import</span> <span class="nn">smbus</span>
 </span><span class="hll">
 </span><span class="hll"><span class="c1"># Param</span>
-</span><span class="hll"><span class="n">CENTER</span> <span class="o">=</span> <span class="mi">200</span>
-</span><span class="hll"><span class="n">RIGHT</span> <span class="o">=</span> <span class="mi">372</span>
-</span><span class="hll"><span class="n">LEFT</span> <span class="o">=</span> 
+</span><span class="hll"><span class="n">CENTER</span> <span class="o">=</span> <span class="mi">373</span>
+</span><span class="hll"><span class="n">RIGHT</span> <span class="o">=</span> <span class="mi">473</span>
+</span><span class="hll"><span class="n">LEFT</span> <span class="o">=</span> <span class="mi">273</span>
 </span><span class="hll">
 </span><span class="hll"><span class="c1"># init</span>
 </span><span class="hll"><span class="n">BUSNUM</span><span class="o">=</span><span class="mi">1</span>
 </span><span class="hll"><span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">60</span>
-</span><span class="hll"><span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">372</span>
+</span><span class="hll"><span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">373</span>
 </span><span class="hll"><span class="n">bus</span> <span class="o">=</span> <span class="n">smbus</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">BUSNUM</span><span class="p">)</span>
 </span><span class="hll"><span class="n">PCA9685</span> <span class="o">=</span> <span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">PCA9685</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="n">INITIAL_VALUE</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="mh">0x40</span><span class="p">)</span>
 </span><span class="hll"><span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">set_hz</span><span class="p">(</span><span class="n">SERVO_HZ</span><span class="p">)</span>
 </span><span class="hll">
-</span><span class="hll"><span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">in_min</span><span class="p">,</span> <span class="n">in_max</span><span class="p">,</span> <span class="n">out_min</span><span class="p">,</span> <span class="n">out_max</span><span class="p">):</span>
-</span><span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">out_max</span> <span class="o">-</span> <span class="n">out_min</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">in_max</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">+</span> <span class="n">out_min</span>
-</span><span class="hll">
-</span><span class="n">state_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stop&#39;</span><span class="p">,</span> <span class="s1">&#39;live&#39;</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../images/ready_img.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">default_image</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">prediction_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpeg&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">camera</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">camera</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">default_image</span><span class="p">)</span>
+</span><span class="hll"><span class="n">state_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stop&#39;</span><span class="p">,</span> <span class="s1">&#39;live&#39;</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../images/ready_img.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span><span class="hll">    <span class="n">default_image</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class="n">prediction_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpeg&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">camera</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">camera</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">default_image</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">live</span><span class="p">(</span><span class="n">state_widget</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">prediction_widget</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">dataset</span>
@@ -2187,16 +2184,16 @@
         <span class="n">x</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">category_index</span><span class="p">]</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">category_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
 
-        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">camera</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">))</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">camera</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">))</span>
+        <span class="c1">#x = int(camera.width * (x / 2.0 + 0.5))</span>
+        <span class="c1">#y = int(camera.height * (y / 2.0 + 0.5))</span>
 
-<span class="hll">        <span class="k">if</span> <span class="n">category_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span class="hll">            <span class="n">x_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="k">if</span> <span class="n">category_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="hll">            <span class="n">x_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">x</span>
 </span><span class="hll">            <span class="n">pwm</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">372</span>
 </span><span class="hll">            <span class="n">pwm_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">pwm</span>
-</span>            <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pwm</span><span class="p">)</span>
-
-        <span class="n">prediction</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span class="hll">            <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pwm</span><span class="p">)</span>
+</span><span class="hll">
+</span>        <span class="n">prediction</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="n">prediction</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
         <span class="n">prediction_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bgr8_to_jpeg</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
 
