@@ -2215,6 +2215,103 @@
 <span class="c1"># display(live_execution_widget)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;live_execution_widget created&quot;</span><span class="p">)</span>
 </code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<span class="c1"># optimizer = torch.optim.SGD(model.parameters(), lr=1e-3, momentum=0.9)</span>
+
+<span class="n">epochs_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">IntText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;epochs&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">eval_button</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;evaluate&#39;</span><span class="p">)</span>
+<span class="n">train_button</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
+<span class="n">loss_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
+<span class="hll"><span class="n">x_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">pwm_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;pwm&#39;</span><span class="p">)</span>
+</span>
+<span class="n">progress_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatProgress</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;progress&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">train_eval</span><span class="p">(</span><span class="n">is_training</span><span class="p">):</span>
+<span class="hll">    <span class="k">global</span> <span class="n">BATCH_SIZE</span><span class="p">,</span> <span class="n">LEARNING_RATE</span><span class="p">,</span> <span class="n">MOMENTUM</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">eval_button</span><span class="p">,</span> <span class="n">train_button</span><span class="p">,</span> <span class="n">accuracy_widget</span><span class="p">,</span> <span class="n">loss_widget</span><span class="p">,</span> <span class="n">progress_widget</span><span class="p">,</span> <span class="n">state_widget</span><span class="p">,</span> <span class="n">x_widget</span><span class="p">,</span> <span class="n">pwm_widget</span>
+</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">dataset</span><span class="p">,</span>
+            <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH_SIZE</span><span class="p">,</span>
+            <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+
+        <span class="n">state_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;stop&#39;</span>
+        <span class="n">train_button</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">eval_button</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_training</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+        <span class="k">while</span> <span class="n">epochs_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">sum_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">error_count</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">category_idx</span><span class="p">,</span> <span class="n">xy</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+                <span class="c1"># send data to device</span>
+                <span class="n">images</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                <span class="n">xy</span> <span class="o">=</span> <span class="n">xy</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">is_training</span><span class="p">:</span>
+                    <span class="c1"># zero gradients of parameters</span>
+                    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+                <span class="c1"># execute model to get outputs</span>
+                <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+
+                <span class="c1"># compute MSE loss over x, y coordinates for associated categories</span>
+                <span class="n">loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="n">cat_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">category_idx</span><span class="o">.</span><span class="n">flatten</span><span class="p">())):</span>
+                    <span class="n">loss</span> <span class="o">+=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">outputs</span><span class="p">[</span><span class="n">batch_idx</span><span class="p">][</span><span class="mi">2</span> <span class="o">*</span> <span class="n">cat_idx</span><span class="p">:</span><span class="mi">2</span> <span class="o">*</span> <span class="n">cat_idx</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">xy</span><span class="p">[</span><span class="n">batch_idx</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">category_idx</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">is_training</span><span class="p">:</span>
+                    <span class="c1"># run backpropogation to accumulate gradients</span>
+                    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+
+                    <span class="c1"># step optimizer to adjust parameters</span>
+                    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+                <span class="c1"># increment progress</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">category_idx</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="n">count</span>
+                <span class="n">sum_loss</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+                <span class="n">progress_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+                <span class="n">loss_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">sum_loss</span> <span class="o">/</span> <span class="n">i</span>
+
+            <span class="k">if</span> <span class="n">is_training</span><span class="p">:</span>
+                <span class="n">epochs_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">epochs_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+    <span class="k">except</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+    <span class="n">train_button</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">eval_button</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">state_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;live&#39;</span>
+
+<span class="n">train_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">train_eval</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">eval_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">train_eval</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="n">train_eval_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span>
+    <span class="n">epochs_widget</span><span class="p">,</span>
+    <span class="n">progress_widget</span><span class="p">,</span>
+    <span class="n">loss_widget</span><span class="p">,</span>
+    <span class="n">ipywidgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">train_button</span><span class="p">,</span> <span class="n">eval_button</span><span class="p">]),</span>
+    <span class="n">x_widget</span><span class="p">,</span>
+    <span class="n">pwm_widget</span><span class="p">,</span>
+<span class="p">])</span>
+
+<span class="hll"><span class="c1"># display(train_eval_widget)</span>
+</span><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trainer configured and train_eval_widget created&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 
