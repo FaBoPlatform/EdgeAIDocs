@@ -1059,27 +1059,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jetson-nano-2gb" class="md-nav__link">
-    Jetson Nano 2GBへのログイン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    Dockerを起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jupyterlab" class="md-nav__link">
-    JupyterLabへの接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     プロジェクトフォルダの作成
   </a>
@@ -1131,20 +1110,6 @@
     <li class="md-nav__item">
       <a href="../02.sample/" class="md-nav__link">
         サンプル
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03.stop/" class="md-nav__link">
-        Dockerの保存と停止
       </a>
     </li>
   
@@ -2115,27 +2080,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jetson-nano-2gb" class="md-nav__link">
-    Jetson Nano 2GBへのログイン
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker" class="md-nav__link">
-    Dockerを起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jupyterlab" class="md-nav__link">
-    JupyterLabへの接続
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     プロジェクトフォルダの作成
   </a>
@@ -2186,46 +2130,6 @@
 
 <h1 id="_1">音声再生</h1>
 <p>音声再生のライブラリをインストールします。</p>
-<p><br></p>
-<p>付属のマイクロUSBのケーブルを使用して接続の場合</p>
-<h2 id="jetson-nano-2gb">Jetson Nano 2GBへのログイン</h2>
-<div class="highlight"><pre><span></span><code>ssh jetson@192.168.55.1
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th align="left">Password</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">jetson</td>
-</tr>
-</tbody>
-</table>
-<h2 id="docker">Dockerを起動</h2>
-<p><code>--privileged</code>オプションをつけて、再びDockerを起動します。</p>
-<div class="highlight"><pre><span></span><code>sudo docker run --runtime nvidia -it --network host \
---volume ~/nvdli-data:/nvdli-nano/data \
---device /dev/video0 \
---privileged \
-handson
-</code></pre></div>
-<h2 id="jupyterlab">JupyterLabへの接続</h2>
-<p><code>http://192.168.55.1:8888</code> にChromeで接続し、JupuyterLabに接続します。</p>
-<table>
-<thead>
-<tr>
-<th align="left">Password</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">dlinano</td>
-</tr>
-</tbody>
-</table>
-<p>※パスワードはjetsonではないことに注意します。</p>
 <h2 id="_2">プロジェクトフォルダの作成</h2>
 <p>speakフォルダを作成します。</p>
 <div class="highlight"><pre><span></span><code>cp /nvdli-nano/classification/* /nvdli-nano/speak/
