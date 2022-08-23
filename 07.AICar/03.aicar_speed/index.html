@@ -2134,18 +2134,18 @@
         <span class="n">preprocessed</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
         <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">preprocessed</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
         <span class="n">category_index</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">category_widget</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-<span class="hll">
-</span><span class="hll">        <span class="c1"># category_index 0</span>
+
+<span class="hll">        <span class="c1"># category_index 0</span>
 </span><span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span><span class="hll">        <span class="c1">#y = output[1]</span>
-</span>        <span class="c1"># category_index 1</span>
-        <span class="c1">#x = output[2]</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-
+</span><span class="hll">        <span class="c1"># category_index 1</span>
+</span>        <span class="c1">#x = output[2]</span>
+<span class="hll">        <span class="n">y</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span>
         <span class="c1">#x = int(camera.width * (x / 2.0 + 0.5))</span>
         <span class="c1">#y = int(camera.height * (y / 2.0 + 0.5))</span>
-<span class="hll">
-</span><span class="hll">        <span class="n">x_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="hll">        <span class="n">x_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">x</span>
 </span><span class="hll">        <span class="n">pwm_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">372</span>
 </span><span class="hll">        <span class="n">pwm_x_widget</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">pwm_x</span>
 </span><span class="hll">        <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">pwm_x</span><span class="p">)</span>
