@@ -2134,11 +2134,11 @@
         <span class="n">preprocessed</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
         <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">preprocessed</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
         <span class="n">category_index</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">categories</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">category_widget</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-
-        <span class="c1"># category_index 0</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="c1">#y = output[1]</span>
-        <span class="c1"># category_index 1</span>
+<span class="hll">
+</span><span class="hll">        <span class="c1"># category_index 0</span>
+</span><span class="hll">        <span class="n">x</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll">        <span class="c1">#y = output[1]</span>
+</span>        <span class="c1"># category_index 1</span>
         <span class="c1">#x = output[2]</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 
@@ -2184,7 +2184,9 @@
 <span class="n">train_button</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
 <span class="n">loss_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;loss&#39;</span><span class="p">)</span>
 <span class="hll"><span class="n">x_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-</span><span class="hll"><span class="n">pwm_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;pwm&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">pwm_x_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;pwm_x&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">y_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">pwm_y_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;pwm_y&#39;</span><span class="p">)</span>
 </span>
 <span class="n">progress_widget</span> <span class="o">=</span> <span class="n">ipywidgets</span><span class="o">.</span><span class="n">FloatProgress</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;progress&#39;</span><span class="p">)</span>
 
@@ -2266,9 +2268,9 @@
     <span class="n">ipywidgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">train_button</span><span class="p">,</span> <span class="n">eval_button</span><span class="p">]),</span>
 <span class="hll">    <span class="n">x_widget</span><span class="p">,</span>
 </span><span class="hll">    <span class="n">pwm_x_widget</span><span class="p">,</span>
-</span>    <span class="n">x_widget</span><span class="p">,</span>
-    <span class="n">pwm_y_widget</span><span class="p">,</span>
-<span class="p">])</span>
+</span><span class="hll">    <span class="n">x_widget</span><span class="p">,</span>
+</span><span class="hll">    <span class="n">pwm_y_widget</span><span class="p">,</span>
+</span><span class="p">])</span>
 
 <span class="c1"># display(train_eval_widget)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trainer configured and train_eval_widget created&quot;</span><span class="p">)</span>
