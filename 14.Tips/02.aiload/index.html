@@ -2088,6 +2088,39 @@
 
 <h1 id="_1">学習済みモデルのロード</h1>
 <h2 id="classificiation">Classificiation</h2>
+<div class="highlight"><pre><span></span><code>from jetcam.usb_camera import USBCamera
+camera = USBCamera(width=224, height=224, capture_device=0)
+camera.running = True
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>import torch
+import torchvision
+import torch.nn.functional as F
+
+CATEGORIES = [&#39;a&#39;, &#39;b&#39;]
+
+NUM_CLASS = 2 * len(CATEGORIES)
+device = torch.device(&#39;cuda&#39;)
+model = torchvision.models.resnet18(num_classes=NUM_CLASS)
+model.fc = torch.nn.Linear(512, NUM_CLASS)
+model = model.to(device)
+
+print(&quot;loading: my_model.pth&quot;)
+model.load_state_dict(torch.load(&#39;my_model.pth&#39;)) 
+model.eval()
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>from utils import preprocess
+import numpy as np
+
+while True:
+    image = camera.value
+    preprocessed = preprocess(image)
+    output = model(preprocessed)
+    output = F.softmax(output, dim=1).detach().cpu().numpy().flatten()
+    category_index = output.argmax()
+
+    #if category_index == 0:
+    #elif category_index == 1:
+</code></pre></div>
 <h2 id="regression">Regression</h2>
 <div class="highlight"><pre><span></span><code>from jetcam.usb_camera import USBCamera
 camera = USBCamera(width=224, height=224, capture_device=0)
@@ -2098,11 +2131,15 @@ import torchvision
 
 CATEGORIES = [&#39;xy&#39;, &#39;speed&#39;]
 
+NUM_CLASS = 2 * len(CATEGORIES)
 device = torch.device(&#39;cuda&#39;)
-model = torchvision.models.resnet18(pretrained=False)
-model.fc = torch.nn.Linear(512, 2 * len(CATEGORIES))
-model = model.cuda().eval().half()
-model.load_state_dict(torch.load(&#39;model.pth&#39;))
+model = torchvision.models.resnet18(num_classes=NUM_CLASS)
+model.fc = torch.nn.Linear(512, NUM_CLASS)
+model = model.to(device)
+
+print(&quot;loading: my_model.pth&quot;)
+model.load_state_dict(torch.load(&#39;my_model.pth&#39;)) 
+model.eval()
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>from utils import preprocess
 import numpy as np
