@@ -2132,7 +2132,7 @@
 <h1 id="129-ultrasound">129 UltraSound</h1>
 <p>超音波距離センサー（HC-SR04)</p>
 <h2 id="_1">サンプルコードの動作</h2>
-<p>超音波センサーに電源ONにして、0.5秒ごとに測距します。</p>
+<p>超音波距離センサーを電源ONにして、0.5秒ごとに測距します。</p>
 <h2 id="_2">サンプルコード使用時の接続</h2>
 <p>FaBo BLOCKS #129 をFaBo BLOCKS 519 FaBo Jetson基板　５、６、２２があるGPIOポートへ接続します。</p>
 <p>センサーの動作電圧はDC５.0Vなので＃５１９基板のスライドスイッチを５V側にします。</p>
@@ -2145,7 +2145,7 @@
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="c1">#Jetson Nano #519 RJ11</span>
+<span class="c1">#FaBo BLOCKS Jetson Nano #519 RJ11 GPIO Setting</span>
 <span class="n">Trig</span> <span class="o">=</span> <span class="mi">5</span>                          
 <span class="n">Echo</span> <span class="o">=</span> <span class="mi">6</span>                          
 <span class="n">PowerOn</span> <span class="o">=</span> <span class="mi">22</span>
