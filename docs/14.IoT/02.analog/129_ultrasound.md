@@ -3,23 +3,29 @@
 超音波距離センサー（HC-SR04)
 
 ## サンプルコードの動作
-0.5秒ごとに即距します。
+超音波距離センサーを電源ONにして、0.5秒ごとに測距します。
 
 ## サンプルコード使用時の接続
-FaBo BLOCKS #129 を#519基板　５、６、２２があるGPIOポートへ接続します。
+FaBo BLOCKS #129 をFaBo BLOCKS 519 FaBo Jetson基板　５、６、２２があるGPIOポートへ接続します。
 
 センサーの動作電圧はDC５.0Vなので＃５１９基板のスライドスイッチを５V側にします。
+
+GPIO２２は、省電力にするためのアナログスイッチとなります。
+
+測距センサーの電源スイッチとなります。HighでON、LowでＯＦＦとなります。
+
 
 ## サンプルコード
 
 ```Python
-# FaBo 129 UltraSound ＨＣ－ＳＲ０４
+
+# FaBo 129 UltraSound HC-SR04
 # coding: utf-8
 import Jetson.GPIO as GPIO
 import time
 import sys
 
-#Jetson Nano #519 RJ11
+#FaBo BLOCKS Jetson Nano #519 RJ11 GPIO Setting
 Trig = 5                          
 Echo = 6                          
 PowerOn = 22
