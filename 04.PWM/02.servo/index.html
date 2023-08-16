@@ -2181,6 +2181,9 @@
 <p><code>0x40</code>がPCA9685のアドレス番号になっています。</p>
 <h2 id="pwm_1">PWMサーボの制御</h2>
 <p>付属のマイクロデジタルサーボSG-90を制御します。SG-90を #519 OUT/INボードのPWM０に接続します。</p>
+<p>お使いになるサーボによって周波数が異なることがございます。</p>
+<p>お使いになるjetsonの機種によってバス番号が異なる場合がございます。</p>
+<p>設定にあたっては範囲を超えて波長が小さ過ぎたり、大き過ぎたりしないようにしましょう。</p>
 <p><img alt="" src="../img/program01.jpg" /></p>
 <p>初期化</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
@@ -2191,8 +2194,8 @@
 
 <span class="c1"># init</span>
 <span class="n">BUSNUM</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">60</span>
-<span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">300</span>
+<span class="n">SERVO_HZ</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">INITIAL_VALUE</span><span class="o">=</span><span class="mi">302</span>
 <span class="n">bus</span> <span class="o">=</span> <span class="n">smbus</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">BUSNUM</span><span class="p">)</span>
 <span class="n">PCA9685</span> <span class="o">=</span> <span class="n">Fabo_PCA9685</span><span class="o">.</span><span class="n">PCA9685</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span><span class="n">INITIAL_VALUE</span><span class="p">,</span><span class="n">address</span><span class="o">=</span><span class="mh">0x40</span><span class="p">)</span>
 <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_hz</span><span class="p">(</span><span class="n">SERVO_HZ</span><span class="p">)</span>
@@ -2200,12 +2203,16 @@
 <p>値を設定</p>
 <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="c1"># Move servo on channel O between extremes.</span>
-    <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">150</span><span class="p">)</span>
+    <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">104</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+    <span class="n">PCA9685</span><span class="o">.</span><span class="n">set_channel_value</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <p>サーボホーンが約０度から約１８０度動くことが確認できましたら、次のページへ。</p>
+<p>PCA9685の解説</p>
+<p><img alt="Servo" src="../img/servoPwm.png" /></p>
+<p>50Mhzの周期は２０m秒。PCA 9685は、１２ビットであるから、サーボモータの１周期の４０９６ビットだとすると１ビットは20m秒➗４０９６＝０.００４８m秒０.５m秒が左いっぱいだとすると１０４ビット右いっぱいが２.４m秒なので５００ビットとなる。中間は５００　＋　１０４　➗　２で３０２となる。</p>
+<p>※I2Cデバイスアドレスが衝突する場合は、裏面にあるスライドスイッチでアドレスが変更できます。</p>
 
 
 
