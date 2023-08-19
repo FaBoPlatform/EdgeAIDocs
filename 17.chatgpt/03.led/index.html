@@ -17,7 +17,7 @@
     
     
       
-        <title>システムロールの追加 - FaBo EdgeAI Docs</title>
+        <title>ChatGPTからハードウェア制御 - FaBo EdgeAI Docs</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#chatgpt" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              システムロールの追加
+              ChatGPTからハードウェア制御
             
           </span>
         </div>
@@ -2155,12 +2155,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          システムロールの追加
+          ChatGPTからハードウェア制御
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        システムロールの追加
+        ChatGPTからハードウェア制御
       </a>
       
         
@@ -2179,8 +2179,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     システムロール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ラッパークラス
   </a>
   
 </li>
@@ -2227,8 +2234,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     システムロール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ラッパークラス
   </a>
   
 </li>
@@ -2248,8 +2262,8 @@
                   
 
 
-<h1 id="_1">システムロールの追加</h1>
-<h2 id="_2">システムロール</h2>
+<h1 id="chatgpt">ChatGPTからハードウェア制御</h1>
+<h2 id="_1">システムロール</h2>
 <p>システムロールに、ChatGPTの振る舞いを記述できます。</p>
 <p>role.txt
 <div class="highlight"><pre><span></span><code>あなたと私の間では、Pythonで下記に定義したメソッドを利用してハードウェアの制御が可能です。
@@ -2279,6 +2293,7 @@ fabo.ledOn()
 
 それでは始めましょう。
 </code></pre></div></p>
+<h2 id="_2">ラッパークラス</h2>
 <p>fabo.py</p>
 <div class="highlight"><pre><span></span><code># coding: utf-8
 import Jetson.GPIO as GPIO
