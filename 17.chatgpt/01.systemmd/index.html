@@ -2276,23 +2276,23 @@
 
 <span class="c1"># メインループ</span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c1"># システムロールをrole.txt から呼び出す</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;role.txt&#39;</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="hll">        <span class="n">system_role</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class="hll">
-</span><span class="hll">    <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-</span><span class="hll">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span>        <span class="c1"># ユーザーからの入力を受け取る</span>
+<span class="hll">    <span class="c1"># システムロールをrole.txt から呼び出す</span>
+</span><span class="hll">    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;role.txt&#39;</span>
+</span><span class="hll">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class="hll">        <span class="n">system_role</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># ユーザーからの入力を受け取る</span>
         <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&gt; &quot;</span><span class="p">)</span>
 
         <span class="c1"># ユーザーの入力をGPT-3 APIに送信して応答を生成する</span>
         <span class="n">prompt</span> <span class="o">+=</span> <span class="n">user_input</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">generate_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span><span class="n">system_role</span><span class="p">,</span><span class="n">model_engine</span><span class="p">)</span>
-
-        <span class="c1"># ChatGPTの応答を表示する</span>
-<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="hll">        <span class="n">response</span> <span class="o">=</span> <span class="n">generate_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span><span class="n">system_role</span><span class="p">,</span><span class="n">model_engine</span><span class="p">)</span>
 </span>
+        <span class="c1"># ChatGPTの応答を表示する</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
 <span class="c1"># プログラムのエントリーポイント</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
