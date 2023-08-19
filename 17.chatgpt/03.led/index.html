@@ -2343,8 +2343,8 @@ class FaBoWrapper:
 </span><span class="hll">        <span class="k">return</span> <span class="n">full_code</span>
 </span><span class="hll">    <span class="k">else</span><span class="p">:</span>
 </span><span class="hll">        <span class="k">return</span> <span class="kc">None</span>
-</span><span class="hll">
-</span><span class="c1"># GPT-3から応答を生成する関数</span>
+</span>
+<span class="c1"># GPT-3から応答を生成する関数</span>
 <span class="k">def</span> <span class="nf">generate_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">system_roll</span><span class="p">,</span> <span class="n">model_engine</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.openai.com/v1/chat/completions&quot;</span>  <span class="c1"># OpenAIのURL</span>
     <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_key</span><span class="p">)}</span>
@@ -2383,8 +2383,8 @@ class FaBoWrapper:
 
         <span class="c1"># ChatGPTの応答を表示</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-<span class="hll">
-</span><span class="hll">        <span class="n">code</span> <span class="o">=</span> <span class="n">extract_python_code</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>  <span class="c1"># 応答からPythonコードを抽出</span>
+
+<span class="hll">        <span class="n">code</span> <span class="o">=</span> <span class="n">extract_python_code</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>  <span class="c1"># 応答からPythonコードを抽出</span>
 </span><span class="hll">        <span class="k">if</span> <span class="n">code</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please wait while I run the code in Jetson Nano...&quot;</span><span class="p">)</span>
 </span><span class="hll">            <span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;import fabo&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># faboのインポート行を削除</span>
