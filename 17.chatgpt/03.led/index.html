@@ -2389,10 +2389,10 @@ class FaBoWrapper:
 </span><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please wait while I run the code in Jetson Nano...&quot;</span><span class="p">)</span>
 </span><span class="hll">            <span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;import fabo&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># faboのインポート行を削除</span>
 </span><span class="hll">            <span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># pythonの文字列を削除</span>
-</span>            <span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># Pythonの文字列を削除</span>
-            <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>  <span class="c1"># コードを実行</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
+</span><span class="hll">            <span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># Pythonの文字列を削除</span>
+</span><span class="hll">            <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>  <span class="c1"># コードを実行</span>
+</span><span class="hll">            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span>
 <span class="c1"># プログラムのエントリーポイント</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
