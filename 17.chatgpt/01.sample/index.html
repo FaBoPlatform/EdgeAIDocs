@@ -12,6 +12,8 @@
         <link rel="prev" href="../../16.Tips/01.tips/">
       
       
+        <link rel="next" href="../01.systemmd/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-9.1.3">
     
@@ -2166,6 +2168,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01.systemmd/" class="md-nav__link">
+        ChatGPTとの連携
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2228,14 +2244,19 @@ https://platform.openai.com/docs/guides/gpt/completions-api</p>
 <p>必要なもの
 - OpenAIのAPIキー</p>
 <div class="highlight"><pre><span></span><code># -*- coding: utf-8 -*-
+import readline
+import requests
+import json
 
-# OpenAI APIキーを設定します
+# OpenAI APIキーを設定します（ご自身のキーに置き換えてください）
 api_key = &quot;#################################################&quot;
 
-# modelの設定を行います
+# 使用するモデルの設定を行います
 model_engine = &quot;gpt-3.5-turbo&quot;
 
+# GPT-3から応答を生成する関数
 def generate_response(prompt, system_roll, model_engine):
+    # OpenAIのURL
     url = &quot;https://api.openai.com/v1/chat/completions&quot;
     headers = {&#39;Authorization&#39;: &#39;Bearer {}&#39;.format(api_key)}
     data = {
@@ -2247,27 +2268,29 @@ def generate_response(prompt, system_roll, model_engine):
     }
     response = requests.post(url, headers=headers, json=data)
     try:
+        # 応答からメッセージを取り出す
         message = response.json()[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
         return message
     except Exception as e:
         print(&quot;Error: &quot; + str(response) + &quot; Exception: &quot; + str(e))
         return None
 
-
+# メインループ
 def main():
 
     prompt = &quot;&quot;
     while True:
-        # ユーザーからの入力を受け取ります
+        # ユーザーからの入力を受け取る
         user_input = input(&quot;&gt; &quot;)
 
-        # ユーザーからの入力をGPT-3 APIに送信して応答を生成します
+        # ユーザーの入力をGPT-3 APIに送信して応答を生成する
         prompt += user_input + &quot;\n&quot;
         response = generate_response(prompt,&quot;&quot;,model_engine)
 
-        # ChatGPTの応答を表示します
+        # ChatGPTの応答を表示する
         print(response)
 
+# プログラムのエントリーポイント
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre></div>
